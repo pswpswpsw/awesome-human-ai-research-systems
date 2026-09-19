@@ -122,7 +122,7 @@ For the academic-survey side of this space — which changes fast and is better 
 - [awesome-ai-for-science](https://github.com/yenanjing/awesome-ai-for-science) — 400+ open-source projects for AI-automated scientific research (code only, no commercial products).
 - [Awesome-LLM-Scientific-Discovery](https://github.com/HKUST-KnowComp/Awesome-LLM-Scientific-Discovery) — EMNLP 2025 survey-companion paper list.
 
-Others in this space that overlap less directly: [Awesome-Agent-Scientists](https://github.com/AgenticScience/Awesome-Agent-Scientists), [Awesome-LLM-Agents-Scientific-Discovery](https://github.com/zhoujieli/Awesome-LLM-Agents-Scientific-Discovery) (biomedical-specific), [awesome-deep-research-agent](https://github.com/ai-agents-2030/awesome-deep-research-agent) (general-purpose, not research-specific), [awesome-HAI](https://github.com/bwang514/awesome-HAI) (Human-AI *Interaction*/HCI papers).
+Others in this space that overlap less directly: [Awesome-Agent-Scientists](https://github.com/AgenticScience/Awesome-Agent-Scientists), [Awesome-LLM-Agents-Scientific-Discovery](https://github.com/zjlrock777/Awesome-LLM-Agents-Scientific-Discovery) (biomedical-specific), [awesome-deep-research-agent](https://github.com/WuizaKaseiyo/awesome-deep-research-agent) (general-purpose, not research-specific), [awesome-HAI](https://github.com/bwang514/awesome-HAI) (Human-AI *Interaction*/HCI papers).
 
 **Why a separate list instead of contributing to one of these?** None of the above curate live, usable commercial products as the primary focus. This list stays commercial-first and intentionally small; if it starts sprawling into a 400-entry paper bibliography, that's a bug, not a feature — open an issue.
 
