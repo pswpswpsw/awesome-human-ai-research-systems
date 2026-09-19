@@ -27,23 +27,24 @@ Systems that fail these tests but are worth knowing about can go in [Deliberatel
 
 ## Which section does it go in?
 
-Sections are **not** research stages. Two tools that both "help with the literature" belong in different sections if one hands you a finished review to sign and the other refuses to write a sentence for you. Ask instead: **who decides what enters the research record, and what standing does the researcher keep in it?**
+Sections are **not** research stages. Two tools that both "help with the literature" belong in different sections if one attaches a verdict to every paper it returns and the other attaches none. Ask instead: **who decides what enters the research record, and what standing does the researcher keep in it?**
 
-The order is not arbitrary. It runs from most to least of the AI's judgment reaching the record by default. **Work down this list and stop at the first match** — several products satisfy more than one test, and the earlier section wins, because it describes the weaker human position and the list should not flatter a tool.
+Apply the two placement rules in this order:
 
-Each section in [README.md](README.md) carries its own full test; these are the short forms.
+1. **Classify by the module that carries research judgment,** not the one the homepage leads with. This picks *which part of a product you evaluate*. A product with a review module and a drafting module is evaluated on whichever one decides what gets asserted. This rule is load-bearing and also the most abused: it should not be used to rescue a product whose excluded module is the one users actually buy.
+2. **Then work down the sections below and stop at the first match.** This picks *which section that module lands in*. Several modules satisfy more than one test, and the earlier section wins, because it describes the weaker human position and the list should not flatter a tool.
+
+The first four are a ranked sequence, running from most to least of the AI's judgment reaching the record without a human ruling on that specific item. The last three sit outside that scale for reasons stated in each. Each section in [README.md](README.md) carries its own full test; these are the short forms, and the README's version is authoritative.
 
 1. **[Commissioned Deliverables](README.md#commissioned-deliverables)** — the next documented human action after the brief is reviewing a complete artifact that would be submitted under the researcher's own name, and no attributable per-unit decision record is produced.
-2. **[Proposals Settled at the Bench](README.md#proposals-settled-at-the-bench)** — the documented output terminates in a physical action, *and* measured results feed back for re-optimization. Both halves required.
-3. **[Sourced Findings, Human Conclusions](README.md#sourced-findings-human-conclusions)** — the largest thing leaving the session is structured working material or less, and every assertion either resolves to an openable source or is explicitly marked model-authored. The machine's labels stand until a human overrides them.
-4. **[Item-by-Item Adjudication](README.md#item-by-item-adjudication)** — the decision record is itself an export (PRISMA flow, conflict log, audit trail), *and* it attributes rulings to named reviewers rather than to the model. Nothing is default-accept. Both halves required.
-5. **[Critique Returned to the Researcher](README.md#critique-returned-to-the-researcher)** — no mechanism puts AI-authored text into the record without a per-item human action, and the AI comments on material the researcher supplied. A bulk apply-all control disqualifies; a tracked change accepted one at a time does not.
-6. **[Components Without a Locus](README.md#components-without-a-locus)** — ships no runtime, no hosted service, and no entry point that returns a deliverable, so the host deployment sets the division of labor.
+2. **[Sourced Findings, Human Conclusions](README.md#sourced-findings-human-conclusions)** — the system attaches a judgment to individual items; that judgment is usable the moment it is produced rather than waiting on an entered ruling; every assertion resolves to an openable source or is explicitly marked model-authored; and the largest thing leaving the session is structured working material or less.
+3. **[Item-by-Item Adjudication](README.md#item-by-item-adjudication)** — the decision record is itself an export (PRISMA flow, conflict log, audit trail), *and* it attributes rulings to named reviewers rather than to the model. Nothing is usable until a named person rules. Both halves required.
+4. **[Critique Returned to the Researcher](README.md#critique-returned-to-the-researcher)** — no mechanism puts AI-authored text into the record without a per-item human action, and the AI comments on material the researcher supplied. A bulk apply-all control disqualifies; a tracked change accepted one at a time does not.
+5. **[Retrieval Without a Verdict](README.md#retrieval-without-a-verdict)** — the system returns items and attaches no judgment to any of them. Ranking is not a verdict; a screening label, a classification, an extracted value, or a per-item score is, and sends the entry to section 2.
+6. **[Proposals Settled at the Bench](README.md#proposals-settled-at-the-bench)** — the documented output terminates in a physical action, *and* measured results feed back for re-optimization. Both halves required.
+7. **[Components Without a Locus](README.md#components-without-a-locus)** — ships no runtime, no hosted service, and no entry point that returns a deliverable, so the host deployment sets the division of labor.
 
-**Two rules that cut across sections:**
-
-- **Classify by the module that carries research judgment,** not the one the homepage leads with. A product with a review module and a drafting module is filed by whichever one decides what gets asserted. This rule is load-bearing and also the most abused: it should not be used to rescue a product whose excluded module is the one users actually buy.
-- **Membership is release-mobile.** Shipping a reviewer log, a checkpoint UI, or a bulk apply-the-fixes button moves an entry. Existing entries need periodic re-testing, not just new PRs — a PR that re-tests an existing entry against its section's stated test is as welcome as one adding a tool.
+**One rule that cuts across all of them:** membership is release-mobile. Shipping a reviewer log, a checkpoint UI, or a bulk apply-the-fixes button moves an entry. Existing entries need periodic re-testing, not just new PRs — a PR that re-tests an existing entry against its section's stated test is as welcome as one adding a tool.
 
 If you genuinely cannot place a tool, say so in the PR and quote the vendor page that confuses you. A boundary that cannot decide a real case is a bug in the taxonomy, and that is worth an issue.
 
@@ -56,19 +57,19 @@ If you genuinely cannot place a tool, say so in the PR and quote the vendor page
    ```
 3. **Write the sentence around the decision, not the feature list.** Say what the system decides and what it leaves to the researcher. "Screens each record and attaches a label that stands unless a reviewer reverses it" is useful; "AI-powered screening for systematic reviews" is not.
 4. **Do not adopt the vendor's own framing.** If the product calls itself a mentor, a co-scientist, or a copilot, describe what it does instead.
-5. Cite the vendor page you used. A classification that cannot be checked from public pages cannot be reviewed.
-6. Keep descriptions factual and vendor-neutral, one sentence, no superlatives you can't back up. If a product ships two paths with different loci, name both and say which one the placement rests on.
+5. Cite the vendor page you used. A classification that cannot be checked from public pages cannot be reviewed. If the claim your placement turns on is not documented anywhere public, say so in the entry rather than asserting it.
+6. Keep descriptions factual and vendor-neutral, one sentence, no superlatives you can't back up. If a product ships two paths with different loci, name both and say which one the placement rests on — briefly, since the one-sentence limit still applies.
 7. One tool per pull request makes review faster, but small batches are fine.
 8. Run a spell-check and make sure links resolve before opening the PR.
 
-Proposing a **new section** is the exception, not the norm. A new section needs a decision locus the existing six cannot express, plus a test a contributor can apply from a product's public pages. Sections that are really workflow stages in disguise will be declined.
+Proposing a **new section** is the exception, not the norm. A new section needs a decision locus the existing seven cannot express, plus a test a contributor can apply from a product's public pages. Sections that are really workflow stages in disguise will be declined.
 
 ## Staying small
 
 This list exists because bigger lists in this space either sprawl until no one can maintain them, or become a paper bibliography that goes stale within a year. To avoid that:
 
 - We favor quality/relevance over completeness. Not every AI-for-research tool needs to be here.
-- If a section grows past ~10–12 entries, that's a signal to prune the weakest ones, or to split the section along a finer decision boundary. *Commissioned Deliverables* and *Sourced Findings* are tied at nine today and are the two to watch.
+- If a section grows past ~10–12 entries, that's a signal to prune the weakest ones, or to split the section along a finer decision boundary. *Commissioned Deliverables*, at nine, is the only one close to that line today, and the likely split is on whether the system retrieves its own evidence.
 - A section holding one entry is fine if the arrangement it describes is real. Thin sections are informative: they show where this kind of collaboration barely exists yet.
 - Duplicates of a well-established category leader need a genuinely differentiating feature. Self-hostable weights and data versus a hosted service counts; a different front end does not.
 

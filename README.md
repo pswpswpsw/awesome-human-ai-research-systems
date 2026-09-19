@@ -15,15 +15,17 @@ Every entry here has to pass two tests:
 
 So each section answers two questions — **what does the human decide**, and **what does the AI decide** — and every boundary is settled from the product's own public pages rather than from how it feels to use.
 
-**The ordering tracks one quantity: how much of the AI's judgment reaches the research record by default.** At the top the system's output *is* the record and the human's only lever is to keep or discard the whole thing. Moving down, less of it arrives unexamined: first the human authorizes a batch, then the machine's labels stand only until overridden, then nothing advances without an attributable ruling entered by a named person, and finally nothing the AI produces has a path into the record at all. Read top to bottom, the AI's default authority falls and the researcher's standing rises.
+**Four of the seven sections form a ranked sequence**, measuring how much of the AI's judgment reaches the research record without a human ruling on that specific item. In [Commissioned Deliverables](#commissioned-deliverables) all of it does: the output *is* the record and your only lever is to keep or discard the whole thing. In [Sourced Findings](#sourced-findings-human-conclusions) the machine attaches a verdict to each item and that verdict stands until you open the source and reverse it. In [Item-by-Item Adjudication](#item-by-item-adjudication) none of it advances until a named person enters a ruling that the log carries. In [Critique Returned to the Researcher](#critique-returned-to-the-researcher) there is no path into the record at all. Read in that order, the AI's default authority falls and the researcher's standing rises.
+
+**Three sections sit outside that scale, each for a stated reason.** [Retrieval Without a Verdict](#retrieval-without-a-verdict) holds systems that attach no judgment to any item, so there is nothing to rank; what they decide is what you ever see. [Proposals Settled at the Bench](#proposals-settled-at-the-bench) produces a measurement rather than an assertion, so no model-authored judgment enters the record to be scaled. [Components Without a Locus](#components-without-a-locus) fixes no locus at all, because the host deployment sets one.
 
 Three rules travel with the sections rather than living under any one heading:
 
-- **Work down the sections in order and stop at the first match.** Several products satisfy more than one test; the earlier section wins, because it describes the weaker human position and the list should not flatter a tool.
-- **Classify by the module that carries research judgment**, not the one the homepage leads with. This is what settles SciSpace, ScholarsReview, Review-it, and Granted AI.
+- **Classify by the module that carries research judgment**, not the one the homepage leads with. This picks *which part of a product you evaluate*. It settles SciSpace, ScholarsReview, Review-it, and Question First.
+- **Then work down the sections in order and stop at the first match.** This picks *which section that module lands in*. Several products satisfy more than one test; the earlier section wins, because it describes the weaker human position and the list should not flatter a tool.
 - **Membership is release-mobile.** A vendor shipping a reviewer log or a checkpoint UI moves an entry. Existing entries need periodic re-testing, not just new PRs.
 
-**An honest limitation.** Two sections below — *Sourced Findings* and *Item-by-Item Adjudication* — hold almost exactly the memberships that "literature search" and "systematic review" held under the old stage-based cut. That is not the axis failing to bite. It is a finding: in those two corners of the market the decision locus happens to be uniform, because screening platforms converged on the reviewer-attributed audit trail that journals demand, and literature tools converged on default-accept labelling. Elsewhere the axis cuts hard across the old stages, putting grant drafting next to autonomous manuscript agents, and separating peer-review tools that write into your file from ones that cannot.
+**An honest limitation.** [Item-by-Item Adjudication](#item-by-item-adjudication) holds exactly the membership that "systematic review" held under the old stage-based cut. That is not the axis failing to bite; it is a finding with a documented cause. PRISMA and the evidence standards journals enforce require reviewer-attributed audit trails, so in that one corner of the market every serious product converged on the same decision locus, and stage and locus coincide. Elsewhere the axis cuts across the old stages: grant drafting now sits beside unattended manuscript agents, peer-review tools are split by whether they can write into your file, and the old literature section is split in two by whether the system attaches a verdict to what it returns.
 
 Things that failed the inclusion tests are listed in [Deliberately Not Listed](#deliberately-not-listed), with reasons.
 
@@ -31,12 +33,21 @@ Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Contents
 
+**The ranked sequence:**
+
 - [Commissioned Deliverables](#commissioned-deliverables)
-- [Proposals Settled at the Bench](#proposals-settled-at-the-bench)
 - [Sourced Findings, Human Conclusions](#sourced-findings-human-conclusions)
 - [Item-by-Item Adjudication](#item-by-item-adjudication)
 - [Critique Returned to the Researcher](#critique-returned-to-the-researcher)
+
+**Off the scale:**
+
+- [Retrieval Without a Verdict](#retrieval-without-a-verdict)
+- [Proposals Settled at the Bench](#proposals-settled-at-the-bench)
 - [Components Without a Locus](#components-without-a-locus)
+
+**Everything else:**
+
 - [Deliberately Not Listed](#deliberately-not-listed)
 - [Related Awesome Lists](#related-awesome-lists)
 - [Contributing](#contributing)
@@ -56,55 +67,34 @@ You write the brief, the system hands back something that already looks finished
 
 - [ClawsGO Science](https://clawsgo.ai/) — Answers one natural-language question with a multi-hour unattended run returning a compiled LaTeX manuscript, figures, and analyses, alongside a screening log recording the model's own inclusion calls rather than any reviewer's.
 - [FutureHouse Platform](https://www.futurehouse.org/tools) — Hosted research agents that take a question and return a finished cited report, deciding without further input which literature to read, what analysis to run, and which conclusions to assert.
-- [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* — Ships two paths: a mentor loop that proposes one rewrite at a time behind a diff and an Apply button, and an auto-fill path that completes the question, gap, hypothesis and methodology, retrieves its own citations, and exports a manuscript, grant, or preregistration draft; filed here on the auto-fill path, which produces a document submitted under the researcher's name with no record of what was examined.
+- [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* — Auto-fills the question, gap, hypothesis and methodology, retrieves its own citations, and exports a manuscript, grant, or preregistration draft submitted under the researcher's name; a separate per-item proposal path exists, but the auto-fill route is the one that produces a document with no record of what was examined.
 - [Review-it](https://review-it.ai/) — Scores an uploaded manuscript section by section, flags methodology weaknesses and fabricated citations, ranks candidate journals by fit, and on a paid tier returns an automatically corrected document rather than a list of suggestions to weigh individually.
-- [ScholarsReview](https://scholarsreview.com/) — Takes an uploaded manuscript and returns a pre-submission review report, journal recommendations, and an apply-the-fixes path that rewrites flagged weaknesses without per-item approval.
+- [ScholarsReview](https://scholarsreview.com/) — Takes an uploaded manuscript and returns a pre-submission review report, journal recommendations, and a "fix identified weaknesses" path that rewrites flagged passages; the vendor does not document whether those rewrites apply in bulk or one at a time, and the placement rests on that unverified point.
 - [Granted AI](https://grantedai.com/) — Drafts letters of inquiry and proposal sections from an uploaded RFP, exporting a DOCX the applicant reviews as a finished document; on a single click it applies its own review findings to the draft without per-item approval.
 - [Labguru Assistant](https://www.labguru.com/labguru-assistant) — Chatbot inside an electronic lab notebook that authors protocol parameters, flags anomalies, and names the next step with no source attached to any assertion; its output becomes the scientist's own notebook record, and the vendor documents no review checkpoint.
 - [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) — Self-hosted pipeline that accepts a described idea or only a set of reference papers, then fixes the research direction, algorithm design, implementation, experiments, and manuscript claims on its own, returning a full paper and a code workspace at which point the researcher's judgment first applies.
 - [Deep-Research-Agent](https://github.com/CYC2002tommy/Deep-Research-Agent) — Halts once for the researcher to approve its search plan, then runs unattended through retrieval, extraction, drafting, DOI verification and internal peer review, returning a finished APA 7th `.docx`.
 
-> **Note:** the widest internal spread of any section here, running from a grant-letter drafter to an unattended manuscript agent. A finer split is possible — probably on whether the system retrieves its own evidence — but no one has written a test for it that survives contact with the entries.
+> **Note:** the largest section and the widest internal spread, running from a grant-letter drafter to an unattended manuscript agent. A finer split is possible — probably on whether the system retrieves its own evidence — but no one has written a test for it that survives contact with the entries.
 >
 > **Also note:** ScholarsReview separately sells an "AI humanizer" advertising a "100% human score" against Turnitin and GPTZero. Detection evasion is named as excluded in [CONTRIBUTING.md](CONTRIBUTING.md), and the entry survives only under the classify-by-the-judgment-carrying-module rule. It is a live question whether that rule should be allowed to rescue it.
-
-## Proposals Settled at the Bench
-
-> **The human decides** whether to spend material and instrument time on what was proposed, and records the outcome under their own name.
->
-> **The AI decides** which experiment is worth running next, and it is the measured result rather than a reviewer that settles whether the proposal was right.
-
-The only arrangement on this list where the verdict comes from a measurement instead of a reader. One entry, and it is here because the arrangement is real rather than because the shelf needed filling.
-
-**How to test a candidate:** two halves, both required. The documented output must terminate in a physical action — an experiment, a synthesis, an assay, an instrument run — and measured results must feed back for re-optimization. Software-only output never qualifies however autonomous the system looks.
-
-- [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) — Proposes the next experiment from stated objectives, constraints, and prior data using Bayesian explore-exploit search, then re-optimizes on the measured results the researcher returns to it, whether entered by hand or fed back automatically through an optional link to lab robots and liquid handlers.
-
-> **Note:** publicly usable closed-loop platforms are still scarce, so PRs are wanted here. Labguru Assistant was tested against this section and does not qualify: it recommends next steps, but no measured result feeds back into a new proposal.
 
 ## Sourced Findings, Human Conclusions
 
 > **The human decides** what the returned material means for the argument, which of it is worth citing, and every sentence that leaves the desk.
 >
-> **The AI decides** what to surface, how to rank it, and what label to attach — and those labels stand until the researcher opens the source and overrides them.
+> **The AI decides** what to surface, how to rank it, and what verdict to attach to each item — and that verdict stands until the researcher opens the source and overrides it.
 
-The AI fetches, ranks, labels, and arranges work that other people did, and stops before the conclusion. What distinguishes this from the section below is the default: here the machine's judgment is provisionally accepted, and it takes a human act to dislodge it.
+The AI fetches, labels, and arranges work that other people did, and stops before the conclusion. What puts a product here rather than one section down is the default: the machine's judgment is provisionally accepted, and it takes a human act to dislodge it.
 
-**How to test a candidate:** ask what the largest thing that leaves the session is. If it is structured working material *or less* — an extraction table, a ranked result set, citation classifications, a conversation — it belongs here; a document the researcher would submit under their own name belongs in [Commissioned Deliverables](#commissioned-deliverables). Then check provenance: every assertion must resolve to an identifiable source a reader can open, or be explicitly marked in the output as model-authored rather than sourced.
+**How to test a candidate:** three clauses. First, the system attaches a judgment to individual items — a screening label, a relevance tier, a support/contrast classification, an extracted value. Second, that judgment is usable the moment it is produced: nothing halts for an entered ruling before the researcher can act on the output. A platform where nothing advances until a named person rules belongs in [Item-by-Item Adjudication](#item-by-item-adjudication); a system that attaches no judgment at all belongs in [Retrieval Without a Verdict](#retrieval-without-a-verdict). Third, provenance: every assertion must resolve to an identifiable source a reader can open, or be explicitly marked in the output as model-authored rather than sourced. And the largest thing leaving the session must be structured working material or less; a document submitted under the researcher's own name belongs in [Commissioned Deliverables](#commissioned-deliverables).
 
 - [Elicit](https://elicit.com/) — Screens each record against user-supplied criteria, attaching an include or exclude label with a reason and supporting quote that stands unless a researcher opens the paper and reverses it; extraction cells carry sentence-level citations, but nothing writes into the researcher's own draft.
 - [Consensus](https://consensus.app/) — Decides what surfaces from a corpus of roughly 220 million papers and how each study is labelled, ranked, and tallied on a yes/no claim, with every assertion pinned to a paper the reader can open and the supporting quote visible.
 - [Undermind](https://www.undermind.ai/) — Runs an agentic, iterative search and returns a ranked table in which each paper carries a match score, a stated reason for inclusion, and an estimate of how much of the relevant work the run found; the model's per-paper labels stand unless the researcher overrides them.
-- [Ai2 Asta](https://asta.allen.ai/) — Searches and ranks a Semantic Scholar-derived corpus and returns per-paper relevance tiers with stated criteria, and reports in which every uncited passage is explicitly labelled model-generated rather than presented as sourced, with everything leaving as an export rather than writing into the researcher's manuscript.
+- [Ai2 Asta](https://asta.allen.ai/) — Returns per-paper relevance tiers with stated criteria over a Semantic Scholar-derived corpus, and reports in which every uncited passage is explicitly labelled model-generated rather than presented as sourced, with everything leaving as an export rather than writing into the researcher's manuscript.
 - [OpenScholar](https://github.com/AkariAsai/OpenScholar) — Self-hosted retrieval-augmented pipeline (Ai2 + UW, [published in *Nature*](https://www.nature.com/articles/s41586-025-10072-4)) that decides what to retrieve, how to rank it, and which passage supports each sentence, leaving what the evidence means to the researcher; ships released weights, reranker, and a 45M-paper index you run yourself, with the hosted demo now redirecting to Asta.
-- [Semantic Scholar](https://www.semanticscholar.org/) — Free, nonprofit search across over 200 million papers with a citation graph; ranks results and attaches TLDRs, passage labels, and cited-passage answers, each scoped to a single paper the reader can open.
 - [scite](https://scite.ai/) — Classifies each citation statement it extracts as supporting, contrasting, or mentioning, and audits an uploaded bibliography for retractions and references carrying mostly contrasting citations; what the flagged evidence means is left to the researcher.
-- [SciSpace](https://scispace.com/) — Searches a large paper corpus and returns ranked results with extracted data as a filterable, exportable table in which every cell traces back to an openable source.
-- [agent-literature-review](https://github.com/Arcadia-Science/agent-literature-review) — Interactive multi-agent terminal session from Arcadia Science that searches arXiv and bioRxiv and reads local PDFs, then discusses them with the researcher in conversation, producing no document or export at all.
-
-> **Note:** tied with Commissioned Deliverables as the largest section, and the one whose internal boundary is weakest. A pure index like Semantic Scholar and a default-accept labeller like Elicit are doing different things to the researcher's judgment, and no one has yet written a test that separates them and survives contact with generated per-paper summaries.
->
-> **Re-test flag:** `agent-literature-review` was last pushed April 2025 and depends on external APIs, so it has no frozen release to fall back on. Under the current activity rule it survives only if it still runs. Someone should confirm that before the next release of this list.
 
 ## Item-by-Item Adjudication
 
@@ -114,7 +104,7 @@ The AI fetches, ranks, labels, and arranges work that other people did, and stop
 
 The most mature division of labor in research, and the only one on this list that leaves behind an auditable account of who decided what. Nothing here is default-accept: the machine's label is a suggestion until a named person rules on it.
 
-**How to test a candidate:** two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels stand unless challenged belongs one section up, in [Sourced Findings](#sourced-findings-human-conclusions).
+**How to test a candidate:** two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels are usable before anyone rules on them belongs one section up, in [Sourced Findings](#sourced-findings-human-conclusions).
 
 - [Covidence](https://www.covidence.org/) — No reference advances without two independent human votes and disagreements route to a conflict-resolution queue, while machine learning only reorders the screening backlog and proposes extraction values a reviewer accepts or rejects individually; the decision flow exports as a PRISMA 2020 diagram and inter-rater reliability report.
 - [Rayyan](https://www.rayyan.ai/) — Rulings are entered one record at a time and nothing resolves by majority, so a disagreement stays in the conflict queue until the reviewers align; what leaves the platform is the decision trail itself, an auto-generated PRISMA flow diagram and team audit log, rather than only the surviving reference set.
@@ -134,6 +124,38 @@ The AI reads your work and tells you what it thinks, and it has no way to put an
 - [ai-peer-review](https://github.com/poldrack/ai-peer-review) — Takes a manuscript PDF and returns independent reviews from six LLMs, a synthesized meta-review, and a table of which model raised which concern, leaving the manuscript itself untouched so every resulting revision is made by the author's own hand.
 
 > **Note:** thin, and the thinness is the finding. Several products advertise a review module that would land here on that module alone, then ship a bulk apply-the-fixes control beside it, which moves them to [Commissioned Deliverables](#commissioned-deliverables). A reviewer that genuinely cannot write is rarer than the marketing suggests.
+
+---
+
+## Retrieval Without a Verdict
+
+> **The human decides** everything about the evidence, because the system offers no opinion on any individual item. Judgment is untouched by anything except what never surfaced.
+>
+> **The AI decides** what reaches your attention and in what order, and attaches no verdict to any of it.
+
+Off the ranked scale, because there is no model-authored judgment entering the record to measure. That does not make these neutral. Deciding what a researcher never sees is real influence, and it is the one kind that leaves nothing to override, which is why it sits in its own section rather than at the bottom of the scale.
+
+**How to test a candidate:** the system returns items without attaching a judgment to any of them. Ranking and relevance ordering do not count as a verdict; a screening label, a support/contrast classification, an extracted value, or a per-item score does, and moves the entry to [Sourced Findings](#sourced-findings-human-conclusions). Generated per-paper summaries are the hard case: a summary describing what a paper says stays here, while one rating the paper against the researcher's criteria does not.
+
+- [Semantic Scholar](https://www.semanticscholar.org/) — Free, nonprofit search across over 200 million papers with a citation graph; ranks results and attaches TLDRs, passage labels, and cited-passage answers, each describing a single paper the reader can open rather than rating it.
+- [SciSpace](https://scispace.com/) — Searches a large paper corpus and returns ranked results with extracted data as a filterable, exportable table in which every cell traces back to an openable source.
+- [agent-literature-review](https://github.com/Arcadia-Science/agent-literature-review) — Interactive multi-agent terminal session from Arcadia Science that searches arXiv and bioRxiv and reads local PDFs, then discusses them with the researcher in conversation, producing no document or export at all.
+
+> **Note:** SciSpace is the weakest member. Its extraction cells sit close to the verdict line, and a change to how they are generated would move it. **Re-test flag:** `agent-literature-review` was last pushed April 2025 and depends on external APIs, so it has no frozen release to fall back on. Under the current activity rule it survives only if it still runs; someone should confirm that before the next release of this list.
+
+## Proposals Settled at the Bench
+
+> **The human decides** whether to spend material and instrument time on what was proposed, and records the outcome under their own name.
+>
+> **The AI decides** which experiment is worth running next, and it is the measured result rather than a reviewer that settles whether the proposal was right.
+
+Off the ranked scale, because what enters the record is a measurement rather than a model-authored assertion. The only arrangement on this list where the verdict comes from an instrument instead of a reader. One entry, and it is here because the arrangement is real rather than because the shelf needed filling.
+
+**How to test a candidate:** two halves, both required. The documented output must terminate in a physical action — an experiment, a synthesis, an assay, an instrument run — and measured results must feed back for re-optimization. Software-only output never qualifies however autonomous the system looks.
+
+- [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) — Proposes the next experiment from stated objectives, constraints, and prior data using Bayesian explore-exploit search, then re-optimizes on the measured results the researcher returns to it, whether entered by hand or fed back automatically through an optional link to lab robots and liquid handlers.
+
+> **Note:** publicly usable closed-loop platforms are still scarce, so PRs are wanted here. Labguru Assistant was tested against this section and does not qualify: it recommends next steps, but no measured result feeds back into a new proposal.
 
 ## Components Without a Locus
 
