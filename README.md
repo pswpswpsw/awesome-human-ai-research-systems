@@ -18,7 +18,7 @@ Twenty-three systems a researcher can use today, in seven kinds, cut by what the
 
 The first four are a ranked sequence: reading down, less of the AI's judgment reaches the record without you ruling on it. The last three sit outside that scale.
 
-*Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run, `open weights` means the model is downloadable too, and `free` marks a service documented as free rather than a tier that may change.
+*Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable too, and `free` marks a service documented as free rather than a tier that may change.
 
 ---
 
@@ -45,7 +45,7 @@ The AI fetches, labels, and arranges work other people did, and stops before the
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [Elicit](https://elicit.com/) | The criteria — and each label only if you open the paper and reverse it | Ranked results, per-record include/exclude labels with reasons and quotes, extraction tables with sentence-level citations | A log exists, but the model's label is its default entry; nothing attributes a ruling to a named reviewer | No | hosted |
+| [Elicit](https://elicit.com/) | The criteria — and each label only if you open the paper and reverse it | Ranked results, per-record include/exclude labels with reasons and quotes, extraction tables with sentence-level citations | Nothing attributes a ruling to a named reviewer; the model's label is the default | No | hosted |
 | [Consensus](https://consensus.app/) | Whether a tally is actually decisive, and every citing sentence | Ranked papers over ~220M, per-study snapshot fields, yes/no claim tally with quotes | No | No | hosted |
 | [Undermind](https://www.undermind.ai/) | What the material means and which papers get cited | Ranked table with match scores, stated inclusion reasons, and a coverage estimate for the run | No | No | hosted |
 | [Ai2 Asta](https://asta.allen.ai/) | Which relevance tier to trust, and every sentence you write | Per-paper relevance tiers with stated criteria; reports whose uncited passages are labelled model-generated | No | No, export only | hosted |
