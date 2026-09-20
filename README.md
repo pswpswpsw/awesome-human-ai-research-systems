@@ -18,6 +18,20 @@ Twenty-three systems a researcher can use today, in seven kinds, cut by what the
 
 The first four are a ranked sequence: reading down, less of the AI's judgment reaches the record without you ruling on it. The last three sit outside that scale.
 
+### If you came here with a task
+
+The kinds are not stages, so a task usually spans more than one. That is the point: the tools you would have compared side by side often differ in what they leave you responsible for.
+
+| If your task is | Look in | What separates the options |
+| --- | --- | --- |
+| Finding papers on a question | [Retrieval Without a Verdict](#retrieval-without-a-verdict), [Sourced Findings](#sourced-findings-human-conclusions) | Whether the system attaches a verdict to each paper or just hands it to you |
+| Screening records for a systematic review | [Sourced Findings](#sourced-findings-human-conclusions), [Item-by-Item Adjudication](#item-by-item-adjudication) | Whether a label stands by default or waits for your named ruling. Only the second leaves a trail a journal will accept |
+| Extracting data from papers | [Sourced Findings](#sourced-findings-human-conclusions), [Item-by-Item Adjudication](#item-by-item-adjudication) | The same split: SciSpace's cells stand until you check them, Covidence's need accepting one at a time |
+| Getting a draft written | [Commissioned Deliverables](#commissioned-deliverables) | Six of the eight entries there return one. What varies is what you supply: a question, an RFP, or only a set of reference papers |
+| Getting a manuscript critiqued | [Commissioned Deliverables](#commissioned-deliverables), [Critique Returned to the Researcher](#critique-returned-to-the-researcher) | Whether the tool can apply its own fixes in bulk, or cannot write at all |
+| Deciding what to run next at the bench | [Proposals Settled at the Bench](#proposals-settled-at-the-bench), [Commissioned Deliverables](#commissioned-deliverables) | Whether a measurement feeds back into the next proposal, or the advice just lands in your notebook |
+| Building your own system on top | [Components Without a Locus](#components-without-a-locus), and the `self-host` rows throughout | Whether it ships a runtime, or expects your agent to supply one |
+
 *Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable too, and `free` marks a service documented as free rather than a tier that may change.
 
 ---
