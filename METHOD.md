@@ -1,16 +1,16 @@
 # How this list is built
 
-The [README](README.md) is the answer. This file is the working. It exists so the list can be argued with: every section boundary here is a test someone can apply to a product's public pages and get the same answer I did.
+The [README](README.md) is the answer. This file is the working. It exists so the list can be argued with: every boundary here is a test someone can apply to a product's public pages and get the same answer I did.
 
 ## The axis
 
-**Sections are cut by decision locus, not by workflow stage.** Where a tool sits in the pipeline says almost nothing about the collaboration: two products can both "help with the literature" while one hands you a finished review to sign and the other refuses to write a single sentence for you. What separates them is who decides what enters the research record, and what standing the researcher keeps in it.
+**The kinds are cut by decision locus, not by workflow stage.** Where a tool sits in the pipeline says almost nothing about the collaboration: two products can both "help with the literature" while one hands you a finished review to sign and the other refuses to write a single sentence for you. What separates them is who decides what enters the research record, and what standing the researcher keeps in it.
 
-So each section answers two questions — what does the human decide, and what does the AI decide — and every boundary is settled from the product's own public pages rather than from how it feels to use. A boundary that cannot be checked that way is not a boundary, it is a vibe, and it was rejected during design for that reason.
+So each kind answers two questions — what does the human decide, and what does the AI decide — and every boundary is settled from the product's own public pages rather than from how it feels to use. A boundary that cannot be checked that way is not a boundary, it is a vibe, and it was rejected during design for that reason.
 
 ## The ordering
 
-**Four of the seven sections form a ranked sequence**, measuring how much of the AI's judgment reaches the research record without a human ruling on that specific item.
+**Four of the seven kinds form a ranked sequence**, measuring how much of the AI's judgment reaches the research record without a human ruling on that specific item.
 
 1. **Commissioned Deliverables** — all of it does. The output *is* the record, and the only lever is to keep or discard the whole thing.
 2. **Sourced Findings, Human Conclusions** — the machine attaches a verdict to each item, and that verdict stands until the researcher opens the source and reverses it.
@@ -19,7 +19,7 @@ So each section answers two questions — what does the human decide, and what d
 
 Read in that order, the AI's default authority falls and the researcher's standing rises.
 
-**Three sections sit outside that scale, each for a stated reason.**
+**Three kinds sit outside that scale, each for a stated reason.**
 
 - **Retrieval Without a Verdict** attaches no judgment to any item, so there is nothing to rank. What it decides is what you ever see.
 - **Proposals Settled at the Bench** produces a measurement rather than an assertion, so no model-authored judgment enters the record to be scaled.
@@ -31,7 +31,7 @@ Read in that order, the AI's default authority falls and the researcher's standi
 
 It does not license rescuing a product whose excluded module is the one users actually buy: a tool whose review module would qualify while the business's principal offering is something this list excludes is excluded, not filed on its best module. A side line in an excluded category does not trigger this; a centre of gravity in one does.
 
-**2. Then test the three off-scale sections first, and only afterwards walk the ranked four in order, stopping at the first match.** This picks *which section that module lands in*. The off-scale tests are narrow and self-evidencing — a physical instrument run, no verdict on any item, no runtime at all — so checking them first stops a general test from catching something it was never written for. Within the ranked four the earlier section wins, because it describes the weaker human position and the list should not flatter a tool.
+**2. Then test the three off-scale kinds first, and only afterwards walk the ranked four in order, stopping at the first match.** This picks *which kind that module lands in*. The off-scale tests are narrow and self-evidencing — a physical instrument run, no verdict on any item, no runtime at all — so checking them first stops a general test from catching something it was never written for. Within the ranked four the earlier kind wins, because it describes the weaker human position and the list should not flatter a tool.
 
 **3. Membership is release-mobile.** A vendor shipping a reviewer log or a checkpoint UI moves an entry. Existing entries need periodic re-testing, not just new PRs.
 
@@ -47,7 +47,7 @@ Three clauses. First, the system attaches a judgment to individual items — a s
 
 ### Item-by-Item Adjudication
 
-Two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels are usable before anyone rules on them belongs one section up, in Sourced Findings.
+Two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels are usable before anyone rules on them belongs one kind up, in Sourced Findings.
 
 ### Critique Returned to the Researcher
 
@@ -61,28 +61,30 @@ The system returns retrieved items to the researcher and attaches no judgment to
 
 Two halves, both required. The documented output must terminate in a physical action — an experiment, a synthesis, an assay, an instrument run — and measured results must feed back for re-optimization. Software-only output never qualifies however autonomous the system looks.
 
+*Applied:* Labguru Assistant was tested against this kind and does not qualify. It recommends next steps that a scientist then performs at a bench, satisfying the first half, but no measured result feeds back into a new proposal, so the second half fails and it sits in Commissioned Deliverables instead. Publicly usable closed-loop platforms remain scarce, so PRs here are wanted.
+
 ### Components Without a Locus
 
 Ask whether the project produces research output by itself. If it ships no runtime, no hosted service, and no entry point that returns a deliverable, it belongs here.
 
 ## Where the axis coincides with the old one, and why
 
-Two sections come close to reproducing a section of the stage-based taxonomy this list used to have. **Item-by-Item Adjudication** holds exactly the membership that "systematic review" held, and **Sourced Findings** holds most of what "literature search" held.
+Two kinds come close to reproducing a section of the stage-based taxonomy this list used to have. **Item-by-Item Adjudication** holds exactly the membership that "systematic review" held, and **Sourced Findings** holds most of what "literature search" held.
 
 That is not the axis failing to bite; in both cases it is a finding with a cause. PRISMA and the evidence standards journals enforce require reviewer-attributed audit trails, so every serious screening platform converged on the same decision locus. Literature tools converged on default-accept labelling for a weaker reason, competitive pressure to put a score on everything returned, and there the test did move entries: Semantic Scholar out to Retrieval Without a Verdict, SciSpace back in on the strength of what an extracted cell asserts.
 
-Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools are split by whether the tool can write into your file, which puts Review-it in the first section and ai-peer-review in the fourth. The old lab section is split between a proposer whose verdict comes from an instrument and one whose output is prose.
+Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools are split by whether the tool can write into your file, which puts Review-it in the first kind and ai-peer-review in the fourth. The old lab section is split between a proposer whose verdict comes from an instrument and one whose output is prose.
 
 ## Known weak points
 
-- **Commissioned Deliverables is the widest section**, running from a grant-letter drafter to an unattended manuscript agent. A finer split is available if it grows: whether the human's single ruling falls on a brief they wrote or on material they already owned, which separates ClawsGO and FutureHouse from Review-it and Labguru Assistant.
+- **Commissioned Deliverables is the widest kind**, running from a grant-letter drafter to an unattended manuscript agent. A finer split is available if it grows: whether the human's single ruling falls on a brief they wrote or on material they already owned, which separates ClawsGO and FutureHouse from Review-it and Labguru Assistant.
 - **Critique Returned to the Researcher is thin, and the thinness is the finding.** Several products advertise a review module that would land there on that module alone, then ship a bulk apply-the-fixes control beside it, which moves them to Commissioned Deliverables. A reviewer that genuinely cannot write is rarer than the marketing suggests.
-- **Retrieval Without a Verdict holds one entry**, which says more about the market than about the boundary. Retrieval that offers no opinion is close to extinct as a product category: the commercial pressure runs toward attaching a score, a label, or an extracted value to everything returned, which moves a product one section up. SciSpace sat there in an earlier draft and was moved for exactly that reason.
-- **Four of seven sections hold a single entry.** Each is defensible on its own, and one of them is a ranked section rather than an annex, so the shape is not three annexes and a list. It is worth watching.
+- **Retrieval Without a Verdict holds one entry**, which says more about the market than about the boundary. Retrieval that offers no opinion is close to extinct as a product category: the commercial pressure runs toward attaching a score, a label, or an extracted value to everything returned, which moves a product one kind up. SciSpace sat there in an earlier draft and was moved for exactly that reason.
+- **Four of seven kinds hold a single entry.** Each is defensible on its own, and one of them is a ranked kind rather than an annex, so the shape is not three annexes and a list. It is worth watching.
 
 ## The strongest objection to all of this
 
-A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require reading a paragraph of theory before anything is findable, and "Item-by-Item Adjudication" is not a term anyone searches for. The cut also separates direct substitutes: Elicit and Covidence both screen records against user-stated criteria, and they sit two sections apart, so a reader comparing screening tools sees half the market and may not know it.
+A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require reading a paragraph of theory before anything is findable, and "Item-by-Item Adjudication" is not a term anyone searches for. The cut also separates direct substitutes: Elicit and Covidence both screen records against user-stated criteria, and they sit two kinds apart, so a reader comparing screening tools sees half the market and may not know it.
 
 The counter is that the separation is the point. Elicit's label stands unless you open the paper; Covidence's does not advance until two named people rule. A reader who treats those as substitutes because both "do screening" is exactly the reader this list is trying to reach. The README's tables carry the distinction in their own columns for that reason.
 

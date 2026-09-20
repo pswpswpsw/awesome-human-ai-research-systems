@@ -46,15 +46,16 @@ If you genuinely cannot place a tool, say so in the PR and quote the vendor page
 Entries are table rows, not bullets. Add a row to the table for the kind your tool lands in:
 
 ```markdown
-| [Name](https://example.com) | what the human rules on | what you get | decision record | writes into your draft |
+| [Name](https://example.com) | what the human rules on | what you get | decision record | writes into your draft | access |
 ```
 
 Fill each column as follows.
 
-- **The human rules on** — the researcher's actual decision point and its granularity. "Every reference, twice over" and "keep or discard the finished report" are both answers; "reviewing the output" is not. This is the column the list exists for, so make it specific.
-- **You get** — the artifact the product returns. Name it concretely: an extraction table, a ranked set with match scores, a compiled manuscript, the next experiment to run.
-- **Decision record** — what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. "No" is a legitimate and informative answer. A log that records the model's labels as the default is not the same as one attributing rulings to named reviewers, and the column should say which it is.
-- **Writes into your draft** — `No`, `Yes, in bulk`, `per-item only`, or `it is the draft`. If AI-authored text can reach the researcher's file, say on what terms.
+- **The human rules on** — the researcher's actual decision point and its granularity. "Every reference, twice over" and "keep or discard the finished report" are both answers; "reviewing the output" is not. If the vendor documents no human checkpoint at all, say that, because it is the most informative answer the column can carry. This is the column the list exists for, so make it specific.
+- **You get** — the artifact the product returns. Name it concretely: an extraction table, a ranked set with match scores, a compiled manuscript, the next experiment to run. Where the placement turns on a property of that artifact — no openable source, uncited passages flagged, citations it retrieved itself — put it here rather than leaving it implicit.
+- **Decision record** — what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. `No` is a legitimate and informative answer, and the commonest correct one. A log whose default entry is the model's own label is not the same as one attributing rulings to named reviewers, and the cell should say which it is. Do not put the product's output here: a concerns table or a returned measurement is what you get, not a record of who decided.
+- **Writes into your draft** — whether AI-authored text can reach the researcher's file, and on what terms. `No` for most entries; otherwise say whether it applies in bulk, per item, or whether the returned artifact simply *is* the draft.
+- **Access** — `hosted`, `self-host`, or a short compound such as `hosted, free` or `self-host, open weights`. A service you log into versus code you run. No prices and no tiers: they churn faster than this file is maintained, and a wrong "free" is the error a reader catches first.
 
 Rules for the prose in those cells:
 
