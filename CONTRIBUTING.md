@@ -34,7 +34,7 @@ Short forms; [METHOD.md](METHOD.md) has the authoritative versions.
 3. **[Adjudication](README.md#adjudication)** — the decision record is itself an export, *and* it attributes rulings to named reviewers rather than to the model. Nothing is usable until a named person rules. Both halves required.
 4. **[Critique](README.md#critique)** — no mechanism puts AI-authored text into the record without a per-item human action, and the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
 5. **[Retrieval](README.md#retrieval)** — the system returns retrieved items and attaches no judgment to any of them. Ranking is not a verdict; a screening label, a classification, an extracted value or a per-item score is, and sends the entry to kind 2.
-6. **[Experimentation](README.md#experimentation)** — the documented output terminates in a physical action, *and* measured results feed back for re-optimization. Both halves required.
+6. **[Bench](README.md#bench)** — the documented output terminates in a physical action, *and* measured results feed back for re-optimization. Both halves required.
 7. **[Components](README.md#components)** — ships no runtime, no hosted service and no entry point that returns a deliverable, so the host deployment sets the division of labor.
 
 **Membership is release-mobile.** Shipping a reviewer log, a checkpoint UI, or a bulk apply-the-fixes button moves an entry. A PR that re-tests an existing entry against its kind is as welcome as one adding a tool.

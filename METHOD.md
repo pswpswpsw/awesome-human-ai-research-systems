@@ -22,7 +22,7 @@ Read in that order, the AI's default authority falls and the researcher's standi
 **Three kinds sit outside that scale, each for a stated reason.**
 
 - **Retrieval** attaches no judgment to any item, so there is nothing to rank. What it decides is what you ever see.
-- **Experimentation** produces a measurement rather than an assertion, so no model-authored judgment enters the record to be scaled.
+- **Bench** settles a proposal by measurement rather than by assertion, so no model-authored judgment enters the record to be scaled.
 - **Components** fixes no locus at all, because the host deployment sets one.
 
 ## The placement rules
@@ -57,7 +57,7 @@ No mechanism may put AI-authored text into the researcher's document or dataset 
 
 The system returns retrieved items to the researcher and attaches no judgment to any of them. Ranking and relevance ordering do not count as a verdict; a screening label, a support/contrast classification, an extracted value, or a per-item score does, and moves the entry to Triage. Generated per-paper summaries are the hard case: a summary describing what a paper says stays here, while one rating the paper against the researcher's criteria, or asserting a value read out of it, does not.
 
-### Experimentation
+### Bench
 
 Two halves, both required. The documented output must terminate in a physical action — an experiment, a synthesis, an assay, an instrument run — and measured results must feed back for re-optimization. Software-only output never qualifies however autonomous the system looks.
 
@@ -79,12 +79,12 @@ Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside u
 
 - **Delegation is the widest kind**, running from a grant-letter drafter to an unattended manuscript agent. A finer split is available if it grows: whether the human's single ruling falls on a brief they wrote or on material they already owned, which separates ClawsGO and FutureHouse from Review-it and Labguru Assistant.
 - **Critique is thin, and the thinness is the finding.** Several products advertise a review module that would land there on that module alone, then ship a bulk apply-the-fixes control beside it, which moves them to Delegation. A reviewer that genuinely cannot write is rarer than the marketing suggests.
-- **Retrieval holds one entry**, which says more about the market than about the boundary. Retrieval that offers no opinion is close to extinct as a product category: the commercial pressure runs toward attaching a score, a label, or an extracted value to everything returned, which moves a product one kind up. SciSpace sat there in an earlier draft and was moved for exactly that reason.
+- **Retrieval holds one entry**, which says more about the market than about the boundary. Search that offers no opinion is close to extinct as a product category: the commercial pressure runs toward attaching a score, a label, or an extracted value to everything returned, which moves a product one kind up. SciSpace sat there in an earlier draft and was moved for exactly that reason.
 - **Four of seven kinds hold a single entry.** Each is defensible on its own, and one of them is a ranked kind rather than an annex, so the shape is not three annexes and a list. It is worth watching.
 
 ## The strongest objection to all of this
 
-A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require reading a paragraph of theory before anything is findable, and "Adjudication" is not a term anyone searches for. The cut also separates direct substitutes: Elicit and Covidence both screen records against user-stated criteria, and they sit two kinds apart, so a reader comparing screening tools sees half the market and may not know it.
+A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require a paragraph of theory before the boundaries are legible, and "Adjudication" is not a term anyone searches for. The cut also separates direct substitutes: Elicit and Covidence both screen records against user-stated criteria, and they sit two kinds apart, so a reader comparing screening tools sees half the market and may not know it.
 
 The counter is that the separation is the point. Elicit's label stands unless you open the paper; Covidence's does not advance until two named people rule. A reader who treats those as substitutes because both "do screening" is exactly the reader this list is trying to reach. The README's tables carry the distinction in their own columns for that reason.
 

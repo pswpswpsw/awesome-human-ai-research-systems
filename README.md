@@ -2,7 +2,7 @@
 
 > A curated, commercial-product-first list of systems where AI does part of the research and a named human is still answerable for it, organized by who decides what enters the research record.
 
-Twenty-three systems a researcher can use today. Seven kinds, cut by what the human still rules on: **delegation, triage, adjudication, critique, retrieval, experimentation, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
+Twenty-three systems a researcher can use today. Seven kinds, cut by what the human still rules on: **delegation, triage, adjudication, critique, retrieval, bench, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
 ## At a glance
 
@@ -13,7 +13,7 @@ Twenty-three systems a researcher can use today. Seven kinds, cut by what the hu
 | [Adjudication](#adjudication) | Every record, one at a time, under your name. Nothing advances until you rule. | 4 |
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes has a path into your file. | 1 |
 | [Retrieval](#retrieval) | Everything about the evidence. The system offers no opinion on any item. | 1 |
-| [Experimentation](#experimentation) | Whether to spend material and instrument time. An instrument, not a reader, settles who was right. | 1 |
+| [Bench](#bench) | Whether to spend material and instrument time. An instrument, not a reader, settles who was right. | 1 |
 | [Components](#components) | Everything, because you pick the host, the permissions, and the checkpoints. | 1 |
 
 The first four are a ranked sequence: reading down, less of the AI's judgment reaches the record without you ruling on it. The last three sit outside that scale.
@@ -29,7 +29,7 @@ The kinds are not stages, so a task usually spans more than one. That is the poi
 | Extracting data from papers | [Triage](#triage), [Adjudication](#adjudication) | The same split: SciSpace's cells stand until you check them, Covidence's need accepting one at a time |
 | Getting a draft written | [Delegation](#delegation) | Six of the eight entries there return one. What varies is what you supply: a question, an RFP, or only a set of reference papers |
 | Getting a manuscript critiqued | [Delegation](#delegation), [Critique](#critique) | Whether the tool can apply its own fixes in bulk, or cannot write at all |
-| Deciding what to run next at the bench | [Experimentation](#experimentation), [Delegation](#delegation) | Whether a measurement feeds back into the next proposal, or the advice just lands in your notebook |
+| Deciding what to run next at the bench | [Bench](#bench), [Delegation](#delegation) | Whether a measurement feeds back into the next proposal, or the advice just lands in your notebook |
 | Building your own system on top | [Components](#components), and the `self-host` rows throughout | Whether it ships a runtime, or expects your agent to supply one |
 
 *Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable too, and `free` marks a service documented as free rather than a tier that may change.
@@ -96,7 +96,7 @@ The system decides what reaches your attention and in what order, and attaches n
 | --- | --- | --- | --- | --- | --- |
 | [Semantic Scholar](https://www.semanticscholar.org/) | Everything the evidence is used for | Ranked search over 200M+ papers, citation graph, TLDRs, passage labels and cited-passage answers that describe a paper rather than rate it | No | No | hosted, free |
 
-## Experimentation
+## Bench
 
 The AI proposes the next experiment, you spend the material and instrument time, and a measurement rather than a reader settles who was right.
 
@@ -110,7 +110,7 @@ Real and usable, but they fix no decision locus of their own: whatever runs them
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [scientific-agent-skills](https://github.com/k-dense-ai/scientific-agent-skills) | Which skills to install, which host runs them, and therefore every checkpoint | 165+ installable scientific skills: database access, cheminformatics, omics, literature retrieval | Whatever the host agent keeps | Whatever the host agent permits | install into a host |
+| [scientific-agent-skills](https://github.com/k-dense-ai/scientific-agent-skills) | Which skills to install, which host runs them, and therefore every checkpoint | 165+ installable scientific skills: database access, cheminformatics, omics, literature search | Whatever the host agent keeps | Whatever the host agent permits | install into a host |
 
 ---
 
