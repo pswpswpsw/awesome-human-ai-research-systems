@@ -61,7 +61,7 @@ The system returns retrieved items to the researcher and attaches no judgment to
 
 Two halves, both required. The documented output must terminate in a physical action — an experiment, a synthesis, an assay, an instrument run — and measured results must feed back for re-optimization. Software-only output never qualifies however autonomous the system looks.
 
-*Applied:* Labguru Assistant was tested against this kind and does not qualify. It recommends next steps that a scientist then performs at a bench, satisfying the first half, but no measured result feeds back into a new proposal, so the second half fails and it sits in Commissioned Deliverables instead. Publicly usable closed-loop platforms remain scarce, so PRs here are wanted.
+*Applied:* Labguru Assistant was tested against this kind and does not qualify: it recommends next steps, but no measured result feeds back into a new proposal. It sits in Commissioned Deliverables instead. Publicly usable closed-loop platforms remain scarce, so PRs here are wanted.
 
 ### Components Without a Locus
 

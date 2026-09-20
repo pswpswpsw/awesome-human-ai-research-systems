@@ -18,7 +18,7 @@ Twenty-three systems a researcher can use today, in seven kinds, cut by what the
 
 The first four are a ranked sequence: reading down, less of the AI's judgment reaches the record without you ruling on it. The last three sit outside that scale.
 
-*Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run.
+*Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run, `open weights` means the model is downloadable too, and `free` marks a service documented as free rather than a tier that may change.
 
 ---
 
@@ -29,15 +29,15 @@ You write the brief, the system hands back something that already looks finished
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
 | [ClawsGO Science](https://clawsgo.ai/) | The question, then keep / revise / discard the whole study | Compiled LaTeX manuscript, figures, analyses | Screening log, recording the model's own inclusion calls rather than a reviewer's | It *is* the draft | hosted |
-| [FutureHouse Platform](https://www.futurehouse.org/tools) | The question, then keep / revise / discard the report | Finished cited report | None documented | It is the draft | hosted |
-| [Question First](https://www.questionfirst.org/) | The brief and target format, then the filled-in plan | Manuscript, grant, or preregistration draft, with citations it retrieved itself | None | It is the draft | hosted, free |
-| [Review-it](https://review-it.ai/) | Which manuscript to upload, then the returned document | Section scores, weakness flags, fabricated-citation flags, journal fit, and on the paid tier a corrected document | None | Yes, in bulk on the paid tier | hosted |
-| [Granted AI](https://grantedai.com/) | Which RFP to pursue, then the exported file | Letters of inquiry, drafted proposal sections | None | Yes, in bulk: one click applies its own review findings | hosted |
-| [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Nothing the vendor documents; no review checkpoint appears on any of its pages | Protocol parameters, anomaly flags, recommended next step, with no openable source attached to any of it | None | Its output becomes your notebook record | hosted |
-| [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | The idea, or merely a set of reference papers | Full paper and a code workspace | None | It is the draft | self-host |
-| [Deep-Research-Agent](https://github.com/CYC2002tommy/Deep-Research-Agent) | The topic, and one approval of the search plan before the run | APA 7th `.docx` with DOI verification | Only that single plan approval | It is the draft | self-host |
+| [FutureHouse Platform](https://www.futurehouse.org/tools) | The question, then keep / revise / discard the report | Finished cited report | No | It is the draft | hosted |
+| [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* | The brief and target format, then the filled-in plan | Manuscript, grant, or preregistration draft, with citations it retrieved itself | No | It is the draft | hosted |
+| [Review-it](https://review-it.ai/) | Which manuscript to upload, then the returned document | Section scores, weakness flags, fabricated-citation flags, journal fit, and on the paid tier a corrected document | No | Yes, in bulk on the paid tier | hosted |
+| [Granted AI](https://grantedai.com/) | Which RFP to pursue, then the exported file | Letters of inquiry, drafted proposal sections | No | Yes, in bulk: one click applies its own review findings | hosted |
+| [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Nothing the vendor documents; no review checkpoint appears on any of its pages | Protocol parameters, anomaly flags, recommended next step, with no openable source attached to any of it | No | Its output becomes your notebook record | hosted |
+| [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | The idea, or merely a set of reference papers | Full paper and a code workspace | No | It is the draft | self-host |
+| [Deep-Research-Agent](https://github.com/CYC2002tommy/Deep-Research-Agent) | The topic, and one approval of the search plan before the run | APA 7th `.docx` with DOI verification | No; the plan approval is a checkpoint, not a record | It is the draft | self-host |
 
-> **Question First** ships two paths with different loci: a per-item proposal path that offers one rewrite at a time, and the auto-fill path above. It is filed on auto-fill, which is the path that produces a document with no record of what was examined.
+> **Question First** ships two paths with different loci: a separate per-item proposal path, and the auto-fill path above. It is filed on auto-fill, which is the path that produces a document with no record of what was examined.
 
 ## Sourced Findings, Human Conclusions
 
@@ -61,10 +61,10 @@ AI screens and ranks, a named human decides, and the audit trail is publishable.
 | --- | --- | --- | --- | --- | --- |
 | [Covidence](https://www.covidence.org/) | Every reference, twice over, plus every conflict and every AI-suggested extraction value | Screened evidence base and the extractions | PRISMA 2020 diagram and inter-rater reliability export, attributed to each reviewer | No | hosted |
 | [Rayyan](https://www.rayyan.ai/) | Every ruling, one record at a time, under a reviewer identity the trail carries; nothing resolves by majority | Screened set, and the trail itself | Auto-generated PRISMA flow diagram and team audit log | No | hosted |
-| [Silvi](https://silvi.ai/) | Whether each study enters, and how a conflict between two blinded reviewers resolves | Screened set for a systematic review or meta-analysis | Decision log and PRISMA flow chart | No | hosted |
+| [Silvi](https://silvi.ai/) | Whether each study enters, and how a conflict between two blinded reviewers resolves | Screened set, with the model's labels suggested against criteria the reviewer states up front | Decision log and PRISMA flow chart | No | hosted |
 | [DistillerSR](https://www.distillersr.com/) | Each reference and each extracted element, attributed to you by name | Screened evidence base built for regulated work | Audit trail traceable to the individual reviewer, plus PRISMA flow | No | hosted |
 
-> **DistillerSR** also sells a fully automated batch mode in which AI screening decisions are checked by a second AI rather than by a person; that mode on its own would fall a section above. The row describes the human-in-the-loop workflow it is filed on.
+> **DistillerSR** also sells a fully automated batch mode in which AI screening decisions are checked by a second AI rather than by a person; that mode on its own would fall a kind above. The row describes the human-in-the-loop workflow it is filed on.
 
 ## Critique Returned to the Researcher
 
@@ -96,7 +96,7 @@ Real and usable, but they fix no decision locus of their own: whatever runs them
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [scientific-agent-skills](https://github.com/k-dense-ai/scientific-agent-skills) | Which skills to install, which host runs them, and therefore every checkpoint | 165+ installable scientific skills: database access, cheminformatics, omics, literature retrieval | Whatever the host agent keeps | Whatever the host agent permits | self-host |
+| [scientific-agent-skills](https://github.com/k-dense-ai/scientific-agent-skills) | Which skills to install, which host runs them, and therefore every checkpoint | 165+ installable scientific skills: database access, cheminformatics, omics, literature retrieval | Whatever the host agent keeps | Whatever the host agent permits | install into a host |
 
 ---
 
