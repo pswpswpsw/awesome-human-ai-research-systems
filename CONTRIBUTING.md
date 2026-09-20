@@ -69,7 +69,7 @@ Proposing a **new section** is the exception, not the norm. A new section needs 
 This list exists because bigger lists in this space either sprawl until no one can maintain them, or become a paper bibliography that goes stale within a year. To avoid that:
 
 - We favor quality/relevance over completeness. Not every AI-for-research tool needs to be here.
-- If a section grows past ~10–12 entries, that's a signal to prune the weakest ones, or to split the section along a finer decision boundary. *Commissioned Deliverables*, at nine, is the only one close to that line today, and the likely split is whether the human's single ruling falls on a brief they wrote or on material they already owned.
+- If a section grows past ~10–12 entries, that's a signal to prune the weakest ones, or to split the section along a finer decision boundary. *Commissioned Deliverables*, at eight, is the closest to that line today, and the likely split is whether the human's single ruling falls on a brief they wrote or on material they already owned.
 - A section holding one entry is fine if the arrangement it describes is real. Thin sections are informative: they show where this kind of collaboration barely exists yet.
 - Duplicates of a well-established category leader need a genuinely differentiating feature. Self-hostable weights and data versus a hosted service counts; a different front end does not.
 
