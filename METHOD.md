@@ -4,13 +4,13 @@ The [README](README.md) is the answer. This file is the working. It exists so th
 
 ## The axis
 
-**The kinds are cut by decision locus, not by workflow stage.** Where a tool sits in the pipeline says almost nothing about the collaboration: two products can both "help with the literature" while one hands you a finished review to sign and the other refuses to write a single sentence for you. What separates them is who decides what enters the research record, and what standing the researcher keeps in it.
+**The categories are cut by decision locus, not by workflow stage.** Where a tool sits in the pipeline says almost nothing about the collaboration: two products can both "help with the literature" while one hands you a finished review to sign and the other refuses to write a single sentence for you. What separates them is who decides what enters the research record, and what standing the researcher keeps in it.
 
-So each kind answers two questions — what does the human decide, and what does the AI decide — and every boundary is settled from the product's own public pages rather than from how it feels to use. A boundary that cannot be checked that way is not a boundary, it is a vibe, and it was rejected during design for that reason.
+So each category answers two questions — what does the human decide, and what does the AI decide — and every boundary is settled from the product's own public pages rather than from how it feels to use. A boundary that cannot be checked that way is not a boundary, it is a vibe, and it was rejected during design for that reason.
 
 ## The ordering
 
-**Four of the seven kinds form a ranked sequence**, measuring how much of the AI's judgment reaches the research record without a human ruling on that specific item.
+**Four of the seven categories form a ranked sequence**, measuring how much of the AI's judgment reaches the research record without a human ruling on that specific item.
 
 1. **Delegation** — all of it does. The output *is* the record, and the only lever is to keep or discard the whole thing.
 2. **Triage** — the machine attaches a verdict to each item, and that verdict stands until the researcher opens the source and reverses it.
@@ -19,7 +19,7 @@ So each kind answers two questions — what does the human decide, and what does
 
 Read in that order, the AI's default authority falls and the researcher's standing rises.
 
-**Three kinds sit outside that scale, each for a stated reason.**
+**Three categories sit outside that scale, each for a stated reason.**
 
 - **Retrieval** attaches no judgment to any item, so there is nothing to rank. What it decides is what you ever see.
 - **Bench** settles a proposal by measurement rather than by assertion, so no model-authored judgment enters the record to be scaled.
@@ -31,7 +31,7 @@ Read in that order, the AI's default authority falls and the researcher's standi
 
 It does not license rescuing a product whose excluded module is the one users actually buy: a tool whose review module would qualify while the business's principal offering is something this list excludes is excluded, not filed on its best module. A side line in an excluded category does not trigger this; a centre of gravity in one does.
 
-**2. Then test the three off-scale kinds first, and only afterwards walk the ranked four in order, stopping at the first match.** This picks *which kind that module lands in*. The off-scale tests are narrow and self-evidencing — a physical instrument run, no verdict on any item, no runtime at all — so checking them first stops a general test from catching something it was never written for. Within the ranked four the earlier kind wins, because it describes the weaker human position and the list should not flatter a tool.
+**2. Then test the three off-scale categories first, and only afterwards walk the ranked four in order, stopping at the first match.** This picks *which category that module lands in*. The off-scale tests are narrow and self-evidencing — a physical instrument run, no verdict on any item, no runtime at all — so checking them first stops a general test from catching something it was never written for. Within the ranked four the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
 
 **3. Membership is release-mobile.** A vendor shipping a reviewer log or a checkpoint UI moves an entry. Existing entries need periodic re-testing, not just new PRs.
 
@@ -47,7 +47,7 @@ Three clauses. First, the system attaches a judgment to individual items — a s
 
 ### Adjudication
 
-Two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels are usable before anyone rules on them belongs one kind up, in Triage.
+Two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels are usable before anyone rules on them belongs one category up, in Triage.
 
 ### Critique
 
@@ -61,7 +61,7 @@ The system returns retrieved items to the researcher and attaches no judgment to
 
 Two halves, both required. The documented output must terminate in a physical action — an experiment, a synthesis, an assay, an instrument run — and measured results must feed back for re-optimization. Software-only output never qualifies however autonomous the system looks.
 
-*Applied:* Labguru Assistant was tested against this kind and does not qualify: it recommends next steps, but no measured result feeds back into a new proposal. It sits in Delegation instead. Publicly usable closed-loop platforms remain scarce, so PRs here are wanted.
+*Applied:* Labguru Assistant was tested against this category and does not qualify: it recommends next steps, but no measured result feeds back into a new proposal. It sits in Delegation instead. Publicly usable closed-loop platforms remain scarce, so PRs here are wanted.
 
 ### Components
 
@@ -69,22 +69,22 @@ Ask whether the project produces research output by itself. If it ships no runti
 
 ## Where the axis coincides with the old one, and why
 
-Two kinds come close to reproducing a section of the stage-based taxonomy this list used to have. **Adjudication** holds exactly the membership that "systematic review" held, and **Triage** holds most of what "literature search" held.
+Two categories come close to reproducing a section of the stage-based taxonomy this list used to have. **Adjudication** holds exactly the membership that "systematic review" held, and **Triage** holds most of what "literature search" held.
 
 That is not the axis failing to bite; in both cases it is a finding with a cause. PRISMA and the evidence standards journals enforce require reviewer-attributed audit trails, so every serious screening platform converged on the same decision locus. Literature tools converged on default-accept labelling for a weaker reason, competitive pressure to put a score on everything returned, and there the test did move entries: Semantic Scholar out to Retrieval, SciSpace back in on the strength of what an extracted cell asserts.
 
-Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools are split by whether the tool can write into your file, which puts Review-it in the first kind and ai-peer-review in the fourth. The old lab section is split between a proposer whose verdict comes from an instrument and one whose output is prose.
+Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools are split by whether the tool can write into your file, which puts Review-it in the first category and ai-peer-review in the fourth. The old lab section is split between a proposer whose verdict comes from an instrument and one whose output is prose.
 
 ## Known weak points
 
-- **Delegation is the widest kind**, running from a grant-letter drafter to an unattended manuscript agent. A finer split is available if it grows: whether the human's single ruling falls on a brief they wrote or on material they already owned, which separates ClawsGO and FutureHouse from Review-it and Labguru Assistant.
+- **Delegation is the widest category**, running from a grant-letter drafter to an unattended manuscript agent. A finer split is available if it grows: whether the human's single ruling falls on a brief they wrote or on material they already owned, which separates ClawsGO and FutureHouse from Review-it and Labguru Assistant.
 - **Critique is thin, and the thinness is the finding.** Several products advertise a review module that would land there on that module alone, then ship a bulk apply-the-fixes control beside it, which moves them to Delegation. A reviewer that genuinely cannot write is rarer than the marketing suggests.
-- **Retrieval holds one entry**, which says more about the market than about the boundary. Search that offers no opinion is close to extinct as a product category: the commercial pressure runs toward attaching a score, a label, or an extracted value to everything returned, which moves a product one kind up. SciSpace sat there in an earlier draft and was moved for exactly that reason.
-- **Four of seven kinds hold a single entry.** Each is defensible on its own, and one of them is a ranked kind rather than an annex, so the shape is not three annexes and a list. It is worth watching.
+- **Retrieval holds one entry**, which says more about the market than about the boundary. Search that offers no opinion is close to extinct as a product category: the commercial pressure runs toward attaching a score, a label, or an extracted value to everything returned, which moves a product one category up. SciSpace sat there in an earlier draft and was moved for exactly that reason.
+- **Four of seven categories hold a single entry.** Each is defensible on its own, and one of them is a ranked category rather than an annex, so the shape is not three annexes and a list. It is worth watching.
 
 ## The strongest objection to all of this
 
-A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require a paragraph of theory before the boundaries are legible, and "Adjudication" is not a term anyone searches for. The cut also separates direct substitutes: Elicit and Covidence both screen records against user-stated criteria, and they sit two kinds apart, so a reader comparing screening tools sees half the market and may not know it.
+A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require a paragraph of theory before the boundaries are legible, and "Adjudication" is not a term anyone searches for. The cut also separates direct substitutes: Elicit and Covidence both screen records against user-stated criteria, and they sit two categories apart, so a reader comparing screening tools sees half the market and may not know it.
 
 The counter is that the separation is the point. Elicit's label stands unless you open the paper; Covidence's does not advance until two named people rule. A reader who treats those as substitutes because both "do screening" is exactly the reader this list is trying to reach. The README's tables carry the distinction in their own columns for that reason.
 
@@ -104,6 +104,18 @@ Recording what was cut, and why, is part of keeping the bar honest. The rules th
 | ChatGPT, Claude, Gemini, Perplexity, NotebookLM, Liner | General-purpose assistants. Researchers use them constantly; listing them adds no signal. |
 | AI humanizers and detection-evasion tools | The advertised job is defeating a check on authorship. |
 | Prompt-template "hypothesis generators" | A prompt wrapped in a landing page is not a system. |
-| Individual papers and preprints | Out of scope; see [Related Awesome Lists](README.md#related-awesome-lists). |
+| Individual papers and preprints | Out of scope; see [Related lists](#related-lists) below. |
 
 If a system here becomes generally available, or ships the module that would change where it sits, open a PR.
+
+## Related lists
+
+For the academic-survey side of this space, which changes fast and is better served by lists dedicated to tracking papers:
+
+- [Awesome-AI-Scientists](https://github.com/tsinghua-fib-lab/Awesome-AI-Scientists) — Closest to HAIRS in spirit; also covers human-in/out-of-the-loop collaboration modes.
+- [awesome-ai-for-science](https://github.com/yenanjing/awesome-ai-for-science) — 400+ open-source projects, code only, no commercial products.
+- [Awesome-LLM-Scientific-Discovery](https://github.com/HKUST-KnowComp/Awesome-LLM-Scientific-Discovery) — EMNLP 2025 survey-companion paper list.
+
+Overlapping less directly: [Awesome-Agent-Scientists](https://github.com/AgenticScience/Awesome-Agent-Scientists), [Awesome-LLM-Agents-Scientific-Discovery](https://github.com/zjlrock777/Awesome-LLM-Agents-Scientific-Discovery) (biomedical), [awesome-deep-research-agent](https://github.com/WuizaKaseiyo/awesome-deep-research-agent) (general-purpose), [awesome-HAI](https://github.com/bwang514/awesome-HAI) (Human-AI *Interaction* papers).
+
+None of them curate live commercial products as the primary focus, and none organize by who decides what enters the research record.

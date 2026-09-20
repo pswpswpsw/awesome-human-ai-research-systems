@@ -17,15 +17,15 @@ Systems that fail these but are worth knowing about are recorded in [METHOD.md](
 - **AI humanizers and detection-evasion tools.** The advertised job is defeating a check on authorship, which is the opposite of the accountability this list is organized around. This extends to a product that bundles one alongside a module that would otherwise qualify: the module rule decides which part of a product you evaluate, not whether a business can be filed on its most respectable component.
 - **Dead or broken projects.** Activity means **the release still runs, not that commits are recent.** A frozen release whose code, weights and data remain publicly downloadable stays eligible; link collections, dead hosted services and broken installs do not. Note the asymmetry: a project with no frozen artifact, depending on external APIs, has nothing to fall back on, so staleness there is evidence of breakage in a way it is not for a released model plus index.
 - **Duplicates without a differentiating feature.** Self-hostable weights and data versus a hosted service counts. A different front end does not.
-- Individual papers and preprints with no working product — link a survey list under [Related Awesome Lists](README.md#related-awesome-lists) instead.
+- Individual papers and preprints with no working product — link a survey list under [Related lists](METHOD.md#related-lists) instead.
 - General-purpose assistants, access or discount programs, reference managers with no AI component.
 
-## Which kind does it go in?
+## Which category does it go in?
 
 Apply two rules in this order. Both are argued in full in [METHOD.md](METHOD.md).
 
 1. **Classify by the module that carries research judgment,** not the one the homepage leads with. This picks *which part of a product you evaluate*.
-2. **Then test the three off-scale kinds first (5–7 below), and only afterwards walk 1–4 in order, stopping at the first match.** The off-scale tests are narrow and self-evidencing, so checking them first stops a general test from catching something it was never written for. Within 1–4 the earlier kind wins, because it describes the weaker human position and the list should not flatter a tool.
+2. **Then test the three off-scale categories first (5–7 below), and only afterwards walk 1–4 in order, stopping at the first match.** The off-scale tests are narrow and self-evidencing, so checking them first stops a general test from catching something it was never written for. Within 1–4 the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
 
 Short forms; [METHOD.md](METHOD.md) has the authoritative versions.
 
@@ -33,17 +33,17 @@ Short forms; [METHOD.md](METHOD.md) has the authoritative versions.
 2. **[Triage](README.md#triage)** — the system attaches a judgment to individual items; that judgment is usable the moment it is produced rather than waiting on an entered ruling; every assertion resolves to an openable source or is explicitly marked model-authored; and the largest thing leaving the session is structured working material or less.
 3. **[Adjudication](README.md#adjudication)** — the decision record is itself an export, *and* it attributes rulings to named reviewers rather than to the model. Nothing is usable until a named person rules. Both halves required.
 4. **[Critique](README.md#critique)** — no mechanism puts AI-authored text into the record without a per-item human action, and the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
-5. **[Retrieval](README.md#retrieval)** — the system returns retrieved items and attaches no judgment to any of them. Ranking is not a verdict; a screening label, a classification, an extracted value or a per-item score is, and sends the entry to kind 2.
+5. **[Retrieval](README.md#retrieval)** — the system returns retrieved items and attaches no judgment to any of them. Ranking is not a verdict; a screening label, a classification, an extracted value or a per-item score is, and sends the entry to category 2.
 6. **[Bench](README.md#bench)** — the documented output terminates in a physical action, *and* measured results feed back for re-optimization. Both halves required.
 7. **[Components](README.md#components)** — ships no runtime, no hosted service and no entry point that returns a deliverable, so the host deployment sets the division of labor.
 
-**Membership is release-mobile.** Shipping a reviewer log, a checkpoint UI, or a bulk apply-the-fixes button moves an entry. A PR that re-tests an existing entry against its kind is as welcome as one adding a tool.
+**Membership is release-mobile.** Shipping a reviewer log, a checkpoint UI, or a bulk apply-the-fixes button moves an entry. A PR that re-tests an existing entry against its category is as welcome as one adding a tool.
 
 If you genuinely cannot place a tool, say so in the PR and quote the vendor page that confuses you. A boundary that cannot decide a real case is a bug in the taxonomy, and that is worth an issue.
 
 ## How to add an entry
 
-Entries are table rows, not bullets. Add a row to the table for the kind your tool lands in:
+Entries are table rows, not bullets. Add a row to the table for the category your tool lands in:
 
 ```markdown
 | [Name](https://example.com) | what the human rules on | what you get | decision record | writes into your draft | access |
@@ -67,15 +67,15 @@ Rules for the prose in those cells:
 6. One tool per pull request makes review faster; small batches are fine.
 7. Check the links resolve before opening the PR.
 
-Proposing a **new kind** is the exception. It needs a decision locus the existing seven cannot express, plus a test a contributor can apply from a product's public pages. Kinds that are really workflow stages in disguise will be declined.
+Proposing a **new category** is the exception. It needs a decision locus the existing seven cannot express, plus a test a contributor can apply from a product's public pages. Categories that are really workflow stages in disguise will be declined.
 
 ## Staying small
 
 This list exists because bigger lists in this space either sprawl until nobody can maintain them, or become a paper bibliography that goes stale within a year.
 
 - Quality and relevance over completeness. Not every AI-for-research tool needs to be here.
-- If a kind grows past ~10–12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at eight, is the closest to that line today.
-- A kind holding one entry is fine if the arrangement it describes is real. Thin kinds are informative: they show where this sort of collaboration barely exists yet.
+- If a category grows past ~10–12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at eight, is the closest to that line today.
+- A category holding one entry is fine if the arrangement it describes is real. Thin categories are informative: they show where this sort of collaboration barely exists yet.
 
 ## Removing entries
 

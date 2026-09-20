@@ -1,12 +1,16 @@
 # Awesome Human-AI Research Systems (HAIRS) [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated, commercial-product-first list of systems where AI does part of the research and a named human is still answerable for it, organized by who decides what enters the research record.
+> Systems where AI does part of the research and a named human is still answerable for it.
 
-Twenty-three systems a researcher can use today. Seven kinds, cut by what the human still rules on: **delegation, triage, adjudication, critique, retrieval, bench, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
+**Human-AI research systems (HAIRS)** take over part of the judgment a researcher would otherwise exercise: which papers are relevant, what a study reports, whether a claim holds up, what to run next, what the manuscript should assert. The result comes back under the researcher's name.
+
+The judgment moves. The accountability does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. That asymmetry is what separates a research system from a general-purpose assistant, and it is why the useful question about any of them is not what it can do, but what it leaves you answerable for.
+
+This list is cut on that question. Twenty-three systems a researcher can use today, in seven categories: **delegation, triage, adjudication, critique, retrieval, bench, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
 ## At a glance
 
-| Kind | What the human still rules on | Entries |
+| Category | What the human still rules on | Entries |
 | --- | --- | --- |
 | [Delegation](#delegation) | Keep, revise, or discard the finished artifact. Nothing records which parts you actually examined. | 8 |
 | [Triage](#triage) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 7 |
@@ -20,7 +24,7 @@ The first four are a ranked sequence: reading down, less of the AI's judgment re
 
 ### If you came here with a task
 
-The kinds are not stages, so a task usually spans more than one. That is the point: the tools you would have compared side by side often differ in what they leave you responsible for.
+The categories are not stages, so a task usually spans more than one. That is the point: the tools you would have compared side by side often differ in what they leave you responsible for.
 
 | If your task is | Look in | What separates the options |
 | --- | --- | --- |
@@ -69,7 +73,7 @@ The AI fetches, labels, and arranges work other people did, and stops before the
 
 ## Adjudication
 
-AI screens and ranks, a named human decides, and the audit trail is publishable. The only kind here that leaves an account of who decided what.
+AI screens and ranks, a named human decides, and the audit trail is publishable. The only category here that leaves an account of who decided what.
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
@@ -78,7 +82,7 @@ AI screens and ranks, a named human decides, and the audit trail is publishable.
 | [Silvi](https://silvi.ai/) | Whether each study enters, and how a conflict between two blinded reviewers resolves | Screened set, with the model's labels suggested against criteria the reviewer states up front | Decision log and PRISMA flow chart | No | hosted |
 | [DistillerSR](https://www.distillersr.com/) | Each reference and each extracted element, attributed to you by name | Screened evidence base built for regulated work | Audit trail traceable to the individual reviewer, plus PRISMA flow | No | hosted |
 
-> **DistillerSR** also sells a fully automated batch mode in which AI screening decisions are checked by a second AI rather than by a person; that mode on its own would fall a kind above. The row describes the human-in-the-loop workflow it is filed on.
+> **DistillerSR** also sells a fully automated batch mode in which AI screening decisions are checked by a second AI rather than by a person; that mode on its own would fall a category above. The row describes the human-in-the-loop workflow it is filed on.
 
 ## Critique
 
@@ -112,23 +116,9 @@ Real and usable, but they fix no decision locus of their own: whatever runs them
 | --- | --- | --- | --- | --- | --- |
 | [scientific-agent-skills](https://github.com/k-dense-ai/scientific-agent-skills) | Which skills to install, which host runs them, and therefore every checkpoint | 165+ installable scientific skills: database access, cheminformatics, omics, literature search | Whatever the host agent keeps | Whatever the host agent permits | install into a host |
 
----
-
-## Related Awesome Lists
-
-For the academic-survey side of this space, which changes fast and is better served by lists dedicated to tracking papers:
-
-- [Awesome-AI-Scientists](https://github.com/tsinghua-fib-lab/Awesome-AI-Scientists) — Closest to HAIRS in spirit; also covers human-in/out-of-the-loop collaboration modes.
-- [awesome-ai-for-science](https://github.com/yenanjing/awesome-ai-for-science) — 400+ open-source projects, code only, no commercial products.
-- [Awesome-LLM-Scientific-Discovery](https://github.com/HKUST-KnowComp/Awesome-LLM-Scientific-Discovery) — EMNLP 2025 survey-companion paper list.
-
-Overlapping less directly: [Awesome-Agent-Scientists](https://github.com/AgenticScience/Awesome-Agent-Scientists), [Awesome-LLM-Agents-Scientific-Discovery](https://github.com/zjlrock777/Awesome-LLM-Agents-Scientific-Discovery) (biomedical), [awesome-deep-research-agent](https://github.com/WuizaKaseiyo/awesome-deep-research-agent) (general-purpose), [awesome-HAI](https://github.com/bwang514/awesome-HAI) (Human-AI *Interaction* papers).
-
-None of them curate live commercial products as the primary focus, and none organize by who decides what enters the research record.
-
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs here and how entries are placed, and [METHOD.md](METHOD.md) for the reasoning behind the seven kinds, including [what was considered and cut](METHOD.md#what-the-tests-excluded). One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs here and how entries are placed, and [METHOD.md](METHOD.md) for the reasoning behind the seven categories, including [what was considered and cut](METHOD.md#what-the-tests-excluded). One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
 
 ## License
 
