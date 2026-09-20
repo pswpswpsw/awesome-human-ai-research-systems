@@ -21,7 +21,7 @@ Systems that fail these tests but are worth knowing about can go in [Deliberatel
 - General-purpose chatbots or assistants (ChatGPT, Claude, Gemini, Perplexity, NotebookLM).
 - Access, credit, or discount programs dressed up as products.
 - Language services, per the exclusion above.
-- **AI humanizers and detection-evasion tools.** The advertised job is defeating a check on authorship, which is the opposite of the accountability this list is organized around. A product that bundles one is, at minimum, worth an issue.
+- **AI humanizers and detection-evasion tools.** The advertised job is defeating a check on authorship, which is the opposite of the accountability this list is organized around. This extends to a product that bundles one alongside a module that would otherwise qualify: the module rule decides which part of a product you evaluate, not whether a business can be filed on its most respectable component.
 - Reference managers with no AI component.
 - Vaporware, waitlist-only or invite-only products, or projects that no longer work. **Activity means the release still runs, not just recent commits:** a frozen release whose code, weights, and data remain publicly downloadable stays eligible, while link collections, dead hosted services, and broken installs do not. Note the asymmetry this creates: a project with no frozen artifact, depending on external APIs, has nothing to fall back on, so staleness there is evidence of breakage in a way it is not for a released model plus index.
 
