@@ -88,6 +88,22 @@ A reader arrives with a task, not with a question about their own epistemic stan
 
 The counter is that the separation is the point. Elicit's label stands unless you open the paper; Covidence's does not advance until two named people rule. A reader who treats those as substitutes because both "do screening" is exactly the reader this list is trying to reach. The README's tables carry the distinction in their own columns for that reason.
 
-## What gets excluded, and by which rule
+## What the tests excluded
 
-The rules that generate [Deliberately Not Listed](README.md#deliberately-not-listed) — the language-service exclusion, the detection-evasion exclusion, and the activity rule — live in [CONTRIBUTING.md](CONTRIBUTING.md), because they are what a contributor needs before opening a PR.
+Recording what was cut, and why, is part of keeping the bar honest. The rules these apply — the language-service exclusion, the detection-evasion exclusion, and the activity rule — are in [CONTRIBUTING.md](CONTRIBUTING.md), because they are what a contributor needs before opening a PR.
+
+| System | Why not |
+| --- | --- |
+| [Paperpal](https://paperpal.com/), [Writefull](https://writefull.com/) | Language services: the centre of gravity is how something is said, not what is claimed or cited. |
+| [ScholarsReview](https://scholarsreview.com/) | The same business sells an AI humanizer advertising a 100% human score against Turnitin and GPTZero. |
+| [agent-literature-review](https://github.com/Arcadia-Science/agent-literature-review) | Last pushed April 2025, API-dependent, no frozen release; and a conversational terminal is a front end, not a differentiating feature. |
+| [Google Co-Scientist](https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/) | Trusted Tester / Preview only: "contact your Google account team." |
+| [Gemini for Science](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/) | Waitlist for individuals, private preview for enterprise partners. |
+| [OpenAI for Academic Researchers](https://openai.com/index/chatgpt-for-academic-researchers/) | A subsidized-access program, not a research system. Now waitlisted. |
+| Google's [figure & peer-review agents](https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/) | Research-stage prototypes, no public product. |
+| ChatGPT, Claude, Gemini, Perplexity, NotebookLM, Liner | General-purpose assistants. Researchers use them constantly; listing them adds no signal. |
+| AI humanizers and detection-evasion tools | The advertised job is defeating a check on authorship. |
+| Prompt-template "hypothesis generators" | A prompt wrapped in a landing page is not a system. |
+| Individual papers and preprints | Out of scope; see [Related Awesome Lists](README.md#related-awesome-lists). |
+
+If a system here becomes generally available, or ships the module that would change where it sits, open a PR.

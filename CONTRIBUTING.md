@@ -9,7 +9,7 @@ Thanks for considering a contribution. This list is commercial-product-first, it
 1. **Usable today.** No waitlists, trusted-tester programs, private previews, or "contact your account team." An impressive lab demo is not a product.
 2. **A research system.** Purpose-built for a step of the research workflow, not a general-purpose assistant, an access program, or a prompt template on a landing page.
 
-Systems that fail these but are worth knowing about go in [Deliberately Not Listed](README.md#deliberately-not-listed) with a one-clause reason. If one later opens to the public, a PR promoting it is very welcome.
+Systems that fail these but are worth knowing about are recorded in [METHOD.md](METHOD.md#what-the-tests-excluded) with a one-clause reason. If one later opens to the public, a PR promoting it into the list is very welcome.
 
 ## What does not
 

@@ -114,24 +114,6 @@ Real and usable, but they fix no decision locus of their own: whatever runs them
 
 ---
 
-## Deliberately Not Listed
-
-| System | Why not |
-| --- | --- |
-| [Paperpal](https://paperpal.com/), [Writefull](https://writefull.com/) | Language services: the centre of gravity is how something is said, not what is claimed or cited. |
-| [ScholarsReview](https://scholarsreview.com/) | The same business sells an AI humanizer advertising a 100% human score against Turnitin and GPTZero. |
-| [agent-literature-review](https://github.com/Arcadia-Science/agent-literature-review) | Last pushed April 2025, API-dependent, no frozen release; and a conversational terminal is a front end, not a differentiating feature. |
-| [Google Co-Scientist](https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/) | Trusted Tester / Preview only: "contact your Google account team." |
-| [Gemini for Science](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/) | Waitlist for individuals, private preview for enterprise partners. |
-| [OpenAI for Academic Researchers](https://openai.com/index/chatgpt-for-academic-researchers/) | A subsidized-access program, not a research system. Now waitlisted. |
-| Google's [figure & peer-review agents](https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/) | Research-stage prototypes, no public product. |
-| ChatGPT, Claude, Gemini, Perplexity, NotebookLM, Liner | General-purpose assistants. Researchers use them constantly; listing them adds no signal. |
-| AI humanizers and detection-evasion tools | The advertised job is defeating a check on authorship. |
-| Prompt-template "hypothesis generators" | A prompt wrapped in a landing page is not a system. |
-| Individual papers and preprints | Out of scope; see [Related Awesome Lists](#related-awesome-lists). |
-
-The rules that produce these exclusions are in [CONTRIBUTING.md](CONTRIBUTING.md). If a system here becomes generally available, or ships the module that would change where it sits, open a PR.
-
 ## Related Awesome Lists
 
 For the academic-survey side of this space, which changes fast and is better served by lists dedicated to tracking papers:
@@ -146,7 +128,7 @@ None of them curate live commercial products as the primary focus, and none orga
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs here and how entries are placed, and [METHOD.md](METHOD.md) for the reasoning behind the seven kinds. One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs here and how entries are placed, and [METHOD.md](METHOD.md) for the reasoning behind the seven kinds, including [what was considered and cut](METHOD.md#what-the-tests-excluded). One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
 
 ## License
 
