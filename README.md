@@ -20,7 +20,7 @@ This list is cut on that question. Twenty-three systems a researcher can use tod
 | [Bench](#bench) | Whether to spend material and instrument time. An instrument, not a reader, settles who was right. | 1 |
 | [Components](#components) | Everything, because you pick the host, the permissions, and the checkpoints. | 1 |
 
-The first four are a ranked sequence: reading down, less of the AI's judgment reaches the record without you ruling on it. The last three sit outside that scale.
+These are not a scale but the occupied cells of a small grid, set out in [METHOD.md](METHOD.md#the-facets). What varies across the first four is what the AI attaches a verdict to and what that verdict is worth before you rule on it. Retrieval is where no verdict is attached at all, Bench where an instrument rather than a reader settles it, and Components where the software ships no runtime and the host decides everything. The sections are ordered so your standing broadly rises as you read down, which is a reading order rather than a measurement.
 
 ### If you came here with a task
 
@@ -70,6 +70,8 @@ The AI fetches, labels, and arranges work other people did, and stops before the
 | [OpenScholar](https://github.com/AkariAsai/OpenScholar) | What the evidence means | Citation-attributed synthesized answers; released weights, reranker, and a 45M-paper index. [Published in *Nature*](https://www.nature.com/articles/s41586-025-10072-4); the hosted demo now redirects to Asta | No | No | self-host, open weights |
 | [scite](https://scite.ai/) | Which references survive the flags | Citation statements classified supporting / contrasting / mentioning; retraction and contested-reference audit of an uploaded bibliography | No | No | hosted |
 | [SciSpace](https://scispace.com/) | Whether an extracted cell reflects what the paper reports | Filterable extraction table, each cell linked to the source it was read from | No | No | hosted |
+
+> **Elicit** and **Ai2 Asta** each also ship a report path whose output is prose rather than structured working material. Both are filed on the screening and retrieval path, which is the one carrying the per-item verdict; on the report path alone each would sit closer to Delegation.
 
 ## Adjudication
 

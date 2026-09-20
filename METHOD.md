@@ -8,22 +8,38 @@ The [README](README.md) is the answer. This file is the working. It exists so th
 
 So each category answers two questions — what does the human decide, and what does the AI decide — and every boundary is settled from the product's own public pages rather than from how it feels to use. A boundary that cannot be checked that way is not a boundary, it is a vibe, and it was rejected during design for that reason.
 
-## The ordering
+## The facets
 
-**Four of the seven categories form a ranked sequence**, measuring how much of the AI's judgment reaches the research record without a human ruling on that specific item.
+Earlier drafts of this file claimed the first four categories were a ranked sequence on a single quantity, with the other three sitting outside it. That claim does not survive its own text: on the stated quantity, Adjudication and Critique both score zero, and so do Retrieval and Bench. Five of seven sat at one point, and the axis separated exactly one adjacent pair. It was also the wrong shape of claim. Categories are values; only axes can be orthogonal, and asking seven sibling labels to be orthogonal to each other is asking them to stop being a partition.
 
-1. **Delegation** — all of it does. The output *is* the record, and the only lever is to keep or discard the whole thing.
-2. **Triage** — the machine attaches a verdict to each item, and that verdict stands until the researcher opens the source and reverses it.
-3. **Adjudication** — none of it advances until a named person enters a ruling the log carries.
-4. **Critique** — there is no path into the record at all, even with a ruling.
+What the seven actually are is the occupied cells of a small grid. Six facets separate them, and each earns its place by separating a pair of listed entries that no other facet separates.
 
-Read in that order, the AI's default authority falls and the researcher's standing rises.
+| Facet | What it asks | Values |
+| --- | --- | --- |
+| **Scope** | what the AI attaches a verdict to | nothing / individual items / the whole artifact |
+| **Standing** | what that verdict is worth absent a human act | it is the record until reversed / it waits on a logged ruling / it can never be the record |
+| **Record** | what leaves the platform as evidence of who decided | none / model-attributed / reviewer-attributed export |
+| **Target** | what the verdict is about | work other people did / the researcher's own work / work not yet done |
+| **Arbiter** | what settles whether the AI was right | a reader / an instrument |
+| **Packaging** | how the software reaches you | hosted / self-host / library with no runtime |
 
-**Three categories sit outside that scale, each for a stated reason.**
+The seven categories are then positions in that grid:
 
-- **Retrieval** attaches no judgment to any item, so there is nothing to rank. What it decides is what you ever see.
-- **Bench** settles a proposal by measurement rather than by assertion, so no model-authored judgment enters the record to be scaled.
-- **Components** fixes no locus at all, because the host deployment sets one.
+| Category | Scope | Standing | Record | Target | Arbiter |
+| --- | --- | --- | --- | --- | --- |
+| **Delegation** | the whole artifact | it is the record | none, or model-attributed | the brief, or material the researcher owns | reader |
+| **Triage** | individual items | stands until reversed | none | work other people did | reader |
+| **Adjudication** | individual items | waits on a logged ruling | reviewer-attributed export | work other people did | reader |
+| **Critique** | individual items | can never be the record | none | the researcher's own work | reader |
+| **Retrieval** | nothing | not applicable | none | work other people did | reader |
+| **Bench** | a proposed condition | waits on a commitment of material | none | work not yet done | instrument |
+| **Components** | unbound | unbound | unbound | unbound | unbound |
+
+Two combinations are inadmissible rather than merely unoccupied: Standing is undefined when Scope is nothing, and a reviewer-attributed Record presupposes that Standing waits on a logged ruling. Six near-independent facets with two declared gates is what orthogonality honestly amounts to here. That is the claim; nothing stronger is true.
+
+**The three categories previously described as sitting outside the scale are not exceptions.** Retrieval is the zero of Scope. Bench is the instrument value of Arbiter. Components is the no-runtime value of Packaging. Calling them annexes was reading a facet value as an exception, and it is also why the seven names do not share a part of speech: they are answers to three different questions.
+
+Reading the sections in their printed order, the researcher's standing broadly rises. That is a reading order, not a measurement.
 
 ## The placement rules
 
@@ -35,6 +51,16 @@ It does not license rescuing a product whose excluded module is the one users ac
 
 **3. Membership is release-mobile.** A vendor shipping a reviewer log or a checkpoint UI moves an entry. Existing entries need periodic re-testing, not just new PRs.
 
+Rule 2 decides which section an entry is printed in. It is a filing procedure, not the structure of the space: a product's description is its facet values, and the order only settles where the row appears.
+
+## Three words the tests depend on
+
+These carried several boundaries while going undefined, which is how a screening platform could satisfy the test of the category above it on a reading nobody intended.
+
+- **Item** — the unit the product itself invites you to accept or reject. A record in a screening set, a row in an extraction table, a citation statement, a proposed experimental condition. A passage inside a document the vendor never asks you to rule on is not an item.
+- **Verdict** — an assertion about an item's fitness, its relevance to criteria the researcher stated, or a value read out of it. A description of what an item says is not a verdict, and neither is rank order. Semantic Scholar's passage labels describe; Elicit's include/exclude labels assert.
+- **Standing** — what a verdict is worth before anyone acts on it. A verdict *stands* when it becomes the operative record of that decision unless a human intervenes. Elicit's include/exclude set is the screening record until reversed. Covidence's suggested extraction value records nothing until a reviewer accepts it, so it does not stand.
+
 ## The tests
 
 ### Delegation
@@ -43,11 +69,11 @@ Trace the shortest input-to-output path the vendor or repo documents. It belongs
 
 ### Triage
 
-Three clauses. First, the system attaches a judgment to individual items — a screening label, a relevance tier, a support/contrast classification, an extracted value. Second, that judgment is usable the moment it is produced: nothing halts for an entered ruling before the researcher can act on the output. A platform where nothing advances until a named person rules belongs in Adjudication; a system that attaches no judgment at all belongs in Retrieval. Third, provenance: every assertion must resolve to an identifiable source a reader can open, or be explicitly marked in the output as model-authored rather than sourced. And the largest thing leaving the session must be structured working material or less; a document submitted under the researcher's own name belongs in Delegation.
+Three clauses. First, the system attaches a judgment to individual items — a screening label, a relevance tier, a support/contrast classification, an extracted value. Second, that judgment **stands**: it is the operative record of that decision unless a human intervenes, rather than a suggestion that records nothing until someone accepts it. A platform where nothing advances until a named person rules belongs in Adjudication; a system that attaches no judgment at all belongs in Retrieval. Third, provenance: every assertion must resolve to an identifiable source a reader can open, or be explicitly marked in the output as model-authored rather than sourced. And the largest thing leaving the session must be structured working material or less; a document submitted under the researcher's own name belongs in Delegation.
 
 ### Adjudication
 
-Two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels are usable before anyone rules on them belongs one category up, in Triage.
+Two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels stand before anyone rules on them belongs one category up, in Triage.
 
 ### Critique
 
@@ -73,7 +99,7 @@ Two categories come close to reproducing a section of the stage-based taxonomy t
 
 That is not the axis failing to bite; in both cases it is a finding with a cause. PRISMA and the evidence standards journals enforce require reviewer-attributed audit trails, so every serious screening platform converged on the same decision locus. Literature tools converged on default-accept labelling for a weaker reason, competitive pressure to put a score on everything returned, and there the test did move entries: Semantic Scholar out to Retrieval, SciSpace back in on the strength of what an extracted cell asserts.
 
-Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools are split by whether the tool can write into your file, which puts Review-it in the first category and ai-peer-review in the fourth. The old lab section is split between a proposer whose verdict comes from an instrument and one whose output is prose.
+Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools are split by whether the tool can write into your file, which puts Review-it in the first category and ai-peer-review in the fourth. That split is narrower than it looks: Review-it's corrected document is a paid-tier feature, so the placement rests on the paid path, and a free-tier user is holding something much closer to Critique. The old lab section is split between a proposer whose verdict comes from an instrument and one whose output is prose.
 
 ## Known weak points
 

@@ -69,6 +69,8 @@ Rules for the prose in those cells:
 
 Proposing a **new category** is the exception. It needs a decision locus the existing seven cannot express, plus a test a contributor can apply from a product's public pages. Categories that are really workflow stages in disguise will be declined.
 
+Proposing a **new facet** (see [METHOD.md](METHOD.md#the-facets)) is held to that bar and one more: it must change at least one existing placement, or it is declined as decoration.
+
 ## Staying small
 
 This list exists because bigger lists in this space either sprawl until nobody can maintain them, or become a paper bibliography that goes stale within a year.
