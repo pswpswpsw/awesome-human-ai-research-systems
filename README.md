@@ -6,6 +6,8 @@
 
 The judgment moves. The accountability does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. That asymmetry is what separates a research system from a general-purpose assistant, and it is why the useful question about any of them is not what it can do, but what it leaves you answerable for.
 
+These are systems for doing research, not for doing science. A model that predicts a protein structure or a material property substitutes for a measurement, not for a judgment about how the work should go, and is out of scope here.
+
 This list is cut on that question. Twenty-three systems a researcher can use today, in seven categories: **delegation, triage, adjudication, critique, retrieval, bench, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
 ## At a glance

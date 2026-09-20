@@ -23,6 +23,8 @@ What the seven actually are is the occupied cells of a small grid. Six facets se
 | **Arbiter** | what settles whether the AI was right | a reader / an instrument |
 | **Packaging** | how the software reaches you | hosted / self-host / library with no runtime |
 
+Target does the least work inside the list and the most at its edge. All three of its values are judgments about research. A fourth value, a claim about nature, is what puts domain models such as AlphaFold and MatterGen outside the list entirely rather than in an eighth category: their output is checked against nature, not against anyone's standards for the work.
+
 The seven categories are then positions in that grid:
 
 | Category | Scope | Standing | Record | Target | Arbiter |
@@ -129,6 +131,7 @@ Recording what was cut, and why, is part of keeping the bar honest. The rules th
 | Google's [figure & peer-review agents](https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/) | Research-stage prototypes, no public product. |
 | ChatGPT, Claude, Gemini, Perplexity, NotebookLM, Liner | General-purpose assistants. Researchers use them constantly; listing them adds no signal. |
 | AI humanizers and detection-evasion tools | The advertised job is defeating a check on authorship. |
+| Domain models: [AlphaFold](https://alphafoldserver.com/), [Boltz](https://github.com/jwohlwend/boltz), [MatterGen](https://github.com/microsoft/mattergen), ML weather emulators | Their output is a claim about nature, checked against nature. They substitute for a measurement rather than for a judgment about how the research should go. Excluded by scope, not by quality: several are among the most consequential scientific software ever released. |
 | Prompt-template "hypothesis generators" | A prompt wrapped in a landing page is not a system. |
 | Individual papers and preprints | Out of scope; see [Related lists](#related-lists) below. |
 
