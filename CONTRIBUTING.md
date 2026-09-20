@@ -29,13 +29,13 @@ Apply two rules in this order. Both are argued in full in [METHOD.md](METHOD.md)
 
 Short forms; [METHOD.md](METHOD.md) has the authoritative versions.
 
-1. **[Commissioned Deliverables](README.md#commissioned-deliverables)** — the next documented human action after the brief is reviewing a complete artifact that would be submitted under the researcher's own name, and no attributable per-unit decision record is produced.
-2. **[Sourced Findings, Human Conclusions](README.md#sourced-findings-human-conclusions)** — the system attaches a judgment to individual items; that judgment is usable the moment it is produced rather than waiting on an entered ruling; every assertion resolves to an openable source or is explicitly marked model-authored; and the largest thing leaving the session is structured working material or less.
-3. **[Item-by-Item Adjudication](README.md#item-by-item-adjudication)** — the decision record is itself an export, *and* it attributes rulings to named reviewers rather than to the model. Nothing is usable until a named person rules. Both halves required.
-4. **[Critique Returned to the Researcher](README.md#critique-returned-to-the-researcher)** — no mechanism puts AI-authored text into the record without a per-item human action, and the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
-5. **[Retrieval Without a Verdict](README.md#retrieval-without-a-verdict)** — the system returns retrieved items and attaches no judgment to any of them. Ranking is not a verdict; a screening label, a classification, an extracted value or a per-item score is, and sends the entry to kind 2.
-6. **[Proposals Settled at the Bench](README.md#proposals-settled-at-the-bench)** — the documented output terminates in a physical action, *and* measured results feed back for re-optimization. Both halves required.
-7. **[Components Without a Locus](README.md#components-without-a-locus)** — ships no runtime, no hosted service and no entry point that returns a deliverable, so the host deployment sets the division of labor.
+1. **[Delegation](README.md#delegation)** — the next documented human action after the brief is reviewing a complete artifact that would be submitted under the researcher's own name, and no attributable per-unit decision record is produced.
+2. **[Triage](README.md#triage)** — the system attaches a judgment to individual items; that judgment is usable the moment it is produced rather than waiting on an entered ruling; every assertion resolves to an openable source or is explicitly marked model-authored; and the largest thing leaving the session is structured working material or less.
+3. **[Adjudication](README.md#adjudication)** — the decision record is itself an export, *and* it attributes rulings to named reviewers rather than to the model. Nothing is usable until a named person rules. Both halves required.
+4. **[Critique](README.md#critique)** — no mechanism puts AI-authored text into the record without a per-item human action, and the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
+5. **[Retrieval](README.md#retrieval)** — the system returns retrieved items and attaches no judgment to any of them. Ranking is not a verdict; a screening label, a classification, an extracted value or a per-item score is, and sends the entry to kind 2.
+6. **[Experimentation](README.md#experimentation)** — the documented output terminates in a physical action, *and* measured results feed back for re-optimization. Both halves required.
+7. **[Components](README.md#components)** — ships no runtime, no hosted service and no entry point that returns a deliverable, so the host deployment sets the division of labor.
 
 **Membership is release-mobile.** Shipping a reviewer log, a checkpoint UI, or a bulk apply-the-fixes button moves an entry. A PR that re-tests an existing entry against its kind is as welcome as one adding a tool.
 
@@ -74,7 +74,7 @@ Proposing a **new kind** is the exception. It needs a decision locus the existin
 This list exists because bigger lists in this space either sprawl until nobody can maintain them, or become a paper bibliography that goes stale within a year.
 
 - Quality and relevance over completeness. Not every AI-for-research tool needs to be here.
-- If a kind grows past ~10–12 entries, prune the weakest or split it along a finer decision boundary. *Commissioned Deliverables*, at eight, is the closest to that line today.
+- If a kind grows past ~10–12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at eight, is the closest to that line today.
 - A kind holding one entry is fine if the arrangement it describes is real. Thin kinds are informative: they show where this sort of collaboration barely exists yet.
 
 ## Removing entries

@@ -2,19 +2,19 @@
 
 > A curated, commercial-product-first list of systems where AI does part of the research and a named human is still answerable for it, organized by who decides what enters the research record.
 
-Twenty-three systems a researcher can use today, in seven kinds, cut by what the human still rules on. The tests behind the boundaries are in [METHOD.md](METHOD.md).
+Twenty-three systems a researcher can use today. Seven kinds, cut by what the human still rules on: **delegation, triage, adjudication, critique, retrieval, experimentation, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
 ## At a glance
 
 | Kind | What the human still rules on | Entries |
 | --- | --- | --- |
-| [Commissioned Deliverables](#commissioned-deliverables) | Keep, revise, or discard the finished artifact. Nothing records which parts you actually examined. | 8 |
-| [Sourced Findings, Human Conclusions](#sourced-findings-human-conclusions) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 7 |
-| [Item-by-Item Adjudication](#item-by-item-adjudication) | Every record, one at a time, under your name. Nothing advances until you rule. | 4 |
-| [Critique Returned to the Researcher](#critique-returned-to-the-researcher) | Whether a single word changes. Nothing the AI writes has a path into your file. | 1 |
-| [Retrieval Without a Verdict](#retrieval-without-a-verdict) | Everything about the evidence. The system offers no opinion on any item. | 1 |
-| [Proposals Settled at the Bench](#proposals-settled-at-the-bench) | Whether to spend material and instrument time. An instrument, not a reader, settles who was right. | 1 |
-| [Components Without a Locus](#components-without-a-locus) | Everything, because you pick the host, the permissions, and the checkpoints. | 1 |
+| [Delegation](#delegation) | Keep, revise, or discard the finished artifact. Nothing records which parts you actually examined. | 8 |
+| [Triage](#triage) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 7 |
+| [Adjudication](#adjudication) | Every record, one at a time, under your name. Nothing advances until you rule. | 4 |
+| [Critique](#critique) | Whether a single word changes. Nothing the AI writes has a path into your file. | 1 |
+| [Retrieval](#retrieval) | Everything about the evidence. The system offers no opinion on any item. | 1 |
+| [Experimentation](#experimentation) | Whether to spend material and instrument time. An instrument, not a reader, settles who was right. | 1 |
+| [Components](#components) | Everything, because you pick the host, the permissions, and the checkpoints. | 1 |
 
 The first four are a ranked sequence: reading down, less of the AI's judgment reaches the record without you ruling on it. The last three sit outside that scale.
 
@@ -24,19 +24,19 @@ The kinds are not stages, so a task usually spans more than one. That is the poi
 
 | If your task is | Look in | What separates the options |
 | --- | --- | --- |
-| Finding papers on a question | [Retrieval Without a Verdict](#retrieval-without-a-verdict), [Sourced Findings](#sourced-findings-human-conclusions) | Whether the system attaches a verdict to each paper or just hands it to you |
-| Screening records for a systematic review | [Sourced Findings](#sourced-findings-human-conclusions), [Item-by-Item Adjudication](#item-by-item-adjudication) | Whether a label stands by default or waits for your named ruling. Only the second leaves a trail a journal will accept |
-| Extracting data from papers | [Sourced Findings](#sourced-findings-human-conclusions), [Item-by-Item Adjudication](#item-by-item-adjudication) | The same split: SciSpace's cells stand until you check them, Covidence's need accepting one at a time |
-| Getting a draft written | [Commissioned Deliverables](#commissioned-deliverables) | Six of the eight entries there return one. What varies is what you supply: a question, an RFP, or only a set of reference papers |
-| Getting a manuscript critiqued | [Commissioned Deliverables](#commissioned-deliverables), [Critique Returned to the Researcher](#critique-returned-to-the-researcher) | Whether the tool can apply its own fixes in bulk, or cannot write at all |
-| Deciding what to run next at the bench | [Proposals Settled at the Bench](#proposals-settled-at-the-bench), [Commissioned Deliverables](#commissioned-deliverables) | Whether a measurement feeds back into the next proposal, or the advice just lands in your notebook |
-| Building your own system on top | [Components Without a Locus](#components-without-a-locus), and the `self-host` rows throughout | Whether it ships a runtime, or expects your agent to supply one |
+| Finding papers on a question | [Retrieval](#retrieval), [Triage](#triage) | Whether the system attaches a verdict to each paper or just hands it to you |
+| Screening records for a systematic review | [Triage](#triage), [Adjudication](#adjudication) | Whether a label stands by default or waits for your named ruling. Only the second leaves a trail a journal will accept |
+| Extracting data from papers | [Triage](#triage), [Adjudication](#adjudication) | The same split: SciSpace's cells stand until you check them, Covidence's need accepting one at a time |
+| Getting a draft written | [Delegation](#delegation) | Six of the eight entries there return one. What varies is what you supply: a question, an RFP, or only a set of reference papers |
+| Getting a manuscript critiqued | [Delegation](#delegation), [Critique](#critique) | Whether the tool can apply its own fixes in bulk, or cannot write at all |
+| Deciding what to run next at the bench | [Experimentation](#experimentation), [Delegation](#delegation) | Whether a measurement feeds back into the next proposal, or the advice just lands in your notebook |
+| Building your own system on top | [Components](#components), and the `self-host` rows throughout | Whether it ships a runtime, or expects your agent to supply one |
 
 *Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable too, and `free` marks a service documented as free rather than a tier that may change.
 
 ---
 
-## Commissioned Deliverables
+## Delegation
 
 You write the brief, the system hands back something that already looks finished, and your name goes on it.
 
@@ -53,7 +53,7 @@ You write the brief, the system hands back something that already looks finished
 
 > **Question First** ships two paths with different loci: a separate per-item proposal path, and the auto-fill path above. It is filed on auto-fill, which is the path that produces a document with no record of what was examined.
 
-## Sourced Findings, Human Conclusions
+## Triage
 
 The AI fetches, labels, and arranges work other people did, and stops before the conclusion. Its verdict on each item is provisionally accepted; dislodging it takes a human act.
 
@@ -67,7 +67,7 @@ The AI fetches, labels, and arranges work other people did, and stops before the
 | [scite](https://scite.ai/) | Which references survive the flags | Citation statements classified supporting / contrasting / mentioning; retraction and contested-reference audit of an uploaded bibliography | No | No | hosted |
 | [SciSpace](https://scispace.com/) | Whether an extracted cell reflects what the paper reports | Filterable extraction table, each cell linked to the source it was read from | No | No | hosted |
 
-## Item-by-Item Adjudication
+## Adjudication
 
 AI screens and ranks, a named human decides, and the audit trail is publishable. The only kind here that leaves an account of who decided what.
 
@@ -80,7 +80,7 @@ AI screens and ranks, a named human decides, and the audit trail is publishable.
 
 > **DistillerSR** also sells a fully automated batch mode in which AI screening decisions are checked by a second AI rather than by a person; that mode on its own would fall a kind above. The row describes the human-in-the-loop workflow it is filed on.
 
-## Critique Returned to the Researcher
+## Critique
 
 The AI reads your work and tells you what it thinks, with no way to put any of it into the record without you ruling on that specific item.
 
@@ -88,7 +88,7 @@ The AI reads your work and tells you what it thinks, with no way to put any of i
 | --- | --- | --- | --- | --- | --- |
 | [ai-peer-review](https://github.com/poldrack/ai-peer-review) | Whether any concern is valid, and whether a single word changes | Six independent LLM reviews, a synthesized meta-review, and a table of which model raised which concern | No | No; the manuscript is untouched and every revision is made by hand | self-host |
 
-## Retrieval Without a Verdict
+## Retrieval
 
 The system decides what reaches your attention and in what order, and attaches no judgment to any of it.
 
@@ -96,7 +96,7 @@ The system decides what reaches your attention and in what order, and attaches n
 | --- | --- | --- | --- | --- | --- |
 | [Semantic Scholar](https://www.semanticscholar.org/) | Everything the evidence is used for | Ranked search over 200M+ papers, citation graph, TLDRs, passage labels and cited-passage answers that describe a paper rather than rate it | No | No | hosted, free |
 
-## Proposals Settled at the Bench
+## Experimentation
 
 The AI proposes the next experiment, you spend the material and instrument time, and a measurement rather than a reader settles who was right.
 
@@ -104,7 +104,7 @@ The AI proposes the next experiment, you spend the material and instrument time,
 | --- | --- | --- | --- | --- | --- |
 | [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to commit material and instrument time to the proposed condition | The next experiment to run, from a Bayesian explore-exploit search over your parameter space, re-optimized on results you return by hand or through an optional robot link | No; the instrument is the record | No | hosted |
 
-## Components Without a Locus
+## Components
 
 Real and usable, but they fix no decision locus of their own: whatever runs them sets one.
 
