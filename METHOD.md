@@ -14,14 +14,16 @@ Earlier drafts of this file claimed the first four categories were a ranked sequ
 
 What the seven actually are is the occupied cells of a small grid. Six facets separate them, and each earns its place by separating a pair of listed entries that no other facet separates.
 
-| Facet | What it asks | Values |
-| --- | --- | --- |
-| **Scope** | what the AI attaches a verdict to | nothing / individual items / the whole artifact |
-| **Standing** | what that verdict is worth absent a human act | it is the record until reversed / it waits on a logged ruling / it can never be the record |
-| **Record** | what leaves the platform as evidence of who decided | none / model-attributed / reviewer-attributed export |
-| **Target** | what the verdict is about | work other people did / the researcher's own work / work not yet done |
-| **Arbiter** | what settles whether the AI was right | a reader / an instrument |
-| **Packaging** | how the software reaches you | hosted / self-host / library with no runtime |
+| Facet | What it asks | Values | Separates, in this list |
+| --- | --- | --- | --- |
+| **Scope** | what the AI attaches a verdict to | nothing / individual items / the whole artifact | Semantic Scholar from Elicit, and Elicit from the Edison Platform |
+| **Standing** | what that verdict is worth absent a human act | it is the record until reversed / it waits on a logged ruling / it can never be the record | Elicit from Covidence |
+| **Record** | what leaves the platform as evidence of who decided | none / model-attributed / reviewer-attributed export | ClawsGO from Rayyan: both ship a log, one attributes to the model and one to a named reviewer |
+| **Target** | what the verdict is about | work other people did / the researcher's own work / work not yet done | Elicit from ai-peer-review |
+| **Arbiter** | what settles whether the AI was right | a reader / an instrument | Atinary from Labguru Assistant |
+| **Packaging** | how the software reaches you | hosted / self-host / library with no runtime | scientific-agent-skills from everything else |
+
+The last column is the argument for six rather than four. Each pair is separated by that facet and by no other, so dropping any one of the six collapses a distinction the list actually makes.
 
 Target does the least work inside the list and the most at its edge. All three of its values are judgments about research. A fourth value, a claim about nature, is what puts domain models such as AlphaFold and MatterGen outside the list entirely rather than in an eighth category: their output is checked against nature, not against anyone's standards for the work.
 
@@ -49,7 +51,7 @@ Reading the sections in their printed order, the researcher's standing broadly r
 
 It does not license rescuing a product whose excluded module is the one users actually buy: a tool whose review module would qualify while the business's principal offering is something this list excludes is excluded, not filed on its best module. A side line in an excluded category does not trigger this; a centre of gravity in one does.
 
-**2. Then test the three off-scale categories first, and only afterwards walk the ranked four in order, stopping at the first match.** This picks *which category that module lands in*. The off-scale tests are narrow and self-evidencing — a physical instrument run, no verdict on any item, no runtime at all — so checking them first stops a general test from catching something it was never written for. Within the ranked four the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
+**2. Then test Retrieval, Bench and Components first, and only afterwards walk Delegation, Triage, Adjudication and Critique in order, stopping at the first match.** This picks *which category that module lands in*. Those three tests are narrow and self-evidencing — a physical instrument run, no verdict on any item, no runtime at all — so checking them first stops a general test from catching something it was never written for. Within the other four the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
 
 **3. Membership is release-mobile.** A vendor shipping a reviewer log or a checkpoint UI moves an entry. Existing entries need periodic re-testing, not just new PRs.
 
@@ -99,13 +101,13 @@ Ask whether the project produces research output by itself. If it ships no runti
 
 Two categories come close to reproducing a section of the stage-based taxonomy this list used to have. **Adjudication** holds exactly the membership that "systematic review" held, and **Triage** holds most of what "literature search" held.
 
-That is not the axis failing to bite; in both cases it is a finding with a cause. PRISMA and the evidence standards journals enforce require reviewer-attributed audit trails, so every serious screening platform converged on the same decision locus. Literature tools converged on default-accept labelling for a weaker reason, competitive pressure to put a score on everything returned, and there the test did move entries: Semantic Scholar out to Retrieval, SciSpace back in on the strength of what an extracted cell asserts.
+That is not the axis failing to bite; in both cases it is a finding with a cause. PRISMA asks authors to report how many reviewers screened each record and whether they worked independently, and the evidence standards journals enforce make an attributable trail practically necessary, so every serious screening platform converged on the same decision locus. Literature tools converged on default-accept labelling for a weaker reason, competitive pressure to put a score on everything returned, and there the test did move entries: Semantic Scholar out to Retrieval, SciSpace back in on the strength of what an extracted cell asserts.
 
-Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools are split by whether the tool can write into your file, which puts Review-it in the first category and ai-peer-review in the fourth. That split is narrower than it looks: Review-it's corrected document is a paid-tier feature, so the placement rests on the paid path, and a free-tier user is holding something much closer to Critique. The old lab section is split between a proposer whose verdict comes from an instrument and one whose output is prose.
+Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools are split by whether the tool can write into your file, which puts Review-it in the first category and ai-peer-review in the fourth. That split is thinner than it looks: Review-it's corrected document is an upgrade above an already-paid floor, and whether its fixes apply in bulk or one at a time is not documented anywhere public, so the placement rests on a fact a reader cannot check. The old lab section is split between a proposer whose verdict comes from an instrument and one whose output is prose.
 
 ## Known weak points
 
-- **Delegation is the widest category**, running from a grant-letter drafter to an unattended manuscript agent. A finer split is available if it grows: whether the human's single ruling falls on a brief they wrote or on material they already owned, which separates ClawsGO and FutureHouse from Review-it and Labguru Assistant.
+- **Delegation is the widest category**, running from a grant-letter drafter to an unattended manuscript agent. A finer split is available if it grows: whether the human's single ruling falls on a brief they wrote or on material they already owned, which separates ClawsGO and the Edison Platform from Review-it and Labguru Assistant.
 - **Critique is thin, and the thinness is the finding.** Several products advertise a review module that would land there on that module alone, then ship a bulk apply-the-fixes control beside it, which moves them to Delegation. A reviewer that genuinely cannot write is rarer than the marketing suggests.
 - **Retrieval holds one entry**, which says more about the market than about the boundary. Search that offers no opinion is close to extinct as a product category: the commercial pressure runs toward attaching a score, a label, or an extracted value to everything returned, which moves a product one category up. SciSpace sat there in an earlier draft and was moved for exactly that reason.
 - **Four of seven categories hold a single entry**, and the grid is sparse. Under the old ranked-sequence framing that looked like a defect. Under the facets it is the normal condition of a classification laid over a real market: most cells of a product space are empty most of the time, and the empty ones are predictions about what has not been built. The sparseness is worth watching for a different reason than it used to be, namely that a facet nobody occupies is a facet that may not be earning its place.
@@ -123,10 +125,10 @@ Recording what was cut, and why, is part of keeping the bar honest. The rules th
 
 | System | Why not |
 | --- | --- |
-| [Paperpal](https://paperpal.com/), [Writefull](https://writefull.com/) | Language services: the centre of gravity is how something is said, not what is claimed or cited. |
+| [Paperpal](https://paperpal.com/), [Writefull](https://writefull.com/) | Language services at their centre of gravity. Paperpal now also retrieves and proposes sources, but a citation finder bolted onto an editor does not make the editor a research system. |
 | [ScholarsReview](https://scholarsreview.com/) | The same business sells an AI humanizer advertising a 100% human score against Turnitin and GPTZero. |
 | [agent-literature-review](https://github.com/Arcadia-Science/agent-literature-review) | Last pushed April 2025, API-dependent, no frozen release; and a conversational terminal is a front end, not a differentiating feature. |
-| [Google Co-Scientist](https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/) | Trusted Tester / Preview only: "contact your Google account team." |
+| [Google Co-Scientist](https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/) | Trusted Tester and Preview access only. The linked post announces the research; availability is gated elsewhere in Google Cloud documentation rather than on this page. |
 | [Gemini for Science](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/) | Waitlist for individuals, private preview for enterprise partners. |
 | [OpenAI for Academic Researchers](https://openai.com/index/chatgpt-for-academic-researchers/) | A subsidized-access program, not a research system. Now waitlisted. |
 | Google's [figure & peer-review agents](https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/) | Research-stage prototypes, no public product. |

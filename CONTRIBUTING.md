@@ -26,13 +26,13 @@ Systems that fail these but are worth knowing about are recorded in [METHOD.md](
 Apply two rules in this order. Both are argued in full in [METHOD.md](METHOD.md).
 
 1. **Classify by the module that carries research judgment,** not the one the homepage leads with. This picks *which part of a product you evaluate*.
-2. **Then test the three off-scale categories first (5–7 below), and only afterwards walk 1–4 in order, stopping at the first match.** The off-scale tests are narrow and self-evidencing, so checking them first stops a general test from catching something it was never written for. Within 1–4 the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
+2. **Then test categories 5–7 first, and only afterwards walk 1–4 in order, stopping at the first match.** Those three tests are narrow and self-evidencing, so checking them first stops a general test from catching something it was never written for. Within 1–4 the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
 
 Short forms; [METHOD.md](METHOD.md) has the authoritative versions.
 
 1. **[Delegation](README.md#delegation)** — the next documented human action after the brief is reviewing a complete artifact that would be submitted under the researcher's own name, and no attributable per-unit decision record is produced.
-2. **[Triage](README.md#triage)** — the system attaches a judgment to individual items; that judgment is usable the moment it is produced rather than waiting on an entered ruling; every assertion resolves to an openable source or is explicitly marked model-authored; and the largest thing leaving the session is structured working material or less.
-3. **[Adjudication](README.md#adjudication)** — the decision record is itself an export, *and* it attributes rulings to named reviewers rather than to the model. Nothing is usable until a named person rules. Both halves required.
+2. **[Triage](README.md#triage)** — the system attaches a judgment to individual items; that judgment stands, meaning it is the operative record unless a human intervenes rather than a suggestion that records nothing until someone accepts it; every assertion resolves to an openable source or is explicitly marked model-authored; and the largest thing leaving the session is structured working material or less.
+3. **[Adjudication](README.md#adjudication)** — the decision record is itself an export, *and* it attributes rulings to named reviewers rather than to the model. Nothing stands until a named person rules. Both halves required.
 4. **[Critique](README.md#critique)** — no mechanism puts AI-authored text into the record without a per-item human action, and the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
 5. **[Retrieval](README.md#retrieval)** — the system returns retrieved items and attaches no judgment to any of them. Ranking is not a verdict; a screening label, a classification, an extracted value or a per-item score is, and sends the entry to category 2.
 6. **[Bench](README.md#bench)** — the documented output terminates in a physical action, *and* measured results feed back for re-optimization. Both halves required.
