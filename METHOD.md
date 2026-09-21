@@ -17,7 +17,7 @@ What the seven actually are is the occupied cells of a small grid. Six facets se
 | Facet | What it asks | Values | Separates, in this list |
 | --- | --- | --- | --- |
 | **Scope** | what the AI attaches a verdict to | nothing / individual items / the whole artifact | Semantic Scholar from Elicit, and Elicit from the Edison Platform |
-| **Standing** | what that verdict is worth absent a human act | it is the record until reversed / it waits on a logged ruling / it can never be the record | Elicit from Covidence |
+| **Standing** | what that verdict is worth absent a human act | it is the record until reversed / it waits on a logged ruling / it can never be the record | Undermind from Covidence |
 | **Record** | what leaves the platform as evidence of who decided | none / model-attributed / reviewer-attributed export | ClawsGO from Rayyan: both ship a log, one attributes to the model and one to a named reviewer |
 | **Target** | what the verdict is about | work other people did / the researcher's own work / work not yet done | Elicit from ai-peer-review |
 | **Arbiter** | what settles whether the AI was right | a reader / an instrument | Atinary from Labguru Assistant |
@@ -63,7 +63,7 @@ These carried several boundaries while going undefined, which is how a screening
 
 - **Item** — the unit the product itself invites you to accept or reject. A record in a screening set, a row in an extraction table, a citation statement, a proposed experimental condition. A passage inside a document the vendor never asks you to rule on is not an item.
 - **Verdict** — an assertion about an item's fitness, its relevance to criteria the researcher stated, or a value read out of it. A description of what an item says is not a verdict, and neither is rank order. Semantic Scholar's passage labels describe; Elicit's include/exclude labels assert.
-- **Standing** — what a verdict is worth before anyone acts on it. A verdict *stands* when it becomes the operative record of that decision unless a human intervenes. Elicit's include/exclude set is the screening record until reversed. Covidence's suggested extraction value records nothing until a reviewer accepts it, so it does not stand.
+- **Standing** — what a verdict is worth before anyone acts on it. A verdict *stands* when it becomes the operative record of that decision unless a human intervenes. Undermind's per-paper labels are the screening record until reversed. Covidence's suggested extraction value records nothing until a reviewer accepts it, so it does not stand.
 
 ## The tests
 
@@ -115,9 +115,9 @@ Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside u
 
 ## The strongest objection to all of this
 
-A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require a paragraph of theory before the boundaries are legible, and "Adjudication" is not a term anyone searches for. The cut also separates direct substitutes: Elicit and Covidence both screen records against user-stated criteria, and they sit two categories apart, so a reader comparing screening tools sees half the market and may not know it.
+A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require a paragraph of theory before the boundaries are legible, and "Adjudication" is not a term anyone searches for. The cut also separates direct substitutes: Undermind and Covidence both rank literature against criteria the researcher states, and they sit one category apart, so a reader comparing screening tools sees part of the market and may not know it.
 
-The counter is that the separation is the point. Elicit's label stands unless you open the paper; Covidence's does not advance until two named people rule. A reader who treats those as substitutes because both "do screening" is exactly the reader this list is trying to reach. The README's tables carry the distinction in their own columns for that reason.
+The counter is that the separation is the point. Undermind's label stands unless you open the paper; Covidence's does not advance until two named people rule. A reader who treats those as substitutes because both "do screening" is exactly the reader this list is trying to reach. The README's tables carry the distinction in their own columns for that reason.
 
 ## What the tests excluded
 

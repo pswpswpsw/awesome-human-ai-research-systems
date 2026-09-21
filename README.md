@@ -15,8 +15,8 @@ This list is cut on that question. Twenty-three systems a researcher can use tod
 | Category | What the human still rules on | Entries |
 | --- | --- | --- |
 | [Delegation](#delegation) | Keep, revise, or discard the finished artifact. Nothing records which parts you actually examined. | 8 |
-| [Triage](#triage) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 7 |
-| [Adjudication](#adjudication) | Every record, one at a time, under your name. Nothing advances until you rule. | 4 |
+| [Triage](#triage) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 6 |
+| [Adjudication](#adjudication) | Every record, one at a time, under your name. Nothing advances until you rule. | 5 |
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes has a path into your file. | 1 |
 | [Retrieval](#retrieval) | Everything about the evidence. The system offers no opinion on any item. | 1 |
 | [Bench](#bench) | Whether to spend material and instrument time. An instrument, not a reader, settles who was right. | 1 |
@@ -65,7 +65,6 @@ The AI fetches, labels, and arranges work other people did, and stops before the
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [Elicit](https://elicit.com/) | The criteria, each label only if you open the paper and reverse it, and every conflict when dual review is on | Ranked results, per-record include/exclude labels with reasons and quotes, extraction tables with sentence-level citations | Dual review with a conflict-resolution view, an adjudication audit trail and an exported PRISMA flow diagram on paid tiers; the model's label is still the default on the single-reviewer path | No | hosted |
 | [Consensus](https://consensus.app/) | Whether a tally is actually decisive, and every citing sentence | Ranked papers over ~220M, per-study snapshot fields, yes/no claim tally with quotes | No | No | hosted |
 | [Undermind](https://www.undermind.ai/) | What the material means and which papers get cited | Ranked table with match scores, stated inclusion reasons, and a coverage estimate for the run | No | No | hosted |
 | [Ai2 Asta](https://asta.allen.ai/) | Which relevance tier to trust, and every sentence you write | Per-paper relevance tiers with stated criteria; reports whose uncited passages are labelled model-generated | No | No, export only | hosted |
@@ -73,7 +72,7 @@ The AI fetches, labels, and arranges work other people did, and stops before the
 | [scite](https://scite.ai/) | Which references survive the flags | Citation statements classified supporting / contrasting / mentioning; retraction and contested-reference audit of an uploaded bibliography | No | No | hosted |
 | [SciSpace](https://scispace.com/) | Whether an extracted cell reflects what the paper reports | Filterable extraction table, each cell traceable to the paper it was read from | No | Yes, in bulk: its Copilot inserts cited evidence and auto-generates paragraphs into a draft written in SciSpace's own editor, exported as `.docx` | hosted |
 
-> **Elicit** and **Ai2 Asta** each also ship a report path whose output is prose rather than structured working material. Both are filed on the screening and retrieval path, which is the one carrying the per-item verdict; on the report path alone each would sit closer to Delegation.
+> **Ai2 Asta** also ships a report path whose output is prose rather than structured working material. It is filed on the retrieval and ranking path, which is the one carrying the per-item verdict; on the report path alone it would sit closer to Delegation.
 
 ## Adjudication
 
@@ -81,11 +80,14 @@ AI screens and ranks, a named human decides, and the audit trail is publishable.
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
+| [Elicit](https://elicit.com/) | Every conflict between two independent reviewers; on the single-reviewer path, only the labels you open a paper to reverse | Ranked results, per-record include/exclude labels with reasons and quotes, extraction tables with sentence-level citations | Audit trail logging every decision, override and adjudication for PRISMA reconstruction, plus agreement statistics and an exported PRISMA flow diagram | No | hosted |
 | [Covidence](https://www.covidence.org/) | Every reference, twice over, plus every conflict and every AI-suggested extraction value | Screened evidence base and the extractions | PRISMA 2020 diagram and inter-rater reliability export, attributed to each reviewer | No | hosted |
 | [Rayyan](https://www.rayyan.ai/) | Every ruling, one record at a time, under a reviewer identity the trail carries; nothing resolves by majority | Screened set, and the trail itself | Auto-generated PRISMA flow diagram and team audit log | No | hosted |
 | [Silvi](https://silvi.ai/) | How a conflict between two blinded reviewers resolves; individual study entry can be committed in bulk from the AI's suggestions | Screened set, with the model's labels suggested against criteria the reviewer states up front | Decision log and PRISMA flow chart | No | hosted |
 | [DistillerSR](https://www.distillersr.com/) | Each reference and each extracted element, attributed to you by name | Screened evidence base built for regulated work | Audit trail traceable to the individual reviewer, plus PRISMA flow | No | hosted |
 
+> **Elicit** ships two paths with different loci. Dual review, where two reviewers rule independently and conflicts surface for resolution, is an Enterprise feature; the PRISMA export ships from the Pro tier. On the default single-reviewer path the model's label stands until you reverse it, which is [Triage](#triage) behaviour. It is filed here on the dual-review path, and a single-reviewer user is holding something closer to Triage.
+>
 > **DistillerSR** also sells a fully automated batch mode in which AI screening decisions are checked by a second AI rather than by a person; that mode on its own would fall a category above. The row describes the human-in-the-loop workflow it is filed on.
 
 ## Critique
