@@ -125,7 +125,7 @@ The AI proposes the next experiment, you spend the material and instrument time,
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs here and how entries are placed, and [METHOD.md](METHOD.md) for the reasoning behind the seven categories, including [what was considered and cut](METHOD.md#what-the-tests-excluded). One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs here and how entries are placed, [METHOD.md](METHOD.md) for the reasoning behind the five categories and [what was considered and cut](METHOD.md#what-the-tests-excluded), and [WORKFLOWS.md](WORKFLOWS.md) for four systems traced through a real task, which is where the rows stop being compressed. One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
 
 ## License
 
