@@ -53,6 +53,8 @@ The categories are not stages, so a task usually spans more than one. That is th
 
 *Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable too, and `free` marks a service documented as free rather than a tier that may change.
 
+**†** marks a claim the vendor publishes but does not display: the wording is in the page source, a schema.org block, or a JavaScript bundle, and a reader checking it in a browser will not find it without developer tools. The claim is sourced and the mark is a warning about where, not a doubt about whether. It is also information in its own right, since a product whose load-bearing facts live only in compiled code has told you something about itself.
+
 ---
 
 ## Delegation
@@ -61,10 +63,10 @@ You write the brief, the system hands back something that already looks finished
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [ClawsGO Science](https://clawsgo.ai/) | The question, then keep / revise / discard the whole study | Compiled LaTeX manuscript, figures, analyses | Screening log, recording the model's own inclusion calls rather than a reviewer's | It *is* the draft | hosted |
+| [ClawsGO Science](https://clawsgo.ai/) | The question, then keep / revise / discard the whole study | Compiled LaTeX manuscript, figures, analyses | Screening log, recording the model's own inclusion calls rather than a reviewer's; documented only in an illustrative demo run on the homepage | It *is* the draft | hosted |
 | [Edison Platform](https://platform.edisonscientific.com/) *(the commercial spinout of FutureHouse)* | The question, then keep / revise / discard the report | Cited report from Kosmos or one of four narrower agents, each conclusion traceable to the code or literature passage that produced it | No | It is the draft | hosted |
-| [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* | The brief and target format, then the filled-in plan | Manuscript, grant, or preregistration draft, with citations it retrieved itself | No | It is the draft | hosted, free |
-| [Review-it](https://review-it.ai/) | Which manuscript to upload, then the returned document | Section scores, weakness flags, fabricated-citation flags, journal fit, and on an upgrade tier a corrected document | No | Yes, on the upgrade tier; whether the fixes apply in bulk or one at a time is not documented publicly, and the placement rests on that | hosted |
+| [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* | The brief and target format, then the filled-in plan | Manuscript, grant, or preregistration draft, with citations it retrieved itself | No | It is the draft | hosted, free † |
+| [Review-it](https://review-it.ai/) | Which manuscript to upload, then the returned document | Section scores, weakness flags, fabricated-citation flags, journal fit, and on an upgrade tier a corrected document | No | Yes, on the upgrade tier †; whether the fixes apply in bulk or one at a time is not documented publicly, and the placement rests on that | hosted |
 | [Granted AI](https://grantedai.com/) | Which RFP to pursue, then the exported file | Letters of inquiry, drafted proposal sections | No | Yes, in bulk: one click applies its own review findings | hosted |
 | [Labguru Assistant](https://www.labguru.com/labguru-assistant) | No gating checkpoint; the help centre advises reviewing the response, but nothing waits on it | Protocol parameters, anomaly flags, recommended next step, with links to related Labguru items but no citation attached to an assertion | No | Its output is saved into your notebook | hosted |
 | [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | The idea, or merely a set of reference papers | Full paper and a code workspace | No | It is the draft | self-host |
@@ -79,7 +81,7 @@ The AI fetches, labels, and arranges work other people did, and stops before the
 | --- | --- | --- | --- | --- | --- |
 | [Consensus](https://consensus.app/) | Whether a tally is actually decisive, and every citing sentence | Ranked papers over ~220M, per-study snapshot fields, yes/no claim tally with quotes | No | No | hosted |
 | [Undermind](https://www.undermind.ai/) | What the material means and which papers get cited | Ranked table with match scores, stated inclusion reasons, and a coverage estimate for the run | No | No | hosted |
-| [Ai2 Asta](https://asta.allen.ai/) | Which relevance tier to trust, and every sentence you write | Per-paper relevance tiers with stated criteria; reports whose uncited passages are labelled model-generated | No | No, export only | hosted |
+| [Ai2 Asta](https://asta.allen.ai/) | Which relevance tier to trust, and every sentence you write | Per-paper relevance tiers with stated criteria †; reports whose uncited passages are labelled model-generated † | No | No, export only | hosted |
 | [OpenScholar](https://github.com/AkariAsai/OpenScholar) | What the evidence means | Citation-attributed synthesized answers; released weights, reranker, and a 45M-paper index. [Published in *Nature*](https://www.nature.com/articles/s41586-025-10072-4); the hosted demo now redirects to Asta | No | No | self-host, open weights |
 | [scite](https://scite.ai/) | Which references survive the flags | Citation statements classified supporting / contrasting / mentioning; retraction and contested-reference audit of an uploaded bibliography | No | No | hosted |
 
@@ -123,7 +125,7 @@ The AI proposes the next experiment, you spend the material and instrument time,
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to commit material and instrument time to the proposed condition | The next experiment to run, from a Bayesian explore-exploit search over your parameter space, re-optimized on results you return by hand or through an optional robot link | No; the instrument is the record | No | hosted |
+| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to commit material and instrument time to the proposed condition | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, re-optimized on results you return by hand or through an optional robot link | No; the instrument is the record | No | hosted |
 
 ## Components
 

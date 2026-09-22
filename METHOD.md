@@ -2,6 +2,8 @@
 
 The [README](README.md) is the answer. This file is the working. It exists so the list can be argued with: every boundary here is a test someone can apply to a product's public pages and get the same answer I did.
 
+One qualification, because the web made it necessary. Some vendors publish a load-bearing fact without displaying it: the wording sits in page source, a schema.org block, or a JavaScript bundle the browser executes but never shows. That is published and freely retrievable, and it is not something a reader will find by looking. Those claims are used, and the README marks each one **†** so nobody goes hunting for a sentence that is not on the page. The alternative was to drop true statements for being awkwardly located, which would have made the list less accurate in the name of being checkable.
+
 ## The axis
 
 **The categories are cut by decision locus, not by workflow stage.** Where a tool sits in the pipeline says almost nothing about the collaboration: two products can both "help with the literature" while one hands you a finished review to sign and the other refuses to write a single sentence for you. What separates them is who decides what enters the research record, and what standing the researcher keeps in it.

@@ -62,11 +62,12 @@ Rules for the prose in those cells:
 
 1. **Do not adopt the vendor's own framing.** If the product calls itself a mentor, a co-scientist, or a copilot, describe what it does instead.
 2. **Cite the vendor page you used**, in the PR description. A classification that cannot be checked from public pages cannot be reviewed. If the fact your placement turns on is not documented anywhere public, say so in the row rather than asserting it.
-3. Keep cells short enough to scan. A table stops being a table when a cell runs to three lines.
-4. Factual and vendor-neutral. No marketing language, no superlatives you cannot back up.
-5. If a product ships two paths with different loci, name the one the placement rests on.
-6. One tool per pull request makes review faster; small batches are fine.
-7. Check the links resolve before opening the PR.
+3. **Mark source-only evidence with †.** If the sentence backing a cell is in page source, a schema.org block or a JavaScript bundle rather than in text the browser displays, append † to that cell and quote the string plus where you found it in the PR. Do not quietly upgrade it to ordinary evidence, and do not drop a true claim for being awkwardly located. Many research products are client-rendered apps, so this comes up more than it should.
+4. Keep cells short enough to scan. A table stops being a table when a cell runs to three lines.
+5. Factual and vendor-neutral. No marketing language, no superlatives you cannot back up.
+6. If a product ships two paths with different loci, name the one the placement rests on.
+7. One tool per pull request makes review faster; small batches are fine.
+8. Check the links resolve before opening the PR.
 
 Proposing a **new category** is the exception. It needs a decision locus the existing seven cannot express, plus a test a contributor can apply from a product's public pages. Categories that are really workflow stages in disguise will be declined.
 
