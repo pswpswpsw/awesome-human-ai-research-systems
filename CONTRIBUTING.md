@@ -34,9 +34,9 @@ Short forms; [METHOD.md](METHOD.md) has the authoritative versions.
 
 1. **[Delegation](README.md#delegation)** — the next documented human action after the brief is reviewing a complete artifact that would be submitted under the researcher's own name, and no attributable per-unit decision record is produced.
 2. **[Standing Verdicts](README.md#standing-verdicts)** — the system attaches a judgment to individual items; that judgment stands, meaning it is the operative record unless a human intervenes; every assertion resolves to an openable source or is explicitly marked model-authored; and the largest thing leaving the session is structured working material or less.
-3. **[Human Approval](README.md#human-approval)** — the decision record is itself an export, *and* it attributes rulings to named reviewers rather than to the model. Nothing stands until a named person rules. Both halves required.
+3. **[Human Approval](README.md#human-approval)** — the platform holds a per-record ruling attributable to a named person, *and* the decision flow leaves the platform as evidence. Nothing stands until a named person rules. Both halves required; the export itself need not carry names.
 4. **[Critique](README.md#critique)** — no mechanism puts AI-authored text into the record without a per-item human action, and the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
-5. **[Bench](README.md#bench)** — the system proposes a specific configuration to run, the run produces a number that drives the next proposal, *and* a documented approval step stands between the proposal and the run. All three required.
+5. **[Bench](README.md#bench)** — the system proposes a specific configuration to run, the run produces a number that drives the next proposal, *and* the loop cannot advance without a human act. All three required. A study that iterates to termination once launched fails the third, and so does a configuration where a robot closes the loop unattended.
 
 **Membership is release-mobile.** Shipping a reviewer log, a checkpoint UI, or a bulk apply-the-fixes button moves an entry. A PR that re-tests an existing entry against its category is as welcome as one adding a tool.
 
@@ -61,13 +61,14 @@ Fill each column as follows.
 Rules for the prose in those cells:
 
 1. **Do not adopt the vendor's own framing.** If the product calls itself a mentor, a co-scientist, or a copilot, describe what it does instead.
-2. **Cite the vendor page you used**, in the PR description. A classification that cannot be checked from public pages cannot be reviewed. If the fact your placement turns on is not documented anywhere public, say so in the row rather than asserting it.
-3. **Mark source-only evidence with †.** If the sentence backing a cell is in page source, a schema.org block or a JavaScript bundle rather than in text the browser displays, append † to that cell and quote the string plus where you found it in the PR. Do not quietly upgrade it to ordinary evidence, and do not drop a true claim for being awkwardly located. Many research products are client-rendered apps, so this comes up more than it should.
-4. Keep cells short enough to scan. A table stops being a table when a cell runs to three lines.
-5. Factual and vendor-neutral. No marketing language, no superlatives you cannot back up.
-6. If a product ships two paths with different loci, name the one the placement rests on.
-7. One tool per pull request makes review faster; small batches are fine.
-8. Check the links resolve before opening the PR.
+2. **Read the page, do not let a tool summarize it for you.** Two independent fact-checking passes on this repo caught a summarizing fetch tool inventing quoted material: once a corpus size that was not on the page, once a set of human-checkpoint steps that do not exist. Use raw retrieval and read the text yourself. A fabricated quotation in a public list is worse than a gap.
+3. **Cite the vendor page you used**, in the PR description. A classification that cannot be checked from public pages cannot be reviewed. If the fact your placement turns on is not documented anywhere public, say so in the row rather than asserting it.
+4. **Mark source-only evidence with †.** If the sentence backing a cell is in page source, a schema.org block or a JavaScript bundle rather than in text the browser displays, append † to that cell and quote the string plus where you found it in the PR. Do not quietly upgrade it to ordinary evidence, and do not drop a true claim for being awkwardly located. Many research products are client-rendered apps, so this comes up more than it should.
+5. Keep cells short enough to scan. A table stops being a table when a cell runs to three lines.
+6. Factual and vendor-neutral. No marketing language, no superlatives you cannot back up.
+7. If a product ships two paths with different loci, name the one the placement rests on.
+8. One tool per pull request makes review faster; small batches are fine.
+9. Check the links resolve before opening the PR.
 
 Proposing a **new category** is the exception. It needs a decision locus the existing five cannot express, plus a test a contributor can apply from a product's public pages. Categories that are really workflow stages in disguise will be declined.
 
