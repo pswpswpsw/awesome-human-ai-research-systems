@@ -44,7 +44,7 @@ The categories are not stages, so a task usually spans more than one. That is th
 | If your task is | Look in | What separates the options |
 | --- | --- | --- |
 | Finding papers on a question | [Retrieval](#retrieval), [Triage](#triage) | Whether the system attaches a verdict to each paper or just hands it to you |
-| Screening records for a systematic review | [Triage](#triage), [Adjudication](#adjudication) | Whether a label stands by default or waits for your named ruling. Only the second leaves a trail a journal will accept |
+| Screening records for a systematic review | [Triage](#triage), [Adjudication](#adjudication) | Whether a label stands by default or waits for your named ruling. Only the second produces the reviewer-attributed trail that evidence-synthesis reporting expects you to be able to describe |
 | Extracting data from papers | [Triage](#triage), [Adjudication](#adjudication) | The same split: Undermind's per-paper labels stand until you check them, Covidence's extraction values need accepting one at a time |
 | Getting a draft written | [Delegation](#delegation) | Six of the seven entries there return one. What varies is what you supply: a question, an RFP, or only a set of reference papers |
 | Getting a manuscript critiqued | [Delegation](#delegation) | Every option writes back into your file. [Critique](#critique), the category for one that cannot, is empty |
@@ -53,7 +53,7 @@ The categories are not stages, so a task usually spans more than one. That is th
 
 *Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable too, and `free` marks a service documented as free rather than a tier that may change.
 
-**†** marks a claim the vendor publishes but does not display: the wording is in the page source, a schema.org block, or a JavaScript bundle, and a reader checking it in a browser will not find it without developer tools. The claim is sourced and the mark is a warning about where, not a doubt about whether. It is also information in its own right, since a product whose load-bearing facts live only in compiled code has told you something about itself.
+**†** marks a claim the vendor publishes but does not display: the wording is in the page source, a schema.org block, or a JavaScript bundle, and a reader checking it in a browser will not find it without developer tools. The mark is about where the evidence is. It says the vendor published that wording, which is not the same as the feature being live for you: a string in a bundle proves distribution, not availability. It is also information in its own right, since a product whose load-bearing facts live only in compiled code has told you something about itself.
 
 ---
 
@@ -125,7 +125,7 @@ The AI proposes the next experiment, you spend the material and instrument time,
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to commit material and instrument time to the proposed condition | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, re-optimized on results you return by hand or through an optional robot link | No; the instrument is the record | No | hosted |
+| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to commit material and instrument time to the proposed condition | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, re-optimized on results you return by hand or through an optional robot link | No | No | hosted |
 
 ## Components
 
