@@ -18,6 +18,7 @@ Systems that fail these but are worth knowing about are recorded in [METHOD.md](
 - **Dead or broken projects.** Activity means **the release still runs, not that commits are recent.** A frozen release whose code, weights and data remain publicly downloadable stays eligible; link collections, dead hosted services and broken installs do not. Note the asymmetry: a project with no frozen artifact, depending on external APIs, has nothing to fall back on, so staleness there is evidence of breakage in a way it is not for a released model plus index.
 - **Domain models that predict nature.** A system whose output is a claim about the world — a protein structure, a material property, a weather field, a reaction yield — substitutes for a measurement, not for a research judgment. It performs a piece of the science rather than helping you decide how the work should go. AlphaFold, Boltz, MatterGen and the ML weather emulators are real, usable and important, and all out of scope. **The test:** is the output checked against nature, or against your standards for the work? Atinary is listed because what it returns is which experiment to run next, a decision about your research; a model returning what that experiment would have found would not be.
 - **Single-maintainer projects with nothing behind them.** One substantive contributor is fine when the project has an institution, a company, a citable publication, or adoption wide enough that a break would be noticed. With none of those, a curated list should not point a researcher at software that depends on one person's continued interest. This is a maintenance-risk judgment, not a quality one, and it is **separate from the activity rule above**: a project can run perfectly today and still fail this.
+- **Pure retrieval tools.** A system that returns items and attaches no judgment to any of them has taken over no research judgment, which is what this list is about. Google Scholar, PubMed, Scopus and Web of Science are all out on this. Semantic Scholar is in because its highly-influential-citation classifier is a per-item machine judgment; ranking alone would not have been enough.
 - **Duplicates without a differentiating feature.** Self-hostable weights and data versus a hosted service counts. A different front end does not.
 - Individual papers and preprints with no working product — link a survey list under [Related lists](METHOD.md#related-lists) instead.
 - General-purpose assistants, access or discount programs, reference managers with no AI component.
@@ -27,17 +28,15 @@ Systems that fail these but are worth knowing about are recorded in [METHOD.md](
 Apply two rules in this order. Both are argued in full in [METHOD.md](METHOD.md).
 
 1. **Classify by the module that carries research judgment,** not the one the homepage leads with. This picks *which part of a product you evaluate*.
-2. **Then test categories 5–7 first, and only afterwards walk 1–4 in order, stopping at the first match.** Those three tests are narrow and self-evidencing, so checking them first stops a general test from catching something it was never written for. Within 1–4 the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
+2. **Then test category 5 first, and only afterwards walk 1–4 in order, stopping at the first match.** Bench's test is narrow and self-evidencing, so checking it first stops a general test from catching something it was never written for. Within 1–4 the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
 
 Short forms; [METHOD.md](METHOD.md) has the authoritative versions.
 
 1. **[Delegation](README.md#delegation)** — the next documented human action after the brief is reviewing a complete artifact that would be submitted under the researcher's own name, and no attributable per-unit decision record is produced.
-2. **[Triage](README.md#triage)** — the system attaches a judgment to individual items; that judgment stands, meaning it is the operative record unless a human intervenes rather than a suggestion that records nothing until someone accepts it; every assertion resolves to an openable source or is explicitly marked model-authored; and the largest thing leaving the session is structured working material or less.
-3. **[Adjudication](README.md#adjudication)** — the decision record is itself an export, *and* it attributes rulings to named reviewers rather than to the model. Nothing stands until a named person rules. Both halves required.
+2. **[Standing Verdicts](README.md#standing-verdicts)** — the system attaches a judgment to individual items; that judgment stands, meaning it is the operative record unless a human intervenes; every assertion resolves to an openable source or is explicitly marked model-authored; and the largest thing leaving the session is structured working material or less.
+3. **[Human Approval](README.md#human-approval)** — the decision record is itself an export, *and* it attributes rulings to named reviewers rather than to the model. Nothing stands until a named person rules. Both halves required.
 4. **[Critique](README.md#critique)** — no mechanism puts AI-authored text into the record without a per-item human action, and the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
-5. **[Retrieval](README.md#retrieval)** — the system returns retrieved items and attaches no judgment to any of them. Ranking is not a verdict; a screening label, a classification, an extracted value or a per-item score is, and sends the entry to category 2.
-6. **[Bench](README.md#bench)** — the documented output terminates in a physical action, *and* measured results feed back for re-optimization. Both halves required.
-7. **[Components](README.md#components)** — ships no runtime, no hosted service and no entry point that returns a deliverable, so the host deployment sets the division of labor.
+5. **[Bench](README.md#bench)** — the system proposes a specific configuration to run, the run produces a number that drives the next proposal, *and* a documented approval step stands between the proposal and the run. All three required.
 
 **Membership is release-mobile.** Shipping a reviewer log, a checkpoint UI, or a bulk apply-the-fixes button moves an entry. A PR that re-tests an existing entry against its category is as welcome as one adding a tool.
 
@@ -70,7 +69,7 @@ Rules for the prose in those cells:
 7. One tool per pull request makes review faster; small batches are fine.
 8. Check the links resolve before opening the PR.
 
-Proposing a **new category** is the exception. It needs a decision locus the existing seven cannot express, plus a test a contributor can apply from a product's public pages. Categories that are really workflow stages in disguise will be declined.
+Proposing a **new category** is the exception. It needs a decision locus the existing five cannot express, plus a test a contributor can apply from a product's public pages. Categories that are really workflow stages in disguise will be declined.
 
 Proposing a **new facet** (see [METHOD.md](METHOD.md#the-facets)) is held to that bar and one more: it must change at least one existing placement, or it is declined as decoration.
 
@@ -79,7 +78,7 @@ Proposing a **new facet** (see [METHOD.md](METHOD.md#the-facets)) is held to tha
 This list exists because bigger lists in this space either sprawl until nobody can maintain them, or become a paper bibliography that goes stale within a year.
 
 - Quality and relevance over completeness. Not every AI-for-research tool needs to be here.
-- If a category grows past ~10–12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at eight, is the closest to that line today.
+- If a category grows past ~10–12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at seven, is the closest to that line today.
 - A category holding one entry is fine if the arrangement it describes is real. Thin categories are informative: they show where this sort of collaboration barely exists yet.
 
 ## Removing entries

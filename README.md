@@ -8,21 +8,19 @@ The judgment moves. The accountability does not. A screening label the model got
 
 These are systems for doing research, not for doing science. A model that predicts a protein structure or a material property substitutes for a measurement, not for a judgment about how the work should go, and is out of scope here.
 
-This list is cut on that question. Twenty systems a researcher can use today, in seven categories: **delegation, triage, adjudication, critique, retrieval, bench, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
+This list is cut on that question. Twenty-one systems a researcher can use today, in five categories: **delegation, standing verdicts, human approval, critique, bench**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
 ## At a glance
 
 | Category | What the human still rules on | Entries |
 | --- | --- | --- |
 | [Delegation](#delegation) | Keep, revise, or discard the finished artifact. Nothing records which parts you actually examined. | 7 |
-| [Triage](#triage) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 5 |
-| [Adjudication](#adjudication) | Every record, one at a time, under your name. Nothing advances until you rule. | 5 |
-| [Critique](#critique) | Whether a single word changes. Nothing the AI writes has a path into your file. | 0 |
-| [Retrieval](#retrieval) | Everything about the evidence. The system offers no opinion on any item. | 1 |
-| [Bench](#bench) | Whether to spend material and instrument time. An instrument, not a reader, settles who was right. | 1 |
-| [Components](#components) | Everything, because you pick the host, the permissions, and the checkpoints. | 1 |
+| [Standing Verdicts](#standing-verdicts) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 6 |
+| [Human Approval](#human-approval) | Every record, one at a time, under your name. Nothing advances until you rule. | 5 |
+| [Critique](#critique) | Whether a single word changes. Nothing the AI writes has a path into your file. | 2 |
+| [Bench](#bench) | Whether to spend material and instrument time. A run, not a reader, settles who was right. | 1 |
 
-These are not a scale but the occupied cells of a small grid, set out in [METHOD.md](METHOD.md#the-facets). What varies across the first four is what the AI attaches a verdict to and what that verdict is worth before you rule on it. Retrieval is where no verdict is attached at all, Bench where an instrument rather than a reader settles it, and Components where the software ships no runtime and the host decides everything. The sections are ordered so your standing broadly rises as you read down, which is a reading order rather than a measurement.
+These are not a scale but the occupied cells of a small grid, set out in [METHOD.md](METHOD.md#the-facets). What varies across the first four is what the AI attaches a verdict to and what that verdict is worth before you rule on it: everything, by default, on your named ruling, or never. Bench sits outside that, because there a run rather than a reader settles who was right. The sections are ordered so your standing broadly rises as you read down, which is a reading order rather than a measurement.
 
 ### How much of the work it touches
 
@@ -32,8 +30,7 @@ The categories say what you still rule on. They say nothing about how much of th
 | --- | --- | --- |
 | **End to end** | a question goes in, something you could submit comes out | ClawsGO Science, Edison Platform, AI-Researcher |
 | **One workflow** | a complete sub-workflow: screening through PRISMA, a literature sweep, an optimization loop | Elicit, Covidence, Rayyan, Silvi, DistillerSR, Ai2 Asta, Atinary SDLabs |
-| **One step** | a single move inside the work | Question First, Review-it, Granted AI, Labguru Assistant, Consensus, Undermind, OpenScholar, scite, Semantic Scholar |
-| **Set by the host** | ships no runtime, so whatever loads it decides the span too | scientific-agent-skills |
+| **One step** | a single move inside the work | Question First, Review-it, Granted AI, Labguru Assistant, Consensus, Undermind, OpenScholar, scite, Semantic Scholar, SciScore, Reviewer3 |
 
 Span is independent of category, which is why it gets its own table rather than a column. All three end-to-end agents sit in Delegation, alongside four one-step tools; the systematic-review platforms each span a whole workflow and are spread across two categories. Read the two tables together: span tells you how much a tool is trying to do, the category tells you what it leaves you answerable for, and a small tool can take more from you than a large one.
 
@@ -43,13 +40,12 @@ The categories are not stages, so a task usually spans more than one. That is th
 
 | If your task is | Look in | What separates the options |
 | --- | --- | --- |
-| Finding papers on a question | [Retrieval](#retrieval), [Triage](#triage) | Whether the system attaches a verdict to each paper or just hands it to you |
-| Screening records for a systematic review | [Triage](#triage), [Adjudication](#adjudication) | Whether a label stands by default or waits for your named ruling. Only the second produces the reviewer-attributed trail that evidence-synthesis reporting expects you to be able to describe |
-| Extracting data from papers | [Triage](#triage), [Adjudication](#adjudication) | The same split: Undermind's per-paper labels stand until you check them, Covidence's extraction values need accepting one at a time |
+| Finding papers on a question | [Standing Verdicts](#standing-verdicts) | Every system here attaches a verdict to each paper it returns. A search engine that attaches none is not in this list at all |
+| Screening records for a systematic review | [Standing Verdicts](#standing-verdicts), [Human Approval](#human-approval) | Whether a label stands by default or waits for your named ruling. Only the second produces the reviewer-attributed trail that evidence-synthesis reporting expects you to be able to describe |
+| Extracting data from papers | [Standing Verdicts](#standing-verdicts), [Human Approval](#human-approval) | The same split: Undermind's per-paper labels stand until you check them, Covidence's extraction values need accepting one at a time |
 | Getting a draft written | [Delegation](#delegation) | Six of the seven entries there return one. What varies is what you supply: a question, an RFP, or only a set of reference papers |
-| Getting a manuscript critiqued | [Delegation](#delegation) | Every option writes back into your file. [Critique](#critique), the category for one that cannot, is empty |
-| Deciding what to run next at the bench | [Bench](#bench), [Delegation](#delegation) | Whether a measurement feeds back into the next proposal, or the advice just lands in your notebook |
-| Building your own system on top | [Components](#components), and the `self-host` rows throughout | Whether it ships a runtime, or expects your agent to supply one |
+| Getting a manuscript checked before submission | [Critique](#critique), [Delegation](#delegation) | Whether the tool can put text into your file at all. Critique cannot; Delegation's reviewers can |
+| Deciding what to run next at the bench | [Bench](#bench), [Delegation](#delegation) | Whether a measured result feeds back into the next proposal, or the advice just lands in your notebook |
 
 *Decision record* below means what leaves the platform as evidence of how the decisions were reached, and who it attributes them to. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable too, and `free` marks a service documented as free rather than a tier that may change.
 
@@ -73,12 +69,13 @@ You write the brief, the system hands back something that already looks finished
 
 > **Question First** ships two paths with different loci: a separate per-item proposal path, and the auto-fill path above. It is filed on auto-fill, which is the path that produces a document with no record of what was examined.
 
-## Triage
+## Standing Verdicts
 
 The AI fetches, labels, and arranges work other people did, and stops before the conclusion. Its verdict on each item is provisionally accepted; dislodging it takes a human act.
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
+| [Semantic Scholar](https://www.semanticscholar.org/) | Everything the evidence is used for | Ranked search over 200M+ papers, citation graph, TLDRs, passage labels and cited-passage answers that describe a paper rather than rate it | No | No | hosted, free |
 | [Consensus](https://consensus.app/) | Whether a tally is actually decisive, and every citing sentence | Ranked papers over ~220M, per-study snapshot fields, yes/no claim tally with quotes | No | No | hosted |
 | [Undermind](https://www.undermind.ai/) | What the material means and which papers get cited | Ranked table with match scores, stated inclusion reasons, and a coverage estimate for the run | No | No | hosted |
 | [Ai2 Asta](https://asta.allen.ai/) | Which relevance tier to trust, and every sentence you write | Per-paper relevance tiers with stated criteria †; reports whose uncited passages are labelled model-generated † | No | No, export only | hosted |
@@ -87,7 +84,7 @@ The AI fetches, labels, and arranges work other people did, and stops before the
 
 > **Ai2 Asta** also ships a report path whose output is prose rather than structured working material. It is filed on the retrieval and ranking path, which is the one carrying the per-item verdict; on the report path alone it would sit closer to Delegation.
 
-## Adjudication
+## Human Approval
 
 AI screens and ranks, a named human decides, and the audit trail is publishable. The only category here that leaves an account of who decided what.
 
@@ -99,25 +96,24 @@ AI screens and ranks, a named human decides, and the audit trail is publishable.
 | [Silvi](https://silvi.ai/) | How a conflict between two blinded reviewers resolves; individual study entry can be committed in bulk from the AI's suggestions | Screened set, with the model's labels suggested against criteria the reviewer states up front | Decision log and PRISMA flow chart | No | hosted |
 | [DistillerSR](https://www.distillersr.com/) | Each reference and each extracted element, attributed to you by name | Screened evidence base built for regulated work | Audit trail traceable to the individual reviewer, plus PRISMA flow | No | hosted |
 
-> **Elicit** ships two paths with different loci. Dual review, where two reviewers rule independently and conflicts surface for resolution, is an Enterprise feature; the PRISMA export ships from the Pro tier. On the default single-reviewer path the model's label stands until you reverse it, which is [Triage](#triage) behaviour. It is filed here on the dual-review path, and a single-reviewer user is holding something closer to Triage.
+> **Elicit** ships two paths with different loci. Dual review, where two reviewers rule independently and conflicts surface for resolution, is an Enterprise feature; the PRISMA export ships from the Pro tier. On the default single-reviewer path the model's label stands until you reverse it, which is [Standing Verdicts](#standing-verdicts) behaviour. It is filed here on the dual-review path, and a single-reviewer user is holding something closer to the category above.
 >
 > **DistillerSR** also sells a fully automated batch mode in which AI screening decisions are checked by a second AI rather than by a person; that mode on its own would fall a category above. The row describes the human-in-the-loop workflow it is filed on.
 
 ## Critique
 
-*No entry currently qualifies.* The AI reads your work and tells you what it thinks, with no way to put any of it into the record without you ruling on that specific item.
-
-This category is defined and empty, which is the most useful thing the list has found. Plenty of products advertise a review module that would land here on that module alone, then ship a bulk apply-the-fixes control beside it, which moves them to [Delegation](#delegation). A reviewer that genuinely cannot write turns out not to exist as a maintained product: the one entry that held this slot, an academic's single-maintainer repository, was removed under the stability rule in [CONTRIBUTING.md](CONTRIBUTING.md), and nothing replaced it.
-
-If you know of one, it is the single most wanted PR in this repo.
-
-## Retrieval
-
-The system decides what reaches your attention and in what order, and attaches no judgment to any of it.
+The AI reads your work and tells you what it thinks, with no way to put any of it into the record without you ruling on that specific item.
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [Semantic Scholar](https://www.semanticscholar.org/) | Everything the evidence is used for | Ranked search over 200M+ papers, citation graph, TLDRs, passage labels and cited-passage answers that describe a paper rather than rate it | No | No | hosted, free |
+| [SciScore](https://sciscore.com/) | Each missing rigour element, and every edit: it names the gap, you write the sentence | Rigor, key-resources and statistics tables, with RRIDs validated against a registry, plus a reporting score | No | No | hosted |
+| [Reviewer3](https://reviewer3.com/) | Every finding, one at a time, and every word of the revision | Claim-by-claim report: each claim checked against the evidence reported, references verified, plus retraction, self-citation and AI-text flags | No | No | hosted |
+
+> **SciScore** is sold to publishers as well as authors, and the same reports run inside submission pipelines. It is filed on the author path, which is self-serve and returns the report to the person who wrote the manuscript.
+>
+> **Reviewer3** ships three paths with different loci. The editor path is first-pass screening at scale; the reviewer path offers to help write a report on a manuscript someone else wrote, which would move it to [Delegation](#delegation). It is filed on the author path, and the vendor states the property the placement rests on in its own words: "We Verify. We Don't Generate." Note the thin provenance: the site names no founders, lab or publication, and its pricing page is client-rendered, so the self-serve tier is published but not visible to a plain reader.
+>
+> **The closest thing this category rejects** is q.e.d Science, which has no write path at all and still fails: it sells experimental proposals, and commentary that tells you what to run next is not commentary on work already recorded. That is the second clause of the test doing work on its own, which had not happened before.
 
 ## Bench
 
@@ -126,14 +122,6 @@ The AI proposes the next experiment, you spend the material and instrument time,
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
 | [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to commit material and instrument time to the proposed condition | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, re-optimized on results you return by hand or through an optional robot link | No | No | hosted |
-
-## Components
-
-Real and usable, but they fix no decision locus of their own: whatever runs them sets one.
-
-| System | The human rules on | You get | Decision record | Writes into your draft | Access |
-| --- | --- | --- | --- | --- | --- |
-| [scientific-agent-skills](https://github.com/k-dense-ai/scientific-agent-skills) | Which skills to install, which host runs them, and therefore every checkpoint | 165+ installable scientific skills: database access, cheminformatics, omics, literature search | Whatever the host agent keeps | Whatever the host agent permits | install into a host |
 
 ## Contributing
 

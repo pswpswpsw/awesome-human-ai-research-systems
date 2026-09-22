@@ -12,18 +12,17 @@ So each category answers two questions — what does the human decide, and what 
 
 ## The facets
 
-Earlier drafts of this file claimed the first four categories were a ranked sequence on a single quantity, with the other three sitting outside it. That claim does not survive its own text: on the stated quantity, Adjudication and Critique both score zero, and so do Retrieval and Bench. Five of seven sat at one point, and the axis separated exactly one adjacent pair. It was also the wrong shape of claim. Categories are values; only axes can be orthogonal, and asking seven sibling labels to be orthogonal to each other is asking them to stop being a partition.
+Earlier drafts of this file claimed the categories were a ranked sequence on a single quantity, with the rest sitting outside it. That claim did not survive its own text: on the stated quantity, several categories scored zero, and the axis separated exactly one adjacent pair. It was also the wrong shape of claim. Categories are values; only axes can be orthogonal, and asking sibling labels to be orthogonal to each other is asking them to stop being a partition.
 
-What the seven actually are is the occupied cells of a small grid. Six facets separate them, and each earns its place by separating a pair of listed entries that no other facet separates.
+What the five actually are is the occupied cells of a small grid. Five facets separate them.
 
 | Facet | What it asks | Values | Separates, in this list |
 | --- | --- | --- | --- |
-| **Scope** | what the AI attaches a verdict to | nothing / individual items / the whole artifact | Semantic Scholar from Elicit, and Elicit from the Edison Platform |
+| **Scope** | what the AI attaches a verdict to | individual items / the whole artifact | Undermind from ClawsGO |
 | **Standing** | what that verdict is worth absent a human act | it is the record until reversed / it waits on a logged ruling / it can never be the record | Undermind from Covidence |
 | **Record** | what leaves the platform as evidence of who decided | none / model-attributed / reviewer-attributed export | ClawsGO from Rayyan: both ship a log, one attributes to the model and one to a named reviewer |
-| **Target** | what the verdict is about | work other people did / the researcher's own work / work not yet done | ClawsGO from Review-it: alike on every other facet, and separated only by whether the verdict is about the brief you gave or the manuscript you already wrote |
-| **Arbiter** | what settles whether the AI was right | a reader / an instrument | Atinary from Labguru Assistant |
-| **Packaging** | how the software reaches you | hosted / self-host / library with no runtime | scientific-agent-skills from everything else |
+| **Target** | what the verdict is about | work other people did / the researcher's own work / work not yet done | Elicit from SciScore |
+| **Arbiter** | what settles whether the AI was right | a reader / a run | Atinary from Labguru Assistant |
 
 The last column names, for each facet, a pair it separates. State the claim carefully, because an earlier draft overstated it: those pairs differ on other facets too, so no single pair proves a facet indispensable. What the column shows is that every facet is doing work somewhere rather than sitting decorative. The stronger claim — that dropping any one facet would merge two entries nothing else separates — is not one this list can currently make.
 
@@ -31,21 +30,19 @@ The last column names, for each facet, a pair it separates. State the claim care
 
 Target does the least work inside the list and the most at its edge. All three of its values are judgments about research. A fourth value, a claim about nature, is what puts domain models such as AlphaFold and MatterGen outside the list entirely rather than in an eighth category: their output is checked against nature, not against anyone's standards for the work.
 
-The seven categories are then positions in that grid:
+The five categories are then positions in that grid:
 
 | Category | Scope | Standing | Record | Target | Arbiter |
 | --- | --- | --- | --- | --- | --- |
 | **Delegation** | the whole artifact | it is the record | none, or model-attributed | the brief, or material the researcher owns | reader |
-| **Triage** | individual items | stands until reversed | none | work other people did | reader |
-| **Adjudication** | individual items | waits on a logged ruling | reviewer-attributed export | work other people did | reader |
+| **Standing Verdicts** | individual items | stands until reversed | none | work other people did | reader |
+| **Human Approval** | individual items | waits on a logged ruling | reviewer-attributed export | work other people did | reader |
 | **Critique** | individual items | can never be the record | none | the researcher's own work | reader |
-| **Retrieval** | nothing | not applicable | none | work other people did | reader |
-| **Bench** | a proposed condition | waits on a commitment of material | none | work not yet done | instrument |
-| **Components** | unbound | unbound | unbound | unbound | unbound |
+| **Bench** | a proposed condition | waits on a commitment of resources | none | work not yet done | run |
 
-Two combinations are inadmissible rather than merely unoccupied: Standing is undefined when Scope is nothing, and a reviewer-attributed Record presupposes that Standing waits on a logged ruling. Six near-independent facets with two declared gates is what orthogonality honestly amounts to here. That is the claim; nothing stronger is true.
+One combination is inadmissible rather than merely unoccupied: a reviewer-attributed Record presupposes that Standing waits on a logged ruling. Five near-independent facets with one declared gate is what orthogonality honestly amounts to here. That is the claim; nothing stronger is true.
 
-**The three categories previously described as sitting outside the scale are not exceptions.** Retrieval is the zero of Scope. Bench is the instrument value of Arbiter. Components is the no-runtime value of Packaging. Calling them annexes was reading a facet value as an exception, and it is also why the seven names do not share a part of speech: they are answers to three different questions.
+**Bench is the one category outside the ranked four, and it is not an exception.** It is the *run* value of Arbiter: everywhere else a reader settles whether the AI was right, and there a measurement does. Two earlier categories, Retrieval and Components, were also filed as facet values this way, and both were later deleted for a better reason: their definitions contradicted the list's own premise. A system that attaches no verdict to anything has taken over no judgment, and a project that ships no runtime is not a standalone system. A facet value is not a licence to keep a category the definition excludes.
 
 Reading the sections in their printed order, the researcher's standing broadly rises. That is a reading order, not a measurement.
 
@@ -55,7 +52,7 @@ Reading the sections in their printed order, the researcher's standing broadly r
 
 It does not license rescuing a product whose excluded module is the one users actually buy: a tool whose review module would qualify while the business's principal offering is something this list excludes is excluded, not filed on its best module. A side line in an excluded category does not trigger this; a centre of gravity in one does.
 
-**2. Then test Retrieval, Bench and Components first, and only afterwards walk Delegation, Triage, Adjudication and Critique in order, stopping at the first match.** This picks *which category that module lands in*. Those three tests are narrow and self-evidencing — a physical instrument run, no verdict on any item, no runtime at all — so checking them first stops a general test from catching something it was never written for. Within the other four the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
+**2. Then test Bench first, and only afterwards walk Delegation, Standing Verdicts, Human Approval and Critique in order, stopping at the first match.** This picks *which category that module lands in*. Bench's test is narrow and self-evidencing — a proposal, a run, and a documented approval before the run — so checking it first stops a general test from catching something it was never written for. Within the other four the earlier category wins, because it describes the weaker human position and the list should not flatter a tool.
 
 **3. Membership is release-mobile.** A vendor shipping a reviewer log or a checkpoint UI moves an entry. Existing entries need periodic re-testing, not just new PRs.
 
@@ -73,53 +70,55 @@ These carried several boundaries while going undefined, which is how a screening
 
 ### Delegation
 
-Trace the shortest input-to-output path the vendor or repo documents. It belongs here when a researcher supplies a question or source materials, the next documented human action is reviewing a complete deliverable that would be submitted under the researcher's own name, and no attributable per-unit decision record is produced. A documented flow that halts for rulings recorded against an exportable log belongs in Adjudication instead.
+Trace the shortest input-to-output path the vendor or repo documents. It belongs here when a researcher supplies a question or source materials, the next documented human action is reviewing a complete deliverable that would be submitted under the researcher's own name, and no attributable per-unit decision record is produced. A documented flow that halts for rulings recorded against an exportable log belongs in Human Approval instead.
 
-### Triage
+### Standing Verdicts
 
-Three clauses. First, the system attaches a judgment to individual items — a screening label, a relevance tier, a support/contrast classification, an extracted value. Second, that judgment **stands**: it is the operative record of that decision unless a human intervenes, rather than a suggestion that records nothing until someone accepts it. A platform where nothing advances until a named person rules belongs in Adjudication; a system that attaches no judgment at all belongs in Retrieval. Third, provenance: every assertion must resolve to an identifiable source a reader can open, or be explicitly marked in the output as model-authored rather than sourced. And the largest thing leaving the session must be structured working material or less; a document submitted under the researcher's own name belongs in Delegation.
+Three clauses. First, the system attaches a judgment to individual items — a screening label, a relevance tier, a support/contrast classification, an extracted value. Second, that judgment **stands**: it is the operative record of that decision unless a human intervenes, rather than a suggestion that records nothing until someone accepts it. A platform where nothing advances until a named person rules belongs in Human Approval. A system that attaches no judgment to any item has taken over no judgment at all, and is out of scope rather than filed elsewhere. Third, provenance: every assertion must resolve to an identifiable source a reader can open, or be explicitly marked in the output as model-authored rather than sourced. And the largest thing leaving the session must be structured working material or less; a document submitted under the researcher's own name belongs in Delegation.
 
-### Adjudication
+### Human Approval
 
-Two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels stand before anyone rules on them belongs one category up, in Triage.
+Two clauses, both required. The decision record must itself be an export — a PRISMA flow diagram, a dual-reviewer conflict log, a screening audit trail that leaves the platform as evidence of how the decisions were reached. And that record must attribute rulings to named reviewers rather than to the model. A platform whose labels stand before anyone rules on them belongs one category up, in Standing Verdicts.
 
 ### Critique
 
 No mechanism may put AI-authored text into the researcher's document or dataset without a per-item human action. A bulk apply-all-fixes control disqualifies; a tracked change the author accepts or rejects one at a time does not, because that leaves an attributable record of exactly what was taken. Second and independent: the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
 
-### Retrieval
-
-The system returns retrieved items to the researcher and attaches no judgment to any of them. Ranking and relevance ordering do not count as a verdict; a screening label, a support/contrast classification, an extracted value, or a per-item score does, and moves the entry to Triage. Generated per-paper summaries are the hard case: a summary describing what a paper says stays here, while one rating the paper against the researcher's criteria, or asserting a value read out of it, does not.
 
 ### Bench
 
-Two halves, both required. The documented output must terminate in a physical action — an experiment, a synthesis, an assay, an instrument run — and measured results must feed back for re-optimization. Software-only output never qualifies however autonomous the system looks.
+Three clauses, all required.
 
-*Applied:* Labguru Assistant was tested against this category and does not qualify: it recommends next steps, but no measured result feeds back into a new proposal. It sits in Delegation instead. Publicly usable closed-loop platforms remain scarce, so PRs here are wanted.
+**A proposal, not a prediction.** The system must return a specific configuration to run next — an experimental condition, a set of parameter values, a synthesis route, a machine setting — rather than an estimate of what running it would produce. A system that reports the expected outcome is a domain model and is out of scope entirely.
 
-### Components
+**A run, and the result feeds the next proposal.** The proposal must be executed and produce a number, and that number must drive what is proposed next. The arbiter may be an instrument or a computation; what it may not be is the system's own estimate. A system that proposes once and stops does not qualify, and neither does one whose feedback is a reader's opinion of the proposal.
 
-Ask whether the project produces research output by itself. If it ships no runtime, no hosted service, and no entry point that returns a deliverable, it belongs here.
+**A documented approval step between the proposal and the run.** The flow must wait on a researcher act on the specific proposed condition: committing the material, the beam time, the instrument hours or the compute. Launching a study and letting it iterate to termination is not this clause. One commitment at the start covering every evaluation is a budget, not a gate.
+
+An earlier version excluded software-only output outright. That clause is dropped, because it excluded for the wrong reason: what distinguishes this category is that a run rather than a reader settles who was right, and a simulation the researcher pays for settles that as firmly as an assay. The approval clause, not the physicality of the arbiter, is what stops this test from catching unattended code-running agents on the way past Delegation under [rule 2](#the-placement-rules) — which is the job the software-only clause was silently doing.
+
+*Applied:* Labguru Assistant fails the second clause; it recommends next steps, and no measured result feeds back into a new proposal. **Dakota** (Sandia) passes the first two clauses cleanly and fails the third: once the input deck is launched nothing waits, and its own documentation describes an uninterrupted parameters-file to results-file iteration. Dropping the software-only clause therefore opened a cell that is, as of this revision, still empty — which is the honest outcome and not an argument for keeping a rule that excluded for the wrong reason. PRs here are wanted.
+
 
 ## Where the axis coincides with the old one, and why
 
-Two categories come close to reproducing a section of the stage-based taxonomy this list used to have. **Adjudication** holds exactly the membership that "systematic review" held, and **Triage** holds most of what "literature search" held.
+Two categories come close to reproducing a section of the stage-based taxonomy this list used to have. **Human Approval** holds exactly the membership that "systematic review" held, and **Standing Verdicts** holds most of what "literature search" held.
 
-That is not the axis failing to bite; in both cases it is a finding with a cause. PRISMA asks authors to report how many reviewers screened each record and whether they worked independently, and the evidence standards journals enforce make an attributable trail practically necessary, so every serious screening platform converged on the same decision locus. Literature tools converged on default-accept labelling for a weaker reason, competitive pressure to put a score on everything returned, and there the test did move entries: Semantic Scholar out to Retrieval, and Elicit up to Adjudication once it shipped dual review.
+That is not the axis failing to bite; in both cases it is a finding with a cause. PRISMA asks authors to report how many reviewers screened each record and whether they worked independently, and the evidence standards journals enforce make an attributable trail practically necessary, so every serious screening platform converged on the same decision locus. Literature tools converged on default-accept labelling for a weaker reason, competitive pressure to put a score on everything returned, and there the test did move entries: Elicit up to Human Approval once it shipped dual review, and Semantic Scholar into Standing Verdicts once its influential-citation classifier was read as the per-item verdict it is.
 
 Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools split by whether the tool can write into your file, and every one that survived the other rules writes, so they all sit in Delegation and Critique is empty. Review-it is the closest call: its corrected document is an upgrade above an already-paid floor, and whether the fixes apply in bulk or one at a time is not documented anywhere public, so even that placement rests on a fact a reader cannot check. The old lab section is split between a proposer whose verdict comes from an instrument and one whose output is prose.
 
 ## Known weak points
 
 - **Delegation is the widest category**, running from a grant-letter drafter to an unattended manuscript agent. A finer split is available if it grows: whether the human's single ruling falls on a brief they wrote or on material they already owned, which separates ClawsGO and the Edison Platform from Review-it and Labguru Assistant.
-- **Critique is thin, and the thinness is the finding.** Several products advertise a review module that would land there on that module alone, then ship a bulk apply-the-fixes control beside it, which moves them to Delegation. A reviewer that genuinely cannot write is rarer than the marketing suggests.
-- **Retrieval holds one entry**, which says more about the market than about the boundary. Search that offers no opinion is close to extinct as a product category: the commercial pressure runs toward attaching a score, a label, or an extracted value to everything returned, which moves a product one category up.
-- **Four of seven categories hold a single entry**, and the grid is sparse. Under the old ranked-sequence framing that looked like a defect. Under the facets it is the normal condition of a classification laid over a real market: most cells of a product space are empty most of the time, and the empty ones are predictions about what has not been built. The sparseness is worth watching for a different reason than it used to be, namely that a facet nobody occupies is a facet that may not be earning its place.
-- **Labguru Assistant satisfies no category's written test** and is filed in the widest one by elimination. Its facet values are legible enough — per-item verdict, stands as the record, no resolvable source — but that combination is a cell no category currently claims. It is the one entry whose placement rests on residue rather than on a test, and the honest reading is that the grid has a gap there rather than that the entry is awkward.
+- **Bench holds one entry and its computational cell is empty.** Dropping the software-only exclusion was right on the reasoning and has so far admitted nobody: every computational loop found either has no approval gate (Dakota, ShinkaEvolve) or is a library rather than a system (BoTorch, Ax, Xopt). Since the audience for this list includes people building scientist-assistant platforms, that emptiness is worth watching rather than shrugging at.
+- **Critique was empty until this revision, and the claim made about it was wrong.** The README said no maintained product reviews without writing. The real situation was narrower and less flattering to the search: read-only review exists where the deliverable is a verification report, and the product that critiques the argument itself crosses into proposing new experiments, which is what q.e.d Science does.
+- **Two categories were deleted for the same error, and it is worth naming.** Retrieval required that a system attach no verdict to anything, and Components that it ship no runtime. Both were written as facet values and both contradicted the list's own premise: a system that takes over no judgment is not a HAIRS, and a library with no runtime is not a standalone system. A facet value is not a reason to keep a category the definition excludes.
+- **Labguru Assistant satisfies no category's written test** and is filed in the widest one by elimination. Its facet values are legible enough, but that combination is a cell no category currently claims. It is the one entry whose placement rests on residue rather than on a test.
 
 ## The strongest objection to all of this
 
-A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require a paragraph of theory before the boundaries are legible, and "Adjudication" is not a term anyone searches for. The cut also separates direct substitutes: Undermind and Covidence both rank literature against criteria the researcher states, and they sit one category apart, so a reader comparing screening tools sees part of the market and may not know it.
+A reader arrives with a task, not with a question about their own epistemic standing. Someone who needs to screen four thousand abstracts can scan stage headings and land on the right shelf in seconds, whereas decision-locus headings require a paragraph of theory before the boundaries are legible, and "Human Approval" is not a term anyone searches for. The cut also separates direct substitutes: Undermind and Covidence both rank literature against criteria the researcher states, and they sit one category apart, so a reader comparing screening tools sees part of the market and may not know it.
 
 The counter is that the separation is the point. Undermind's label stands unless you open the paper; Covidence's does not advance until two named people rule. A reader who treats those as substitutes because both "do screening" is exactly the reader this list is trying to reach. The README's tables carry the distinction in their own columns for that reason.
 
@@ -141,6 +140,11 @@ Recording what was cut, and why, is part of keeping the bar honest. The rules th
 | [SciSpace](https://scispace.com/) | Its AI Writer page advertises output that will "pass as human" and a Rewriter that humanizes AI prose, flagged by a built-in AI detector. Same criterion that excluded ScholarsReview, and the module rule does not rescue a bundled detection-evasion capability. |
 | [ai-peer-review](https://github.com/poldrack/ai-peer-review) | Single-maintainer repository from a Stanford lab: 8 of 9 commits by one author, 154 stars, and its README states the code was AI-generated. Held the only Critique slot; removed under the same stability rule rather than kept because the category would otherwise be empty. |
 | [Deep-Research-Agent](https://github.com/CYC2002tommy/Deep-Research-Agent) | A single-maintainer side project: 23 of 24 commits by one author, no lab, company or publication behind it. Good work, but a curated list should not point a researcher at software whose maintenance depends on one person's continued interest. |
+| [scientific-agent-skills](https://github.com/k-dense-ai/scientific-agent-skills) | A skill library with no runtime of its own. Whatever agent loads it sets the permissions and the checkpoints, so it is not a standalone research system. Excluded by scope, not by quality: 45,000+ stars and sixteen contributors. |
+| [Semantic Scholar](https://www.semanticscholar.org/) *(now listed)* | Was filed under a Retrieval category defined as attaching no verdict. Its highly-influential-citation classifier is a per-item machine judgment, so it moved into Standing Verdicts and the category that had held it was deleted. Recorded here because the reasoning is the same one that excludes Google Scholar, PubMed and Scopus, which attach no per-item verdict and are therefore out. |
+| [q.e.d Science](https://qedscience.com/) | No write path at all, and still fails Critique: it sells experimental proposals, and commentary telling you what to run next is not commentary on work already recorded. The only entry so far rejected by that clause alone. |
+| [Dakota](https://dakota.sandia.gov/) | The textbook computational loop, and no gate: once the input deck is launched it iterates to termination with nothing waiting on a researcher. Excluded on the approval clause, not on the arbiter. |
+| [statcheck](http://statcheck.io/) | Recomputes reported statistics and flags inconsistencies, with no write path, which is exactly the Critique shape. Excluded because it is deterministic parsing and arithmetic with no model in it, and this list describes itself from its first paragraph in model terms. |
 | Domain models: [AlphaFold](https://alphafoldserver.com/), [Boltz](https://github.com/jwohlwend/boltz), [MatterGen](https://github.com/microsoft/mattergen), ML weather emulators | Their output is a claim about nature, checked against nature. They substitute for a measurement rather than for a judgment about how the research should go. Excluded by scope, not by quality: several are among the most consequential scientific software ever released. |
 | Prompt-template "hypothesis generators" | A prompt wrapped in a landing page is not a system. |
 | Individual papers and preprints | Out of scope; see [Related lists](#related-lists) below. |
