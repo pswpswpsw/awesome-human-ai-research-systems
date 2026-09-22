@@ -8,14 +8,14 @@ The judgment moves. The accountability does not. A screening label the model got
 
 These are systems for doing research, not for doing science. A model that predicts a protein structure or a material property substitutes for a measurement, not for a judgment about how the work should go, and is out of scope here.
 
-This list is cut on that question. Twenty-three systems a researcher can use today, in seven categories: **delegation, triage, adjudication, critique, retrieval, bench, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
+This list is cut on that question. Twenty-one systems a researcher can use today, in seven categories: **delegation, triage, adjudication, critique, retrieval, bench, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
 ## At a glance
 
 | Category | What the human still rules on | Entries |
 | --- | --- | --- |
-| [Delegation](#delegation) | Keep, revise, or discard the finished artifact. Nothing records which parts you actually examined. | 8 |
-| [Triage](#triage) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 6 |
+| [Delegation](#delegation) | Keep, revise, or discard the finished artifact. Nothing records which parts you actually examined. | 7 |
+| [Triage](#triage) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 5 |
 | [Adjudication](#adjudication) | Every record, one at a time, under your name. Nothing advances until you rule. | 5 |
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes has a path into your file. | 1 |
 | [Retrieval](#retrieval) | Everything about the evidence. The system offers no opinion on any item. | 1 |
@@ -32,8 +32,8 @@ The categories are not stages, so a task usually spans more than one. That is th
 | --- | --- | --- |
 | Finding papers on a question | [Retrieval](#retrieval), [Triage](#triage) | Whether the system attaches a verdict to each paper or just hands it to you |
 | Screening records for a systematic review | [Triage](#triage), [Adjudication](#adjudication) | Whether a label stands by default or waits for your named ruling. Only the second leaves a trail a journal will accept |
-| Extracting data from papers | [Triage](#triage), [Adjudication](#adjudication) | The same split: SciSpace's cells stand until you check them, Covidence's need accepting one at a time |
-| Getting a draft written | [Delegation](#delegation) | Six of the eight entries there return one. What varies is what you supply: a question, an RFP, or only a set of reference papers |
+| Extracting data from papers | [Triage](#triage), [Adjudication](#adjudication) | The same split: Undermind's per-paper labels stand until you check them, Covidence's extraction values need accepting one at a time |
+| Getting a draft written | [Delegation](#delegation) | Six of the seven entries there return one. What varies is what you supply: a question, an RFP, or only a set of reference papers |
 | Getting a manuscript critiqued | [Delegation](#delegation), [Critique](#critique) | Whether the tool can apply its own fixes in bulk, or cannot write at all |
 | Deciding what to run next at the bench | [Bench](#bench), [Delegation](#delegation) | Whether a measurement feeds back into the next proposal, or the advice just lands in your notebook |
 | Building your own system on top | [Components](#components), and the `self-host` rows throughout | Whether it ships a runtime, or expects your agent to supply one |
@@ -55,7 +55,6 @@ You write the brief, the system hands back something that already looks finished
 | [Granted AI](https://grantedai.com/) | Which RFP to pursue, then the exported file | Letters of inquiry, drafted proposal sections | No | Yes, in bulk: one click applies its own review findings | hosted |
 | [Labguru Assistant](https://www.labguru.com/labguru-assistant) | No gating checkpoint; the help centre advises reviewing the response, but nothing waits on it | Protocol parameters, anomaly flags, recommended next step, with links to related Labguru items but no citation attached to an assertion | No | Its output is saved into your notebook | hosted |
 | [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | The idea, or merely a set of reference papers | Full paper and a code workspace | No | It is the draft | self-host |
-| [Deep-Research-Agent](https://github.com/CYC2002tommy/Deep-Research-Agent) | The topic, then two approvals: the search plan before the run, and a gap report before synthesis | APA 7th `.docx` with DOI verification | No; both approvals are conversational checkpoints, not records | It is the draft | install into a host |
 
 > **Question First** ships two paths with different loci: a separate per-item proposal path, and the auto-fill path above. It is filed on auto-fill, which is the path that produces a document with no record of what was examined.
 
@@ -70,7 +69,6 @@ The AI fetches, labels, and arranges work other people did, and stops before the
 | [Ai2 Asta](https://asta.allen.ai/) | Which relevance tier to trust, and every sentence you write | Per-paper relevance tiers with stated criteria; reports whose uncited passages are labelled model-generated | No | No, export only | hosted |
 | [OpenScholar](https://github.com/AkariAsai/OpenScholar) | What the evidence means | Citation-attributed synthesized answers; released weights, reranker, and a 45M-paper index. [Published in *Nature*](https://www.nature.com/articles/s41586-025-10072-4); the hosted demo now redirects to Asta | No | No | self-host, open weights |
 | [scite](https://scite.ai/) | Which references survive the flags | Citation statements classified supporting / contrasting / mentioning; retraction and contested-reference audit of an uploaded bibliography | No | No | hosted |
-| [SciSpace](https://scispace.com/) | Whether an extracted cell reflects what the paper reports | Filterable extraction table, each cell traceable to the paper it was read from | No | Yes, in bulk: its Copilot inserts cited evidence and auto-generates paragraphs into a draft written in SciSpace's own editor, exported as `.docx` | hosted |
 
 > **Ai2 Asta** also ships a report path whose output is prose rather than structured working material. It is filed on the retrieval and ranking path, which is the one carrying the per-item verdict; on the report path alone it would sit closer to Delegation.
 
