@@ -24,6 +24,19 @@ This list is cut on that question. Twenty systems a researcher can use today, in
 
 These are not a scale but the occupied cells of a small grid, set out in [METHOD.md](METHOD.md#the-facets). What varies across the first four is what the AI attaches a verdict to and what that verdict is worth before you rule on it. Retrieval is where no verdict is attached at all, Bench where an instrument rather than a reader settles it, and Components where the software ships no runtime and the host decides everything. The sections are ordered so your standing broadly rises as you read down, which is a reading order rather than a measurement.
 
+### How much of the work it touches
+
+The categories say what you still rule on. They say nothing about how much of the research a system reaches, and that varies far more than the category names suggest: a tool that helps you sharpen a research question and an agent that returns a finished manuscript sit in the same category, because you rule on both the same way, once, at the end.
+
+| Span | What it covers | Systems |
+| --- | --- | --- |
+| **End to end** | a question goes in, something you could submit comes out | ClawsGO Science, Edison Platform, AI-Researcher |
+| **One workflow** | a complete sub-workflow: screening through PRISMA, a literature sweep, an optimization loop | Elicit, Covidence, Rayyan, Silvi, DistillerSR, Ai2 Asta, Atinary SDLabs |
+| **One step** | a single move inside the work | Question First, Review-it, Granted AI, Labguru Assistant, Consensus, Undermind, OpenScholar, scite, Semantic Scholar |
+| **Set by the host** | ships no runtime, so whatever loads it decides the span too | scientific-agent-skills |
+
+Span is independent of category, which is why it gets its own table rather than a column. All three end-to-end agents sit in Delegation, alongside four one-step tools; the systematic-review platforms each span a whole workflow and are spread across two categories. Read the two tables together: span tells you how much a tool is trying to do, the category tells you what it leaves you answerable for, and a small tool can take more from you than a large one.
+
 ### If you came here with a task
 
 The categories are not stages, so a task usually spans more than one. That is the point: the tools you would have compared side by side often differ in what they leave you responsible for.

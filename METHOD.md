@@ -25,6 +25,8 @@ What the seven actually are is the occupied cells of a small grid. Six facets se
 
 The last column is the argument for six rather than four. Each pair is separated by that facet and by no other, so dropping any one of the six collapses a distinction the list actually makes.
 
+**Span is not a facet, and the distinction matters.** How much of the research a system reaches — one step, one sub-workflow, or a question in and a submittable artifact out — is real and useful, and the README prints it as its own table. But it changes no placement: Question First helps you sharpen a research question and ClawsGO returns a finished manuscript, and both sit in Delegation because you rule on each the same way, once, at the end. [CONTRIBUTING.md](CONTRIBUTING.md) requires a new facet to change at least one existing placement or be declined as decoration, and span fails that test honestly. It is a description axis running alongside the classification rather than inside it, which is also the cleanest evidence that the facets are doing real work: a genuinely independent dimension can be added without disturbing a single row.
+
 Target does the least work inside the list and the most at its edge. All three of its values are judgments about research. A fourth value, a claim about nature, is what puts domain models such as AlphaFold and MatterGen outside the list entirely rather than in an eighth category: their output is checked against nature, not against anyone's standards for the work.
 
 The seven categories are then positions in that grid:
