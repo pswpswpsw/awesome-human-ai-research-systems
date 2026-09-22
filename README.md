@@ -8,7 +8,7 @@ The judgment moves. The accountability does not. A screening label the model got
 
 These are systems for doing research, not for doing science. A model that predicts a protein structure or a material property substitutes for a measurement, not for a judgment about how the work should go, and is out of scope here.
 
-This list is cut on that question. Twenty-one systems a researcher can use today, in seven categories: **delegation, triage, adjudication, critique, retrieval, bench, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
+This list is cut on that question. Twenty systems a researcher can use today, in seven categories: **delegation, triage, adjudication, critique, retrieval, bench, components**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
 ## At a glance
 
@@ -17,7 +17,7 @@ This list is cut on that question. Twenty-one systems a researcher can use today
 | [Delegation](#delegation) | Keep, revise, or discard the finished artifact. Nothing records which parts you actually examined. | 7 |
 | [Triage](#triage) | Every sentence you write. The machine's verdict on each paper stands until you open the source and reverse it. | 5 |
 | [Adjudication](#adjudication) | Every record, one at a time, under your name. Nothing advances until you rule. | 5 |
-| [Critique](#critique) | Whether a single word changes. Nothing the AI writes has a path into your file. | 1 |
+| [Critique](#critique) | Whether a single word changes. Nothing the AI writes has a path into your file. | 0 |
 | [Retrieval](#retrieval) | Everything about the evidence. The system offers no opinion on any item. | 1 |
 | [Bench](#bench) | Whether to spend material and instrument time. An instrument, not a reader, settles who was right. | 1 |
 | [Components](#components) | Everything, because you pick the host, the permissions, and the checkpoints. | 1 |
@@ -34,7 +34,7 @@ The categories are not stages, so a task usually spans more than one. That is th
 | Screening records for a systematic review | [Triage](#triage), [Adjudication](#adjudication) | Whether a label stands by default or waits for your named ruling. Only the second leaves a trail a journal will accept |
 | Extracting data from papers | [Triage](#triage), [Adjudication](#adjudication) | The same split: Undermind's per-paper labels stand until you check them, Covidence's extraction values need accepting one at a time |
 | Getting a draft written | [Delegation](#delegation) | Six of the seven entries there return one. What varies is what you supply: a question, an RFP, or only a set of reference papers |
-| Getting a manuscript critiqued | [Delegation](#delegation), [Critique](#critique) | Whether the tool can apply its own fixes in bulk, or cannot write at all |
+| Getting a manuscript critiqued | [Delegation](#delegation) | Every option writes back into your file. [Critique](#critique), the category for one that cannot, is empty |
 | Deciding what to run next at the bench | [Bench](#bench), [Delegation](#delegation) | Whether a measurement feeds back into the next proposal, or the advice just lands in your notebook |
 | Building your own system on top | [Components](#components), and the `self-host` rows throughout | Whether it ships a runtime, or expects your agent to supply one |
 
@@ -90,11 +90,11 @@ AI screens and ranks, a named human decides, and the audit trail is publishable.
 
 ## Critique
 
-The AI reads your work and tells you what it thinks, with no way to put any of it into the record without you ruling on that specific item.
+*No entry currently qualifies.* The AI reads your work and tells you what it thinks, with no way to put any of it into the record without you ruling on that specific item.
 
-| System | The human rules on | You get | Decision record | Writes into your draft | Access |
-| --- | --- | --- | --- | --- | --- |
-| [ai-peer-review](https://github.com/poldrack/ai-peer-review) | Whether any concern is valid, and whether a single word changes | Six independent LLM reviews, a synthesized meta-review, and a table of which model raised which concern | No | No; the manuscript is untouched and every revision is made by hand | self-host |
+This category is defined and empty, which is the most useful thing the list has found. Plenty of products advertise a review module that would land here on that module alone, then ship a bulk apply-the-fixes control beside it, which moves them to [Delegation](#delegation). A reviewer that genuinely cannot write turns out not to exist as a maintained product: the one entry that held this slot, an academic's single-maintainer repository, was removed under the stability rule in [CONTRIBUTING.md](CONTRIBUTING.md), and nothing replaced it.
+
+If you know of one, it is the single most wanted PR in this repo.
 
 ## Retrieval
 
