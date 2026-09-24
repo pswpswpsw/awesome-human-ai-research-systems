@@ -409,7 +409,7 @@ The one approval mechanism in the product governs whether a literature-search qu
 
 So the wait between a proposal and the next proposal is a data dependency rather than a control. The optimizer cannot retrain without a number, and only a human can currently supply that number. In the manual workflow that dependency coincides with a researcher deciding to spend material. But the platform records what was executed, afterwards, and records nothing about a decision to run nothing at all. Through the API the wait is not even that. A script holding one key can poll for recommendations and post measurements in a loop, with no interface and no human. The submission is attributed to the key's owner whether or not anyone read the proposal.
 
-That bears on the third clause of the [Bench test](METHOD.md#bench), which asks for a human act between the proposal and the run. This trace is why that clause no longer demands an approval control inside the software, since no listed system ships one. It is the same clause METHOD gives as the reason for excluding Dakota.
+That bears on the third clause of the [Bench test](METHOD.md#bench), which asks for a human act between one proposal and the next. This trace is why that clause no longer demands an approval control inside the software, since no listed system ships one. It is the same clause METHOD gives as the reason for excluding Dakota.
 
 The robot case has the same shape, and the best evidence on it is not marketing. The IBM RoboRXN integration paper (peer-reviewed, vendor co-authored: Schilter et al., *Chem Sci* 2024, doi:10.1039/D3SC05607D) puts a human operator in the loop twice, starting a loaded reaction and entering HPLC peak areas. That is laboratory physics rather than a product control, and the authors say they wrote their own backend application to connect the two platforms. The marketing pages meanwhile advertise the gate's absence as a feature, describing robotic batches that sync back for next-iteration planning with "no manual intervention" (demonstrated).
 
@@ -445,7 +445,7 @@ Any approval, acceptance or hold state on a proposed condition, in the interface
 
 Copy the proposal-and-execution split directly. Keeping suggested and executed values side by side on the same record, with the executed field as the editable one, answers three questions at once: what the model wanted, what the human actually did, and whether the difference mattered. It does that with no approval workflow at all. It is the single best idea in the product.
 
-The lesson to avoid is the one this trace exists to make legible. A data dependency is not a control, and the two are easy to confuse. SDLabs looks human-gated because the loop stalls until someone types a number. It is not gated. The system has no concept of a proposal being accepted, and the same API that serves the recommendation accepts the result. If a platform's human authority rests on the human having to go to the bench, it disappears the moment the bench is automated. Authority has to be a state the system refuses to leave rather than a step the world happens to be slow at.
+The lesson to avoid is the one this trace exists to make legible. A data dependency is not a control, and the two are easy to confuse. SDLabs looks human-gated because the loop stalls until someone types a number. It has no control gate. The system has no concept of a proposal being accepted, and the same API that serves the recommendation accepts the result. If a platform's human authority rests on the human having to go to the bench, it disappears the moment the bench is automated. Authority has to be a state the system refuses to leave rather than a step the world happens to be slow at.
 
 The one real gate here is well designed, and it gates an outbound data flow rather than an action. It shows the whole payload before it leaves the boundary, and it treats unknown fields as visible by default, so a field added to the tool later cannot be approved unseen (†, `ToolApprovalCard.tsx`). For a multi-institution platform where the sensitive event is information crossing a boundary, that is a better model than a generic confirm dialog.
 
@@ -464,7 +464,7 @@ Build versus buy. The optimizer is real, exercised in four peer-reviewed campaig
 | Does the API preserve it | no API | **no**: the API removes the one mandatory act | no API | nothing to preserve |
 | Push completion signal | not applicable | none; polling only | not applicable | none; polling or a WebSocket |
 
-The pattern across all four: binding human authority and programmatic access never coexist. Covidence enforces its checkpoints and cannot be called. Elicit and Atinary can be called and enforce nothing. ClawsGO has neither. A platform team that wants adjudicated screening, or a gated optimization loop, as a callable service will not find one here. That makes a callable building block for adjudication the clearest unoccupied space these four traces expose.
+The pattern across all four: binding human authority and programmatic access never coexist. Covidence enforces its checkpoints and cannot be called. Elicit and Atinary can be called, and neither enforces anything on the programmatic path. ClawsGO has neither. A platform team that wants adjudicated screening, or a gated optimization loop, as a callable service will not find one here. That makes a callable building block for adjudication the clearest unoccupied space these four traces expose.
 
 Two API-design patterns are worth separating from that verdict. Elicit's `source` enum, recording whether a session came from a user, the API, MCP or an agent, is small schema doing real work. Atinary's suggested-versus-executed field pair is the same idea applied per value.
 
@@ -497,7 +497,7 @@ The transferable observation is that a named list of failure states, each with i
 
 Naming this is a finding rather than an absence of data. On checkpoint behaviour under silence, the four do four different things: proceed after a timer, stand as the record, wait indefinitely, or stall on a data dependency that a script removes. On the decision record, none of the four exports a per-record ruling attributed to a named person with a timestamp, and the one system that retains that information in the app documents that it cannot be exported. On API-side gates, no system in these four traces has one.
 
-Limit that last claim carefully. Rayyan, DistillerSR and Silvi sit in the same README category and were not traced here, and their rows claim logs that name which reviewer made each call. Nothing above is evidence against those rows.
+Limit that last claim carefully. Rayyan, DistillerSR and Silvi sit in the same README category and were not traced here, and two of those three rows claim logs that name which reviewer made each call, while Silvi's claims only a decision log. Nothing above is evidence against those rows.
 
 ---
 
