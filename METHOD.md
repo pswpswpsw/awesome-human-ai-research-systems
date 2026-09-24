@@ -22,7 +22,7 @@ What the five actually are is the filled-in squares of a small grid. The grid is
 | --- | --- | --- | --- |
 | **Scope** | what the AI passes a verdict on | individual items / the whole finished piece of work | Undermind from ClawsGO |
 | **Standing** | what that verdict is worth if no human does anything | it is the record until someone reverses it / it waits for a person's ruling, which gets recorded / it can never be the record | Undermind from Covidence |
-| **Record** | what leaves the platform as evidence of who decided | nothing / a log that puts the decision on the model / an export that puts the decisions on reviewers | ClawsGO from Rayyan: one's log is the model's own and is viewable rather than exportable, the other's names the reviewer who decided |
+| **Record** | what leaves the platform as evidence of who decided | nothing / a log that puts the decision on the model / an export of the decision flow, built on rulings the platform ties to named reviewers | ClawsGO from Rayyan: one's only log is the model's own and is viewable rather than exportable, so nothing leaves; the other's export names the reviewer who decided |
 | **Target** | what the verdict is about | work other people did / the researcher's own work / work not yet done | Elicit from SciScore |
 | **Arbiter** | who or what settles whether the AI was right (the referee) | a reader / a run | Atinary from Labguru Assistant |
 
@@ -38,11 +38,11 @@ The five categories are then positions in that grid:
 | --- | --- | --- | --- | --- | --- |
 | **Delegation** | the whole finished piece of work | it is the record | nothing, or a log that puts the decision on the model | the brief, or material the researcher owns | a reader |
 | **Standing Verdicts** | individual items | it stands until someone reverses it | nothing | work other people did | a reader |
-| **Human Approval** | individual items | it waits for a person's ruling, which gets recorded | an export that puts the decisions on reviewers | work other people did | a reader |
+| **Human Approval** | individual items | it waits for a person's ruling, which gets recorded | an export of the decision flow, built on rulings tied to named reviewers | work other people did | a reader |
 | **Critique** | individual items | it can never be the record | nothing | the researcher's own work | a reader |
 | **Bench** | a proposed condition | it waits on a commitment of materials and machine time | nothing | work not yet done | a run |
 
-One combination is not merely empty, it is impossible. A Record that puts decisions on reviewers only makes sense when Standing waits for a reviewer's ruling to begin with. So what the grid offers is five facets that are close to independent, plus one stated rule tying two of them together. That is the claim, and nothing stronger than it is true.
+One combination is not merely empty, it is impossible. A Record built on rulings tied to named reviewers only makes sense when Standing waits for a reviewer's ruling to begin with. So what the grid offers is five facets that are close to independent, plus one stated rule tying two of them together. That is the claim, and nothing stronger than it is true.
 
 **Bench is the one category outside the ranked four, and it is not an exception.** It is the *run* answer to the Arbiter question. Everywhere else a reader settles whether the AI was right, and at the bench a measurement does. Two earlier categories, Retrieval and Components, were justified the same way, as answers to a facet. Both were later deleted for a better reason: their definitions contradicted what this list says it is about. A system that passes a verdict on nothing has taken over no judgment, and a project that ships no software you can run is not a standalone system. Being an answer to a facet does not entitle a category to stay when the definition rules it out.
 
@@ -72,7 +72,7 @@ Several boundaries rested on these three words while none of them was defined, w
 
 ### Delegation
 
-Follow the shortest path from input to output that the vendor or the repository documents. A system belongs here when three things hold. The researcher supplies a question or some source material. The next human action in the documentation is looking over a finished piece of work that would be handed in under the researcher's own name. And nothing comes out that records who decided what, unit by unit. A documented flow that instead halts for rulings the platform records against a named person belongs in Human Approval.
+Follow the shortest path from input to output that the vendor or the repository documents. A system belongs here when three things hold. The researcher supplies a question or some source material. The next human action in the documentation is looking over a finished piece of work that would be handed in under the researcher's own name. And nothing comes out that records who decided what, unit by unit. A documented flow that instead halts for rulings the platform records against a named person, and that lets the decision flow leave as evidence, belongs in Human Approval.
 
 ### Standing Verdicts
 
@@ -110,7 +110,7 @@ An earlier version excluded software-only output outright. That clause is droppe
 
 Two categories come close to rebuilding a section of the old arrangement, the one that sorted tools by stage of work. **Human Approval** holds exactly the membership that "systematic review" held, and **Standing Verdicts** holds most of what "literature search" held.
 
-That is not the axis failing to bite. In both cases there is a cause behind it. PRISMA asks authors to report how many reviewers screened each record and whether they worked independently, . The evidence standards that journals enforce make a trail back to named people practically necessary, so every serious screening platform converged on the same answer about who decides. Literature tools converged on labels that count unless you reverse them, and for a weaker reason: competitive pressure to put a score on everything returned. There the test did move entries. Elicit went up to Human Approval once it shipped dual review. Semantic Scholar went into Standing Verdicts once its influential-citation classifier was read as what it is, a verdict on each item.
+That is not the axis failing to bite. In both cases there is a cause behind it. PRISMA asks authors to report how many reviewers screened each record and whether they worked independently. The evidence standards that journals enforce make a trail back to named people practically necessary, so every serious screening platform converged on the same answer about who decides. Literature tools converged on labels that count unless you reverse them, and for a weaker reason: competitive pressure to put a score on everything returned. There the test did move entries. Elicit went up to Human Approval once it shipped dual review. Semantic Scholar went into Standing Verdicts once its influential-citation classifier was read as what it is, a verdict on each item.
 
 Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools split by whether the tool can write into your file: the ones that write sit in Delegation, and the two that cannot sit in Critique. Review-it is the closest call. Its corrected document is an upgrade above a floor you already pay for, and whether the fixes apply in bulk or one at a time is not documented anywhere public, so even that placement rests on a fact a reader cannot check. The old lab section splits in two: a proposer whose verdict comes from an instrument, and one whose output is prose.
 

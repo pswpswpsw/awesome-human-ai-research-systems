@@ -24,21 +24,21 @@ These five are not a ranking. They are the filled-in squares of a small grid, an
 
 ### Where the five come from
 
-The categories are not a list to take on trust. Each one is a combination of answers to five questions you can ask about any tool, and the combinations no product occupies are simply absent. [METHOD.md](METHOD.md#the-facets) argues each question and names them Scope, Standing, Record, Target and Arbiter. This is the result.
+The categories are not a list to take on trust. Each one is a combination of answers to five questions you can ask about any tool. Some combinations are missing because no product occupies them, and one is missing because the grid rules it out. [METHOD.md](METHOD.md#the-facets) argues each question and names them Scope, Standing, Record, Target and Arbiter. This is the result.
 
-| Category | What the AI judges | What its verdict is worth | What leaves as evidence | Whose work | Who settles it |
+| Category | What the AI passes a verdict on | What that verdict is worth if you do nothing | What leaves as evidence of who decided | What the verdict is about | Who or what settles it |
 | --- | --- | --- | --- | --- | --- |
 | **Delegation** | the whole finished piece of work | it is the record | nothing, or a log that puts the decision on the model | the brief, or material you own | a reader |
 | **Standing Verdicts** | individual items | it stands until someone reverses it | nothing | work other people did | a reader |
-| **Human Approval** | individual items | it waits for a person's ruling, which gets recorded | an export that puts the decisions on reviewers | work other people did | a reader |
+| **Human Approval** | individual items | it waits for a person's ruling, which gets recorded | an export of the decision flow, built on rulings tied to named reviewers | work other people did | a reader |
 | **Critique** | individual items | it can never be the record | nothing | your own work | a reader |
 | **Bench** | a proposed condition | it waits on a commitment of materials and machine time | nothing | work not yet done | a run |
 
-Read the third column down the first four rows and there is a real scale: a verdict that is the record outright, then one that holds until you reverse it, then one that waits for your named ruling, then one that can never be the record. That is the closest thing here to a measure of how much supervision the arrangement asks of you, and it is one column rather than the categories themselves.
+Read the third column down the first four rows and there is a real scale: a verdict that is the record outright, then one that holds until you reverse it, then one that waits for your named ruling, then one that can never be the record. That is the closest thing here to a measure of how much say the researcher keeps, and it is one column rather than the categories themselves.
 
-**Bench is not the top of that scale.** It is the odd answer in the last column. Everywhere else a reader settles whether the AI was right; at the bench a measurement does. Ordering Delegation through Bench as rising human involvement would put Bench on a scale it is not on.
+**Bench is not the top of that scale.** It is the odd answer in the last column. Everywhere else a reader settles whether the AI was right; at the bench a measurement does. Reading that column as if it ran on into Bench would put Bench on a scale it is not on.
 
-A single quantity was tried here and it failed. An earlier draft called the categories a ladder with one rising quantity, and [METHOD.md](METHOD.md) records what happened: several categories scored zero on that quantity, and it told apart exactly one neighbouring pair. Five questions do the work one could not.
+A single quantity was tried here and it failed. An earlier draft called the categories a ladder with one rising quantity, and [METHOD.md](METHOD.md) records what happened: several categories scored zero on that quantity, and the ladder told apart exactly one neighbouring pair. Five questions do the work one could not.
 
 A few words recur below, so here they are once. A **systematic review** is a study of other studies: you search for everything published on a question, throw out what does not qualify, and summarise what is left. **Screening** is the throwing-out part, done in two stages, first on titles and abstracts and then on the full papers. A **PRISMA flow diagram** is the standard picture that accompanies such a review, showing how many records came in at each step and how many survived. Two reviewers work **blinded** when neither can see the other's calls, **adjudication** is how their disagreements get settled, and **inter-rater reliability** is how often they agreed.
 
@@ -115,7 +115,7 @@ The AI screens and ranks, a named person decides, and the trail it leaves is goo
 | [Elicit](https://elicit.com/) | Every disagreement between two independent reviewers; on the single-reviewer path, only the labels you open a paper to overturn | Ranked results, an include or exclude label on each record with a reason and a quote, extraction tables with sentence-level citations | Audit trail logging every decision, override and adjudication for PRISMA reconstruction, plus agreement statistics and an exported PRISMA flow diagram | No | hosted |
 | [Covidence](https://www.covidence.org/) | Every reference, twice over, plus every disagreement and every value the AI suggests pulling out | Screened evidence base and the extractions | PRISMA 2020 flow diagram and an inter-rater reliability report; the screening exports show how often named pairs of reviewers agreed rather than how either of them ruled on any record, and the per-reviewer export arrives at the extraction stage | No | hosted |
 | [Rayyan](https://www.rayyan.ai/) | Every decision, one record at a time, under a reviewer identity the trail keeps; nothing is settled by majority | Screened set, and the trail itself | Auto-generated PRISMA flow diagram and team audit log | No | hosted |
-| [Silvi](https://silvi.ai/) | How a disagreement between two blinded reviewers gets settled; individual study entry can be committed in bulk from the AI's suggestions | Screened set, with the model's labels suggested against criteria the reviewer sets out first | Decision log and PRISMA flow chart | No | hosted |
+| [Silvi](https://silvi.ai/) | How a disagreement between two blinded reviewers gets settled; the data entry for individual studies can be committed in bulk from the AI's suggestions | Screened set, with the model's labels suggested against criteria the reviewer sets out first | Decision log and PRISMA flow chart | No | hosted |
 | [DistillerSR](https://www.distillersr.com/) | Each reference and each extracted element, recorded against your name | Screened evidence base built for regulated work | Audit trail traceable to the individual reviewer, plus PRISMA flow | No | hosted |
 
 > **Elicit** has two paths that differ in who decides. Dual review, where two reviewers rule independently and disagreements come back for someone to settle, is an Enterprise feature, and the tier at which the PRISMA export becomes available is not documented. On the default single-reviewer path the model's label stands until you reverse it, which is [Standing Verdicts](#standing-verdicts) behaviour. It is filed here on the dual-review path, so a single-reviewer user is holding something closer to the category above.
@@ -143,7 +143,7 @@ The AI suggests the next experiment, you spend the materials and the machine tim
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to spend materials and machine time on the condition it suggests | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, which balances trying new settings against refining good ones, re-tuned on results you feed back by hand or through an optional robot link | No | No | hosted |
+| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to spend materials and machine time on the condition it suggests | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, balancing new settings against refinement of the good ones, re-tuned on results you feed back by hand or through an optional robot link | No | No | hosted |
 
 ## Contributing
 
