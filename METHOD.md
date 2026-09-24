@@ -128,6 +128,32 @@ You arrive here with a job to do, not with a question about how much say you kee
 
 The answer to that is that splitting them up is the point. Undermind's label is the record unless you open the paper and change it. Covidence advances nothing until two named people rule. A reader who treats those two as interchangeable because both "do screening" is exactly the reader this list is trying to reach. That is why the README's tables carry the distinction in columns of their own.
 
+## Why particular entries sit where they do
+
+Each of these is a placement that turned on one fact, recorded here so the README can stay a list.
+
+### Delegation
+
+**Question First** has two paths, and the human rules on different things in each. One offers you suggestions one at a time. The other, the one above, fills the whole plan in. It is filed on the fill-it-in path, because that is the path that produces a document with no record of what anyone examined.
+
+### Standing Verdicts
+
+**Ai2 Asta** also has a report path, which returns prose rather than a structured set of results. It is filed on the search and ranking path, because that is the one that puts a judgment on each paper. On the report path alone it would sit closer to Delegation.
+
+### Human Approval
+
+**Elicit** has two paths that differ in who decides. Dual review, where two reviewers rule independently and disagreements come back for someone to settle, is an Enterprise feature, and the tier at which the PRISMA export becomes available is not documented. On the default single-reviewer path the model's label stands until you reverse it, which is [Standing Verdicts](#standing-verdicts) behaviour. It is filed here on the dual-review path, so a single-reviewer user is holding something closer to the category above.
+
+**DistillerSR** also sells a fully automatic mode where a second AI checks the first one's screening decisions instead of a person. That mode on its own would fall into the category above. The row describes the workflow with a human in it, which is the one it is filed on.
+
+### Critique
+
+**SciScore** is sold to publishers as well as to authors, and the same reports run inside submission systems. It is filed on the author path, where you sign up yourself and the report comes back to whoever wrote the manuscript.
+
+**Reviewer3** has three paths, and the human rules on different things in each. The editor path is first-pass screening at scale. The reviewer path offers to help write a report on a manuscript someone else wrote, which would move it to [Delegation](#delegation). It is filed on the author path, and the company states the property that placement rests on in its own words: "We Verify. We Don't Generate." One caution: the site names no founders, no lab and no publication, and its pricing page is built by code in the browser, so the self-serve tier is published but a plain reader will not see it.
+
+**The closest thing this category rejects** is q.e.d Science. It cannot write into your file at all and still fails, because it sells suggestions for experiments, and telling you what to run next is not commenting on work you have already written or recorded. The test's second clause asks that the AI comment on work you have already written or recorded. Here that clause does the work by itself, which had not happened before.
+
 ## What the tests excluded
 
 Writing down what was cut, and why, is part of keeping the bar honest. The rules these cuts apply (the language-service exclusion, the detection-evasion exclusion, and the activity rule) live in [CONTRIBUTING.md](CONTRIBUTING.md), because that is what a contributor needs before opening a PR.

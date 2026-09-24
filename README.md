@@ -2,23 +2,15 @@
 
 > Systems where AI does part of the research and a named human is still answerable for it.
 
-**Human-AI research systems (HAIRS)** take over part of the judgment a researcher would otherwise make. Which papers are relevant. What a study reports. Whether a claim holds up. What to try next. What the paper should say. The work comes back with the researcher's name on it.
+**Human-AI research systems (HAIRS)** take over part of the judgment a researcher would otherwise make: which papers are relevant, what a study reports, whether a claim holds up, what to try next, what the paper should say. The work comes back with the researcher's name on it.
 
-The judgment moves. Who answers for it does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. That gap is what separates these tools from a general-purpose assistant, and it is why the useful question about any of them is not what it can do. It is what it leaves you answerable for.
+The judgment moves. Who answers for it does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. That gap is why the useful question about one of these tools is not what it can do. It is what it leaves you answerable for.
 
-These are tools for *doing* research, not tools that do the science for you. A model that predicts a protein structure or a material property is replacing a measurement, not replacing a judgment about how the work should go, so it is not on this list.
+A model that predicts a protein structure or a material property is replacing a measurement rather than a judgment, so it is not on this list.
 
-This list is cut on that question. Twenty-one systems a researcher can use today, in five categories: **delegation, standing verdicts, human approval, critique, bench**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
+Twenty-one systems a researcher can use today, in five categories. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
 
-## Three words this list turns on
-
-Several of the boundaries below rest on these three words. In ordinary use they are vaguer than they are here, so each one says what it excludes as well as what it covers. [METHOD.md](METHOD.md#three-words-the-tests-depend-on) states them in the form the tests use.
-
-**Item.** The unit the product itself invites you to accept or reject. A record in a screening set (one paper being judged into or out of a review), a row in an extraction table (the numbers pulled out of one study), a citation statement, a proposed experimental condition. *Not an item:* a passage inside a document the vendor never asks you to rule on.
-
-**Verdict.** A claim the AI makes about one item: whether it is fit for the purpose, how relevant it is to criteria you stated, or what value can be read out of it. *Not a verdict:* describing what an item says, or putting items in rank order. Semantic Scholar's passage labels describe. Elicit's include or exclude labels assert. What puts Semantic Scholar on this list is a different feature, a classifier that flags each highly influential citation. The rank-order half of that exclusion is doing real work: it is why a search tool that only ranks results is not on this list at all.
-
-**Standing.** What a verdict is worth before anyone acts on it. A verdict **stands** when it is the record that counts for the decision about that item unless a human steps in. Undermind's label on each paper is the screening record until someone reverses it, so it stands. Covidence's suggested extraction value records nothing until a reviewer accepts it, so it does not. This is the word the second category is named for. A *standing verdict* is the machine's call on one item, already counting as the record unless someone reverses it. That category asks for two further things: every assertion either points to a source you can open or is marked as written by the model, and nothing larger than structured working material leaves the session, a table of labelled papers rather than a document you would submit.
+**Three words the categories turn on.** An **item** is the unit the product itself invites you to accept or reject: a record in a screening set, a row in an extraction table, a citation statement, a proposed experimental condition. A **verdict** is a claim the AI makes about one item; describing what an item says, or putting items in rank order, is not a verdict. A verdict **stands** when it is the record that counts for that item unless a human steps in.
 
 ## At a glance
 
@@ -30,62 +22,19 @@ Several of the boundaries below rest on these three words. In ordinary use they 
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes reaches your file unless you act on that specific item. | 2 |
 | [Bench](#bench) | Whether to spend the materials and the machine time. A measurement, not a reader, decides who was right. | 1 |
 
-These five are not a ranking. They are the filled-in squares of a small grid, and [METHOD.md](METHOD.md#the-facets) lays out the five questions that produce them. Across the first four, two things change: what the AI passes a verdict on, and what that verdict is worth before you rule on it. A verdict can be the record outright, the record until you reverse it, something that waits for your named ruling, or something that can never be the record. Bench sits apart because there a run rather than a reader settles who was right. The sections run in an order where the researcher's say broadly rises as you read down, which is a reading order and not a score.
-
-### Where the five come from
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/categories-dark.svg">
   <img alt="A partial view showing two of the five facets. Four categories sit in order on one qualitative scale, what the AI&#39;s call on an item is worth before you act: in Delegation it is the record, in Standing Verdicts it stands until someone reverses it, in Human Approval it waits for a named person&#39;s recorded ruling, in Critique it can never be the record. Bench sits off that scale because it answers a different question, who settles whether the AI was right: a reader for the other four, a run for Bench. Placement also depends on Scope, Record and Target." src="docs/categories-light.svg" width="860">
 </picture>
 
-The categories are not a list to take on trust. Each is a combination of answers to five questions about any tool, argued and tabulated in [METHOD.md](METHOD.md#the-facets). The figure shows two of them.
-
-A single quantity was tried here and it failed. An earlier draft called the categories a ladder with one rising quantity; several scored zero on it, and it told apart exactly one neighbouring pair. Five questions do the work one could not.
-
-A few words recur below, so here they are once. A **systematic review** is a study of other studies: you search for everything published on a question, throw out what does not qualify, and summarise what is left. **Screening** is the throwing-out part, done in two stages, first on titles and abstracts and then on the full papers. A **PRISMA flow diagram** is the standard picture that accompanies such a review, showing how many records came in at each step and how many survived. Two reviewers work **blinded** when neither can see the other's calls, **adjudication** is how their disagreements get settled, and **inter-rater reliability** is how often they agreed.
-
 <details>
-<summary><b>How much of the work each tool touches</b></summary>
+<summary><b>How to read the tables</b></summary>
 
+*The human rules on* is the one column that is our reading rather than a quotation, worked out from what the documentation does and does not require; [WORKFLOWS.md](WORKFLOWS.md) follows four systems through a real task to show that reading instead of asserting it. *Decision record* is what leaves the platform as evidence of how the decisions were reached, and who it puts them on. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable, and `free` marks a service the company documents as free outright.
 
-The categories say nothing about how big a bite each tool takes, and that varies far more than the names suggest. A tool that helps you sharpen a research question and an agent that hands back a finished paper end up in the same category, because you judge both the same way: once, at the end.
+**†** marks something the company published but does not show you, in page source or a script the browser never displays. It proves the wording was distributed, not that the feature is switched on for you.
 
-| Span | What it covers | Systems |
-| --- | --- | --- |
-| **End to end** | a question goes in, something you could submit comes out | ClawsGO Science, Edison Platform, AI-Researcher |
-| **One workflow** | a complete sub-workflow: screening through PRISMA, a literature sweep, an optimization loop | Elicit, Covidence, Rayyan, Silvi, DistillerSR, Ai2 Asta, Atinary SDLabs |
-| **One step** | a single move inside the work | Question First, Review-it, Granted AI, Labguru Assistant, Consensus, Undermind, OpenScholar, scite, Semantic Scholar, SciScore, Reviewer3 |
-
-How much a tool takes on, its **span**, is independent of which category it lands in, which is why it gets its own table instead of another column. All three end-to-end agents sit in Delegation next to four one-step tools. The systematic-review platforms each cover a whole workflow and all sit in Human Approval, while the other whole-workflow entries land in Standing Verdicts and Bench. Read both tables together: one tells you how much a tool is trying to do, the other tells you what it leaves you answerable for. A small tool can take more from you than a big one.
-
-</details>
-
-<details>
-<summary><b>If you came here with a task</b></summary>
-
-
-The categories are not stages of research, so one task usually reaches across more than one. That is the point. Two tools you would have compared side by side often differ in what they leave you responsible for.
-
-| If your task is | Look in | What separates the options |
-| --- | --- | --- |
-| Finding papers on a question | [Standing Verdicts](#standing-verdicts) | Every system here judges individual items rather than only ranking them. A search engine that judges none is not on this list at all |
-| Screening records for a systematic review | [Standing Verdicts](#standing-verdicts), [Human Approval](#human-approval) | Whether a label counts by default, or waits for a ruling the platform ties to a named reviewer and can export as a decision flow |
-| Extracting data from papers | [Standing Verdicts](#standing-verdicts), [Human Approval](#human-approval) | The same split: Undermind's labels count until you check them, Covidence's extracted values are accepted one at a time |
-| Getting a draft written | [Delegation](#delegation) | Six of the seven return one. What varies is what you supply: a question, a funding call, or a pile of reference papers |
-| Getting a manuscript checked before submission | [Critique](#critique), [Delegation](#delegation) | Whether the tool can put text into your file. The reviewers in Delegation can; Critique tools cannot unless you act on that specific item |
-| Deciding what to run next at the bench | [Bench](#bench), [Delegation](#delegation) | Whether a measured result feeds back into the next suggestion, or the advice just lands in your notebook |
-
-</details>
-
-<details>
-<summary><b>How to read the tables</b> (column meanings, access values, and the &#8224; mark)</summary>
-
-Three column headings need a word. *Decision record* is what leaves the platform as evidence of how the decisions were reached, and who it puts them on. *Access* says how you get at it. `hosted` is a service you log into. `self-host` is code you run yourself. `install into a host` is a library some other program runs. `open weights` means you can download the model too. And `free` marks a service the company documents as free outright, rather than a tier that may change.
-
-*The human rules on* is the one column that is our reading rather than a quotation. No company describes its product in these terms, so each cell is worked out from what the documentation does and does not require. [WORKFLOWS.md](WORKFLOWS.md) follows four systems through a real task, which is where that reading gets shown instead of asserted. The other five columns you can check against a page directly.
-
-**†** marks something the company published but does not show you: the wording sits in the page source, in a schema.org block (a hidden chunk of structured data describing the page), or in a JavaScript file the browser runs but never displays, so a reader in a normal browser will not find it without developer tools. A string in a bundle proves the wording was distributed, not that the feature is switched on for you. It is also information in its own right, because a product whose load-bearing facts live only in compiled code has told you something about itself.
+Recurring terms: a **systematic review** is a study of other studies; **screening** is throwing out what does not qualify, on titles and abstracts first and then full papers; a **PRISMA flow diagram** is the standard picture showing how many records survived each step; reviewers are **blinded** when neither can see the other's calls, **adjudication** settles their disagreements, and **inter-rater reliability** is how often they agreed.
 
 </details>
 
@@ -105,7 +54,6 @@ You supply a question or some source material, the system hands back something t
 | [Labguru Assistant](https://www.labguru.com/labguru-assistant) | No gating checkpoint; the help centre suggests reviewing the response, but nothing waits on it | Protocol parameters, anomaly flags, recommended next step, with links to related Labguru items but no citation behind any claim | No | Its output is saved into your notebook | hosted |
 | [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | The idea, or merely a set of reference papers | Full paper and a code workspace | No | It is the draft | self-host |
 
-> **Question First** has two paths, and the human rules on different things in each. One offers you suggestions one at a time. The other, the one above, fills the whole plan in. It is filed on the fill-it-in path, because that is the path that produces a document with no record of what anyone examined.
 
 ## Standing Verdicts
 
@@ -120,7 +68,6 @@ The AI goes and gets work other people did, labels it, and arranges it, then sto
 | [OpenScholar](https://github.com/AkariAsai/OpenScholar) | What the evidence means | Answers whose claims are attributed to sources; released weights, reranker, and a 45M-paper index. [Published in *Nature*](https://www.nature.com/articles/s41586-025-10072-4); the hosted demo now redirects to Asta | No | No | self-host, open weights |
 | [scite](https://scite.ai/) | Which references survive the flags | Each citation statement sorted into supporting, contrasting or mentioning; a check of an uploaded bibliography for retractions and contested references | No | No | hosted |
 
-> **Ai2 Asta** also has a report path, which returns prose rather than a structured set of results. It is filed on the search and ranking path, because that is the one that puts a judgment on each paper. On the report path alone it would sit closer to Delegation.
 
 ## Human Approval
 
@@ -134,9 +81,6 @@ The AI screens and ranks, a named person decides, and the trail it leaves is goo
 | [Silvi](https://silvi.ai/) | How a disagreement between two blinded reviewers gets settled; the data entry for individual studies can be committed in bulk from the AI's suggestions | Screened set, with the model's labels suggested against criteria the reviewer sets out first | Decision log and PRISMA flow chart | No | hosted |
 | [DistillerSR](https://www.distillersr.com/) | Each reference and each extracted element, recorded against your name | Screened evidence base built for regulated work | Audit trail traceable to the individual reviewer, plus PRISMA flow | No | hosted |
 
-> **Elicit** has two paths that differ in who decides. Dual review, where two reviewers rule independently and disagreements come back for someone to settle, is an Enterprise feature, and the tier at which the PRISMA export becomes available is not documented. On the default single-reviewer path the model's label stands until you reverse it, which is [Standing Verdicts](#standing-verdicts) behaviour. It is filed here on the dual-review path, so a single-reviewer user is holding something closer to the category above.
->
-> **DistillerSR** also sells a fully automatic mode where a second AI checks the first one's screening decisions instead of a person. That mode on its own would fall into the category above. The row describes the workflow with a human in it, which is the one it is filed on.
 
 ## Critique
 
@@ -147,11 +91,6 @@ The AI reads your work and tells you what it thinks. It has no way to get any of
 | [SciScore](https://sciscore.com/) | Each missing rigour element, and every edit: it names the gap, you write the sentence | Rigor, key-resources and statistics tables, with RRIDs (research resource identifiers) checked against a registry, plus a reporting score | No | No | hosted |
 | [Reviewer3](https://reviewer3.com/) | Every finding, one at a time, and every word of the revision | Claim-by-claim report: each claim checked against the evidence reported, references verified, plus retraction, self-citation and AI-text flags | No | No | hosted |
 
-> **SciScore** is sold to publishers as well as to authors, and the same reports run inside submission systems. It is filed on the author path, where you sign up yourself and the report comes back to whoever wrote the manuscript.
->
-> **Reviewer3** has three paths, and the human rules on different things in each. The editor path is first-pass screening at scale. The reviewer path offers to help write a report on a manuscript someone else wrote, which would move it to [Delegation](#delegation). It is filed on the author path, and the company states the property that placement rests on in its own words: "We Verify. We Don't Generate." One caution: the site names no founders, no lab and no publication, and its pricing page is built by code in the browser, so the self-serve tier is published but a plain reader will not see it.
->
-> **The closest thing this category rejects** is q.e.d Science. It cannot write into your file at all and still fails, because it sells suggestions for experiments, and telling you what to run next is not commenting on work you have already written or recorded. The test's second clause asks that the AI comment on work you have already written or recorded. Here that clause does the work by itself, which had not happened before.
 
 ## Bench
 
@@ -163,7 +102,7 @@ The AI suggests the next experiment, you spend the materials and the machine tim
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs here and how entries are placed. See [METHOD.md](METHOD.md) for the reasoning behind the five categories and [what was considered and cut](METHOD.md#what-the-tests-excluded). See [WORKFLOWS.md](WORKFLOWS.md) for four systems traced through a real task, which is where the rows stop being compressed. One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
+[CONTRIBUTING.md](CONTRIBUTING.md) has what belongs here and how entries are placed. One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
 
 ## License
 
