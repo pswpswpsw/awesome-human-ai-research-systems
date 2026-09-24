@@ -4,7 +4,7 @@
 
 **Human-AI research systems (HAIRS)** take over part of the judgment a researcher would otherwise make. Which papers are relevant. What a study reports. Whether a claim holds up. What to try next. What the paper should say. The work comes back with the researcher's name on it.
 
-The judgment moves. Who answers for it does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. That gap between who did the work and who answers for it is what separates these tools from a general-purpose assistant, and it is why the useful question about any of them is not what it can do. It is what it leaves you answerable for.
+The judgment moves. Who answers for it does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. That gap is what separates these tools from a general-purpose assistant, and it is why the useful question about any of them is not what it can do. It is what it leaves you answerable for.
 
 These are tools for *doing* research, not tools that do the science for you. A model that predicts a protein structure or a material property is replacing a measurement, not replacing a judgment about how the work should go, so it is not on this list.
 
@@ -39,27 +39,17 @@ These five are not a ranking. They are the filled-in squares of a small grid, an
   <img alt="A partial view showing two of the five facets. Four categories sit in order on one qualitative scale, what the AI&#39;s call on an item is worth before you act: in Delegation it is the record, in Standing Verdicts it stands until someone reverses it, in Human Approval it waits for a named person&#39;s recorded ruling, in Critique it can never be the record. Bench sits off that scale because it answers a different question, who settles whether the AI was right: a reader for the other four, a run for Bench. Placement also depends on Scope, Record and Target." src="docs/categories-light.svg" width="860">
 </picture>
 
-The categories are not a list to take on trust. Each one is a combination of answers to five questions you can ask about any tool. Some combinations are missing because no product occupies them, and one is missing because the grid rules it out. [METHOD.md](METHOD.md#the-facets) argues each question and names them Scope, Standing, Record, Target and Arbiter. This is the result.
+The categories are not a list to take on trust. Each is a combination of answers to five questions about any tool, argued and tabulated in [METHOD.md](METHOD.md#the-facets). The figure shows two of them.
 
-| Category | What the AI passes a verdict on | What that verdict is worth if you do nothing | What leaves as evidence of who decided | What the verdict is about | Who or what settles it |
-| --- | --- | --- | --- | --- | --- |
-| **Delegation** | the whole finished piece of work | it is the record | nothing, or a log that puts the decision on the model | the brief, or material you own | a reader |
-| **Standing Verdicts** | individual items | it stands until someone reverses it | nothing | work other people did | a reader |
-| **Human Approval** | individual items | it waits for a person's ruling, which gets recorded | an export of the decision flow, built on rulings tied to named reviewers | work other people did | a reader |
-| **Critique** | individual items | it can never be the record | nothing | your own work | a reader |
-| **Bench** | a proposed condition | it waits on a commitment of materials and machine time | nothing | work not yet done | a run |
-
-Read the third column down the first four rows and there is a real scale: a verdict that is the record outright, then one that holds until you reverse it, then one that waits for your named ruling, then one that can never be the record. That is the closest thing here to a measure of how much say the researcher keeps, and it is one column rather than the categories themselves.
-
-**Bench is not the top of that scale.** It is the odd answer in the last column. Everywhere else a reader settles whether the AI was right; at the bench a measurement does. Reading that column as if it ran on into Bench would put Bench on a scale it is not on.
-
-A single quantity was tried here and it failed. An earlier draft called the categories a ladder with one rising quantity, and [METHOD.md](METHOD.md) records what happened: several categories scored zero on that quantity, and the ladder told apart exactly one neighbouring pair. Five questions do the work one could not.
+A single quantity was tried here and it failed. An earlier draft called the categories a ladder with one rising quantity; several scored zero on it, and it told apart exactly one neighbouring pair. Five questions do the work one could not.
 
 A few words recur below, so here they are once. A **systematic review** is a study of other studies: you search for everything published on a question, throw out what does not qualify, and summarise what is left. **Screening** is the throwing-out part, done in two stages, first on titles and abstracts and then on the full papers. A **PRISMA flow diagram** is the standard picture that accompanies such a review, showing how many records came in at each step and how many survived. Two reviewers work **blinded** when neither can see the other's calls, **adjudication** is how their disagreements get settled, and **inter-rater reliability** is how often they agreed.
 
-### How much of the work it touches
+<details>
+<summary><b>How much of the work each tool touches</b></summary>
 
-The categories above tell you what you still decide. They say nothing about how big a bite each tool takes, and that varies far more than the category names suggest. A tool that helps you sharpen a research question and an agent that hands back a finished paper end up in the same category, because you judge both the same way: once, at the end.
+
+The categories say nothing about how big a bite each tool takes, and that varies far more than the names suggest. A tool that helps you sharpen a research question and an agent that hands back a finished paper end up in the same category, because you judge both the same way: once, at the end.
 
 | Span | What it covers | Systems |
 | --- | --- | --- |
@@ -69,24 +59,35 @@ The categories above tell you what you still decide. They say nothing about how 
 
 How much a tool takes on, its **span**, is independent of which category it lands in, which is why it gets its own table instead of another column. All three end-to-end agents sit in Delegation next to four one-step tools. The systematic-review platforms each cover a whole workflow and all sit in Human Approval, while the other whole-workflow entries land in Standing Verdicts and Bench. Read both tables together: one tells you how much a tool is trying to do, the other tells you what it leaves you answerable for. A small tool can take more from you than a big one.
 
-### If you came here with a task
+</details>
+
+<details>
+<summary><b>If you came here with a task</b></summary>
+
 
 The categories are not stages of research, so one task usually reaches across more than one. That is the point. Two tools you would have compared side by side often differ in what they leave you responsible for.
 
 | If your task is | Look in | What separates the options |
 | --- | --- | --- |
-| Finding papers on a question | [Standing Verdicts](#standing-verdicts) | Every system here attaches a judgment to individual items rather than only ranking them. A search engine that attaches none is not on this list at all |
-| Screening records for a systematic review | [Standing Verdicts](#standing-verdicts), [Human Approval](#human-approval) | Whether a label counts by default or waits for your named decision. Only the second holds a ruling on each record that traces back to a named reviewer, and leaves a decision flow a reader can rebuild |
-| Extracting data from papers | [Standing Verdicts](#standing-verdicts), [Human Approval](#human-approval) | Same split: Undermind's labels on each paper count until you check them, Covidence's extracted values have to be accepted one at a time |
-| Getting a draft written | [Delegation](#delegation) | Six of the seven entries there return one. What varies is what you supply: a question, a funding call, or only a pile of reference papers |
+| Finding papers on a question | [Standing Verdicts](#standing-verdicts) | Every system here judges individual items rather than only ranking them. A search engine that judges none is not on this list at all |
+| Screening records for a systematic review | [Standing Verdicts](#standing-verdicts), [Human Approval](#human-approval) | Whether a label counts by default, or waits for a ruling the platform ties to a named reviewer and can export as a decision flow |
+| Extracting data from papers | [Standing Verdicts](#standing-verdicts), [Human Approval](#human-approval) | The same split: Undermind's labels count until you check them, Covidence's extracted values are accepted one at a time |
+| Getting a draft written | [Delegation](#delegation) | Six of the seven return one. What varies is what you supply: a question, a funding call, or a pile of reference papers |
 | Getting a manuscript checked before submission | [Critique](#critique), [Delegation](#delegation) | Whether the tool can put text into your file. The reviewers in Delegation can; Critique tools cannot unless you act on that specific item |
 | Deciding what to run next at the bench | [Bench](#bench), [Delegation](#delegation) | Whether a measured result feeds back into the next suggestion, or the advice just lands in your notebook |
 
-Three of the column headings below need a word of explanation. *Decision record* means what leaves the platform as evidence of how the decisions were reached, and who it puts them on. *Access* says how you get at it. `hosted` is a service you log into. `self-host` is code you run yourself. `install into a host` is a library some other program runs. `open weights` means you can download the model too. And `free` marks a service the company documents as free outright, rather than a tier that may change.
+</details>
 
-*The human rules on* is the one column that is our reading rather than a quotation. No company writes about its product in these terms, so each cell is worked out from what the documentation does and does not require. [WORKFLOWS.md](WORKFLOWS.md) follows four systems through a real task, which is where that reading gets shown instead of asserted. The other five columns you can check against a page directly.
+<details>
+<summary><b>How to read the tables</b> (column meanings, access values, and the &#8224; mark)</summary>
 
-**†** marks something the company published but does not show you. The wording sits in the page source, in a schema.org block (a hidden chunk of structured data describing the page), or in a JavaScript file the browser runs but never displays, so someone checking in a normal browser will not find it without developer tools. The mark is about where the evidence lives. It says the company published that wording, which is not the same as the feature being switched on for you: a string in a bundle proves it was distributed, not that you can use it. The mark also tells you something in its own right, because a product whose load-bearing facts live only in compiled code has revealed something about itself.
+Three column headings need a word. *Decision record* is what leaves the platform as evidence of how the decisions were reached, and who it puts them on. *Access* says how you get at it. `hosted` is a service you log into. `self-host` is code you run yourself. `install into a host` is a library some other program runs. `open weights` means you can download the model too. And `free` marks a service the company documents as free outright, rather than a tier that may change.
+
+*The human rules on* is the one column that is our reading rather than a quotation. No company describes its product in these terms, so each cell is worked out from what the documentation does and does not require. [WORKFLOWS.md](WORKFLOWS.md) follows four systems through a real task, which is where that reading gets shown instead of asserted. The other five columns you can check against a page directly.
+
+**†** marks something the company published but does not show you: the wording sits in the page source, in a schema.org block (a hidden chunk of structured data describing the page), or in a JavaScript file the browser runs but never displays, so a reader in a normal browser will not find it without developer tools. A string in a bundle proves the wording was distributed, not that the feature is switched on for you. It is also information in its own right, because a product whose load-bearing facts live only in compiled code has told you something about itself.
+
+</details>
 
 ---
 
