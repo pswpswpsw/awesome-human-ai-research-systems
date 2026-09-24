@@ -12,13 +12,13 @@ This list is cut on that question. Twenty-one systems a researcher can use today
 
 ## Three words this list turns on
 
-Every boundary below rests on these three. In ordinary use they are vaguer than they are here, so each one says what it excludes as well as what it covers. [METHOD.md](METHOD.md#three-words-the-tests-depend-on) argues them at length.
+Several of the boundaries below rest on these three words. In ordinary use they are vaguer than they are here, so each one says what it excludes as well as what it covers. [METHOD.md](METHOD.md#three-words-the-tests-depend-on) states them in the form the tests use.
 
-**Item.** The unit the product itself asks you to accept or reject, one at a time. A record in a screening set, a row in an extraction table, a citation statement, a proposed experiment. *Not an item:* a passage buried inside a document the vendor never puts in front of you to rule on. If the tool never asks, it is not an item.
+**Item.** The unit the product itself invites you to accept or reject. A record in a screening set (one paper being judged into or out of a review), a row in an extraction table (the numbers pulled out of one study), a citation statement, a proposed experimental condition. *Not an item:* a passage inside a document the vendor never asks you to rule on.
 
-**Verdict.** A claim the AI makes about one item: whether it is fit for the purpose, how relevant it is to criteria you stated, or what value can be read out of it. *Not a verdict:* describing what an item says, or putting items in rank order. Semantic Scholar's passage labels describe. Elicit's include or exclude labels assert. That line is doing real work, because it is why a search tool that only ranks results is not on this list at all.
+**Verdict.** A claim the AI makes about one item: whether it is fit for the purpose, how relevant it is to criteria you stated, or what value can be read out of it. *Not a verdict:* describing what an item says, or putting items in rank order. Semantic Scholar's passage labels describe. Elicit's include or exclude labels assert. What puts Semantic Scholar on this list is a different feature, a classifier that flags each highly influential citation. The rank-order half of that exclusion is doing real work: it is why a search tool that only ranks results is not on this list at all.
 
-**Standing.** What a verdict is worth before anyone acts on it. A verdict **stands** when it is the record that counts for that decision unless a human steps in. Undermind's label on each paper is the screening record until someone reverses it, so it stands. Covidence's suggested extraction value records nothing until a reviewer accepts it, so it does not. This is the word the second category is named for: a *standing verdict* is the machine's call on one item, already counting as the record, waiting for you to reverse it or leave it be.
+**Standing.** What a verdict is worth before anyone acts on it. A verdict **stands** when it is the record that counts for the decision about that item unless a human steps in. Undermind's label on each paper is the screening record until someone reverses it, so it stands. Covidence's suggested extraction value records nothing until a reviewer accepts it, so it does not. This is the word the second category is named for. A *standing verdict* is the machine's call on one item, already counting as the record unless someone reverses it. That category asks for two further things: every assertion either points to a source you can open or is marked as written by the model, and nothing larger than structured working material leaves the session, a table of labelled papers rather than a document you would submit.
 
 ## At a glance
 
@@ -36,7 +36,7 @@ These five are not a ranking. They are the filled-in squares of a small grid, an
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/categories-dark.svg">
-  <img alt="Four categories on one scale: Delegation, where the machine&#39;s call is the record; Standing Verdicts, where it stands until someone reverses it; Human Approval, where it waits for a named person&#39;s ruling; Critique, where it can never be the record. Bench sits off that scale, because there a run rather than a reader settles who was right." src="docs/categories-light.svg" width="860">
+  <img alt="A partial view showing two of the five facets. Four categories sit in order on one qualitative scale, what the AI&#39;s call on an item is worth before you act: in Delegation it is the record, in Standing Verdicts it stands until someone reverses it, in Human Approval it waits for a named person&#39;s recorded ruling, in Critique it can never be the record. Bench sits off that scale because it answers a different question, who settles whether the AI was right: a reader for the other four, a run for Bench. Placement also depends on Scope, Record and Target." src="docs/categories-light.svg" width="860">
 </picture>
 
 The categories are not a list to take on trust. Each one is a combination of answers to five questions you can ask about any tool. Some combinations are missing because no product occupies them, and one is missing because the grid rules it out. [METHOD.md](METHOD.md#the-facets) argues each question and names them Scope, Standing, Record, Target and Arbiter. This is the result.
@@ -112,7 +112,7 @@ The AI goes and gets work other people did, labels it, and arranges it, then sto
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [Semantic Scholar](https://www.semanticscholar.org/) | Everything the evidence is used for | Ranked search over 200M+ papers, citation graph, TLDRs, passage labels and cited-passage answers that describe a paper rather than rate it | No | No | hosted, free |
+| [Semantic Scholar](https://www.semanticscholar.org/) | Everything the evidence is used for | Ranked search over 200M+ papers, citation graph, TLDRs, passage labels and cited-passage answers that describe a paper rather than rate it, plus the classifier that flags each highly influential citation, which is the per-item judgment that puts it on this list | No | No | hosted, free |
 | [Consensus](https://consensus.app/) | Whether a tally really settles anything, and every sentence you cite in | Ranked papers over ~220M, a snapshot of each study, yes/no claim tally with quotes | No | No | hosted |
 | [Undermind](https://www.undermind.ai/) | What the material means and which papers get cited | Ranked table with match scores, stated inclusion reasons, and a coverage estimate for the run | No | No | hosted |
 | [Ai2 Asta](https://asta.allen.ai/) | Which relevance tier to trust, and every sentence you write | Per-paper relevance tiers with stated criteria †; reports where anything it wrote without a citation is labelled as model-generated † | No | No, export only | hosted |
