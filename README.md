@@ -10,6 +10,16 @@ These are tools for *doing* research, not tools that do the science for you. A m
 
 This list is cut on that question. Twenty-one systems a researcher can use today, in five categories: **delegation, standing verdicts, human approval, critique, bench**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
+## Three words this list turns on
+
+Every boundary below rests on these three. In ordinary use they are vaguer than they are here, so each one says what it excludes as well as what it covers. [METHOD.md](METHOD.md#three-words-the-tests-depend-on) argues them at length.
+
+**Item.** The unit the product itself asks you to accept or reject, one at a time. A record in a screening set, a row in an extraction table, a citation statement, a proposed experiment. *Not an item:* a passage buried inside a document the vendor never puts in front of you to rule on. If the tool never asks, it is not an item.
+
+**Verdict.** A claim the AI makes about one item: whether it is fit for the purpose, how relevant it is to criteria you stated, or what value can be read out of it. *Not a verdict:* describing what an item says, or putting items in rank order. Semantic Scholar's passage labels describe. Elicit's include or exclude labels assert. That line is doing real work, because it is why a search tool that only ranks results is not on this list at all.
+
+**Standing.** What a verdict is worth before anyone acts on it. A verdict **stands** when it is the record that counts for that decision unless a human steps in. Undermind's label on each paper is the screening record until someone reverses it, so it stands. Covidence's suggested extraction value records nothing until a reviewer accepts it, so it does not. This is the word the second category is named for: a *standing verdict* is the machine's call on one item, already counting as the record, waiting for you to reverse it or leave it be.
+
 ## At a glance
 
 | Category | What the human still rules on | Entries |
