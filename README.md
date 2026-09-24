@@ -10,6 +10,8 @@ These are tools for *doing* research, not tools that do the science for you. A m
 
 This list is cut on that question. Twenty-one systems a researcher can use today, in five categories: **delegation, standing verdicts, human approval, critique, bench**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
+A few words recur below, so here they are once. A **systematic review** is a study of other studies: you search for everything published on a question, throw out what does not qualify, and summarise what is left. **Screening** is the throwing-out part, done in two stages, first on titles and abstracts and then on the full papers. A **PRISMA flow diagram** is the standard picture that accompanies such a review, showing how many records came in at each step and how many survived. Two reviewers work **blinded** when neither can see the other's calls, **adjudication** is how their disagreements get settled, and **inter-rater reliability** is how often they agreed.
+
 ## At a glance
 
 | Category | What the human still rules on | Entries |
@@ -20,7 +22,7 @@ This list is cut on that question. Twenty-one systems a researcher can use today
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes reaches your file unless you act on that specific item. | 2 |
 | [Bench](#bench) | Whether to spend the materials and the machine time. A measurement, not a reader, decides who was right. | 1 |
 
-These five are not a ranking. They are the filled-in squares of a small grid, and [METHOD.md](METHOD.md#the-facets) lays out the five questions that produce them. Across the first four, two things change: what the AI passes a verdict on, and what that verdict is worth before you rule on it. It can be the record outright, the record until you reverse it, something that waits for your named ruling, or something that can never be the record. Bench sits apart because there a run rather than a reader settles who was right. The sections run in an order where the researcher's say broadly rises as you read down, which is a reading order and not a score.
+These five are not a ranking. They are the filled-in squares of a small grid, and [METHOD.md](METHOD.md#the-facets) lays out the five questions that produce them. Across the first four, two things change: what the AI passes a verdict on, and what that verdict is worth before you rule on it. A verdict can be the record outright, the record until you reverse it, something that waits for your named ruling, or something that can never be the record. Bench sits apart because there a run rather than a reader settles who was right. The sections run in an order where the researcher's say broadly rises as you read down, which is a reading order and not a score.
 
 ### How much of the work it touches
 
@@ -32,7 +34,7 @@ The categories above tell you what you still decide. They say nothing about how 
 | **One workflow** | a complete sub-workflow: screening through PRISMA, a literature sweep, an optimization loop | Elicit, Covidence, Rayyan, Silvi, DistillerSR, Ai2 Asta, Atinary SDLabs |
 | **One step** | a single move inside the work | Question First, Review-it, Granted AI, Labguru Assistant, Consensus, Undermind, OpenScholar, scite, Semantic Scholar, SciScore, Reviewer3 |
 
-How much a tool takes on is independent of which category it lands in, which is why it gets its own table instead of another column. All three end-to-end agents sit in Delegation next to four one-step tools. The systematic-review platforms each cover a whole workflow and all sit in Human Approval, while the other whole-workflow entries land in Standing Verdicts and Bench. Read both tables together: one tells you how much a tool is trying to do, the other tells you what it leaves you answerable for. A small tool can take more from you than a big one.
+How much a tool takes on, its **span**, is independent of which category it lands in, which is why it gets its own table instead of another column. All three end-to-end agents sit in Delegation next to four one-step tools. The systematic-review platforms each cover a whole workflow and all sit in Human Approval, while the other whole-workflow entries land in Standing Verdicts and Bench. Read both tables together: one tells you how much a tool is trying to do, the other tells you what it leaves you answerable for. A small tool can take more from you than a big one.
 
 ### If you came here with a task
 
@@ -47,7 +49,7 @@ The categories are not stages of research, so one task usually reaches across mo
 | Getting a manuscript checked before submission | [Critique](#critique), [Delegation](#delegation) | Whether the tool can put text into your file. The reviewers in Delegation can; Critique tools cannot unless you act on that specific item |
 | Deciding what to run next at the bench | [Bench](#bench), [Delegation](#delegation) | Whether a measured result feeds back into the next suggestion, or the advice just lands in your notebook |
 
-Three of the column headings below need a word of explanation. *Decision record* means what leaves the platform as evidence of how the decisions were reached, and who it puts them on. *Access* says how you get at it: `hosted` is a service you log into, `self-host` is code you run yourself, `install into a host` is a library some other program runs, `open weights` means you can download the model too, and `free` marks a service the company documents as free outright, rather than a tier that may change.
+Three of the column headings below need a word of explanation. *Decision record* means what leaves the platform as evidence of how the decisions were reached, and who it puts them on. *Access* says how you get at it. `hosted` is a service you log into. `self-host` is code you run yourself. `install into a host` is a library some other program runs. `open weights` means you can download the model too. And `free` marks a service the company documents as free outright, rather than a tier that may change.
 
 *The human rules on* is the one column that is our reading rather than a quotation. No company writes about its product in these terms, so each cell is worked out from what the documentation does and does not require. [WORKFLOWS.md](WORKFLOWS.md) follows four systems through a real task, which is where that reading gets shown instead of asserted. The other five columns you can check against a page directly.
 
@@ -61,9 +63,9 @@ You write the brief, the system hands back something that already looks finished
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [ClawsGO Science](https://clawsgo.ai/) | The question, then keep / revise / discard the whole study | Compiled LaTeX manuscript, figures, analyses | Screening log, which records the model's own inclusion calls rather than any reviewer's; shown only in a sample run on the homepage, not in the documentation | It *is* the draft | hosted |
+| [ClawsGO Science](https://clawsgo.ai/) | The question, then keep / revise / discard the whole study | Manuscript compiled from LaTeX, a typesetting system used for science papers, plus figures and analyses | Screening log, which records the model's own inclusion calls rather than any reviewer's; shown only in a sample run on the homepage, not in the documentation | It *is* the draft | hosted |
 | [Edison Platform](https://platform.edisonscientific.com/) *(the commercial spinout of FutureHouse)* | The question, then keep / revise / discard the report | Cited report from Kosmos or one of four narrower agents, with each conclusion traceable back to the code or the passage that produced it | No | It is the draft | hosted |
-| [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* | The brief and target format, then the filled-in plan | Manuscript, grant, or preregistration draft, with citations it went and found itself | No | It is the draft | hosted, free † |
+| [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* | The brief and target format, then the filled-in plan | Manuscript, grant, or preregistration draft (a study plan filed before the work starts), with citations it went and found itself | No | It is the draft | hosted, free † |
 | [Review-it](https://review-it.ai/) | Which manuscript to upload, then the returned document | Section scores, weakness flags, fabricated-citation flags, journal fit, and on an upgrade tier a corrected document | No | Yes, on the upgrade tier †; whether the fixes apply all at once or one at a time is not documented publicly, and the placement rests on that | hosted |
 | [Granted AI](https://grantedai.com/) | Which funding call to pursue, then the exported file | Letters of inquiry, drafted proposal sections | No | Yes, all at once: one click applies its own review findings | hosted |
 | [Labguru Assistant](https://www.labguru.com/labguru-assistant) | No gating checkpoint; the help centre suggests reviewing the response, but nothing waits on it | Protocol parameters, anomaly flags, recommended next step, with links to related Labguru items but no citation behind any claim | No | Its output is saved into your notebook | hosted |
@@ -108,14 +110,14 @@ The AI reads your work and tells you what it thinks. It has no way to get any of
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [SciScore](https://sciscore.com/) | Each missing rigour element, and every edit: it names the gap, you write the sentence | Rigor, key-resources and statistics tables, with RRIDs checked against a registry, plus a reporting score | No | No | hosted |
+| [SciScore](https://sciscore.com/) | Each missing rigour element, and every edit: it names the gap, you write the sentence | Rigor, key-resources and statistics tables, with RRIDs (research resource identifiers) checked against a registry, plus a reporting score | No | No | hosted |
 | [Reviewer3](https://reviewer3.com/) | Every finding, one at a time, and every word of the revision | Claim-by-claim report: each claim checked against the evidence reported, references verified, plus retraction, self-citation and AI-text flags | No | No | hosted |
 
 > **SciScore** is sold to publishers as well as to authors, and the same reports run inside submission systems. It is filed on the author path, where you sign up yourself and the report comes back to whoever wrote the manuscript.
 >
 > **Reviewer3** has three paths, and the human rules on different things in each. The editor path is first-pass screening at scale. The reviewer path offers to help write a report on a manuscript someone else wrote, which would move it to [Delegation](#delegation). It is filed on the author path, and the company states the property that placement rests on in its own words: "We Verify. We Don't Generate." One caution: the site names no founders, no lab and no publication, and its pricing page is built by code in the browser, so the self-serve tier is published but a plain reader will not see it.
 >
-> **The closest thing this category rejects** is q.e.d Science. It cannot write into your file at all and still fails, because it sells suggestions for experiments, and telling you what to run next is not commenting on work you have already written or recorded. That is the second clause of the test doing the work by itself, which had not happened before.
+> **The closest thing this category rejects** is q.e.d Science. It cannot write into your file at all and still fails, because it sells suggestions for experiments, and telling you what to run next is not commenting on work you have already written or recorded. The test's second clause asks that the AI comment on work you have already written or recorded. Here that clause does the work by itself, which had not happened before.
 
 ## Bench
 
@@ -123,11 +125,11 @@ The AI suggests the next experiment, you spend the materials and the machine tim
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
-| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to spend materials and machine time on the condition it suggests | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, re-tuned on results you feed back by hand or through an optional robot link | No | No | hosted |
+| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Whether to spend materials and machine time on the condition it suggests | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, which balances trying new settings against refining good ones, re-tuned on results you feed back by hand or through an optional robot link | No | No | hosted |
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs here and how entries are placed, [METHOD.md](METHOD.md) for the reasoning behind the five categories and [what was considered and cut](METHOD.md#what-the-tests-excluded), and [WORKFLOWS.md](WORKFLOWS.md) for four systems traced through a real task, which is where the rows stop being compressed. One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs here and how entries are placed. See [METHOD.md](METHOD.md) for the reasoning behind the five categories and [what was considered and cut](METHOD.md#what-the-tests-excluded). See [WORKFLOWS.md](WORKFLOWS.md) for four systems traced through a real task, which is where the rows stop being compressed. One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.
 
 ## License
 
