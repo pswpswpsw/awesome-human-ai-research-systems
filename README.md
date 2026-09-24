@@ -34,6 +34,11 @@ These five are not a ranking. They are the filled-in squares of a small grid, an
 
 ### Where the five come from
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/categories-dark.svg">
+  <img alt="Four categories on one scale: Delegation, where the machine&#39;s call is the record; Standing Verdicts, where it stands until someone reverses it; Human Approval, where it waits for a named person&#39;s ruling; Critique, where it can never be the record. Bench sits off that scale, because there a run rather than a reader settles who was right." src="docs/categories-light.svg" width="860">
+</picture>
+
 The categories are not a list to take on trust. Each one is a combination of answers to five questions you can ask about any tool. Some combinations are missing because no product occupies them, and one is missing because the grid rules it out. [METHOD.md](METHOD.md#the-facets) argues each question and names them Scope, Standing, Record, Target and Arbiter. This is the result.
 
 | Category | What the AI passes a verdict on | What that verdict is worth if you do nothing | What leaves as evidence of who decided | What the verdict is about | Who or what settles it |
