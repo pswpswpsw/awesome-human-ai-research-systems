@@ -10,8 +10,6 @@ These are tools for *doing* research, not tools that do the science for you. A m
 
 This list is cut on that question. Twenty-one systems a researcher can use today, in five categories: **delegation, standing verdicts, human approval, critique, bench**. The tests behind the boundaries are in [METHOD.md](METHOD.md).
 
-A few words recur below, so here they are once. A **systematic review** is a study of other studies: you search for everything published on a question, throw out what does not qualify, and summarise what is left. **Screening** is the throwing-out part, done in two stages, first on titles and abstracts and then on the full papers. A **PRISMA flow diagram** is the standard picture that accompanies such a review, showing how many records came in at each step and how many survived. Two reviewers work **blinded** when neither can see the other's calls, **adjudication** is how their disagreements get settled, and **inter-rater reliability** is how often they agreed.
-
 ## At a glance
 
 | Category | What the human still rules on | Entries |
@@ -23,6 +21,26 @@ A few words recur below, so here they are once. A **systematic review** is a stu
 | [Bench](#bench) | Whether to spend the materials and the machine time. A measurement, not a reader, decides who was right. | 1 |
 
 These five are not a ranking. They are the filled-in squares of a small grid, and [METHOD.md](METHOD.md#the-facets) lays out the five questions that produce them. Across the first four, two things change: what the AI passes a verdict on, and what that verdict is worth before you rule on it. A verdict can be the record outright, the record until you reverse it, something that waits for your named ruling, or something that can never be the record. Bench sits apart because there a run rather than a reader settles who was right. The sections run in an order where the researcher's say broadly rises as you read down, which is a reading order and not a score.
+
+### Where the five come from
+
+The categories are not a list to take on trust. Each one is a combination of answers to five questions you can ask about any tool, and the combinations no product occupies are simply absent. [METHOD.md](METHOD.md#the-facets) argues each question and names them Scope, Standing, Record, Target and Arbiter. This is the result.
+
+| Category | What the AI judges | What its verdict is worth | What leaves as evidence | Whose work | Who settles it |
+| --- | --- | --- | --- | --- | --- |
+| **Delegation** | the whole finished piece of work | it is the record | nothing, or a log that puts the decision on the model | the brief, or material you own | a reader |
+| **Standing Verdicts** | individual items | it stands until someone reverses it | nothing | work other people did | a reader |
+| **Human Approval** | individual items | it waits for a person's ruling, which gets recorded | an export that puts the decisions on reviewers | work other people did | a reader |
+| **Critique** | individual items | it can never be the record | nothing | your own work | a reader |
+| **Bench** | a proposed condition | it waits on a commitment of materials and machine time | nothing | work not yet done | a run |
+
+Read the third column down the first four rows and there is a real scale: a verdict that is the record outright, then one that holds until you reverse it, then one that waits for your named ruling, then one that can never be the record. That is the closest thing here to a measure of how much supervision the arrangement asks of you, and it is one column rather than the categories themselves.
+
+**Bench is not the top of that scale.** It is the odd answer in the last column. Everywhere else a reader settles whether the AI was right; at the bench a measurement does. Ordering Delegation through Bench as rising human involvement would put Bench on a scale it is not on.
+
+A single quantity was tried here and it failed. An earlier draft called the categories a ladder with one rising quantity, and [METHOD.md](METHOD.md) records what happened: several categories scored zero on that quantity, and it told apart exactly one neighbouring pair. Five questions do the work one could not.
+
+A few words recur below, so here they are once. A **systematic review** is a study of other studies: you search for everything published on a question, throw out what does not qualify, and summarise what is left. **Screening** is the throwing-out part, done in two stages, first on titles and abstracts and then on the full papers. A **PRISMA flow diagram** is the standard picture that accompanies such a review, showing how many records came in at each step and how many survived. Two reviewers work **blinded** when neither can see the other's calls, **adjudication** is how their disagreements get settled, and **inter-rater reliability** is how often they agreed.
 
 ### How much of the work it touches
 
@@ -59,7 +77,7 @@ Three of the column headings below need a word of explanation. *Decision record*
 
 ## Delegation
 
-You write the brief, the system hands back something that already looks finished, and your name goes on it.
+You supply a question or some source material, the system hands back something that already looks finished, and your name goes on it.
 
 | System | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- |
