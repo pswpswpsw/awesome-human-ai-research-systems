@@ -22,7 +22,7 @@ What the five actually are is the filled-in squares of a small grid. The grid is
 | --- | --- | --- | --- |
 | **Scope** | what the AI passes a verdict on | individual items / the whole finished piece of work | Undermind from ClawsGO |
 | **Standing** | what that verdict is worth if no human does anything | it is the record until someone reverses it / it waits for a person's ruling, which gets recorded / it can never be the record | Undermind from Covidence |
-| **Record** | what leaves the platform as evidence of who decided | nothing / a log that puts the decision on the model / an export that puts it on named reviewers | ClawsGO from Rayyan: both ship a log, one puts the decision on the model and one on a named reviewer |
+| **Record** | what leaves the platform as evidence of who decided | nothing / a log that puts the decision on the model / an export that names the reviewers who decided | ClawsGO from Rayyan: both ship a log, one puts the decision on the model and one on a named reviewer |
 | **Target** | what the verdict is about | work other people did / the researcher's own work / work not yet done | Elicit from SciScore |
 | **Arbiter** | who or what settles whether the AI was right (the referee) | a reader / a run | Atinary from Labguru Assistant |
 
@@ -38,7 +38,7 @@ The five categories are then positions in that grid:
 | --- | --- | --- | --- | --- | --- |
 | **Delegation** | the whole finished piece of work | it is the record | nothing, or a log that puts the decision on the model | the brief, or material the researcher owns | a reader |
 | **Standing Verdicts** | individual items | it stands until someone reverses it | nothing | work other people did | a reader |
-| **Human Approval** | individual items | it waits for a person's ruling, which gets recorded | an export that puts it on named reviewers | work other people did | a reader |
+| **Human Approval** | individual items | it waits for a person's ruling, which gets recorded | an export that names the reviewers who decided | work other people did | a reader |
 | **Critique** | individual items | it can never be the record | nothing | the researcher's own work | a reader |
 | **Bench** | a proposed condition | it waits on a commitment of materials and machine time | nothing | work not yet done | a run |
 
@@ -84,7 +84,7 @@ Two clauses, both required. First, the platform holds a ruling on each record th
 
 ### Critique
 
-First, no mechanism may put AI-written text into the researcher's document or dataset unless the human acts on that specific item. A bulk apply-all-fixes control disqualifies a tool. A tracked change the author accepts or rejects one at a time does not, because that leaves a record of exactly what was taken and who took it. Second, and separate from the first: the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
+First, no mechanism may put AI-written text into the researcher's document or dataset unless the human acts on that specific item. A control that applies every fix at once disqualifies a tool. A tracked change the author accepts or rejects one at a time does not, because that leaves a record of exactly what was taken and who took it. Second, and separate from the first: the AI returns commentary on work the researcher has already written or recorded, rather than proposing new work or fetching someone else's.
 
 
 ### Bench
