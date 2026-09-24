@@ -405,7 +405,7 @@ What is not versioned is the experiment configuration itself, which is changed i
 | Checkpoint | Mandatory | Granularity | Surface | If nobody acts |
 | --- | --- | --- | --- | --- |
 | Publish and start the campaign | yes | bulk, once, covering every round | UI and API | nothing runs |
-| Edit a proposed value before recording it | no | per item | UI and API | the suggestion is recorded as executed |
+| Edit a proposed value before recording it | no | per item | UI † and API | the suggestion is recorded as executed |
 | Remove a proposed condition | no | per item | UI only † | the condition stays in the batch |
 | Submit results | yes | bulk, per batch | UI and API | the loop stalls and no new proposal is generated |
 | Approve an agent tool call (feature-flagged) | yes, for that call | bulk across a turn | UI only † | the literature query is not sent |
