@@ -100,6 +100,19 @@ The AI suggests the next experiment, you spend the materials and the machine tim
 | --- | --- | --- | --- | --- | --- | --- |
 | [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Proposes the next experiment, then re-plans on the result you bring back | Whether to spend materials and machine time on the condition it suggests | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, balancing new settings against refinement of the good ones, re-tuned on results you feed back by hand or through an optional robot link | No | No | hosted |
 
+## Which systems do the same job
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/similar-dark.svg">
+  <img alt="A graph of all 21 systems. Two are joined when they return the same kind of thing: searching the literature, screening and extracting for a review, judging citations, writing a draft, checking a finished manuscript, or picking the next experiment. Node colour is the category. Thirteen of the 45 links join two colours, and those are the pairs you would compare that leave you answerable for different things." src="docs/similar-light.svg" width="1000">
+</picture>
+
+Two systems are joined when they return the same kind of thing. The job is read off what each one documents that it returns, not off how it sells itself, so you can redraw this from the tables above.
+
+Colour is the category, which means a link between two colours marks a pair you would be choosing between that nonetheless leaves you answerable for different things. That is the whole argument of this list, in the only place it is visible at a glance. **ClawsGO Science** does systematic-review work beside five platforms that stop for a named reviewer, and stops for nobody. **Review-it** checks manuscripts beside the two Critique tools, and unlike them can write into the file on an upgrade tier †. **Elicit** searches beside the Standing Verdicts tools, which is what its single-reviewer path behaves like. **Atinary** and **Labguru Assistant** both tell you what to run next, and only one waits for the result.
+
+Isolated nodes are informative too. **scite** shares a job with one other system. Under this rule nothing else here does what it does.
+
 ## Contributing
 
 [CONTRIBUTING.md](CONTRIBUTING.md) has what belongs here and how entries are placed. One entry per PR; a PR that re-tests an existing entry is as welcome as one adding a tool.

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="690" viewBox="0 0 1000 690" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-labelledby="gt gd">
+<title id="gt">Which systems do the same job</title>
+<desc id="gd">A graph of all 21 systems. Two systems are joined when they do the same job, read off what each one documents that it returns: searching the literature, screening and extracting for a review, judging citations, writing a draft, checking a finished manuscript, or picking the next experiment. Node colour is the category, meaning what the human still rules on. 13 of the 45 links join systems of different colours: those are the pairs a researcher would compare that nonetheless leave the human answerable for different things. ClawsGO Science does review work alongside the Human Approval platforms with no human gate, Review-it checks manuscripts alongside the Critique tools but can write into the file, Elicit searches alongside the Standing Verdicts tools, and Atinary is paired with Labguru Assistant on choosing what to run next.</desc>
+<rect width="1000" height="690" fill="#ffffff"/>
+<text x="34" y="32" font-size="14.5" font-weight="600" fill="#12181f">Which systems do the same job</text>
+<text x="34" y="52" font-size="12" fill="#5b6875">A link means the two return the same kind of thing. Colour is the category. 13 links join two colours: same job, different answerability.</text>
+<line x1="112" y1="158" x2="258" y2="116" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="112" y1="158" x2="318" y2="238" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="112" y1="158" x2="108" y2="262" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="112" y1="158" x2="208" y2="352" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="112" y1="158" x2="456" y2="186" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="258" y1="116" x2="318" y2="238" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="258" y1="116" x2="108" y2="262" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="258" y1="116" x2="208" y2="352" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="258" y1="116" x2="456" y2="186" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="318" y1="238" x2="108" y2="262" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="318" y1="238" x2="208" y2="352" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="318" y1="238" x2="456" y2="186" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="108" y1="262" x2="208" y2="352" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="108" y1="262" x2="456" y2="186" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="208" y1="352" x2="132" y2="462" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="208" y1="352" x2="456" y2="186" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="456" y1="186" x2="596" y2="108" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="456" y1="186" x2="724" y2="166" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="456" y1="186" x2="652" y2="258" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="456" y1="186" x2="512" y2="296" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="456" y1="186" x2="652" y2="388" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="596" y1="108" x2="724" y2="166" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="596" y1="108" x2="652" y2="258" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="596" y1="108" x2="512" y2="296" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="596" y1="108" x2="652" y2="388" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="724" y1="166" x2="652" y2="258" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="724" y1="166" x2="512" y2="296" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="724" y1="166" x2="652" y2="388" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="652" y1="258" x2="512" y2="296" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="652" y1="258" x2="652" y2="388" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="512" y1="296" x2="652" y2="388" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="652" y1="388" x2="822" y2="88" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="652" y1="388" x2="938" y2="168" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="652" y1="388" x2="812" y2="268" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="652" y1="388" x2="930" y2="352" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="822" y1="88" x2="938" y2="168" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="822" y1="88" x2="812" y2="268" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="822" y1="88" x2="930" y2="352" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="938" y1="168" x2="812" y2="268" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="938" y1="168" x2="930" y2="352" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="812" y1="268" x2="930" y2="352" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="706" y1="524" x2="884" y2="552" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="706" y1="524" x2="772" y2="626" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="884" y1="552" x2="772" y2="626" stroke="#c3ccd6" stroke-width="1" opacity="0.55"/>
+<line x1="380" y1="552" x2="534" y2="610" stroke="#a4602a" stroke-width="1.7" stroke-dasharray="5 3" opacity="0.95"/>
+<circle cx="112" cy="158" r="7" fill="#2d6a8f" stroke="#ffffff" stroke-width="2"/>
+<text x="124" y="162" font-size="11.5" font-weight="600" text-anchor="start" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Consensus</text>
+<circle cx="258" cy="116" r="7" fill="#2d6a8f" stroke="#ffffff" stroke-width="2"/>
+<text x="270" y="120" font-size="11.5" font-weight="600" text-anchor="start" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Undermind</text>
+<circle cx="318" cy="238" r="7" fill="#2d6a8f" stroke="#ffffff" stroke-width="2"/>
+<text x="330" y="242" font-size="11.5" font-weight="600" text-anchor="start" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Ai2 Asta</text>
+<circle cx="108" cy="262" r="7" fill="#2d6a8f" stroke="#ffffff" stroke-width="2"/>
+<text x="120" y="266" font-size="11.5" font-weight="600" text-anchor="start" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">OpenScholar</text>
+<circle cx="208" cy="352" r="7" fill="#2d6a8f" stroke="#ffffff" stroke-width="2"/>
+<text x="220" y="356" font-size="11.5" font-weight="600" text-anchor="start" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Semantic Scholar</text>
+<circle cx="132" cy="462" r="7" fill="#2d6a8f" stroke="#ffffff" stroke-width="2"/>
+<text x="144" y="466" font-size="11.5" font-weight="600" text-anchor="start" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">scite</text>
+<circle cx="456" cy="186" r="7" fill="#2f7d55" stroke="#ffffff" stroke-width="2"/>
+<text x="456" y="172" font-size="11.5" font-weight="600" text-anchor="middle" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Elicit</text>
+<circle cx="596" cy="108" r="7" fill="#2f7d55" stroke="#ffffff" stroke-width="2"/>
+<text x="596" y="94" font-size="11.5" font-weight="600" text-anchor="middle" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Covidence</text>
+<circle cx="724" cy="166" r="7" fill="#2f7d55" stroke="#ffffff" stroke-width="2"/>
+<text x="712" y="170" font-size="11.5" font-weight="600" text-anchor="end" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Rayyan</text>
+<circle cx="652" cy="258" r="7" fill="#2f7d55" stroke="#ffffff" stroke-width="2"/>
+<text x="652" y="244" font-size="11.5" font-weight="600" text-anchor="middle" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Silvi</text>
+<circle cx="512" cy="296" r="7" fill="#2f7d55" stroke="#ffffff" stroke-width="2"/>
+<text x="512" y="282" font-size="11.5" font-weight="600" text-anchor="middle" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">DistillerSR</text>
+<circle cx="652" cy="388" r="7" fill="#7a4fa3" stroke="#ffffff" stroke-width="2"/>
+<text x="652" y="374" font-size="11.5" font-weight="600" text-anchor="middle" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">ClawsGO Science</text>
+<circle cx="822" cy="88" r="7" fill="#7a4fa3" stroke="#ffffff" stroke-width="2"/>
+<text x="810" y="92" font-size="11.5" font-weight="600" text-anchor="end" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Granted AI</text>
+<circle cx="938" cy="168" r="7" fill="#7a4fa3" stroke="#ffffff" stroke-width="2"/>
+<text x="926" y="172" font-size="11.5" font-weight="600" text-anchor="end" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">AI-Researcher</text>
+<circle cx="812" cy="268" r="7" fill="#7a4fa3" stroke="#ffffff" stroke-width="2"/>
+<text x="800" y="272" font-size="11.5" font-weight="600" text-anchor="end" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Edison Platform</text>
+<circle cx="930" cy="352" r="7" fill="#7a4fa3" stroke="#ffffff" stroke-width="2"/>
+<text x="918" y="356" font-size="11.5" font-weight="600" text-anchor="end" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Question First</text>
+<circle cx="706" cy="524" r="7" fill="#7a4fa3" stroke="#ffffff" stroke-width="2"/>
+<text x="694" y="528" font-size="11.5" font-weight="600" text-anchor="end" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Review-it</text>
+<circle cx="884" cy="552" r="7" fill="#b5484f" stroke="#ffffff" stroke-width="2"/>
+<text x="872" y="556" font-size="11.5" font-weight="600" text-anchor="end" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">SciScore</text>
+<circle cx="772" cy="626" r="7" fill="#b5484f" stroke="#ffffff" stroke-width="2"/>
+<text x="760" y="630" font-size="11.5" font-weight="600" text-anchor="end" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Reviewer3</text>
+<circle cx="380" cy="552" r="7" fill="#a4602a" stroke="#ffffff" stroke-width="2"/>
+<text x="380" y="538" font-size="11.5" font-weight="600" text-anchor="middle" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Atinary SDLabs</text>
+<circle cx="534" cy="610" r="7" fill="#7a4fa3" stroke="#ffffff" stroke-width="2"/>
+<text x="534" y="596" font-size="11.5" font-weight="600" text-anchor="middle" fill="#12181f" stroke="#ffffff" stroke-width="3.2" paint-order="stroke">Labguru Assistant</text>
+<text x="34" y="668" font-size="11.5" fill="#5b6875">Category:</text>
+<circle cx="100" cy="664" r="5.5" fill="#2d6a8f"/>
+<text x="111" y="668" font-size="11.5" fill="#12181f">Standing Verdicts</text>
+<circle cx="246.2" cy="664" r="5.5" fill="#2f7d55"/>
+<text x="257.2" y="668" font-size="11.5" fill="#12181f">Human Approval</text>
+<circle cx="372.59999999999997" cy="664" r="5.5" fill="#7a4fa3"/>
+<text x="383.59999999999997" y="668" font-size="11.5" fill="#12181f">Delegation</text>
+<circle cx="472.59999999999997" cy="664" r="5.5" fill="#b5484f"/>
+<text x="483.59999999999997" y="668" font-size="11.5" fill="#12181f">Critique</text>
+<circle cx="559.4" cy="664" r="5.5" fill="#a4602a"/>
+<text x="570.4" y="668" font-size="11.5" fill="#12181f">Bench</text>
+</svg>
