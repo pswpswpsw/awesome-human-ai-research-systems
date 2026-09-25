@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="486" viewBox="0 0 860 486" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-labelledby="figtitle figdesc">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="486" viewBox="0 0 860 486" font-family="&quot;Iowan Old Style&quot;,&quot;Palatino Linotype&quot;,Palatino,&quot;Book Antiqua&quot;,Georgia,&quot;Times New Roman&quot;,serif" role="img" aria-labelledby="figtitle figdesc">
 <title id="figtitle">How the five categories are arranged</title>
 <desc id="figdesc">A partial view showing two of the five facets. Four categories sit in order on one qualitative scale, what the AI&#8217;s call on an item is worth before the researcher acts: in Delegation it is the record, in Standing Verdicts it stands until someone reverses it, in Human Approval it waits for a named person&#8217;s recorded ruling, in Critique it can never be the record. The order is qualitative, not a measured quantity. Bench sits off that scale because it answers a different question, who settles whether the AI was right: a reader for the other four, a run for Bench. Placement also depends on the other three facets, Scope, Record and Target.</desc>
-<rect width="860" height="486" fill="#ffffff"/>
+<rect width="860" height="486" fill="#fdfcfa"/>
 <text x="42" y="32" font-size="14.5" font-weight="600" fill="#12181f">Standing: what the AI&#8217;s call on one item is worth before you do anything</text>
 <text x="42" y="52" font-size="12.5" fill="#5b6875">These four sit in order on one qualitative scale. The order is a ranking, not a measured quantity, and it is one facet</text>
 <text x="42" y="68" font-size="12.5" fill="#5b6875">rather than the categories themselves.</text>
