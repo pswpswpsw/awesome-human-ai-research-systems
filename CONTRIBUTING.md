@@ -47,11 +47,12 @@ If you genuinely cannot place a tool, say so in the PR and quote the vendor page
 Entries are table rows, not bullets. Add a row to the table for the category your tool lands in:
 
 ```markdown
-| [Name](https://example.com) | what the human rules on | what you get | decision record | writes into your draft | access |
+| [Name](https://example.com) | what it does | what the human rules on | what you get | decision record | writes into your draft | access |
 ```
 
 Fill each column as follows.
 
+- **What it does.** One line, and it has to tell this product apart from its neighbours in the same category. Say what the system does with an item, not what market it serves: the systems in one category are alike by construction, so a sentence that would fit three of them has done no work. Do not repeat another cell in the same row, and do not upgrade a cell carrying a dagger into plain fact.
 - **The human rules on.** Name the researcher's actual decision point, and how fine-grained it is. "Every reference, twice over" and "keep or discard the finished report" are both answers. A cell saying "reviewing the output" is not. If the vendor documents no human checkpoint at all, say that, because it is the most informative answer the column can carry. This is the column the list exists for, so make it specific.
 - **You get.** Name what the product hands back, and name it concretely: an extraction table, a ranked set with match scores, a compiled manuscript, the next experiment to run. Sometimes the placement turns on a property of that output, such as no openable source, uncited passages flagged, or citations it retrieved itself. Put that here rather than leaving it implicit.
 - **Decision record.** What leaves the platform as evidence of how the decisions were reached, and who it attributes them to. `No` is a legitimate and informative answer, and the commonest correct one. A log whose default entry is the model's own label is not the same as one attributing rulings to named reviewers, and the cell should say which it is. Do not put the product's output here. A concerns table or a returned measurement is what you get, not a record of who decided.
