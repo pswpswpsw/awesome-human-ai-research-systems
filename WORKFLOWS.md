@@ -506,7 +506,7 @@ The transferable observation is that a named list of failure states, each with i
 
 Naming this is a finding rather than an absence of data. On checkpoint behaviour under silence, the four do four different things: proceed after a timer, stand as the record, wait indefinitely, or stall on a data dependency that a script removes. On the decision record, none of the four exports a per-record ruling attributed to a named person with a timestamp, and the one system that retains that information in the app documents that it cannot be exported. On API-side gates, no system in these four traces has one.
 
-Limit that last claim carefully. Rayyan, DistillerSR and Silvi sit in the same README category and were not traced here, and two of those three rows claim logs that name which reviewer made each call, while Silvi's claims only a decision log. Nothing above is evidence against those rows.
+Limit that last claim carefully. It rests on the two systems traced here, and the category has held other platforms whose rows claimed logs that name which reviewer made each call. Nothing above was evidence against those rows.
 
 ---
 

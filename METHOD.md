@@ -22,7 +22,7 @@ What the five actually are is the filled-in squares of a small grid. The grid is
 | --- | --- | --- | --- |
 | **Scope** | what the AI passes a verdict on | individual items / the whole finished piece of work | Undermind from ClawsGO |
 | **Standing** | what that verdict is worth if no human does anything | it is the record until someone reverses it / it waits for a person's ruling, which gets recorded / it can never be the record | Undermind from Covidence |
-| **Record** | what leaves the platform as evidence of who decided | nothing / a log that puts the decision on the model / an export of the decision flow, built on rulings the platform ties to named reviewers | ClawsGO from Rayyan: one's only log is the model's own and is viewable rather than exportable, so nothing leaves; the other's export names the reviewer who decided |
+| **Record** | what leaves the platform as evidence of who decided | nothing / a log that puts the decision on the model / an export of the decision flow, built on rulings the platform ties to named reviewers | ClawsGO from Covidence: one's only log is the model's own and is viewable rather than exportable, so nothing leaves; the other exports a decision flow, and an agreement report naming the reviewer pairs |
 | **Target** | what the verdict is about | work other people did / the researcher's own work / work not yet done | Elicit from SciScore |
 | **Arbiter** | who or what settles whether the AI was right (the referee) | a reader / a run | Atinary from Labguru Assistant |
 
@@ -144,8 +144,6 @@ Each of these is a placement that turned on one fact, recorded here so the READM
 
 **Elicit** has two paths that differ in who decides. Dual review, where two reviewers rule independently and disagreements come back for someone to settle, is an Enterprise feature, and the tier at which the PRISMA export becomes available is not documented. On the default single-reviewer path the model's label stands until you reverse it, which is [Standing Verdicts](#standing-verdicts) behaviour. It is filed here on the dual-review path, so a single-reviewer user is holding something closer to the category above.
 
-**DistillerSR** also sells a fully automatic mode where a second AI checks the first one's screening decisions instead of a person. That mode on its own would fall into the category above. The row describes the workflow with a human in it, which is the one it is filed on.
-
 ### Critique
 
 **SciScore** is sold to publishers as well as to authors, and the same reports run inside submission systems. It is filed on the author path, where you sign up yourself and the report comes back to whoever wrote the manuscript.
@@ -168,6 +166,7 @@ Writing down what was cut, and why, is part of keeping the bar honest. The rules
 | [OpenAI for Academic Researchers](https://openai.com/index/chatgpt-for-academic-researchers/) | A subsidized-access program, not a research system. Now waitlisted. |
 | Google's [figure & peer-review agents](https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/) | Research-stage prototypes, no public product. |
 | [ScientistTwo](https://scientist-two.github.io/) (Google Cloud AI Research) | Autonomous multi-agent generation of papers and runnable code, benchmarked against accepted ICLR, ICML and NeurIPS work, and the strongest demonstration in this table. Still no product: the project page's only outbound links are the preprint, the PDFs it generated, a demo video and its website template. Nothing to run and no access to request. Delegation in shape if it ever ships. |
+| [Rayyan](https://www.rayyan.ai/), [Silvi](https://silvi.ai/), [DistillerSR](https://www.distillersr.com/) | Listed in Human Approval until September 2026 and removed on the maintainer's judgment, not by any test in this file. All three passed the written tests when they were added, and nothing here is evidence against them. Recorded because a list that drops entries silently is worth less than one that says it did. |
 | ChatGPT, Claude, Gemini, Perplexity, NotebookLM, Liner | General-purpose assistants. Researchers use them constantly, and listing them adds no signal. |
 | AI humanizers and detection-evasion tools | The advertised job is defeating a check on authorship. |
 | [SciSpace](https://scispace.com/) | Its AI Writer page advertises output that will "pass as human", plus a Rewriter that humanizes AI prose and a built-in AI detector that flags it. Same criterion that excluded ScholarsReview, and the module rule does not rescue a product that bundles a way around detection. |
