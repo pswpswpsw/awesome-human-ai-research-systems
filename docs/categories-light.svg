@@ -21,7 +21,7 @@
 <rect x="436" y="78" width="185" height="104" rx="7" fill="#f7f8fa" stroke="#d6dde5"/>
 <rect x="436" y="78" width="5" height="104" rx="2.5" fill="#2d6a8f"/>
 <text x="454" y="103" font-size="14" font-weight="700" fill="#12181f">Human Approval</text>
-<text x="454" y="121" font-size="11.5" fill="#5b6875">2 systems</text>
+<text x="454" y="121" font-size="11.5" fill="#5b6875">1 system</text>
 <text x="454" y="144" font-size="11.5" fill="#12181f">It waits for a named</text>
 <text x="454" y="159" font-size="11.5" fill="#12181f">person's ruling,</text>
 <text x="454" y="174" font-size="11.5" fill="#12181f">which gets recorded.</text>

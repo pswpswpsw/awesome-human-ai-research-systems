@@ -240,6 +240,8 @@ What to build that Elicit does not offer: a screening decision resource of its o
 
 ## Covidence: the same 2,000 abstracts
 
+> Covidence was removed from the [README](README.md) list in September 2026. The trace is kept because two of METHOD’s clauses were rewritten in response to it, so deleting the evidence would leave those rewrites unexplained.
+
 **The task.** Identical to the Elicit trace, deliberately. Filed in [Human Approval](README.md#human-approval). Not-for-profit, based in Melbourne, hosted web app only: "It is not possible to use Covidence offline."
 
 Access conditions gate the task before anything else does. The free trial stops at 500 records, so 2,000 needs a paid plan. A co-reviewer, though, needs no subscription of their own (documented).

@@ -8,7 +8,7 @@ The judgment moves. Who answers for it does not. A screening label the model got
 
 A model that predicts a protein structure or a material property is replacing a measurement rather than a judgment, so it is not on this list.
 
-Eighteen systems a researcher can use today, in five categories. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
+Seventeen systems a researcher can use today, in five categories. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
 
 **Three words the categories turn on.** An **item** is the unit the product itself invites you to accept or reject: a record in a screening set, a row in an extraction table, a citation statement, a proposed experimental condition. A **verdict** is a claim the AI makes about one item; describing what an item says, or putting items in rank order, is not a verdict. A verdict **stands** when it is the record that counts for that item unless a human steps in.
 
@@ -18,7 +18,7 @@ Eighteen systems a researcher can use today, in five categories. The tests behin
 | --- | --- | --- |
 | [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 7 |
 | [Standing Verdicts](#standing-verdicts) | Every sentence you write. The machine's call on each paper is the record unless you open the source and reverse it. | 6 |
-| [Human Approval](#human-approval) | Every record, one at a time, with your name on it. Nothing moves until you say so. | 2 |
+| [Human Approval](#human-approval) | Every record, one at a time, with your name on it. Nothing moves until you say so. | 1 |
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes reaches your file unless you act on that specific item. | 2 |
 | [Bench](#bench) | Whether to spend the materials and the machine time. A measurement, not a reader, decides who was right. | 1 |
 
@@ -76,7 +76,6 @@ The AI screens and ranks, a named person decides, and the trail it leaves is goo
 | System | What it does | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- | --- |
 | [Elicit](https://elicit.com/) | Screens and extracts; disagreements go to a person on the dual path | Every disagreement between two independent reviewers; on the single-reviewer path, only the labels you open a paper to overturn | Ranked results, an include or exclude label on each record with a reason and a quote, extraction tables with sentence-level citations | Audit trail logging every decision, override and adjudication for PRISMA reconstruction, plus agreement statistics and an exported PRISMA flow diagram | No | hosted |
-| [Covidence](https://www.covidence.org/) | People screen each reference twice; the AI ranks and pre-filters | Every reference, twice over, plus every disagreement and every value the AI suggests pulling out | Screened evidence base and the extractions | PRISMA 2020 flow diagram and an inter-rater reliability report; the screening exports show how often named pairs of reviewers agreed rather than how either of them ruled on any record, and the per-reviewer export arrives at the extraction stage | No | hosted |
 
 
 ## Critique
@@ -101,12 +100,12 @@ The AI suggests the next experiment, you spend the materials and the machine tim
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/similar-dark.svg">
-  <img alt="A graph of all 21 systems. Two are joined when they return the same kind of thing: searching the literature, screening and extracting for a review, judging citations, writing a draft, checking a finished manuscript, or picking the next experiment. Node colour is the category. A plain solid link, 23 of them, joins two systems in the same category. A dashed link, 10 of them, joins two in different categories, meaning they do the same job but leave you answerable for different things." src="docs/similar-light.svg" width="1000">
+  <img alt="A graph of all 21 systems. Two are joined when they return the same kind of thing: searching the literature, screening and extracting for a review, judging citations, writing a draft, checking a finished manuscript, or picking the next experiment. Node colour is the category. A plain solid link, 22 of them, joins two systems in the same category. A dashed link, 9 of them, joins two in different categories, meaning they do the same job but leave you answerable for different things." src="docs/similar-light.svg" width="1000">
 </picture>
 
 Two systems are joined when they return the same kind of thing. The job is read off what each one documents that it returns, not off how it sells itself, so you can redraw this from the tables above.
 
-There are two kinds of link, and the difference is the whole reason for the picture. A **plain solid link** joins two systems that also sit in the same category, so they are straightforward alternatives: same job, same thing left to you. A **dashed link** joins two that sit in different categories. Those are pairs you would be choosing between that nonetheless leave you answerable for different things, and there are ten of them against twenty-three of the other kind. The dashed links are the argument of this list in the only place it is visible at a glance. **ClawsGO Science** does systematic-review work beside the platforms that stop for a named reviewer, and stops for nobody. **Review-it** checks manuscripts beside the two Critique tools, and unlike them can write into the file on an upgrade tier †. **Elicit** searches beside the Standing Verdicts tools, which is what its single-reviewer path behaves like. **Atinary** and **Labguru Assistant** both tell you what to run next, and only one waits for the result.
+There are two kinds of link, and the difference is the whole reason for the picture. A **plain solid link** joins two systems that also sit in the same category, so they are straightforward alternatives: same job, same thing left to you. A **dashed link** joins two that sit in different categories. Those are pairs you would be choosing between that nonetheless leave you answerable for different things, and there are nine of them against twenty-two of the other kind. The dashed links are the argument of this list in the only place it is visible at a glance. **ClawsGO Science** does systematic-review work beside the platforms that stop for a named reviewer, and stops for nobody. **Review-it** checks manuscripts beside the two Critique tools, and unlike them can write into the file on an upgrade tier †. **Elicit** searches beside the Standing Verdicts tools, which is what its single-reviewer path behaves like. **Atinary** and **Labguru Assistant** both tell you what to run next, and only one waits for the result.
 
 Isolated nodes are informative too. **scite** shares a job with one other system. Under this rule nothing else here does what it does.
 
