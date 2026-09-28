@@ -143,7 +143,7 @@ Worth avoiding, four things. Timeout-then-proceed on a judgment call, which conv
 
 Screening criteria are not required from you. Elicit auto-generates them from the question and the setup details, and you may edit, disable or add. A user who simply accepts them has supplied nothing beyond the question.
 
-Records you already hold go in through the Library as RIS or BIB. Elicit reads title, authors and abstract only, and nothing else "at this time" (documented, support.elicit.com/en/articles/14744236-upload-paper-titles-abstracts-ris-and-bib-files).
+Records you already hold go in through the Library as RIS, BIB or PDF, and a Full Text column shows which is which. The title, authors and abstract restriction is scoped to one format: Elicit reads those fields "from a .ris or .bib file only" and nothing else "at this time", so a full-text PDF you hold goes in as full text (documented, support.elicit.com/en/articles/14744236-upload-paper-titles-abstracts-ris-and-bib-files).
 
 **Through the API (documented, from the schema).** `POST /api/v2/sessions/systematic-reviews` takes researchQuestion, protocolDetails, searches, abstractScreening, fulltextScreening, extraction, generateReport, title and isPublic. Its `required` array, the list of fields you cannot leave out, contains exactly one entry: researchQuestion. There is no collection id, source id, file id, RIS or CSV field anywhere in the request body.
 
