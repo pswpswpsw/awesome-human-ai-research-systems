@@ -70,6 +70,7 @@ Rules for the prose in those cells:
 7. If a product ships two paths, and the human rules on different things in each, name the path your placement rests on.
 8. One tool per pull request makes review faster. Small batches are fine.
 9. Check the links resolve before opening the PR.
+10. **Regenerate the figures.** The two images in `docs/` are drawn by scripts, not by hand. After adding, removing or moving an entry, run `node scripts/figures/categories.js` and `node scripts/figures/similar.js`. A new entry also needs a line in `NODES` in `similar.js` giving its position and the jobs it does, read off what it documents that it returns. The second script refuses to draw if the README tables and that list disagree, and names every count in the README prose that no longer matches the figure. Edit the script, never the SVG.
 
 Proposing a **new category** is the exception. It needs a decision point the existing five cannot express, meaning a genuinely different answer to the question of what the human still rules on. It also needs a test a contributor can apply from a product's public pages. Categories that are really workflow stages in disguise will be declined.
 

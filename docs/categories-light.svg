@@ -2,7 +2,7 @@
 <title id="figtitle">How the five categories are arranged</title>
 <desc id="figdesc">A partial view showing two of the five facets. Four categories sit in order on one qualitative scale, what the AI&#8217;s call on an item is worth before the researcher acts: in Delegation it is the record, in Standing Verdicts it stands until someone reverses it, in Human Approval it waits for a named person&#8217;s recorded ruling, in Critique it can never be the record. The order is qualitative, not a measured quantity. Bench sits off that scale because it answers a different question, who settles whether the AI was right: a reader for the other four, a run for Bench. Placement also depends on the other three facets, Scope, Record and Target.</desc>
 <rect width="860" height="486" fill="#fdfcfa"/>
-<text x="42" y="32" font-size="14.5" font-weight="600" fill="#12181f">Standing: what the AI&#8217;s call on one item is worth before you do anything</text>
+<text x="42" y="32" font-size="16" font-weight="600" fill="#12181f">Standing: what the AI&#8217;s call on one item is worth before you do anything</text>
 <text x="42" y="52" font-size="12.5" fill="#5b6875">These four sit in order on one qualitative scale. The order is a ranking, not a measured quantity, and it is one facet</text>
 <text x="42" y="68" font-size="12.5" fill="#5b6875">rather than the categories themselves.</text>
 <rect x="42" y="78" width="185" height="104" rx="7" fill="#f7f8fa" stroke="#d6dde5"/>
@@ -23,7 +23,7 @@
 <text x="454" y="103" font-size="14" font-weight="700" fill="#12181f">Human Approval</text>
 <text x="454" y="121" font-size="11.5" fill="#5b6875">1 system</text>
 <text x="454" y="144" font-size="11.5" fill="#12181f">It waits for a named</text>
-<text x="454" y="159" font-size="11.5" fill="#12181f">person's ruling,</text>
+<text x="454" y="159" font-size="11.5" fill="#12181f">person’s ruling,</text>
 <text x="454" y="174" font-size="11.5" fill="#12181f">which gets recorded.</text>
 <rect x="633" y="78" width="185" height="104" rx="7" fill="#f7f8fa" stroke="#d6dde5"/>
 <rect x="633" y="78" width="5" height="104" rx="2.5" fill="#2d6a8f"/>
@@ -37,7 +37,7 @@
 <text x="42" y="238" font-size="12" fill="#5b6875">the AI&#8217;s call is already the record</text>
 <text x="818" y="238" font-size="12" fill="#5b6875" text-anchor="end">it can never be the record</text>
 <line x1="42" y1="278" x2="818" y2="278" stroke="#d6dde5" stroke-width="1" stroke-dasharray="4 4"/>
-<text x="42" y="308" font-size="14.5" font-weight="600" fill="#12181f">Bench is not further along that line. It answers a different question.</text>
+<text x="42" y="308" font-size="16" font-weight="600" fill="#12181f">Bench is not further along that line. It answers a different question.</text>
 <text x="42" y="330" font-size="13" fill="#5b6875">Arbiter: who settles whether the AI was right?</text>
 <rect x="42" y="346" width="382" height="86" rx="7" fill="#eaf1f6" stroke="#d6dde5"/>
 <text x="58" y="372" font-size="13.5" font-weight="700" fill="#2d6a8f">a reader</text>
