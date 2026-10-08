@@ -46,9 +46,10 @@ const JOBS = {
 // Shape is not decoration. No five hues stay pairwise distinguishable for
 // colour-blind readers, so colour never carries category on its own. The
 // palette below was checked with a CVD validator: on the four category pairs
-// that a link actually joins (S-H, H-D, D-C, B-D) the worst separation is
-// Delta E 21.6, against a floor of 8; across all ten pairs it is not, and
-// the shapes carry the rest.
+// that a link actually joins (S-H, H-D, D-C, B-D), the worst separation over
+// light and dark mode together is Delta E 19.2 for colour-blind vision (dark
+// mode, D-C) and 29 for normal vision, against floors of 8 and 15. Across all
+// ten pairs no five hues pass, and the shapes carry the rest.
 const CATS = {
   'Delegation':        { key: 'D', rank: 0, shape: 'diamond',  phrase: 'The machine’s call is the record.' },
   'Standing Verdicts': { key: 'S', rank: 1, shape: 'circle',   phrase: 'It stands until someone reverses it.' },
