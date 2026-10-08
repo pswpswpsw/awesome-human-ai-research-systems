@@ -1,0 +1,33 @@
+name: Built files match the README
+
+# The two figures in docs/ and the chooser page at docs/index.html are built
+# from the README tables by `node scripts/build.js`. This reruns the build on
+# every push and pull request and fails if its output differs from what was
+# committed, so a table can never change without everything built from it.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Rebuild the figures and the chooser from the README
+        run: node scripts/build.js
+      - name: Fail if anything differs from what was committed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::Files built from the README are out of date. Run 'node scripts/build.js' and commit the result."
+            git status --porcelain
+            git --no-pager diff --stat
+            exit 1
+          fi
+          echo "Everything built from the README matches what was committed."
