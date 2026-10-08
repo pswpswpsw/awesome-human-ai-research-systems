@@ -1,7 +1,7 @@
 // Figure 2: which systems do the same job.
 // Run: node scripts/figures/similar.js
 //
-// Two systems are linked when they share a job. The job tags below are read
+// Two systems are linked when they share a job. The job tags in graph-data.js are read
 // off what each system documents that it returns; the category of every node
 // comes from the README table it sits in, never from this file. The script
 // refuses to draw if the README and this file disagree about which systems
@@ -9,34 +9,8 @@
 // the graph, so a removal cannot leave a stale number behind.
 const { readme, readEntries, words, write } = require('./readme');
 
-// x, y: position. j: jobs. a: label anchor override. dy: label offset override.
-const NODES = {
-  'Consensus':             { x: 104, y: 146, j: ['search'], a: 'end' },
-  'Undermind':             { x: 252, y: 104, j: ['search'] },
-  'Ai2 Asta':              { x: 304, y: 214, j: ['search'], a: 'end' },
-  'OpenScholar':           { x: 98,  y: 268, j: ['search'], a: 'end' },
-  'Semantic Scholar':      { x: 206, y: 344, j: ['search', 'citations'] },
-  'scite':                 { x: 116, y: 456, j: ['citations'] },
-  'Elicit':                { x: 450, y: 226, j: ['search', 'screen'] },
-  'ClawsGO Science':       { x: 606, y: 318, j: ['screen', 'draft'], dy: 24 },
-  'Granted AI':            { x: 770, y: 100, j: ['draft'] },
-  'AI-Researcher (HKUDS)': { x: 928, y: 176, j: ['draft'], label: 'AI-Researcher' },
-  'Edison Platform':       { x: 764, y: 250, j: ['draft'], a: 'start' },
-  'Question First':        { x: 918, y: 352, j: ['draft'] },
-  'Review-it':             { x: 700, y: 540, j: ['check'] },
-  'SciScore':              { x: 896, y: 568, j: ['check'], a: 'start' },
-  'Reviewer3':             { x: 776, y: 636, j: ['check'] },
-  'Atinary SDLabs':        { x: 340, y: 560, j: ['next'] },
-  'Labguru Assistant':     { x: 512, y: 612, j: ['next'], dy: 24 },
-};
-const JOB = {
-  search: 'searching the literature',
-  screen: 'screening and extracting for a review',
-  citations: 'judging citations',
-  draft: 'writing a draft',
-  check: 'checking a finished manuscript',
-  next: 'picking the next experiment',
-};
+const { NODES, JOBS } = require('./graph-data');
+const JOB = Object.fromEntries(Object.entries(JOBS).map(([k, v]) => [k, v.phrase]));
 const COLOUR = { 'Standing Verdicts': 'S', 'Human Approval': 'H', 'Delegation': 'D', 'Critique': 'C', 'Bench': 'B' };
 
 // ---- agree with the README before drawing anything ----
