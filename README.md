@@ -100,7 +100,7 @@ The AI suggests the next experiment, you spend the materials and the machine tim
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/similar-dark.svg">
-  <img alt="A graph of all 17 systems. Two are joined when they return the same kind of thing: searching the literature, screening and extracting for a review, judging citations, writing a draft, checking a finished manuscript, or picking the next experiment. Node colour is the category. A plain solid link, 22 of them, joins two systems in the same category. A dashed link, 9 of them, joins two in different categories, meaning they do the same job but leave you answerable for different things." src="docs/similar-light.svg" width="1000">
+  <img alt="A graph of all 17 systems. Two are joined when they return the same kind of thing: searching the literature, screening and extracting for a review, judging citations, writing a draft, checking a finished manuscript, or picking the next experiment. Node colour and shape both mark the category. A plain solid link, 22 of them, joins two systems in the same category. A dashed link, 9 of them, joins two in different categories, meaning they do the same job but leave you answerable for different things." src="docs/similar-light.svg" width="1000">
 </picture>
 
 Two systems are joined when they return the same kind of thing. The job is read off what each one documents that it returns, not off how it sells itself, so you can redraw this from the tables above.

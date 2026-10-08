@@ -9,25 +9,25 @@
 // the graph, so a removal cannot leave a stale number behind.
 const { readme, readEntries, words, write } = require('./readme');
 
-const { NODES, JOBS } = require('./graph-data');
+const { NODES, JOBS, CATS, PALETTE, SHAPES } = require('./graph-data');
 const JOB = Object.fromEntries(Object.entries(JOBS).map(([k, v]) => [k, v.phrase]));
-const COLOUR = { 'Standing Verdicts': 'S', 'Human Approval': 'H', 'Delegation': 'D', 'Critique': 'C', 'Bench': 'B' };
+const COLOUR = Object.fromEntries(Object.entries(CATS).map(([name, c]) => [name, c.key]));
 
 // ---- agree with the README before drawing anything ----
 const entries = readEntries();
 const errors = [];
 for (const e of entries) {
-  if (!NODES[e.name]) errors.push('README lists "' + e.name + '" but the graph has no position or job for it. Add it to NODES.');
+  if (!NODES[e.name]) errors.push('README lists "' + e.name + '" but the graph has no position or job for it. Add it to NODES in graph-data.js.');
 }
 for (const k of Object.keys(NODES)) {
-  if (!entries.some((e) => e.name === k)) errors.push('The graph has "' + k + '" but the README tables do not. Remove it from NODES.');
+  if (!entries.some((e) => e.name === k)) errors.push('The graph has "' + k + '" but the README tables do not. Remove it from NODES in graph-data.js.');
 }
 if (errors.length) {
   console.error('Refusing to draw:\n  ' + errors.join('\n  '));
   process.exit(1);
 }
 const N = {};
-for (const e of entries) N[e.name] = { ...NODES[e.name], c: COLOUR[e.cat], label: NODES[e.name].label || e.name };
+for (const e of entries) N[e.name] = { ...NODES[e.name], c: COLOUR[e.cat], shape: CATS[e.cat].shape, label: NODES[e.name].label || e.name };
 
 const names = Object.keys(N);
 const edges = [];
@@ -62,12 +62,10 @@ const jobsUsed = Object.keys(JOB).filter((k) => names.some((n) => N[n].j.include
 const jobList = jobsUsed.slice(0, -1).join(', ') + ', or ' + jobsUsed[jobsUsed.length - 1];
 
 const FONT = '&quot;Iowan Old Style&quot;,&quot;Palatino Linotype&quot;,Palatino,&quot;Book Antiqua&quot;,Georgia,&quot;Times New Roman&quot;,serif';
-const CAT = { S: 'Standing Verdicts', H: 'Human Approval', D: 'Delegation', C: 'Critique', B: 'Bench' };
+const ORDER = Object.keys(CATS).sort((a, b) => CATS[a].rank - CATS[b].rank);
 const T = {
-  light: { bg: '#fdfcfa', ink: '#1a1b1e', mut: '#5c5d63', edge: '#3f8d9c', cross: '#a4602a',
-    S: '#2d6a8f', H: '#2f7d55', D: '#7a4fa3', C: '#b5484f', B: '#a4602a', halo: '#fdfcfa' },
-  dark: { bg: '#0d1117', ink: '#e9e6e1', mut: '#9a978f', edge: '#5fb4c4', cross: '#e3a94a',
-    S: '#6cb6ff', H: '#57c08a', D: '#c091e8', C: '#f07a82', B: '#e3a94a', halo: '#0d1117' },
+  light: { bg: '#fdfcfa', ink: '#1a1b1e', mut: '#5c5d63', halo: '#fdfcfa', ...PALETTE.light },
+  dark: { bg: '#0d1117', ink: '#e9e6e1', mut: '#9a978f', halo: '#0d1117', ...PALETTE.dark },
 };
 const W = 1000, H = 742;
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -78,7 +76,7 @@ function svg(mode) {
   const o = [];
   o.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="${FONT}" role="img" aria-labelledby="gt gd">`);
   o.push('<title id="gt">Which systems do the same job</title>');
-  o.push(`<desc id="gd">A graph of all ${nNodes} systems. Two systems are joined when they return the same kind of thing: ${jobList}. Node colour is the category, meaning what the human still rules on. There are two kinds of link. A plain solid link, ${nSame} of them, joins two systems in the same category, so they are straightforward alternatives. A thicker dashed link, ${nCross} of them, joins two systems in different categories: they do the same job but leave the researcher answerable for different things. The dashed links join ${esc(dashedSentence())}.</desc>`);
+  o.push(`<desc id="gd">A graph of all ${nNodes} systems. Two systems are joined when they return the same kind of thing: ${jobList}. Node colour and shape both mark the category, meaning what the human still rules on. There are two kinds of link. A plain solid link, ${nSame} of them, joins two systems in the same category, so they are straightforward alternatives. A thicker dashed link, ${nCross} of them, joins two systems in different categories: they do the same job but leave the researcher answerable for different things. The dashed links join ${esc(dashedSentence())}.</desc>`);
   o.push(`<rect width="${W}" height="${H}" fill="${c.bg}"/>`);
   o.push(`<text x="34" y="34" font-size="17" font-weight="600" fill="${c.ink}">Which systems do the same job</text>`);
   o.push(`<text x="34" y="55" font-size="12.5" font-style="italic" fill="${c.mut}">A link joins two systems that return the same kind of thing. What the link looks like tells you whether they also sit in the same category.</text>`);
@@ -88,7 +86,7 @@ function svg(mode) {
   }
   for (const n of names) {
     const d = N[n];
-    o.push(`<circle cx="${d.x}" cy="${d.y}" r="7" fill="${c[d.c]}" stroke="${c.halo}" stroke-width="2"/>`);
+    o.push(`<path d="${SHAPES[d.shape]}" transform="translate(${d.x},${d.y})" fill="${c[d.c]}" stroke="${c.halo}" stroke-width="2" stroke-linejoin="round"/>`);
     const anchor = d.a || (d.x > 700 ? 'end' : d.x < 330 ? 'start' : 'middle');
     const dx = anchor === 'end' ? -12 : anchor === 'start' ? 12 : 0;
     const dy = d.dy !== undefined ? d.dy : anchor === 'middle' ? -15 : 4;
@@ -102,12 +100,13 @@ function svg(mode) {
   o.push(`<text x="${x2 + 54}" y="${y1}" font-size="12.5" fill="${c.ink}">same job, different category (${nCross}): different answerability</text>`);
   const y2 = H - 26;
   let lx = 34;
-  o.push(`<text x="${lx}" y="${y2}" font-size="12.5" font-style="italic" fill="${c.mut}">Node colour, the category:</text>`);
-  lx += 158;
-  for (const k of ['S', 'H', 'D', 'C', 'B']) {
-    o.push(`<circle cx="${lx}" cy="${y2 - 4}" r="5.5" fill="${c[k]}"/>`);
-    o.push(`<text x="${lx + 11}" y="${y2}" font-size="12.5" fill="${c.ink}">${CAT[k]}</text>`);
-    lx += CAT[k].length * 7.1 + 32;
+  o.push(`<text x="${lx}" y="${y2}" font-size="12.5" font-style="italic" fill="${c.mut}">Node colour and shape, the category:</text>`);
+  lx += 226;
+  for (const name of ORDER) {
+    const k = CATS[name].key;
+    o.push(`<path d="${SHAPES[CATS[name].shape]}" transform="translate(${lx},${y2 - 4}) scale(0.8)" fill="${c[k]}"/>`);
+    o.push(`<text x="${lx + 12}" y="${y2}" font-size="12.5" fill="${c.ink}">${name}</text>`);
+    lx += name.length * 7.1 + 34;
   }
   o.push('</svg>');
   return o.join('\n');

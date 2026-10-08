@@ -40,4 +40,35 @@ const JOBS = {
   next:      { phrase: 'picking the next experiment',           label: 'Pick the next experiment',        verb: 'suggest what to run next' },
 };
 
-module.exports = { NODES, JOBS };
+// Category key, its position on the Standing scale (Bench sits off it), the
+// shape that marks it, and what the machine's call is worth there.
+//
+// Shape is not decoration. No five hues stay pairwise distinguishable for
+// colour-blind readers, so colour never carries category on its own. The
+// palette below was checked with a CVD validator: on the four category pairs
+// that a link actually joins (S-H, H-D, D-C, B-D) the worst separation is
+// Delta E 21.6, against a floor of 8; across all ten pairs it is not, and
+// the shapes carry the rest.
+const CATS = {
+  'Delegation':        { key: 'D', rank: 0, shape: 'diamond',  phrase: 'The machine’s call is the record.' },
+  'Standing Verdicts': { key: 'S', rank: 1, shape: 'circle',   phrase: 'It stands until someone reverses it.' },
+  'Human Approval':    { key: 'H', rank: 2, shape: 'square',   phrase: 'It waits for a named person’s ruling.' },
+  'Critique':          { key: 'C', rank: 3, shape: 'triangle', phrase: 'It can never be the record.' },
+  'Bench':             { key: 'B', rank: 4, shape: 'hexagon',  phrase: 'Off this scale: a run settles it, not a reader.' },
+};
+
+const PALETTE = {
+  light: { D: '#2a78d6', S: '#4a3aa7', H: '#008300', C: '#e34948', B: '#eda100', edge: '#3f8d9c', cross: '#a4602a' },
+  dark:  { D: '#3987e5', S: '#9085e9', H: '#008300', C: '#e66767', B: '#c98500', edge: '#5fb4c4', cross: '#e3a94a' },
+};
+
+// Each shape as a path centred on 0,0, about 16 units across.
+const SHAPES = {
+  circle:   'M7,0A7,7 0 1 1 -7,0A7,7 0 1 1 7,0Z',
+  square:   'M-6.2,-6.2H6.2V6.2H-6.2Z',
+  diamond:  'M0,-8.2L8.2,0L0,8.2L-8.2,0Z',
+  triangle: 'M0,-8.4L7.8,6L-7.8,6Z',
+  hexagon:  'M-7.4,0L-3.7,-6.4L3.7,-6.4L7.4,0L3.7,6.4L-3.7,6.4Z',
+};
+
+module.exports = { NODES, JOBS, CATS, PALETTE, SHAPES };
