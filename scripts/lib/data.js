@@ -5,7 +5,12 @@
 // nowhere else.
 //
 // A system is put under a need only when its own documentation says it does
-// that job, never on the strength of how it sells itself. The README tables
+// that job, never on the strength of how it sells itself, and only through the
+// module its README row describes. The needs section shows that row's cells
+// and that row's category, so placing a product under a need served by some
+// other module would put one module's answerability on another. Elicit's
+// research reports, scite's question answering and Asta's data analysis are
+// real, and are left out for that reason. The README tables
 // decide which systems exist and which category each sits in; the build
 // refuses to run if this file disagrees with them.
 
@@ -34,11 +39,11 @@ const TAGS = {
   'Labguru Assistant':     ['next'],
   'AI-Researcher (HKUDS)': ['paper'],
   'Wisp Science':          ['data'],
-  'Semantic Scholar':      ['find', 'citations'],
+  'Semantic Scholar':      ['find'],
   'Consensus':             ['find', 'answer'],
   'Undermind':             ['find'],
   'Ai2 Asta':              ['find', 'answer'],
-  'OpenScholar':           ['find', 'answer'],
+  'OpenScholar':           ['answer'],
   'scite':                 ['citations'],
   'Elicit':                ['find', 'review'],
   'SciScore':              ['manuscript'],
