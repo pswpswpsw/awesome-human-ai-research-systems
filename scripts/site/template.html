@@ -101,69 +101,6 @@ h1 {
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .chip[aria-pressed="true"] .n { background: color-mix(in srgb, var(--bg) 22%, transparent); color: var(--bg); }
 
-/* ---- landscape ---- */
-.stage {
-  margin: 26px 0 0; background: var(--surface); border: 1px solid var(--rule);
-  border-radius: 14px; box-shadow: var(--shadow); overflow: hidden;
-}
-.stage-head {
-  display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between;
-  padding: 18px 22px 0;
-}
-.stage-title { font-size: 15px; font-weight: 600; margin: 0; }
-.stage-sub { font-size: 14px; color: var(--muted); margin: 0; font-style: italic; }
-.graph { display: block; width: 100%; height: auto; }
-.legend {
-  display: flex; flex-wrap: wrap; gap: 10px 22px; padding: 4px 22px 18px;
-  font-size: 13.5px; color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: 14px;
-}
-.legend .item { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
-.legend svg { overflow: visible; }
-.legend .sep { width: 1px; background: var(--rule-2); align-self: stretch; }
-
-/* graph marks */
-.edge { fill: none; stroke-linecap: round; transition: opacity .35s ease, stroke-width .35s ease; }
-.edge.same { stroke: var(--edge); stroke-width: 1.35; opacity: .8; }
-.edge.cross { stroke: var(--cross); stroke-width: 1.8; opacity: .95; stroke-dasharray: 5 3; }
-.drawline { stroke-dasharray: 100; stroke-dashoffset: 100; }
-.play .drawline { animation: draw .75s cubic-bezier(.3,.6,.2,1) forwards; animation-delay: var(--d, 0s); }
-@keyframes draw { to { stroke-dashoffset: 0; } }
-
-.node { cursor: pointer; transition: opacity .35s ease; }
-.node .mark { stroke: var(--surface); stroke-width: 2; }
-.node .hit { fill: transparent; }
-.node text {
-  font-family: var(--serif); font-size: 12.5px; fill: var(--ink);
-  stroke: var(--surface); stroke-width: 3.4px; paint-order: stroke; stroke-linejoin: round;
-}
-.node .shape { transform-box: fill-box; transform-origin: center; }
-.intro .node { opacity: 0; }
-.intro.play .node { animation: pop .5s cubic-bezier(.2,.8,.2,1.2) forwards; animation-delay: var(--d, 0s); }
-@keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-.node:hover .shape, .node:focus-visible .shape { transform: scale(1.25); }
-.node .shape { transition: transform .2s ease; }
-
-.dim .node { opacity: .16; }
-.dim .node.on { opacity: 1; }
-.dim .edge { opacity: .05; }
-.dim .edge.on.same { opacity: 1; stroke-width: 2.1; }
-.dim .edge.on.cross { opacity: 1; stroke-width: 2.4; }
-
-@media (max-width: 640px) {
-  .node text { display: none; }
-  .node .mark { stroke-width: 1.5; }
-}
-
-.tip {
-  position: fixed; z-index: 10; pointer-events: none; max-width: 300px;
-  background: var(--ink); color: var(--bg); border-radius: 10px; padding: 10px 13px;
-  font-size: 14px; line-height: 1.4; box-shadow: var(--shadow);
-  opacity: 0; transform: translateY(4px); transition: opacity .15s, transform .15s;
-}
-.tip.show { opacity: 1; transform: none; }
-.tip b { display: block; font-size: 15px; margin-bottom: 2px; }
-.tip .c { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; margin-bottom: 6px; display: block; }
-
 /* ---- result ---- */
 .result { margin: 34px 0 0; min-height: 120px; }
 .prompt {
@@ -214,8 +151,7 @@ footer code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monosp
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .drawline { stroke-dashoffset: 0; }
-  .intro .node, .play-cards .card { opacity: 1; }
+  .play-cards .card { opacity: 1; }
 }
 </style>
 </head>
@@ -232,31 +168,16 @@ footer code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monosp
     <div class="chips" role="group" aria-labelledby="pick-label" id="chips"></div>
   </section>
 
-  <section class="stage" aria-labelledby="stage-title">
-    <div class="stage-head">
-      <p class="stage-title" id="stage-title">Where it sits among all <span id="n-all"></span> systems</p>
-      <p class="stage-sub">Hover or tap a system. Dashed links join two that do the same job from different categories.</p>
-    </div>
-    <svg class="graph intro" id="graph" viewBox="10 64 980 612" role="img" aria-labelledby="graph-desc">
-      <desc id="graph-desc"></desc>
-      <defs id="defs"></defs>
-      <g id="edges"></g>
-      <g id="nodes"></g>
-    </svg>
-    <div class="legend" id="legend"></div>
-  </section>
-
   <section class="result" id="result" aria-live="polite">
-    <div class="prompt">Choose a job above to see the systems that do it, side by side.</div>
+    <div class="prompt">Choose what you want to do above to see the systems that do it, side by side.</div>
   </section>
 
   <footer>
     <p id="provenance"></p>
-    <p>Every line about a product on this page is taken from the README tables, and the links come from the same job tags that draw the README&rsquo;s second figure. Nothing here is written separately, so it cannot drift from the list. To change it, edit the README and run <code>node scripts/build.js</code>.</p>
+    <p>Every line about a product on this page is taken from the README tables, and which system sits under which need comes from the same list that builds the README&rsquo;s &ldquo;What do you want to do?&rdquo; section. Nothing here is written separately, so it cannot drift from the list. To change it, edit the README and run <code>node scripts/build.js</code>.</p>
     <p><a href="__REPO_URL__">The full list, and the reasoning behind every placement, is on GitHub.</a></p>
   </footer>
 </div>
-<div class="tip" id="tip" role="tooltip"></div>
 
 <script>
 window.HAIRS = null; /*__DATA__*/
@@ -281,116 +202,12 @@ window.HAIRS = null; /*__DATA__*/
     return n;
   }
   function shape(kind, parent, size) {
-    // the same path data the README figure draws, from graph-data.js
+    // the same path data as the README figure, from scripts/lib/data.js
     var p = el('path', { d: D.shapes[kind], 'stroke-linejoin': 'round' }, parent);
     if (size && size !== 1) p.setAttribute('transform', 'scale(' + size + ')');
     return p;
   }
   function catOf(e) { return D.cats[e.cat]; }
-
-  // ---------------- graph ----------------
-  var svg = document.getElementById('graph');
-  var gE = document.getElementById('edges'), gN = document.getElementById('nodes'), defs = document.getElementById('defs');
-  document.getElementById('graph-desc').textContent = D.graphDesc;
-  document.getElementById('n-all').textContent = D.entries.length;
-
-  var edgeEls = [];
-  D.edges.forEach(function (ed, i) {
-    var a = byName[ed.a], b = byName[ed.b];
-    var g = el('g', {}, gE);
-    var cls = 'edge ' + (ed.cross ? 'cross' : 'same');
-    var line;
-    if (ed.cross) {
-      // a dashed line cannot animate its own dash array, so a solid mask draws it in
-      var m = el('mask', { id: 'm' + i, maskUnits: 'userSpaceOnUse', x: 0, y: 0, width: 1000, height: 742 }, defs);
-      el('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, stroke: '#fff', 'stroke-width': 8, pathLength: 100, 'class': 'drawline' }, m);
-      line = el('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, 'class': cls, mask: 'url(#m' + i + ')' }, g);
-    } else {
-      line = el('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, 'class': cls + ' drawline', pathLength: 100 }, g);
-    }
-    edgeEls.push({ ed: ed, line: line, mask: ed.cross ? defs.lastChild.firstChild : line });
-  });
-
-  var nodeEls = [];
-  var minX = Math.min.apply(null, D.entries.map(function (e) { return e.x; }));
-  D.entries.forEach(function (e) {
-    var c = catOf(e);
-    var g = el('g', { 'class': 'node', transform: 'translate(' + e.x + ',' + e.y + ')', tabindex: 0, role: 'button', 'aria-label': e.label + ', ' + e.cat + '. ' + e.doesText }, gN);
-    g.style.setProperty('--d', ((e.x - minX) / 1000 * .55).toFixed(3) + 's');
-    el('circle', { r: 18, 'class': 'hit' }, g);
-    var sg = el('g', { 'class': 'shape' }, g);
-    var s = shape(c.shape, sg);
-    s.setAttribute('class', 'mark');
-    s.setAttribute('fill', 'var(--cat-' + c.key + ')');
-    var anchor = e.a || (e.x > 700 ? 'end' : e.x < 330 ? 'start' : 'middle');
-    var dx = anchor === 'end' ? -13 : anchor === 'start' ? 13 : 0;
-    var dy = e.dy !== undefined ? e.dy : anchor === 'middle' ? -15 : 4;
-    var t = el('text', { x: dx, y: dy, 'text-anchor': anchor }, g);
-    t.textContent = e.label;
-    nodeEls.push({ e: e, g: g });
-    g.addEventListener('mouseenter', function (ev) { showTip(e, ev); });
-    g.addEventListener('mousemove', function (ev) { moveTip(ev); });
-    g.addEventListener('mouseleave', hideTip);
-    g.addEventListener('focus', function () { var r = g.getBoundingClientRect(); showTip(e, { clientX: r.left + r.width / 2, clientY: r.top }); });
-    g.addEventListener('blur', hideTip);
-    g.addEventListener('click', function () { pickFromNode(e); });
-    g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); pickFromNode(e); } });
-  });
-
-  function replay(elm, cls) {
-    elm.classList.remove(cls);
-    void elm.getBoundingClientRect();
-    elm.classList.add(cls);
-  }
-
-  // entrance: nodes first, then the solid links, then the dashed ones last
-  function intro() {
-    edgeEls.forEach(function (x) {
-      var base = x.ed.cross ? 1.25 : .55;
-      var jitter = (x.ed.a.length * 7 + x.ed.b.length * 3) % 10 / 40;
-      x.mask.style.setProperty('--d', (base + jitter).toFixed(3) + 's');
-    });
-    if (reduce) { svg.classList.remove('intro'); return; }
-    svg.classList.add('play');
-    setTimeout(function () { svg.classList.remove('intro'); }, 1400);
-  }
-
-  // ---------------- tooltip ----------------
-  var tip = document.getElementById('tip');
-  function showTip(e, ev) {
-    tip.innerHTML = '<span class="c">' + e.cat + '</span><b>' + e.label + '</b>' + e.doesHTML;
-    tip.classList.add('show');
-    moveTip(ev);
-  }
-  function moveTip(ev) {
-    var w = tip.offsetWidth, h = tip.offsetHeight;
-    var x = Math.min(window.innerWidth - w - 12, Math.max(12, ev.clientX - w / 2));
-    var y = ev.clientY - h - 16;
-    if (y < 8) y = ev.clientY + 22;
-    tip.style.left = x + 'px'; tip.style.top = y + 'px';
-  }
-  function hideTip() { tip.classList.remove('show'); }
-
-  // ---------------- legend ----------------
-  var legend = document.getElementById('legend');
-  function lineSwatch(cross) {
-    var s = document.createElementNS(NS, 'svg'); s.setAttribute('width', 34); s.setAttribute('height', 10);
-    var l = el('line', { x1: 1, y1: 5, x2: 33, y2: 5, 'class': 'edge ' + (cross ? 'cross' : 'same') }, s);
-    return s;
-  }
-  function addItem(swatch, text) {
-    var it = document.createElement('span'); it.className = 'item';
-    it.appendChild(swatch); it.appendChild(document.createTextNode(text)); legend.appendChild(it);
-  }
-  addItem(lineSwatch(false), 'same job, same category (' + D.nSame + ')');
-  addItem(lineSwatch(true), 'same job, different category (' + D.nCross + ')');
-  var sep = document.createElement('span'); sep.className = 'sep'; legend.appendChild(sep);
-  D.catOrder.forEach(function (name) {
-    var c = D.cats[name];
-    var s = document.createElementNS(NS, 'svg'); s.setAttribute('width', 18); s.setAttribute('height', 18); s.setAttribute('viewBox', '-9 -9 18 18');
-    var m = shape(c.shape, s, .95); m.setAttribute('fill', 'var(--cat-' + c.key + ')');
-    addItem(s, name);
-  });
 
   // ---------------- chips ----------------
   var chips = document.getElementById('chips');
@@ -408,36 +225,15 @@ window.HAIRS = null; /*__DATA__*/
   var jobsByKey = {};
   D.jobs.forEach(function (j) { jobsByKey[j.key] = j; });
 
-  function pickFromNode(e) {
-    var i = e.jobs.indexOf(current);
-    var next = e.jobs[(i + 1) % e.jobs.length];
-    select(next);
-    document.getElementById('result').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-  }
-
   function select(key) {
     current = key;
     for (var k in chipEls) chipEls[k].setAttribute('aria-pressed', String(k === key));
     try { history.replaceState(null, '', key ? '#job=' + key : location.pathname); } catch (_) {}
     if (!key) {
-      svg.classList.remove('dim');
-      nodeEls.forEach(function (n) { n.g.classList.remove('on'); });
-      edgeEls.forEach(function (x) { x.line.classList.remove('on'); });
-      document.getElementById('result').innerHTML = '<div class="prompt">Choose a job above to see the systems that do it, side by side.</div>';
+      document.getElementById('result').innerHTML = '<div class="prompt">Choose what you want to do above to see the systems that do it, side by side.</div>';
       return;
     }
-    var j = jobsByKey[key];
-    svg.classList.add('dim');
-    nodeEls.forEach(function (n) { n.g.classList.toggle('on', n.e.jobs.indexOf(key) >= 0); });
-    var any = false;
-    edgeEls.forEach(function (x) {
-      var on = byName[x.ed.a].jobs.indexOf(key) >= 0 && byName[x.ed.b].jobs.indexOf(key) >= 0;
-      x.line.classList.toggle('on', on);
-      if (on) { any = true; x.mask.style.setProperty('--d', (x.ed.cross ? .35 : 0) + 's'); }
-    });
-    // redraw the highlighted links, solid first and dashed a beat later
-    if (any && !reduce) replay(svg, 'play');
-    renderCards(j);
+    renderCards(jobsByKey[key]);
   }
 
   function renderCards(j) {
@@ -484,11 +280,10 @@ window.HAIRS = null; /*__DATA__*/
   }
 
   document.getElementById('provenance').textContent =
-    'Built from the README tables: ' + D.entries.length + ' systems, ' + D.edges.length + ' links, ' + D.jobs.length + ' jobs.';
+    'Built from the README tables: ' + D.entries.length + ' systems under ' + D.jobs.length + ' needs.';
 
-  intro();
   var h = (location.hash.match(/job=(\w+)/) || [])[1];
-  if (h && jobsByKey[h]) setTimeout(function () { select(h); }, reduce ? 0 : 1500);
+  if (h && jobsByKey[h]) setTimeout(function () { select(h); }, reduce ? 0 : 250);
 })();
 </script>
 </body>

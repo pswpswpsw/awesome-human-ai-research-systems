@@ -1,6 +1,6 @@
 // Figure 1: the Standing scale across the ranked four, and Bench off it.
 // Counts come from the README tables. Run: node scripts/figures/categories.js
-const { readEntries, counts, plural, write } = require('./readme');
+const { readEntries, counts, plural, write } = require('../lib/readme');
 
 const n = counts(readEntries());
 const FONT = '&quot;Iowan Old Style&quot;,&quot;Palatino Linotype&quot;,Palatino,&quot;Book Antiqua&quot;,Georgia,&quot;Times New Roman&quot;,serif';

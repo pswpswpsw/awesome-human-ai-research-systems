@@ -23,6 +23,23 @@ function readEntries() {
   return out;
 }
 
+// Every product row with all of its cells. cells[0] is the System cell;
+// name, url and note are parsed out of it.
+function readRows() {
+  const out = [];
+  for (const s of readme().split(/^## /m).slice(1)) {
+    const cat = s.split('\n')[0].trim();
+    if (!CATS.includes(cat)) continue;
+    for (const l of s.split('\n')) {
+      if (!/^\| \[[^\]]+\]\(https?:/.test(l)) continue;
+      const cells = l.split('|').slice(1, -1).map((c) => c.trim());
+      const m = cells[0].match(/^\[([^\]]+)\]\((https?:[^)\s]+)\)\s*(.*)$/);
+      out.push({ name: m[1], url: m[2], note: m[3].replace(/^\*\(|\)\*$/g, '').trim(), cat, cells });
+    }
+  }
+  return out;
+}
+
 function counts(entries) {
   const c = {};
   for (const k of CATS) c[k] = 0;
@@ -41,4 +58,4 @@ function write(name, svg) {
   fs.writeFileSync(path.join(ROOT, 'docs', name), svg);
 }
 
-module.exports = { ROOT, CATS, readme, readEntries, counts, plural, words, write };
+module.exports = { ROOT, CATS, readme, readEntries, readRows, counts, plural, words, write };
