@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="742" viewBox="0 0 1000 742" font-family="&quot;Iowan Old Style&quot;,&quot;Palatino Linotype&quot;,Palatino,&quot;Book Antiqua&quot;,Georgia,&quot;Times New Roman&quot;,serif" role="img" aria-labelledby="gt gd">
 <title id="gt">Which systems do the same job</title>
-<desc id="gd">A graph of all 17 systems. Two systems are joined when they return the same kind of thing: searching the literature, screening and extracting for a review, judging citations, writing a draft, checking a finished manuscript, or picking the next experiment. Node colour and shape both mark the category, meaning what the human still rules on. There are two kinds of link. A plain solid link, 22 of them, joins two systems in the same category, so they are straightforward alternatives. A thicker dashed link, 9 of them, joins two systems in different categories: they do the same job but leave the researcher answerable for different things. The dashed links join Elicit to ClawsGO Science, Semantic Scholar, Consensus, Undermind, Ai2 Asta and OpenScholar; Review-it to SciScore and Reviewer3; Labguru Assistant to Atinary SDLabs.</desc>
+<desc id="gd">A graph of all 18 systems. Two systems are joined when they return the same kind of thing: searching the literature, screening and extracting for a review, judging citations, writing a draft, checking a finished manuscript, or picking the next experiment. Node colour and shape both mark the category, meaning what the human still rules on. There are two kinds of link. A plain solid link, 27 of them, joins two systems in the same category, so they are straightforward alternatives. A thicker dashed link, 9 of them, joins two systems in different categories: they do the same job but leave the researcher answerable for different things. The dashed links join Elicit to ClawsGO Science, Semantic Scholar, Consensus, Undermind, Ai2 Asta and OpenScholar; Review-it to SciScore and Reviewer3; Labguru Assistant to Atinary SDLabs.</desc>
 <rect width="1000" height="742" fill="#0d1117"/>
 <text x="34" y="34" font-size="17" font-weight="600" fill="#e9e6e1">Which systems do the same job</text>
 <text x="34" y="55" font-size="12.5" font-style="italic" fill="#9a978f">A link joins two systems that return the same kind of thing. What the link looks like tells you whether they also sit in the same category.</text>
@@ -8,16 +8,21 @@
 <line x1="606" y1="318" x2="918" y2="352" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="606" y1="318" x2="770" y2="100" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="606" y1="318" x2="928" y2="176" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
+<line x1="606" y1="318" x2="684" y2="178" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="606" y1="318" x2="450" y2="226" stroke="#e3a94a" stroke-width="1.8" stroke-dasharray="5 3" opacity="0.95"/>
 <line x1="764" y1="250" x2="918" y2="352" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="764" y1="250" x2="770" y2="100" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="764" y1="250" x2="928" y2="176" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
+<line x1="764" y1="250" x2="684" y2="178" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="918" y1="352" x2="770" y2="100" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="918" y1="352" x2="928" y2="176" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
+<line x1="918" y1="352" x2="684" y2="178" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="700" y1="540" x2="896" y2="568" stroke="#e3a94a" stroke-width="1.8" stroke-dasharray="5 3" opacity="0.95"/>
 <line x1="700" y1="540" x2="776" y2="636" stroke="#e3a94a" stroke-width="1.8" stroke-dasharray="5 3" opacity="0.95"/>
 <line x1="770" y1="100" x2="928" y2="176" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
+<line x1="770" y1="100" x2="684" y2="178" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="512" y1="612" x2="340" y2="560" stroke="#e3a94a" stroke-width="1.8" stroke-dasharray="5 3" opacity="0.95"/>
+<line x1="928" y1="176" x2="684" y2="178" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="206" y1="344" x2="104" y2="146" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="206" y1="344" x2="252" y2="104" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
 <line x1="206" y1="344" x2="304" y2="214" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
@@ -49,6 +54,8 @@
 <text x="512" y="636" font-size="12.5" text-anchor="middle" fill="#e9e6e1" stroke="#0d1117" stroke-width="3.4" paint-order="stroke">Labguru Assistant</text>
 <path d="M0,-8.2L8.2,0L0,8.2L-8.2,0Z" transform="translate(928,176)" fill="#3987e5" stroke="#0d1117" stroke-width="2" stroke-linejoin="round"/>
 <text x="916" y="180" font-size="12.5" text-anchor="end" fill="#e9e6e1" stroke="#0d1117" stroke-width="3.4" paint-order="stroke">AI-Researcher</text>
+<path d="M0,-8.2L8.2,0L0,8.2L-8.2,0Z" transform="translate(684,178)" fill="#3987e5" stroke="#0d1117" stroke-width="2" stroke-linejoin="round"/>
+<text x="684" y="163" font-size="12.5" text-anchor="middle" fill="#e9e6e1" stroke="#0d1117" stroke-width="3.4" paint-order="stroke">Wisp Science</text>
 <path d="M7,0A7,7 0 1 1 -7,0A7,7 0 1 1 7,0Z" transform="translate(206,344)" fill="#9085e9" stroke="#0d1117" stroke-width="2" stroke-linejoin="round"/>
 <text x="218" y="348" font-size="12.5" text-anchor="start" fill="#e9e6e1" stroke="#0d1117" stroke-width="3.4" paint-order="stroke">Semantic Scholar</text>
 <path d="M7,0A7,7 0 1 1 -7,0A7,7 0 1 1 7,0Z" transform="translate(104,146)" fill="#9085e9" stroke="#0d1117" stroke-width="2" stroke-linejoin="round"/>
@@ -70,7 +77,7 @@
 <path d="M-7.4,0L-3.7,-6.4L3.7,-6.4L7.4,0L3.7,6.4L-3.7,6.4Z" transform="translate(340,560)" fill="#c98500" stroke="#0d1117" stroke-width="2" stroke-linejoin="round"/>
 <text x="340" y="545" font-size="12.5" text-anchor="middle" fill="#e9e6e1" stroke="#0d1117" stroke-width="3.4" paint-order="stroke">Atinary SDLabs</text>
 <line x1="34" y1="674" x2="78" y2="674" stroke="#5fb4c4" stroke-width="1.35" opacity="0.8"/>
-<text x="88" y="678" font-size="12.5" fill="#e9e6e1">same job, same category (22): straightforward alternatives</text>
+<text x="88" y="678" font-size="12.5" fill="#e9e6e1">same job, same category (27): straightforward alternatives</text>
 <line x1="520" y1="674" x2="564" y2="674" stroke="#e3a94a" stroke-width="1.8" stroke-dasharray="5 3"/>
 <text x="574" y="678" font-size="12.5" fill="#e9e6e1">same job, different category (9): different answerability</text>
 <text x="34" y="716" font-size="12.5" font-style="italic" fill="#9a978f">Node colour and shape, the category:</text>

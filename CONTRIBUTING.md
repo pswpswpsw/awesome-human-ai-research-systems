@@ -81,7 +81,7 @@ Proposing a **new facet** (see [METHOD.md](METHOD.md#the-facets)) must clear tha
 This list exists because bigger lists in this space either sprawl until nobody can maintain them, or turn into a paper bibliography that goes stale within a year.
 
 - Quality and relevance beat completeness. Not every AI-for-research tool needs to be here.
-- If a category grows past ~10–12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at seven, is the closest to that line today.
+- If a category grows past ~10–12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at eight, is the closest to that line today.
 - A category holding one entry is fine if the arrangement it describes is real. Thin categories are informative: they show where this sort of collaboration barely exists yet.
 
 ## Removing entries

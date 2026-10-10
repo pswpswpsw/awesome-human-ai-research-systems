@@ -20,6 +20,7 @@ const NODES = {
   'ClawsGO Science':       { x: 606, y: 318, j: ['screen', 'draft'], dy: 24 },
   'Granted AI':            { x: 770, y: 100, j: ['draft'] },
   'AI-Researcher (HKUDS)': { x: 928, y: 176, j: ['draft'], label: 'AI-Researcher' },
+  'Wisp Science':          { x: 684, y: 178, j: ['draft'] },
   'Edison Platform':       { x: 764, y: 250, j: ['draft'], a: 'start' },
   'Question First':        { x: 918, y: 352, j: ['draft'] },
   'Review-it':             { x: 700, y: 540, j: ['check'] },
