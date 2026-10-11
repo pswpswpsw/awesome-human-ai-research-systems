@@ -1,15 +1,17 @@
 // Builds the chooser page, docs/index.html, which GitHub Pages serves.
 // Run everything at once with: node scripts/build.js
 //
-// Every product sentence on the page is a README table cell, and the needs,
-// colours and shapes come from scripts/lib/data.js, the same list the
-// README's "What do you want to do?" section is built from. The script
+// Every product sentence on the cards is a README table cell, the How they
+// differ tables come from scripts/lib/compare.js, and the needs, colours and
+// shapes come from scripts/lib/data.js, the same files the README's "What do
+// you want to do?" section is built from. The script
 // refuses to build if the README tables and data.js disagree about which
 // systems exist, so the page cannot quietly fall out of step with the list.
 const fs = require('fs');
 const path = require('path');
 const { ROOT, readme, readRows } = require('../lib/readme');
 const { NEEDS, TAGS, CATS, PALETTE, SHAPES } = require('../lib/data');
+const { CHECKED, matrix } = require('../lib/compare');
 
 const REPO_URL = 'https://github.com/pswpswpsw/awesome-human-ai-research-systems';
 const TEMPLATE = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
@@ -53,8 +55,21 @@ if (errors.length) {
   process.exit(1);
 }
 
+// The comparison rows for each job, in the order the cards are shown: by
+// category rank, then README order. The README build has already checked them.
+const allRows = readRows();
+const panelOrder = (key) => allRows
+  .filter((r) => (TAGS[r.name] || []).includes(key))
+  .sort((a, b) => CATS[a.cat].rank - CATS[b.cat].rank || allRows.indexOf(a) - allRows.indexOf(b));
 const jobs = Object.entries(NEEDS)
-  .map(([key, j]) => ({ key, label: j.label, verb: j.verb, members: entries.filter((e) => e.jobs.includes(key)).map((e) => e.name) }))
+  .map(([key, j]) => ({
+    key, label: j.label, verb: j.verb,
+    members: entries.filter((e) => e.jobs.includes(key)).map((e) => e.name),
+    diff: matrix(key, panelOrder(key)).map((r) => ({
+      label: esc(r.label),
+      cells: r.cells.map((c) => ({ name: c.name, v: c.cell.v, html: esc(c.text).replace(/†/g, '<span class="dag">†</span>') })),
+    })),
+  }))
   .filter((j) => j.members.length);
 
 // The README links straight to jobs on this page. Those links are written by
@@ -76,6 +91,7 @@ const data = {
   cats: CATS,
   catOrder: Object.keys(CATS).sort((a, b) => CATS[a].rank - CATS[b].rank),
   shapes: SHAPES,
+  checked: CHECKED,
 };
 
 // ---- colours as CSS custom properties, from the shared palette ----

@@ -143,6 +143,34 @@ dl.facts dt { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercas
 dl.facts dd { margin: 0; color: var(--ink-2); }
 dl.facts code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); padding: 1px 6px; border-radius: 5px; }
 
+/* ---- how they differ ---- */
+.diff { margin: 36px 0 0; }
+.diff h3 { font-size: 24px; font-weight: 600; line-height: 1.2; margin: 0 0 6px; }
+.diff .sub { margin: 0 0 14px; color: var(--ink-2); font-size: 16.5px; max-width: 46em; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow); }
+table.mx { border-collapse: separate; border-spacing: 0; width: 100%; min-width: calc(190px + var(--n) * 118px); font-size: 15px; line-height: 1.4; }
+table.mx th, table.mx td { padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+table.mx tbody tr:last-child th, table.mx tbody tr:last-child td { border-bottom: 0; }
+table.mx thead th { font-size: 14.5px; font-weight: 600; text-align: center; background: var(--surface-2); }
+table.mx thead th .sw { display: block; height: 3px; border-radius: 2px; background: var(--c); margin: 0 auto 7px; width: 28px; }
+table.mx tbody th { text-align: left; font-weight: 400; color: var(--ink-2); min-width: 190px; max-width: 260px; }
+table.mx th:first-child { position: sticky; left: 0; z-index: 1; background: var(--surface); box-shadow: 1px 0 0 var(--rule); }
+table.mx thead th:first-child { background: var(--surface-2); }
+table.mx td { text-align: center; }
+table.mx td.yes { color: var(--ink); font-weight: 600; }
+table.mx td.no { color: var(--ink-2); }
+table.mx td.nd { color: var(--muted); font-style: italic; font-size: 13.5px; }
+table.mx td.preprint, table.mx td.text { color: var(--ink-2); font-size: 14px; }
+table.mx .dag { font-weight: 400; }
+@media (max-width: 560px) {
+  table.mx { font-size: 14px; min-width: calc(132px + var(--n) * 96px); }
+  table.mx th, table.mx td { padding: 9px 9px; }
+  table.mx tbody th { min-width: 132px; max-width: 150px; }
+  table.mx td.nd { font-size: 12.5px; }
+}
+.legend { margin: 10px 0 0; color: var(--muted); font-size: 14px; max-width: 62em; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
 footer { margin: 56px 0 0; padding: 22px 0 48px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; }
 footer p { margin: 0 0 6px; max-width: 60em; }
 footer code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; background: var(--surface-2); padding: 1px 6px; border-radius: 5px; }
@@ -174,7 +202,7 @@ footer code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monosp
 
   <footer>
     <p id="provenance"></p>
-    <p>Every line about a product on this page is taken from the README tables, and which system sits under which need comes from the same list that builds the README&rsquo;s &ldquo;What do you want to do?&rdquo; section. The page is built from the list, and a check on every push fails if the two differ. To change it, edit the README and run <code>node scripts/build.js</code>.</p>
+    <p>The cards are taken from the README tables, and which system sits under which need comes from the same list that builds the README&rsquo;s &ldquo;What do you want to do?&rdquo; section. The <em>How they differ</em> tables come from <code>scripts/lib/compare.js</code>, where each value carries the page and the words it rests on. The page is built from those files, and a check on every push fails if the committed page differs from a fresh build. To change it, edit the source and run <code>node scripts/build.js</code>.</p>
     <p><a href="__REPO_URL__">The full list, and the reasoning behind every placement, is on GitHub.</a></p>
   </footer>
 </div>
@@ -269,7 +297,30 @@ window.HAIRS = null; /*__DATA__*/
         '</dl></article>';
     });
     html += '</div>';
+    html += renderDiff(j, members);
     document.getElementById('result').innerHTML = html;
+  }
+
+  // Where the systems in the job differ, from scripts/lib/compare.js.
+  function renderDiff(j, members) {
+    if (!j.diff || !j.diff.length) return '';
+    var h = '<section class="diff" aria-labelledby="diff-h"><h3 id="diff-h">How they differ</h3>' +
+      '<p class="sub">Feature by feature, where their public documentation differs.</p>' +
+      '<div class="scroll" role="region" tabindex="0" aria-labelledby="diff-h"><table class="mx" style="--n:' + members.length + '">' +
+      '<thead><tr><th scope="col"><span class="vh">Feature</span></th>';
+    members.forEach(function (m) {
+      h += '<th scope="col" style="--c: var(--cat-' + catOf(m).key + ')"><span class="sw" aria-hidden="true"></span>' + m.label + '</th>';
+    });
+    h += '</tr></thead><tbody>';
+    j.diff.forEach(function (r) {
+      var byN = {};
+      r.cells.forEach(function (c) { byN[c.name] = c; });
+      h += '<tr><th scope="row">' + r.label + '</th>';
+      members.forEach(function (m) { var c = byN[m.name]; h += '<td class="' + c.v + '">' + c.html + '</td>'; });
+      h += '</tr>';
+    });
+    return h + '</tbody></table></div>' +
+      '<p class="legend">&#10003; and &#10007; rest on the vendor&rsquo;s own pages or on the system&rsquo;s own README row, and &dagger; marks evidence found only in page source or a script bundle. In the evaluation row, &#10003; names the published study. <em>Not documented</em> means nothing we found on its public pages says either way. Checked ' + D.checked + '.</p></section>';
   }
 
   function catIcon(c) {
@@ -280,7 +331,7 @@ window.HAIRS = null; /*__DATA__*/
   }
 
   document.getElementById('provenance').textContent =
-    'Built from the README tables: ' + D.entries.length + ' systems under ' + D.jobs.length + ' needs.';
+    'Built from the README tables and scripts/lib/compare.js: ' + D.entries.length + ' systems under ' + D.jobs.length + ' needs.';
 
   var h = (location.hash.match(/job=(\w+)/) || [])[1];
   if (h && jobsByKey[h]) setTimeout(function () { select(h); }, reduce ? 0 : 250);
