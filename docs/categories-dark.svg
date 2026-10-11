@@ -1,10 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="486" viewBox="0 0 860 486" font-family="&quot;Iowan Old Style&quot;,&quot;Palatino Linotype&quot;,Palatino,&quot;Book Antiqua&quot;,Georgia,&quot;Times New Roman&quot;,serif" role="img" aria-labelledby="figtitle figdesc">
 <title id="figtitle">How the five categories are arranged</title>
-<desc id="figdesc">A partial view showing two of the five facets. Four categories sit in order on one qualitative scale, what the AI&#8217;s call on an item is worth before the researcher acts: in Delegation it is the record, in Standing Verdicts it stands until someone reverses it, in Human Approval it waits for a named person&#8217;s recorded ruling, in Critique it can never be the record. The order is qualitative, not a measured quantity. Bench sits off that scale because it answers a different question, who settles whether the AI was right: a reader for the other four, a run for Bench. Placement also depends on the other three facets, Scope, Record and Target.</desc>
+<desc id="figdesc">The figure shows two of the five facets, Standing and Arbiter. Four categories sit in order on one qualitative scale, what the AI&#8217;s call on an item is worth before the researcher acts: in Delegation it is the record, in Standing Verdicts it stands until someone reverses it, in Human Approval it waits for a named person&#8217;s recorded ruling, in Critique it can never be the record. Bench sits off that scale because it answers a different question, who settles whether the AI was right: a reader for the other four, a run for Bench. Placement uses three more facets, Scope, Record and Target, tabulated in METHOD.md.</desc>
 <rect width="860" height="486" fill="#0d1117"/>
 <text x="42" y="32" font-size="16" font-weight="600" fill="#e6edf3">Standing: what the AI&#8217;s call on one item is worth before you do anything</text>
-<text x="42" y="52" font-size="12.5" fill="#9198a1">These four sit in order on one qualitative scale. The order is a ranking, not a measured quantity, and it is one facet</text>
-<text x="42" y="68" font-size="12.5" fill="#9198a1">rather than the categories themselves.</text>
+<text x="42" y="56" font-size="12.5" fill="#9198a1">These four sit in order on one facet, Standing, which is a qualitative scale.</text>
 <rect x="42" y="78" width="185" height="104" rx="7" fill="#161b22" stroke="#30363d"/>
 <rect x="42" y="78" width="5" height="104" rx="2.5" fill="#6cb6ff"/>
 <text x="60" y="103" font-size="14" font-weight="700" fill="#e6edf3">Delegation</text>
@@ -37,7 +36,7 @@
 <text x="42" y="238" font-size="12" fill="#9198a1">the AI&#8217;s call is already the record</text>
 <text x="818" y="238" font-size="12" fill="#9198a1" text-anchor="end">it can never be the record</text>
 <line x1="42" y1="278" x2="818" y2="278" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4"/>
-<text x="42" y="308" font-size="16" font-weight="600" fill="#e6edf3">Bench is not further along that line. It answers a different question.</text>
+<text x="42" y="308" font-size="16" font-weight="600" fill="#e6edf3">Bench sits off that line. It answers a different question.</text>
 <text x="42" y="330" font-size="13" fill="#9198a1">Arbiter: who settles whether the AI was right?</text>
 <rect x="42" y="346" width="382" height="86" rx="7" fill="#132430" stroke="#30363d"/>
 <text x="58" y="372" font-size="13.5" font-weight="700" fill="#6cb6ff">a reader</text>
@@ -48,5 +47,5 @@
 <text x="454" y="393" font-size="11.5" fill="#e6edf3">A measurement settles it, and that result</text>
 <text x="454" y="408" font-size="11.5" fill="#e6edf3">feeds the next proposal. A human act is</text>
 <text x="454" y="423" font-size="11.5" fill="#e6edf3">required in between. Bench &#183; 1 system.</text>
-<text x="42" y="464" font-size="11.5" fill="#9198a1">Two of five facets shown. Placement also depends on Scope, Record and Target, tabulated in METHOD.md.</text>
+<text x="42" y="464" font-size="11.5" fill="#9198a1">Placement uses three more facets, Scope, Record and Target, tabulated in METHOD.md.</text>
 </svg>

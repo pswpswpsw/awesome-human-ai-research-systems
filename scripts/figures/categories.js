@@ -23,11 +23,10 @@ function svg(mode) {
   const o = [];
   o.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="${FONT}" role="img" aria-labelledby="figtitle figdesc">`);
   o.push('<title id="figtitle">How the five categories are arranged</title>');
-  o.push('<desc id="figdesc">A partial view showing two of the five facets. Four categories sit in order on one qualitative scale, what the AI&#8217;s call on an item is worth before the researcher acts: in Delegation it is the record, in Standing Verdicts it stands until someone reverses it, in Human Approval it waits for a named person&#8217;s recorded ruling, in Critique it can never be the record. The order is qualitative, not a measured quantity. Bench sits off that scale because it answers a different question, who settles whether the AI was right: a reader for the other four, a run for Bench. Placement also depends on the other three facets, Scope, Record and Target.</desc>');
+  o.push('<desc id="figdesc">The figure shows two of the five facets, Standing and Arbiter. Four categories sit in order on one qualitative scale, what the AI&#8217;s call on an item is worth before the researcher acts: in Delegation it is the record, in Standing Verdicts it stands until someone reverses it, in Human Approval it waits for a named person&#8217;s recorded ruling, in Critique it can never be the record. Bench sits off that scale because it answers a different question, who settles whether the AI was right: a reader for the other four, a run for Bench. Placement uses three more facets, Scope, Record and Target, tabulated in METHOD.md.</desc>');
   o.push(`<rect width="${W}" height="${H}" fill="${c.bg}"/>`);
   o.push(`<text x="${X0}" y="32" font-size="16" font-weight="600" fill="${c.ink}">Standing: what the AI&#8217;s call on one item is worth before you do anything</text>`);
-  o.push(`<text x="${X0}" y="52" font-size="12.5" fill="${c.mut}">These four sit in order on one qualitative scale. The order is a ranking, not a measured quantity, and it is one facet</text>`);
-  o.push(`<text x="${X0}" y="68" font-size="12.5" fill="${c.mut}">rather than the categories themselves.</text>`);
+  o.push(`<text x="${X0}" y="56" font-size="12.5" fill="${c.mut}">These four sit in order on one facet, Standing, which is a qualitative scale.</text>`);
   BOX.forEach((b, i) => {
     const x = X0 + i * (BW + G);
     o.push(`<rect x="${x}" y="${BY}" width="${BW}" height="${BH}" rx="7" fill="${c.card}" stroke="${c.bd}"/>`);
@@ -44,7 +43,7 @@ function svg(mode) {
   o.push(`<text x="${X0}" y="${AY + 22}" font-size="12" fill="${c.mut}">the AI&#8217;s call is already the record</text>`);
   o.push(`<text x="${XE}" y="${AY + 22}" font-size="12" fill="${c.mut}" text-anchor="end">it can never be the record</text>`);
   o.push(`<line x1="${X0}" y1="278" x2="${XE}" y2="278" stroke="${c.bd}" stroke-width="1" stroke-dasharray="4 4"/>`);
-  o.push(`<text x="${X0}" y="308" font-size="16" font-weight="600" fill="${c.ink}">Bench is not further along that line. It answers a different question.</text>`);
+  o.push(`<text x="${X0}" y="308" font-size="16" font-weight="600" fill="${c.ink}">Bench sits off that line. It answers a different question.</text>`);
   o.push(`<text x="${X0}" y="330" font-size="13" fill="${c.mut}">Arbiter: who settles whether the AI was right?</text>`);
   const FY = 346, FH = 86, FW = 382, RX = X0 + FW + G + 2;
   o.push(`<rect x="${X0}" y="${FY}" width="${FW}" height="${FH}" rx="7" fill="${c.acBg}" stroke="${c.bd}"/>`);
@@ -56,7 +55,7 @@ function svg(mode) {
   o.push(`<text x="${RX + 16}" y="${FY + 47}" font-size="11.5" fill="${c.ink}">A measurement settles it, and that result</text>`);
   o.push(`<text x="${RX + 16}" y="${FY + 62}" font-size="11.5" fill="${c.ink}">feeds the next proposal. A human act is</text>`);
   o.push(`<text x="${RX + 16}" y="${FY + 77}" font-size="11.5" fill="${c.ink}">required in between. Bench &#183; ${plural(n['Bench'])}.</text>`);
-  o.push(`<text x="${X0}" y="464" font-size="11.5" fill="${c.mut}">Two of five facets shown. Placement also depends on Scope, Record and Target, tabulated in METHOD.md.</text>`);
+  o.push(`<text x="${X0}" y="464" font-size="11.5" fill="${c.mut}">Placement uses three more facets, Scope, Record and Target, tabulated in METHOD.md.</text>`);
   o.push('</svg>');
   return o.join('\n');
 }
