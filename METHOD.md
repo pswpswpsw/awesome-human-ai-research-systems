@@ -24,7 +24,7 @@ The five categories are the filled-in squares of a small grid. The grid is built
 
 The last column gives, for each facet, one pair of systems that facet tells apart, which shows that every facet does work somewhere in the list. Because each pair also differs on other facets, the list leaves open whether any single facet is indispensable.
 
-**Span describes the systems without sorting them.** Span means how much of the research a system reaches: one step, one sub-workflow, or a question in and something you could hand in coming out. It is real and useful as a description, and it moves no entry. Question First helps you sharpen a research question, ClawsGO hands back a finished manuscript, and both sit in Delegation, because you rule on each the same way, once, at the end. [CONTRIBUTING.md](CONTRIBUTING.md) requires a new facet to change at least one existing placement or be turned down as decoration, and span fails that test. That result is also the cleanest evidence that the facets are doing real work: a genuinely separate dimension can be added without moving a single row.
+**Span describes the systems without sorting them.** Span means how much of the research a system reaches: one step, one sub-workflow, or a question in and something you could hand in coming out. It is real and useful as a description, and it moves no entry. Question First helps you sharpen a research question, ClawsGO hands back a finished manuscript, and both sit in Delegation, because in each you rule on the whole document and never item by item: Question First shows you an outline before the full text, ClawsGO only the finished manuscript. [CONTRIBUTING.md](CONTRIBUTING.md) requires a new facet to change at least one existing placement or be turned down as decoration, and span fails that test. That result is also the cleanest evidence that the facets are doing real work: a genuinely separate dimension can be added without moving a single row.
 
 Target does the least work inside the list and the most at its edge. All three of its values are judgments about research. There is a fourth answer, a claim about nature itself, and that fourth answer is why domain models such as AlphaFold and MatterGen fall outside the list entirely instead of into a sixth category. Their output gets checked against nature, not against anyone's standards for how the work should go.
 
@@ -108,7 +108,7 @@ Two categories come close to rebuilding a section of the old arrangement, the on
 
 In both cases there is a cause behind the overlap. PRISMA asks authors to report how many reviewers screened each record and whether they worked independently. The evidence standards that journals enforce make a trail back to named people practically necessary, so every serious screening platform converged on the same answer about who decides. Literature tools converged on labels that count unless you reverse them, and for a weaker reason: competitive pressure to put a score on everything returned. There the test did move entries. Elicit went up to Human Approval once it shipped dual review. Semantic Scholar went into Standing Verdicts once its influential-citation classifier was read as what it is, a verdict on each item.
 
-Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools split by whether the tool can write into your file: the ones that write sit in Delegation, and the two that cannot sit in Critique. Review-it is the closest call. Its corrected document is an upgrade above a floor you already pay for, and whether the fixes apply in bulk or one at a time is not documented anywhere public, so its placement rests on a fact a reader cannot check. The old lab section splits in two: a proposer whose verdict comes from an instrument, and one whose output is prose.
+Elsewhere the axis cuts hard across the old stages. Grant drafting sits beside unattended manuscript agents. Peer-review tools split by whether the tool can write into your file: the ones that write sit in Delegation, and the two that write none of your text sit in Critique. Review-it is the closest call. Its corrected document is an upgrade above a floor you already pay for, and whether the fixes apply in bulk or one at a time is not documented anywhere public, so its placement rests on a fact a reader cannot check. The old lab section splits in two: a proposer whose verdict comes from an instrument, and one whose output is prose.
 
 ## Known weak points
 
@@ -129,7 +129,7 @@ Each of these is a placement that turned on one fact, recorded here so the READM
 
 ### Delegation
 
-**Question First** has two paths, and the human rules on different things in each. One offers you suggestions one at a time. The other, the one above, fills the whole plan in. It is filed on the fill-it-in path, because that is the path that produces a document with no record of what anyone examined.
+**Question First** has two paths, and the human rules on different things in each. One offers you suggestions one at a time. The other, the one above, drafts an outline you can edit and then fills the whole plan in. It is filed on the fill-it-in path, because that is the path that produces a document with no record of what anyone examined.
 
 ### Standing Verdicts
 
@@ -143,7 +143,7 @@ Each of these is a placement that turned on one fact, recorded here so the READM
 
 **SciScore** is sold to publishers as well as to authors, and the same reports run inside submission systems. It is filed on the author path, where you sign up yourself and the report comes back to whoever wrote the manuscript.
 
-**Reviewer3** has three paths, and the human rules on different things in each. The editor path is first-pass screening at scale. The reviewer path offers to help write a report on a manuscript someone else wrote, which would move it to [Delegation](#delegation). It is filed on the author path, and the company states the property that placement rests on in its own words: "We Verify. We Don't Generate." One caution: the site names no founders, no lab and no publication, and its pricing page is built by code in the browser, so the self-serve tier is published but a plain reader will not see it.
+**Reviewer3** has three paths, and the human rules on different things in each. The editor path is first-pass screening at scale. The reviewer path offers to help write a report on a manuscript someone else wrote, which would move it to [Delegation](#delegation). It is filed on the author path, and the company states the property that placement rests on in its own words: "We Verify. We Don't Generate." One caution: the site names no founders, no lab and no publication.
 
 **The closest thing this category rejects** is q.e.d Science. It cannot write into your file at all, and it still fails the second clause: it sells suggestions for experiments, and telling you what to run next is not commenting on work you have already written or recorded. It is the first rejection that clause makes on its own.
 

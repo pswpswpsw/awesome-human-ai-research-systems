@@ -144,7 +144,7 @@ Both in Delegation, so they leave you the same kind of thing to rule on. [Compar
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [Question First](https://www.questionfirst.org/) | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the filled-in plan | [Delegation](#delegation) |
+| [Question First](https://www.questionfirst.org/) | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the outline it drafts first, then the filled-in plan | [Delegation](#delegation) |
 | [Granted AI](https://grantedai.com/) | Drafts proposal sections and letters of inquiry | Which funding call to pursue, then the exported file | [Delegation](#delegation) |
 
 **How they differ**
@@ -166,7 +166,7 @@ Three systems, all in Delegation, so they leave you the same kind of thing to ru
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
 | [ClawsGO Science](https://clawsgo.ai/) | Takes a question and hands back a finished manuscript | The question, then keep / revise / discard the whole study | [Delegation](#delegation) |
-| [Question First](https://www.questionfirst.org/) | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the filled-in plan | [Delegation](#delegation) |
+| [Question First](https://www.questionfirst.org/) | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the outline it drafts first, then the filled-in plan | [Delegation](#delegation) |
 | [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | Turns an idea, or reference papers, into a paper and code | The idea, or merely a set of reference papers | [Delegation](#delegation) |
 
 **How they differ**
@@ -210,7 +210,7 @@ Two systems across two categories, so they leave you different things to rule on
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Writes protocol parameters and next steps into your notebook | No gating checkpoint; the help centre suggests reviewing the response, but nothing waits on it | [Delegation](#delegation) |
+| [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Suggests protocol parameters and next steps in a side panel inside Labguru | The question, then whether to save what it returns, a step no public page shows; nothing waits on the check the help centre asks you to make | [Delegation](#delegation) |
 | [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Proposes the next experiment, then re-plans on the result you bring back | Whether to spend materials and machine time on the condition it suggests | [Bench](#bench) |
 
 **How they differ**
@@ -265,12 +265,12 @@ You supply a question or some source material, the system hands back something t
 | --- | --- | --- | --- | --- | --- | --- |
 | [ClawsGO Science](https://clawsgo.ai/) | Takes a question and hands back a finished manuscript | The question, then keep / revise / discard the whole study | Manuscript compiled from LaTeX, a typesetting system used for science papers, plus figures and analyses | Screening log of the model's own inclusion calls, seen only in a sample run on the homepage | It *is* the draft | hosted |
 | [Edison Platform](https://platform.edisonscientific.com/) *(the commercial spinout of FutureHouse)* | Answers a question, citing the code or passage behind each claim | The question, then keep / revise / discard the report | Cited report from Kosmos or one of four narrower agents, with each conclusion traceable back to the code or the passage that produced it | No | It is the draft | hosted |
-| [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the filled-in plan | Manuscript, grant, or preregistration draft (a study plan filed before the work starts), with citations it went and found itself | No | It is the draft | hosted, free † |
+| [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the outline it drafts first, then the filled-in plan | Manuscript, grant, or preregistration draft (a study plan filed before the work starts), with citations it went and found itself | No | It is the draft | hosted, free † |
 | [Review-it](https://review-it.ai/) | Scores a manuscript; an upgrade tier returns it corrected † | Which manuscript to upload, then the returned document | Section scores, weakness flags, fabricated-citation flags, journal fit, and on an upgrade tier a corrected document | No | Yes, on the upgrade tier †; whether the fixes apply all at once or one at a time is not publicly documented, and the placement rests on that | hosted |
 | [Granted AI](https://grantedai.com/) | Drafts proposal sections and letters of inquiry | Which funding call to pursue, then the exported file | Letters of inquiry, drafted proposal sections | No | Yes, all at once: one click applies its own review findings | hosted |
-| [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Writes protocol parameters and next steps into your notebook | No gating checkpoint; the help centre suggests reviewing the response, but nothing waits on it | Protocol parameters, anomaly flags, recommended next step, with links to related Labguru items but no citation behind any claim | No | Its output is saved into your notebook | hosted |
+| [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Suggests protocol parameters and next steps in a side panel inside Labguru | The question, then whether to save what it returns, a step no public page shows; nothing waits on the check the help centre asks you to make | Protocol parameters, anomaly flags, recommended next step, with links to related Labguru items but no citation behind any claim | No | Not on its own: answers appear in a side panel, and the product page calls its protocols ready to save | hosted |
 | [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | Turns an idea, or reference papers, into a paper and code | The idea, or merely a set of reference papers | Full paper and a code workspace | No | It is the draft | self-host |
-| [Wisp Science](https://github.com/xuzhougeng/wisp-science) | Runs analyses on your own files and locks the evidence behind each manuscript claim into an exportable capsule | The question and any action an approval gate stops on, then which results are selected as evidence for each manuscript item | Literature search, Python and R runs with logs, figures and drafts in a local project, plus an Evidence Capsule: a ZIP binding manuscript items to the exact runs, code and environment behind them, with a clean-workspace rerun check | The Evidence Capsule marks each binding Candidate, Selected or Rejected, with lineage and checksums; the documentation does not say who made each choice | It writes project files; approval gates stay on unless you opt into Full Permission, and the README does not say which actions they cover | self-host |
+| [Wisp Science](https://github.com/xuzhougeng/wisp-science) | Runs analyses on your own files and locks the evidence behind each manuscript claim into an exportable capsule | The question and any action an approval gate stops on, then which results are selected as evidence for each manuscript item | Literature search, Python and R runs with logs, figures and drafts in a local project, plus an Evidence Capsule: a ZIP binding manuscript items to the exact runs, code and environment behind them, with a clean-workspace rerun check | The Evidence Capsule marks each binding Candidate, Selected or Rejected, with lineage and checksums; the documentation does not say who made each choice | It writes project files; dangerous commands stop for approval and other tools follow their own allow, ask or deny rule, until you opt into Full Permission | self-host |
 
 ## Standing Verdicts
 
@@ -300,7 +300,7 @@ The AI reads your work and comments on it. A comment reaches the record only whe
 | System | What it does | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- | --- |
 | [SciScore](https://sciscore.com/) | Checks a manuscript for missing rigour and verifies resource IDs | Each missing rigour element, and every edit: it names the gap, you write the sentence | Rigor, key-resources and statistics tables, with RRIDs (research resource identifiers) checked against a registry, plus a reporting score | No | No | hosted |
-| [Reviewer3](https://reviewer3.com/) | Checks each claim against the evidence the manuscript reports | Every finding, one at a time, and every word of the revision | Claim-by-claim report: each claim checked against the evidence reported, references verified, plus retraction, self-citation and AI-text flags | No | No | hosted |
+| [Reviewer3](https://reviewer3.com/) | Checks each claim against the evidence the manuscript reports | Every finding, one at a time, and every word of the revision | Claim-by-claim report: each claim checked against the evidence reported, references verified, plus retraction and self-citation flags | No | No; its MCP server lists an edit tool for your own assistant, whose schema is not public | hosted |
 
 ## Bench
 

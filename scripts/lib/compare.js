@@ -82,7 +82,7 @@ const DERIVED = {
   weights: (c) => ({ v: /open weights/.test(c[6]) ? 'yes' : 'no' }),
   own_text: (c) => {
     const w = c[5];
-    if (/^No\b/.test(w)) return { v: 'no' };
+    if (/^(No\b|Not on its own)/.test(w)) return { v: 'no' };
     if (/^(Yes|It \*?is\*? the draft|Its output is saved|It writes)/.test(w)) {
       return { v: 'yes', d: /^Yes[^;.]*†/.test(w), q: /upgrade tier/.test(w) ? 'upgrade tier' : '' };
     }
