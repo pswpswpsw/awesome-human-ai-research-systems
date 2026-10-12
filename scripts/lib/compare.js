@@ -59,6 +59,7 @@ const FEATURES = {
   code: 'Hands you the code behind the results',
   latex: 'Compiles the paper in LaTeX',
   midrun: 'Stops at set points for your approval',
+  self_check: 'Checks every citation and number in its own draft',
   // your own data
   own_model: 'Lets you choose the language model',
   evidence_package: 'Exports a package tying the claims you bind to their runs',
@@ -66,6 +67,7 @@ const FEATURES = {
   gates: 'Stops for your approval before it acts',
   // the lab
   closed_loop: 'Plans the next run from results you measure',
+  admit: 'Waits for you to admit each proposal before it runs',
   notebook: 'Its output can be saved in your lab notebook',
   robot: 'Connects to lab robots or instruments',
   anomaly: 'Flags anomalies in your data',
@@ -98,9 +100,9 @@ const ROWS = {
   citations: ['fabricated', 'retraction', 'stance', 'selfcite', 'own_text'],
   manuscript: ['score', 'rigor', 'rrid', 'claim_evidence', 'journal_fit', 'fabricated', 'own_text'],
   grant: ['finds_citations', 'loi', 'prereg', 'self_review'],
-  paper: ['runs_experiments', 'code', 'latex', 'midrun', 'selfhost'],
+  paper: ['runs_experiments', 'code', 'latex', 'midrun', 'self_check', 'selfhost'],
   data: ['selfhost', 'own_model', 'evidence_package', 'rerun', 'gates'],
-  next: ['closed_loop', 'notebook', 'robot', 'anomaly', 'api'],
+  next: ['closed_loop', 'admit', 'notebook', 'robot', 'anomaly', 'api'],
 };
 
 // Hand-entered values, keyed by the system's name as the README writes it.
@@ -116,6 +118,7 @@ const CELLS = {
     code: { v: "yes", url: "https://clawsgo.ai/", quote: "Every plot is a reproducible bundle: figure, code, environment, version history." },
     latex: { v: "yes", url: "https://clawsgo.ai/", quote: "LaTeX drafts with real citations, compiled to PDF." },
     midrun: { v: "no", q: "asks at its own discretion, then proceeds", url: "https://clawsgo.ai/docs/quickstart/first-task", quote: "When a decision matters, ClawsGO stops and asks. ... Skip them all and it decides on its own." },
+    self_check: { v: "nd" },
   },
   "Edison Platform": {
     runs_code: { v: "yes", q: "Kosmos", url: "https://docs.edisonscientific.com/overview.md", quote: "Kosmos autonomously reads literature, writes and executes analysis code, generates hypotheses, and produces a comprehensive cited report. ... You can trace any finding back to the specific code or literature passage that produced it." },
@@ -136,6 +139,7 @@ const CELLS = {
     code: { v: "nd" },
     latex: { v: "nd" },
     midrun: { v: "yes", q: "outline before full text", d: true, url: "https://www.questionfirst.org/assets/ExportModal-DOVphZng.js", quote: "Generate an outline first, then click \"Generate Full Text\" to create the document" },
+    self_check: { v: "nd" },
   },
   "Review-it": {
     fabricated: { v: "yes", url: "https://review-it.ai/", quote: "Cross-verify literature citations in real-time to flag fabricated references or AI-hallucinated research sources." },
@@ -156,6 +160,7 @@ const CELLS = {
   },
   "Labguru Assistant": {
     closed_loop: { v: "nd" },
+    admit: { v: "nd" },
     notebook: { v: "yes", url: "https://www.labguru.com/labguru-assistant", quote: "generating structured protocols ready to save and share within Labguru ELN/LIMS" },
     robot: { v: "nd" },
     anomaly: { v: "yes", url: "https://www.labguru.com/labguru-assistant", quote: "Analyze results, summarize trends, generate visual outputs, and identify anomalies using AI-powered insights." },
@@ -166,6 +171,14 @@ const CELLS = {
     code: { v: "yes", url: "https://github.com/hkuds/ai-researcher", quote: "transform abstract concepts into concrete code implementations" },
     latex: { v: "yes", url: "https://raw.githubusercontent.com/HKUDS/AI-Researcher/main/paper_agent/tex_writer.py", quote: "result1 = subprocess.run(['pdflatex', '-interaction=nonstopmode', main_tex_file], capture_output=True, text=True)", d: true },
     midrun: { v: "no", url: "https://github.com/hkuds/ai-researcher", quote: "This fully automated system removes the need for manual intervention across the entire research lifecycle" },
+    self_check: { v: "nd" },
+  },
+  "Polaris": {
+    runs_experiments: { v: "yes", url: "https://github.com/ZJU-REAL/Polaris", quote: "writes code, runs a smoke test, launches runs with streamed logs and live metric curves" },
+    code: { v: "yes", url: "https://github.com/ZJU-REAL/Polaris", quote: "Agents write and run code on real GPU servers, iterate on metrics, and" },
+    latex: { v: "yes", url: "https://github.com/ZJU-REAL/Polaris", quote: "The Paper Writer opens a multi-file LaTeX project (NeurIPS, ICLR, ACL templates) with a CodeMirror 6 editor, real-time collaborative editing (CRDT), and local tectonic compilation to a live PDF preview." },
+    midrun: { v: "yes", q: "opt-in; off by default", url: "https://github.com/ZJU-REAL/Polaris/blob/main/docs/task-system.md", quote: "In-run gates are **opt-in** (#626): plan templates only include them when the run was created with `confirm_budget` (experiments) or `confirm_goal` (proposals); by default a run goes straight through." },
+    self_check: { v: "yes", url: "https://github.com/ZJU-REAL/Polaris", quote: "Line-by-line citation verification (existence: exact, minor, or fabricated; support: supported, partial, or unsupported) plus deterministic fact-checking of every number against the experiment record, then multi-perspective top-venue reviewer agents and a meta-review. A fabricated citation forces a non-pass." },
   },
   "Wisp Science": {
     own_model: { v: "yes", url: "https://raw.githubusercontent.com/xuzhougeng/wisp-science/main/README.md", quote: "Bring OpenAI-compatible or Anthropic models, or drive Codex / Claude Code over" },
@@ -255,6 +268,15 @@ const CELLS = {
     robot: { v: "yes", q: "optional", url: "https://atinary.com/technology/sdlabs/", quote: "Integration with laboratory robotics platforms (such as Chemspeed, Bruker, or IBM RoboRXN), as well as platforms like ACD/Labs’ Katalyst and data management systems like LIMS and ELNs, is optional and seamless via API/SDK." },
     anomaly: { v: "nd" },
     api: { v: "yes", url: "https://api.sdlabs.atinary.com/schema/", quote: "SDLabs API for experiment optimization and dataset management." },
+    admit: { v: "nd" },
+  },
+  "NeuriCo": {
+    closed_loop: { v: "yes", q: "scores its own scorer computes, not measurements", url: "https://github.com/ChicagoHAI/NeuriCo", quote: "Iteratively proposes, executes, scores, and checkpoints improvements" },
+    admit: { v: "yes", url: "https://github.com/ChicagoHAI/NeuriCo/blob/main/docs/HITL_AUTORESEARCH.md", quote: "A legal proposal is presented to the human for approval or concrete feedback." },
+    notebook: { v: "nd" },
+    robot: { v: "nd" },
+    anomaly: { v: "nd" },
+    api: { v: "nd" },
   },
 };
 

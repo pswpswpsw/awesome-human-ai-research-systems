@@ -7,7 +7,7 @@
 <rect x="42" y="78" width="185" height="104" rx="7" fill="#f7f8fa" stroke="#d6dde5"/>
 <rect x="42" y="78" width="5" height="104" rx="2.5" fill="#2d6a8f"/>
 <text x="60" y="103" font-size="14" font-weight="700" fill="#12181f">Delegation</text>
-<text x="60" y="121" font-size="11.5" fill="#5b6875">8 systems</text>
+<text x="60" y="121" font-size="11.5" fill="#5b6875">9 systems</text>
 <text x="60" y="144" font-size="11.5" fill="#12181f">It is the record.</text>
 <text x="60" y="159" font-size="11.5" fill="#12181f">You rule once, at the end,</text>
 <text x="60" y="174" font-size="11.5" fill="#12181f">on the whole finished work.</text>
@@ -46,6 +46,6 @@
 <text x="454" y="372" font-size="13.5" font-weight="700" fill="#a4602a">a run</text>
 <text x="454" y="393" font-size="11.5" fill="#12181f">A measurement settles it, and that result</text>
 <text x="454" y="408" font-size="11.5" fill="#12181f">feeds the next proposal. A human act is</text>
-<text x="454" y="423" font-size="11.5" fill="#12181f">required in between. Bench &#183; 1 system.</text>
+<text x="454" y="423" font-size="11.5" fill="#12181f">required in between. Bench &#183; 2 systems.</text>
 <text x="42" y="464" font-size="11.5" fill="#5b6875">Placement uses three more facets, Scope, Record and Target, tabulated in METHOD.md.</text>
 </svg>

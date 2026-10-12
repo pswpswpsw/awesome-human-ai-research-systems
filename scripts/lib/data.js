@@ -38,6 +38,7 @@ const TAGS = {
   'Granted AI':            ['grant'],
   'Labguru Assistant':     ['next'],
   'AI-Researcher (HKUDS)': ['paper'],
+  'Polaris':               ['paper'],
   'Wisp Science':          ['data'],
   'Semantic Scholar':      ['find'],
   'Consensus':             ['find', 'answer'],
@@ -49,6 +50,7 @@ const TAGS = {
   'SciScore':              ['manuscript'],
   'Reviewer3':             ['citations', 'manuscript'],
   'Atinary SDLabs':        ['next'],
+  'NeuriCo':               ['next'],
 };
 
 // Category key, its position on the Standing scale (Bench sits off it), the

@@ -6,7 +6,7 @@
 
 The judgment moves. Who answers for it does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. So the useful question about any of these tools is what it leaves you answerable for.
 
-Eighteen systems a researcher can use today, in five categories. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
+Twenty systems a researcher can use today, in five categories. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
 
 ## What do you want to do?
 
@@ -159,25 +159,27 @@ Both in Delegation, so they leave you the same kind of thing to rule on. [Compar
 </details>
 
 <details>
-<summary><b>Get a whole paper drafted</b> &middot; 3 systems</summary>
+<summary><b>Get a whole paper drafted</b> &middot; 4 systems</summary>
 
-Three systems, all in Delegation, so they leave you the same kind of thing to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=paper).
+Four systems, all in Delegation, so they leave you the same kind of thing to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=paper).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
 | [ClawsGO Science](https://clawsgo.ai/) | Takes a question and hands back a finished manuscript | The question, then keep / revise / discard the whole study | [Delegation](#delegation) |
 | [Question First](https://www.questionfirst.org/) | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the outline it drafts first, then the filled-in plan | [Delegation](#delegation) |
 | [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | Turns an idea, or reference papers, into a paper and code | The idea, or merely a set of reference papers | [Delegation](#delegation) |
+| [Polaris](https://github.com/ZJU-REAL/Polaris) | Takes a research direction to a LaTeX paper, then checks every citation and number in its own draft before handing it over | The direction and its inclusion criteria, then keep / revise / discard the reviewed paper; approval gates on budget and goals only if you switch them on | [Delegation](#delegation) |
 
 **How they differ**
 
-| | ClawsGO Science | Question First | AI-Researcher (HKUDS) |
-| --- | :---: | :---: | :---: |
-| Runs the analyses itself | ✓ | *not documented* | ✓ |
-| Hands you the code behind the results | ✓ | *not documented* | ✓ |
-| Compiles the paper in LaTeX | ✓ | *not documented* | ✓ † |
-| Stops at set points for your approval | ✗ (asks at its own discretion, then proceeds) | ✓ † (outline before full text) | ✗ |
-| You can host the whole system yourself | ✗ | ✗ | ✓ |
+| | ClawsGO Science | Question First | AI-Researcher (HKUDS) | Polaris |
+| --- | :---: | :---: | :---: | :---: |
+| Runs the analyses itself | ✓ | *not documented* | ✓ | ✓ |
+| Hands you the code behind the results | ✓ | *not documented* | ✓ | ✓ |
+| Compiles the paper in LaTeX | ✓ | *not documented* | ✓ † | ✓ |
+| Stops at set points for your approval | ✗ (asks at its own discretion, then proceeds) | ✓ † (outline before full text) | ✗ | ✓ (opt-in; off by default) |
+| Checks every citation and number in its own draft | *not documented* | *not documented* | *not documented* | ✓ |
+| You can host the whole system yourself | ✗ | ✗ | ✓ | ✓ |
 
 </details>
 
@@ -204,24 +206,26 @@ Both in Delegation, so they leave you the same kind of thing to rule on. [Compar
 </details>
 
 <details>
-<summary><b>Decide what to run next in the lab</b> &middot; 2 systems</summary>
+<summary><b>Decide what to run next in the lab</b> &middot; 3 systems</summary>
 
-Two systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=next).
+Three systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=next).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
 | [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Suggests protocol parameters and next steps in a side panel inside Labguru | The question, then whether to save what it returns, a step no public page shows; nothing waits on the check the help centre asks you to make | [Delegation](#delegation) |
 | [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Proposes the next experiment, then re-plans on the result you bring back | Whether to spend materials and machine time on the condition it suggests | [Bench](#bench) |
+| [NeuriCo](https://github.com/ChicagoHAI/NeuriCo) | Proposes one change to a software experiment, runs and scores it only after you admit it, and plans the next from the scores | Each proposed experiment before it runs; whether a scored result is kept is the manager model's call | [Bench](#bench) |
 
 **How they differ**
 
-| | Labguru Assistant | Atinary SDLabs |
-| --- | :---: | :---: |
-| Plans the next run from results you measure | *not documented* | ✓ |
-| Its output can be saved in your lab notebook | ✓ | ✓ (optional, through its API) |
-| Connects to lab robots or instruments | *not documented* | ✓ (optional) |
-| Flags anomalies in your data | ✓ | *not documented* |
-| Can be called from code | *not documented* | ✓ |
+| | Labguru Assistant | Atinary SDLabs | NeuriCo |
+| --- | :---: | :---: | :---: |
+| Plans the next run from results you measure | *not documented* | ✓ | ✓ (scores its own scorer computes, not measurements) |
+| Waits for you to admit each proposal before it runs | *not documented* | *not documented* | ✓ |
+| Its output can be saved in your lab notebook | ✓ | ✓ (optional, through its API) | *not documented* |
+| Connects to lab robots or instruments | *not documented* | ✓ (optional) | *not documented* |
+| Flags anomalies in your data | ✓ | *not documented* | *not documented* |
+| Can be called from code | *not documented* | ✓ | *not documented* |
 
 </details>
 
@@ -233,11 +237,11 @@ Two systems across two categories, so they leave you different things to rule on
 
 | Category | What the human still rules on | Entries |
 | --- | --- | --- |
-| [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 8 |
+| [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 9 |
 | [Standing Verdicts](#standing-verdicts) | Every sentence you write. The machine's call on each paper is the record unless you open the source and reverse it. | 6 |
 | [Human Approval](#human-approval) | Every record, one at a time, with your name on it. Nothing moves until you say so. | 1 |
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes reaches your file unless you act on that specific item. | 2 |
-| [Bench](#bench) | Whether to spend the materials and the machine time. A measurement, not a reader, decides who was right. | 1 |
+| [Bench](#bench) | Whether to spend the materials and the machine time. A measurement, not a reader, decides who was right. | 2 |
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/categories-dark.svg">
@@ -270,6 +274,7 @@ You supply a question or some source material, the system hands back something t
 | [Granted AI](https://grantedai.com/) | Drafts proposal sections and letters of inquiry | Which funding call to pursue, then the exported file | Letters of inquiry, drafted proposal sections | No | Yes, all at once: one click applies its own review findings | hosted |
 | [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Suggests protocol parameters and next steps in a side panel inside Labguru | The question, then whether to save what it returns, a step no public page shows; nothing waits on the check the help centre asks you to make | Protocol parameters, anomaly flags, recommended next step, with links to related Labguru items but no citation behind any claim | No | Not on its own: answers appear in a side panel, and the product page calls its protocols ready to save | hosted |
 | [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | Turns an idea, or reference papers, into a paper and code | The idea, or merely a set of reference papers | Full paper and a code workspace | No | It is the draft | self-host |
+| [Polaris](https://github.com/ZJU-REAL/Polaris) | Takes a research direction to a LaTeX paper, then checks every citation and number in its own draft before handing it over | The direction and its inclusion criteria, then keep / revise / discard the reviewed paper; approval gates on budget and goals only if you switch them on | Paper wiki, scored ideas, experiment runs on your GPU servers, a LaTeX paper, and a review rating each citation as exact, minor or fabricated and as supported, partial or unsupported, with every number checked against the run record | Run logs that keep every plan, action and verdict, all made by the agent | It is the draft | self-host |
 | [Wisp Science](https://github.com/xuzhougeng/wisp-science) | Runs analyses on your own files and locks the evidence behind each manuscript claim into an exportable capsule | The question and any action an approval gate stops on, then which results are selected as evidence for each manuscript item | Literature search, Python and R runs with logs, figures and drafts in a local project, plus an Evidence Capsule: a ZIP binding manuscript items to the exact runs, code and environment behind them, with a clean-workspace rerun check | The Evidence Capsule marks each binding Candidate, Selected or Rejected, with lineage and checksums; the documentation does not say who made each choice | It writes project files; dangerous commands stop for approval and other tools follow their own allow, ask or deny rule, until you opt into Full Permission | self-host |
 
 ## Standing Verdicts
@@ -309,6 +314,7 @@ The AI suggests the next experiment, you spend the materials and the machine tim
 | System | What it does | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- | --- |
 | [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Proposes the next experiment, then re-plans on the result you bring back | Whether to spend materials and machine time on the condition it suggests | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, balancing new settings against refinement of the good ones, re-tuned on results you feed back by hand or through an optional robot link | No | No | hosted |
+| [NeuriCo](https://github.com/ChicagoHAI/NeuriCo) *(HITL AutoResearch path)* | Proposes one change to a software experiment, runs and scores it only after you admit it, and plans the next from the scores | Each proposed experiment before it runs; whether a scored result is kept is the manager model's call | A frontier of scored experiment checkpoints with code, logs and reports, and an optional paper, run by Claude Code, Codex or Gemini CLI workers | An append-only idea log tagging each decision as the worker's, the manager's or the human's; it names no person | No; code, reports and the optional paper stay in its own workspace | self-host |
 
 ## Contributing
 
