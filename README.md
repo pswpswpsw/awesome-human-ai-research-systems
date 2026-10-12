@@ -6,7 +6,7 @@
 
 The judgment moves. Who answers for it does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. So the useful question about any of these tools is what it leaves you answerable for.
 
-Twenty systems a researcher can use today, in five categories. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
+Twenty-one systems a researcher can use today, in five categories. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
 
 ## What do you want to do?
 
@@ -206,26 +206,27 @@ Both in Delegation, so they leave you the same kind of thing to rule on. [Compar
 </details>
 
 <details>
-<summary><b>Decide what to run next in the lab</b> &middot; 3 systems</summary>
+<summary><b>Decide what to run next in the lab</b> &middot; 4 systems</summary>
 
-Three systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=next).
+Four systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=next).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
 | [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Suggests protocol parameters and next steps in a side panel inside Labguru | The question, then whether to save what it returns, a step no public page shows; nothing waits on the check the help centre asks you to make | [Delegation](#delegation) |
+| [OpenResearch](https://openresearch.sh/) | Works in a Git repository, preferably an existing implementation you import, puts each hypothesis on its own branch, runs every branch under one fixed command, and builds the next round on the measured winner | The repository, the goal and the compute backend, then the write-up; on the default Agentic setting its loop waits on you between runs only when failed runs hit its repair cap, and permission prompts are a separate setting | [Delegation](#delegation) |
 | [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Proposes the next experiment, then re-plans on the result you bring back | Whether to spend materials and machine time on the condition it suggests | [Bench](#bench) |
 | [NeuriCo](https://github.com/ChicagoHAI/NeuriCo) | Proposes one change to a software experiment, runs and scores it only after you admit it, and plans the next from the scores | Each proposed experiment before it runs; whether a scored result is kept is the manager model's call | [Bench](#bench) |
 
 **How they differ**
 
-| | Labguru Assistant | Atinary SDLabs | NeuriCo |
-| --- | :---: | :---: | :---: |
-| Plans the next run from results you measure | *not documented* | ✓ | ✓ (scores its own scorer computes, not measurements) |
-| Waits for you to admit each proposal before it runs | *not documented* | *not documented* | ✓ |
-| Its output can be saved in your lab notebook | ✓ | ✓ (optional, through its API) | *not documented* |
-| Connects to lab robots or instruments | *not documented* | ✓ (optional) | *not documented* |
-| Flags anomalies in your data | ✓ | *not documented* | *not documented* |
-| Can be called from code | *not documented* | ✓ | *not documented* |
+| | Labguru Assistant | OpenResearch | Atinary SDLabs | NeuriCo |
+| --- | :---: | :---: | :---: | :---: |
+| Plans the next run from results you measure | *not documented* | ✓ (on runs it launches itself) | ✓ | ✓ (scores its own scorer computes, not measurements) |
+| Waits for you to admit each proposal before it runs | *not documented* | ✗ (default Agentic setting; opt-in Copilot asks, as guidance rather than enforcement) | *not documented* | ✓ |
+| Its output can be saved in your lab notebook | ✓ | *not documented* | ✓ (optional, through its API) | *not documented* |
+| Connects to lab robots or instruments | *not documented* | *not documented* | ✓ (optional) | *not documented* |
+| Flags anomalies in your data | ✓ | *not documented* | *not documented* | *not documented* |
+| Can be called from code | *not documented* | ✓ (orx CLI) | ✓ | *not documented* |
 
 </details>
 
@@ -237,7 +238,7 @@ Three systems across two categories, so they leave you different things to rule 
 
 | Category | What the human still rules on | Entries |
 | --- | --- | --- |
-| [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 9 |
+| [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 10 |
 | [Standing Verdicts](#standing-verdicts) | Every sentence you write. The machine's call on each paper is the record unless you open the source and reverse it. | 6 |
 | [Human Approval](#human-approval) | Every record, one at a time, with your name on it. Nothing moves until you say so. | 1 |
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes reaches your file unless you act on that specific item. | 2 |
@@ -276,6 +277,7 @@ You supply a question or some source material, the system hands back something t
 | [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) | Turns an idea, or reference papers, into a paper and code | The idea, or merely a set of reference papers | Full paper and a code workspace | No | It is the draft | self-host |
 | [Polaris](https://github.com/ZJU-REAL/Polaris) | Takes a research direction to a LaTeX paper, then checks every citation and number in its own draft before handing it over | The direction and its inclusion criteria, then keep / revise / discard the reviewed paper; approval gates on budget and goals only if you switch them on | Paper wiki, scored ideas, experiment runs on your GPU servers, a LaTeX paper, and a review rating each citation as exact, minor or fabricated and as supported, partial or unsupported, with every number checked against the run record | Run logs that keep every plan, action and verdict, all made by the agent | It is the draft | self-host |
 | [Wisp Science](https://github.com/xuzhougeng/wisp-science) | Runs analyses on your own files and locks the evidence behind each manuscript claim into an exportable capsule | The question and any action an approval gate stops on, then which results are selected as evidence for each manuscript item | Literature search, Python and R runs with logs, figures and drafts in a local project, plus an Evidence Capsule: a ZIP binding manuscript items to the exact runs, code and environment behind them, with a clean-workspace rerun check | The Evidence Capsule marks each binding Candidate, Selected or Rejected, with lineage and checksums; the documentation does not say who made each choice | It writes project files; dangerous commands stop for approval and other tools follow their own allow, ask or deny rule, until you opt into Full Permission | self-host |
+| [OpenResearch](https://openresearch.sh/) *(an alphaXiv project)* | Works in a Git repository, preferably an existing implementation you import, puts each hypothesis on its own branch, runs every branch under one fixed command, and builds the next round on the measured winner | The repository, the goal and the compute backend, then the write-up; on the default Agentic setting its loop waits on you between runs only when failed runs hit its repair cap, and permission prompts are a separate setting | An experiment tree of git branches, each frozen once a run answers it, a log for every run, and reports and figures in a local artifacts folder | No; the tree stays in a local database and run logs on your machine, optional GitHub publication pushes only the experiment branches, and no field on a node or run says who promoted or stopped it † | It writes code to experiment branches in its own worktree, and is the draft when you ask for a paper (`paper.tex`), which can sync both ways with Overleaf | self-host |
 
 ## Standing Verdicts
 

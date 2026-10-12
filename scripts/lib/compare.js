@@ -270,6 +270,14 @@ const CELLS = {
     api: { v: "yes", url: "https://api.sdlabs.atinary.com/schema/", quote: "SDLabs API for experiment optimization and dataset management." },
     admit: { v: "nd" },
   },
+  "OpenResearch": {
+    closed_loop: { v: "yes", q: "on runs it launches itself", url: "https://github.com/alphaXiv/OpenResearch", quote: "learn from past results and decide what to try next." },
+    admit: { v: "no", q: "default Agentic setting; opt-in Copilot asks, as guidance rather than enforcement", url: "README.md", quote: "its loop waits on you between runs only when failed runs hit its repair cap" },
+    notebook: { v: "nd" },
+    robot: { v: "nd" },
+    anomaly: { v: "nd" },
+    api: { v: "yes", q: "orx CLI", url: "https://github.com/alphaXiv/OpenResearch/blob/main/SKILL.md", quote: "Read this before driving `orx` programmatically." },
+  },
   "NeuriCo": {
     closed_loop: { v: "yes", q: "scores its own scorer computes, not measurements", url: "https://github.com/ChicagoHAI/NeuriCo", quote: "Iteratively proposes, executes, scores, and checkpoints improvements" },
     admit: { v: "yes", url: "https://github.com/ChicagoHAI/NeuriCo/blob/main/docs/HITL_AUTORESEARCH.md", quote: "A legal proposal is presented to the human for approval or concrete feedback." },

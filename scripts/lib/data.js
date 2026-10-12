@@ -51,6 +51,7 @@ const TAGS = {
   'Reviewer3':             ['citations', 'manuscript'],
   'Atinary SDLabs':        ['next'],
   'NeuriCo':               ['next'],
+  'OpenResearch':          ['next'],
 };
 
 // Category key, its position on the Standing scale (Bench sits off it), the
