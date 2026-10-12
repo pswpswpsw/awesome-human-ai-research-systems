@@ -77,10 +77,38 @@ header.top { padding: 56px 0 28px; }
 }
 h1 {
   font-weight: 600; font-size: clamp(30px, 5.2vw, 50px); line-height: 1.08;
-  letter-spacing: -.012em; margin: 0 0 16px; max-width: 18ch; text-wrap: balance;
+  letter-spacing: -.012em; margin: 0 0 16px; max-width: 24ch; text-wrap: balance;
 }
 .lede { font-size: clamp(17px, 2.1vw, 20px); color: var(--ink-2); max-width: 44em; margin: 0; }
 .lede em { font-style: italic; }
+
+/* ---- how the list is curated ---- */
+.faq { margin: 56px 0 0; max-width: 52em; }
+.faq h2 { font-size: clamp(24px, 3.4vw, 30px); font-weight: 600; margin: 0 0 14px; letter-spacing: -.01em; }
+details.qa + details.qa { margin-top: 10px; }
+details.qa { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; }
+details.qa summary {
+  list-style: none; cursor: pointer; padding: 14px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+  font-size: 16.5px; font-weight: 600; color: var(--ink);
+}
+details.qa summary::-webkit-details-marker { display: none; }
+details.qa summary::before {
+  content: ""; width: 7px; height: 7px; border-right: 1.6px solid var(--muted); border-bottom: 1.6px solid var(--muted);
+  transform: rotate(-45deg); transition: transform .2s; margin-right: 2px; flex: none;
+}
+details.qa[open] summary::before { transform: rotate(45deg); }
+details.qa .badge {
+  font-size: 12px; font-weight: 400; letter-spacing: .06em; color: var(--ink);
+  background: color-mix(in srgb, var(--cat-H) 16%, transparent); border: 1px solid color-mix(in srgb, var(--cat-H) 45%, transparent);
+  border-radius: 999px; padding: 3px 10px;
+}
+.m-body { padding: 0 18px 18px 18px; border-top: 1px solid var(--rule); }
+.m-body h3 { font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 400; margin: 18px 0 6px; }
+.m-body p { margin: 0 0 10px; color: var(--ink-2); font-size: 16px; }
+.weekly { margin: 16px 0 4px; padding: 13px 15px; border-radius: 10px; border-left: 4px solid var(--cat-H); background: color-mix(in srgb, var(--cat-H) 9%, var(--surface)); }
+.weekly .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); margin: 0 0 4px; }
+.weekly p:last-child { margin: 0; color: var(--ink); }
+.m-links { font-size: 15px; }
 
 /* ---- job picker ---- */
 .picker { margin: 30px 0 8px; }
@@ -175,6 +203,16 @@ footer { margin: 56px 0 0; padding: 22px 0 48px; border-top: 1px solid var(--rul
 footer p { margin: 0 0 6px; max-width: 60em; }
 footer code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; background: var(--surface-2); padding: 1px 6px; border-radius: 5px; }
 .eyebrow a { text-decoration: none; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; margin: 0 0 14px; }
+.topbar .eyebrow { margin: 0; }
+.theme { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--rule-2); border-radius: 999px; background: var(--surface); }
+.theme button {
+  font: inherit; font-size: 12.5px; letter-spacing: .06em; color: var(--muted);
+  background: transparent; border: 0; border-radius: 999px; padding: 4px 12px; cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.theme button:hover { color: var(--ink); }
+.theme button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 .eyebrow a:hover { text-decoration: underline; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -182,13 +220,23 @@ footer code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monosp
   .play-cards .card { opacity: 1; }
 }
 </style>
+<script>
+try { var t = localStorage.getItem('hairs-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (_) {}
+</script>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <p class="eyebrow"><a href="__REPO_URL__">Awesome Human-AI Research Systems</a> &middot; chooser</p>
-    <h1>Pick the job. See what each tool leaves you answerable for.</h1>
-    <p class="lede">Every system shown for a job does that job. What differs is <em>what the machine&rsquo;s call is worth before you touch it</em>, which is the question this list is organised around.</p>
+    <div class="topbar">
+      <p class="eyebrow"><a href="__REPO_URL__">Awesome Human-AI Research Systems</a> &middot; chooser</p>
+      <div class="theme" role="group" aria-label="Colour theme">
+        <button type="button" data-mode="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-mode="light" aria-pressed="false">Light</button>
+        <button type="button" data-mode="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+    <h1>A bird&rsquo;s-eye view of human-AI research systems</h1>
+    <p class="lede">Systems where AI does part of the research and a named human still answers for it. Pick a job to compare the ones that do it: what separates them is <em>what the machine&rsquo;s call is worth before you touch it</em>.</p>
   </header>
 
   <section class="picker" aria-labelledby="pick-label">
@@ -200,6 +248,63 @@ footer code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monosp
     <div class="prompt">Choose what you want to do above to see the systems that do it, side by side.</div>
   </section>
 
+  <section class="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">Questions</h2>
+    <details class="qa">
+      <summary><span class="m-title">How is this list curated?</span><span class="badge">Scanned for new systems every Monday</span></summary>
+      <div class="m-body">
+        <div class="weekly">
+        <p class="k">Kept current every week</p>
+        <p>Every Monday a scheduled AI agent searches arXiv, launch announcements, the related awesome lists and GitHub for new research systems. It tests each candidate against the rules below, checks whether any excluded system has opened to the public, and opens every listed link to catch products that moved or closed. It writes a report and changes nothing. The maintainer rules on each candidate, and an entry is added or moved only when the evidence holds up.</p>
+        </div>
+        <h3>What gets in</h3>
+        <p>A system has to pass three tests on its own public pages. A researcher can use it today, with no waitlist or private preview. It was built for research work, not as a general assistant. And it does something no listed system does, so the list holds one system for each question a reader brings. A university project and a company product are judged the same way.</p>
+        <h3>Where it goes</h3>
+        <p>Each system is filed by what the human still rules on, not by the stage of work it serves. The part of the product that carries research judgment is the part tested. Bench is tested first, then Delegation, Standing Verdicts, Human Approval and Critique in that order, and the first match places it. An entry moves whenever a release changes how the product works.</p>
+        <h3>What counts as evidence</h3>
+        <p>Every boundary is a test a reader can run against the vendor&rsquo;s public pages. Pages are fetched and read directly, never through a tool that summarises them. A claim found only in page source or a script bundle carries a &dagger;, and anything no public page states is marked <em>not documented</em>. Each value in the <em>How they differ</em> tables keeps the URL and the exact words it rests on, and a check on every push rebuilds the README and this page from those sources and fails if either differs from what was committed.</p>
+        <p class="m-links">The full tests, the placement rules and every exclusion are in <a href="__REPO_URL__/blob/main/METHOD.md">METHOD.md</a>. How each column is filled is in <a href="__REPO_URL__/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>, and four systems are traced through a real task in <a href="__REPO_URL__/blob/main/WORKFLOWS.md">WORKFLOWS.md</a>.</p>
+      </div>
+    </details>
+    <details class="qa">
+      <summary><span class="m-title">Why is a system I use not on the list?</span></summary>
+      <div class="m-body">
+        <p>Usually for one of four reasons. Nobody has tested it yet. It failed one of the tests above: a waitlist, a general-purpose assistant, a language service, a plugin that only runs inside another agent, or a single maintainer with nothing behind the project. A listed system already answers the same question for the same reader. Or it was removed on the maintainer&rsquo;s judgment.</p>
+        <p>Systems left out after a closer look are in the <a href="__REPO_URL__/blob/main/METHOD.md#what-the-tests-excluded">exclusion table</a>, each with its reason. The weekly scan rules out more candidates than the table records, so a system missing from it may already have been looked at. Either way, <a href="__REPO_URL__/issues">open an issue</a> with a link to it and the case for it.</p>
+      </div>
+    </details>
+    <details class="qa">
+      <summary><span class="m-title">Does <em>not documented</em> mean the product lacks the feature?</span></summary>
+      <div class="m-body">
+        <p>No. It means nothing we found on the product&rsquo;s public pages says either way, and features behind a login stay out of view. A &#10007; appears only where the vendor says the product does not do something, or where the system&rsquo;s own row in the README rules it out.</p>
+      </div>
+    </details>
+    <details class="qa">
+      <summary><span class="m-title">Why group systems by what you still rule on, not by task?</span></summary>
+      <div class="m-body">
+        <p>Two tools that do the same job can leave you answerable for very different things. One screening tool&rsquo;s label is the record unless you open the paper and reverse it; another&rsquo;s waits for a named person to rule. The jobs above let you start from the task, and the category on each card tells you what that tool leaves you to check.</p>
+      </div>
+    </details>
+    <details class="qa">
+      <summary><span class="m-title">Can a system change category?</span></summary>
+      <div class="m-body">
+        <p>Yes. Placement follows what the product documents, so a release that adds a reviewer log, a checkpoint, or a button that applies every fix at once moves the entry. The weekly scan reopens every listed product, and a pull request that re-tests an entry is as welcome as one that adds a tool.</p>
+      </div>
+    </details>
+    <details class="qa">
+      <summary><span class="m-title">Why are ChatGPT, Claude or AlphaFold not here?</span></summary>
+      <div class="m-body">
+        <p>General-purpose assistants are not built for a particular step of research, and researchers already know them. Models such as AlphaFold predict a property of nature, so they stand in for a measurement rather than for a judgment about how the research should go, which puts them outside the definition this list starts from.</p>
+      </div>
+    </details>
+    <details class="qa">
+      <summary><span class="m-title">How do I suggest a system or correct an entry?</span></summary>
+      <div class="m-body">
+        <p><a href="__REPO_URL__/issues">Open an issue</a> or a pull request on GitHub, and link the vendor page your claim rests on. <a href="__REPO_URL__/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> explains how each column is filled and what evidence each kind of claim needs.</p>
+      </div>
+    </details>
+  </section>
+
   <footer>
     <p id="provenance"></p>
     <p>The cards are taken from the README tables, and which system sits under which need comes from the same list that builds the README&rsquo;s &ldquo;What do you want to do?&rdquo; section. The <em>How they differ</em> tables come from <code>scripts/lib/compare.js</code>, where each value carries the page and the words it rests on. The page is built from those files, and a check on every push fails if the committed page differs from a fresh build. To change it, edit the source and run <code>node scripts/build.js</code>.</p>
@@ -207,6 +312,21 @@ footer code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monosp
   </footer>
 </div>
 
+<script>
+// Theme switch: Auto follows the system setting; Light and Dark are remembered in this browser.
+(function () {
+  var root = document.documentElement, KEY = 'hairs-theme';
+  var buttons = document.querySelectorAll('.theme button');
+  function apply(mode) {
+    if (mode === 'light' || mode === 'dark') root.setAttribute('data-theme', mode);
+    else { mode = 'auto'; root.removeAttribute('data-theme'); }
+    try { if (mode === 'auto') localStorage.removeItem(KEY); else localStorage.setItem(KEY, mode); } catch (_) {}
+    for (var i = 0; i < buttons.length; i++) buttons[i].setAttribute('aria-pressed', String(buttons[i].getAttribute('data-mode') === mode));
+  }
+  for (var i = 0; i < buttons.length; i++) buttons[i].addEventListener('click', function () { apply(this.getAttribute('data-mode')); });
+  apply(root.getAttribute('data-theme') || 'auto');
+})();
+</script>
 <script>
 window.HAIRS = null; /*__DATA__*/
 </script>
