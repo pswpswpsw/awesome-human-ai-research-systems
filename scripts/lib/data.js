@@ -22,7 +22,6 @@ const NEEDS = {
   review:     { label: 'Run a systematic review',                verb: 'take on systematic-review work' },
   citations:  { label: 'Check whether citations hold up',        verb: 'judge whether the citations in a paper hold up' },
   manuscript: { label: 'Check a manuscript before submitting',   verb: 'check a finished manuscript before it goes out' },
-  grant:      { label: 'Write a grant proposal or a study plan', verb: 'draft a grant proposal or a study plan' },
   paper:      { label: 'Get a whole paper drafted',              verb: 'hand back a drafted paper' },
   data:       { label: 'Analyse your own data with an agent',    verb: 'run analyses on files you provide' },
   next:       { label: 'Decide what to run next in the lab',     verb: 'suggest the next experiment' },
@@ -33,9 +32,7 @@ const NEEDS = {
 const TAGS = {
   'ClawsGO Science':       ['review', 'paper'],
   'Edison Platform':       ['answer', 'data'],
-  'Question First':        ['grant', 'paper'],
   'Review-it':             ['citations', 'manuscript'],
-  'Granted AI':            ['grant'],
   'Labguru Assistant':     ['next'],
   'Polaris':               ['paper'],
   'Wisp Science':          ['data'],

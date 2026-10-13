@@ -6,7 +6,7 @@
 
 The judgment moves. Who answers for it does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. So the useful question about any of these tools is what it leaves you answerable for.
 
-Twenty systems a researcher can use today, in five categories, and nine close alternatives listed under the system each most resembles. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
+Eighteen systems a researcher can use today, in five categories, and nine close alternatives listed under the system each most resembles. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
 
 ## What do you want to do?
 
@@ -138,35 +138,13 @@ Three systems across two categories, so they leave you different things to rule 
 </details>
 
 <details>
-<summary><b>Write a grant proposal or a study plan</b> &middot; 2 systems</summary>
+<summary><b>Get a whole paper drafted</b> &middot; 2 systems, 4 close alternatives</summary>
 
-Both in Delegation, so they leave you the same kind of thing to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=grant).
-
-| System | What it does | What you still rule on | Category |
-| --- | --- | --- | --- |
-| [Question First](https://www.questionfirst.org/) | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the outline it drafts first, then the filled-in plan | [Delegation](#delegation) |
-| [Granted AI](https://grantedai.com/) | Drafts proposal sections and letters of inquiry | Which funding call to pursue, then the exported file | [Delegation](#delegation) |
-
-**How they differ**
-
-| | Question First | Granted AI |
-| --- | :---: | :---: |
-| Finds and inserts citations itself | ✓ † | *not documented* |
-| Drafts letters of inquiry | *not documented* | ✓ |
-| Handles preregistrations and study plans | ✓ † | *not documented* |
-| Reviews the draft and applies every fix at once | *not documented* | ✓ (upgrade tier) |
-
-</details>
-
-<details>
-<summary><b>Get a whole paper drafted</b> &middot; 3 systems, 4 close alternatives</summary>
-
-Three systems, all in Delegation, so they leave you the same kind of thing to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=paper).
+Both in Delegation, so they leave you the same kind of thing to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=paper).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
 | [ClawsGO Science](https://clawsgo.ai/) | Takes a question and hands back a finished manuscript | The question, then keep / revise / discard the whole study | [Delegation](#delegation) |
-| [Question First](https://www.questionfirst.org/) | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the outline it drafts first, then the filled-in plan | [Delegation](#delegation) |
 | [Polaris](https://github.com/ZJU-REAL/Polaris) | Takes a research direction to a LaTeX paper, and by default will not mark it submitted until its own review passes, which fails on any fabricated citation | The direction, then every idea promoted to an experiment, which its docs say only a person can decide in the app, and in-app submission of the reviewed paper, which the arXiv export skips †; also any question it asks when stuck. Goal and budget checks exist but are off by default | [Delegation](#delegation) |
 
 **Close to Polaris** &middot; *Direction in, paper and code out, on your machine*
@@ -178,14 +156,11 @@ Three systems, all in Delegation, so they leave you the same kind of thing to ru
 
 **How they differ**
 
-| | ClawsGO Science | Question First | Polaris |
-| --- | :---: | :---: | :---: |
-| Runs the analyses itself | ✓ | *not documented* | ✓ |
-| Hands you the code behind the results | ✓ | *not documented* | ✓ |
-| Compiles the paper in LaTeX | ✓ | *not documented* | ✓ |
-| Stops at set points for your approval | ✗ (asks at its own discretion, then proceeds) | ✓ † (outline before full text) | ✓ (promotion and in-app submission; runs pause only with opt-in gates) |
-| Checks every citation and number in its own draft | *not documented* | *not documented* | ✓ (percentages and decimals; support for up to 30 citations a round) |
-| You can host the whole system yourself | ✗ | ✗ | ✓ |
+| | ClawsGO Science | Polaris |
+| --- | :---: | :---: |
+| Stops at set points for your approval | ✗ (asks at its own discretion, then proceeds) | ✓ (promotion and in-app submission; runs pause only with opt-in gates) |
+| Checks every citation and number in its own draft | *not documented* | ✓ (percentages and decimals; support for up to 30 citations a round) |
+| You can host the whole system yourself | ✗ | ✓ |
 
 </details>
 
@@ -252,7 +227,7 @@ Four systems across two categories, so they leave you different things to rule o
 
 | Category | What the human still rules on | Entries |
 | --- | --- | --- |
-| [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 9 |
+| [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 7 |
 | [Standing Verdicts](#standing-verdicts) | Every sentence you write. The machine's call on each paper is the record unless you open the source and reverse it. | 6 |
 | [Human Approval](#human-approval) | Every record, one at a time, with your name on it. Nothing moves until you say so. | 1 |
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes reaches your file unless you act on that specific item. | 2 |
@@ -284,9 +259,7 @@ You supply a question or some source material, the system hands back something t
 | --- | --- | --- | --- | --- | --- | --- |
 | [ClawsGO Science](https://clawsgo.ai/) | Takes a question and hands back a finished manuscript | The question, then keep / revise / discard the whole study | Manuscript compiled from LaTeX, a typesetting system used for science papers, plus figures and analyses | Screening log of the model's own inclusion calls, seen only in a sample run on the homepage | It *is* the draft | hosted |
 | [Edison Platform](https://platform.edisonscientific.com/) *(the commercial spinout of FutureHouse)* | Answers a question, citing the code or passage behind each claim | The question, then keep / revise / discard the report | Cited report from Kosmos or one of four narrower agents, with each conclusion traceable back to the code or the passage that produced it | No | It is the draft | hosted |
-| [Question First](https://www.questionfirst.org/) *(formerly planyourscience.com)* | Fills in a whole manuscript, grant or preregistration draft | The brief and target format, then the outline it drafts first, then the filled-in plan | Manuscript, grant, or preregistration draft (a study plan filed before the work starts), with citations it went and found itself | No | It is the draft | hosted, free † |
 | [Review-it](https://review-it.ai/) | Scores a manuscript; an upgrade tier returns it corrected † | Which manuscript to upload, then the returned document | Section scores, weakness flags, fabricated-citation flags, journal fit, and on an upgrade tier a corrected document | No | Yes, on the upgrade tier †; whether the fixes apply all at once or one at a time is not publicly documented, and the placement rests on that | hosted |
-| [Granted AI](https://grantedai.com/) | Drafts proposal sections and letters of inquiry | Which funding call to pursue, then the exported file | Letters of inquiry, drafted proposal sections | No | Yes, all at once: one click applies its own review findings | hosted |
 | [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Suggests protocol parameters and next steps in a side panel inside Labguru | The question, then whether to save what it returns, a step no public page shows; nothing waits on the check the help centre asks you to make | Protocol parameters, anomaly flags, recommended next step, with links to related Labguru items but no citation behind any claim | No | Not on its own: answers appear in a side panel, and the product page calls its protocols ready to save | hosted |
 | [Polaris](https://github.com/ZJU-REAL/Polaris) | Takes a research direction to a LaTeX paper, and by default will not mark it submitted until its own review passes, which fails on any fabricated citation | The direction, then every idea promoted to an experiment, which its docs say only a person can decide in the app, and in-app submission of the reviewed paper, which the arXiv export skips †; also any question it asks when stuck. Goal and budget checks exist but are off by default | Paper wiki, scored ideas, experiment runs on your GPU servers, a LaTeX paper, and a review rating every citation as exact, minor or fabricated and up to 30 per round as supported, partial or unsupported, with every percentage and decimal checked against the run record | No; answers to its questions record who answered, and each gate stores who decided it †, but no documented export carries either | It is the draft | self-host |
 | [Wisp Science](https://github.com/xuzhougeng/wisp-science) | Runs analyses on your own files and locks the evidence behind each manuscript claim into an exportable capsule | The question and any action an approval gate stops on, then which results are selected as evidence for each manuscript item | Literature search, Python and R runs with logs, figures and drafts in a local project, plus an Evidence Capsule: a ZIP binding manuscript items to the exact runs, code and environment behind them, with a clean-workspace rerun check | The Evidence Capsule marks each binding Candidate, Selected or Rejected, with lineage and checksums; the documentation does not say who made each choice | It writes project files; dangerous commands stop for approval and other tools follow their own allow, ask or deny rule, until you opt into Full Permission | self-host |

@@ -19,6 +19,7 @@ Systems that fail these tests but are worth knowing about get recorded in [METHO
 - **Domain models that predict nature.** If the output is a claim about the world, such as a protein structure, a material property, a weather field or a reaction yield, it takes the place of a measurement rather than of a research judgment. It performs a piece of the science instead of helping you decide how the work should go. AlphaFold, Boltz, MatterGen and the ML weather emulators are real, usable and important, and all out of scope. **The test:** is the output checked against nature, or against your standards for the work? Atinary is listed because what it returns is which experiment to run next, a decision about your research. A model returning what that experiment would have found would not be.
 - **Single-maintainer projects with nothing behind them.** One substantive contributor is fine when the project has backing: an institution, a company, a citable publication, or enough users that a break would be noticed. With none of those, a curated list should not point a researcher at software that depends on one person staying interested. The judgment concerns maintenance risk alone, and it is **separate from the activity rule above**: a project can run perfectly today and still fail this one.
 - **Pure retrieval tools.** A system that returns items and attaches no judgment to any of them has taken over no research judgment, and research judgment is what this list is about. Google Scholar, PubMed, Scopus and Web of Science are all out on this. Semantic Scholar is in because its highly-influential-citation classifier is a machine judgment made about each individual item. Ranking alone would not have been enough.
+- **Grant, proposal and study-plan writers.** A funding proposal, a preregistration or a study plan describes research that has not been done yet, and drafting one is writing about research rather than doing it. These are out even when they search the literature or check their own drafts.
 - **Papers and preprints with no working product.** Link a survey list under [Related lists](METHOD.md#related-lists) instead.
 - **General-purpose assistants, access or discount programs, reference managers with no AI component.**
 
@@ -86,7 +87,7 @@ Proposing a **new facet** (see [METHOD.md](METHOD.md#the-facets)) must clear tha
 This list exists because bigger lists in this space either sprawl until nobody can maintain them, or turn into a paper bibliography that goes stale within a year.
 
 - Quality and relevance beat completeness. Not every AI-for-research tool needs to be here.
-- If a category grows past about 10 to 12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at nine, is the closest to that line today.
+- If a category grows past about 10 to 12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at seven, is the closest to that line today.
 - A category holding one entry is fine if the arrangement it describes is real. Thin categories are informative: they show where this sort of collaboration barely exists yet.
 
 ## Removing entries
