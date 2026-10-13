@@ -37,7 +37,6 @@ const TAGS = {
   'Review-it':             ['citations', 'manuscript'],
   'Granted AI':            ['grant'],
   'Labguru Assistant':     ['next'],
-  'AI-Researcher (HKUDS)': ['paper'],
   'Polaris':               ['paper'],
   'Wisp Science':          ['data'],
   'Semantic Scholar':      ['find'],

@@ -166,19 +166,12 @@ const CELLS = {
     anomaly: { v: "yes", url: "https://www.labguru.com/labguru-assistant", quote: "Analyze results, summarize trends, generate visual outputs, and identify anomalies using AI-powered insights." },
     api: { v: "nd" },
   },
-  "AI-Researcher (HKUDS)": {
-    runs_experiments: { v: "yes", url: "https://github.com/hkuds/ai-researcher", quote: "Systematic experimentation forms the core of our validation process. We execute comprehensive tests to evaluate algorithm performance, collect metrics, and document all findings." },
-    code: { v: "yes", url: "https://github.com/hkuds/ai-researcher", quote: "transform abstract concepts into concrete code implementations" },
-    latex: { v: "yes", url: "https://raw.githubusercontent.com/HKUDS/AI-Researcher/main/paper_agent/tex_writer.py", quote: "result1 = subprocess.run(['pdflatex', '-interaction=nonstopmode', main_tex_file], capture_output=True, text=True)", d: true },
-    midrun: { v: "no", url: "https://github.com/hkuds/ai-researcher", quote: "This fully automated system removes the need for manual intervention across the entire research lifecycle" },
-    self_check: { v: "nd" },
-  },
   "Polaris": {
     runs_experiments: { v: "yes", url: "https://github.com/ZJU-REAL/Polaris", quote: "writes code, runs a smoke test, launches runs with streamed logs and live metric curves" },
     code: { v: "yes", url: "https://github.com/ZJU-REAL/Polaris", quote: "Agents write and run code on real GPU servers, iterate on metrics, and" },
     latex: { v: "yes", url: "https://github.com/ZJU-REAL/Polaris", quote: "The Paper Writer opens a multi-file LaTeX project (NeurIPS, ICLR, ACL templates) with a CodeMirror 6 editor, real-time collaborative editing (CRDT), and local tectonic compilation to a live PDF preview." },
-    midrun: { v: "yes", q: "opt-in; off by default", url: "https://github.com/ZJU-REAL/Polaris/blob/main/docs/task-system.md", quote: "In-run gates are **opt-in** (#626): plan templates only include them when the run was created with `confirm_budget` (experiments) or `confirm_goal` (proposals); by default a run goes straight through." },
-    self_check: { v: "yes", url: "https://github.com/ZJU-REAL/Polaris", quote: "Line-by-line citation verification (existence: exact, minor, or fabricated; support: supported, partial, or unsupported) plus deterministic fact-checking of every number against the experiment record, then multi-perspective top-venue reviewer agents and a meta-review. A fabricated citation forces a non-pass." },
+    midrun: { v: "yes", q: "promotion and in-app submission; runs pause only with opt-in gates", url: "https://github.com/ZJU-REAL/Polaris/blob/main/docs/concepts.md", quote: "Promoting an idea to the experiment stage — promotion is itself an approval action, so this gate is always created. ... Marking a manuscript as submitted — always an approval action." },
+    self_check: { v: "yes", q: "percentages and decimals; support for up to 30 citations a round", url: "https://github.com/ZJU-REAL/Polaris", quote: "Line-by-line citation verification (existence: exact, minor, or fabricated; support: supported, partial, or unsupported) plus deterministic fact-checking of every number against the experiment record, then multi-perspective top-venue reviewer agents and a meta-review. A fabricated citation forces a non-pass." },
   },
   "Wisp Science": {
     own_model: { v: "yes", url: "https://raw.githubusercontent.com/xuzhougeng/wisp-science/main/README.md", quote: "Bring OpenAI-compatible or Anthropic models, or drive Codex / Claude Code over" },

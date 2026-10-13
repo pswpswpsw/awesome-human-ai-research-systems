@@ -140,7 +140,30 @@ details.qa .badge {
 .callout h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 600; line-height: 1.15; margin: 0 0 10px; letter-spacing: -.01em; text-wrap: balance; }
 .callout p { margin: 0; color: var(--ink-2); font-size: 17px; }
 
-.cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); align-items: start; }
+
+/* ---- stacked cards: a featured system and its close alternatives ---- */
+.card.stacked {
+  overflow: visible; margin: 0 14px 14px 0;
+  box-shadow: var(--shadow), 7px 7px 0 -1px var(--surface), 7px 7px 0 0 var(--rule-2), 14px 14px 0 -1px var(--surface), 14px 14px 0 0 var(--rule-2);
+}
+.card.stacked::before { border-radius: 14px 0 0 14px; }
+.card .stack-title { margin: -4px 0 0; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.alts-btn {
+  font: inherit; font-size: 15px; color: var(--ink); background: var(--surface-2); border: 1px solid var(--rule-2);
+  border-radius: 10px; padding: 9px 12px; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 8px;
+}
+.alts-btn:hover { border-color: var(--ink-2); }
+.alts-btn .chev { display: inline-block; transition: transform .2s; }
+.alts-btn[aria-expanded="true"] .chev { transform: rotate(90deg); }
+.alts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.alts[hidden] { display: none; }
+.alts li { padding: 10px 2px; border-bottom: 1px solid var(--rule); font-size: 15px; line-height: 1.4; }
+.alts li:last-child { border-bottom: 0; }
+.alts a { font-weight: 600; }
+.alts .was { font-size: 12px; color: var(--muted); font-style: italic; margin-left: 6px; }
+.alts p { margin: 2px 0 0; color: var(--ink-2); }
+.alts .src { font-weight: 400; font-size: 13px; color: var(--muted); }
 .card {
   position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px;
   padding: 20px 20px 18px 22px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px;
@@ -258,7 +281,7 @@ try { var t = localStorage.getItem('hairs-theme'); if (t === 'light' || t === 'd
         <p>Every Monday a scheduled AI agent searches arXiv, launch announcements, the related awesome lists and GitHub for new research systems. It tests each candidate against the rules below, checks whether any excluded system has opened to the public, and opens every listed link to catch products that moved or closed. It writes a report and changes nothing. The maintainer rules on each candidate, and an entry is added or moved only when the evidence holds up.</p>
         </div>
         <h3>What gets in</h3>
-        <p>A system has to pass three tests on its own public pages. A researcher can use it today, with no waitlist or private preview. It was built for research work, not as a general assistant. And it does something no listed system does, so the list holds one system for each question a reader brings. A university project and a company product are judged the same way.</p>
+        <p>A system has to pass two tests on its own public pages. A researcher can use it today, with no waitlist or private preview, and it was built for research work, not as a general assistant. A system that passes both and answers a question no listed system answers gets its own row. One that answers the same question as a listed system joins its cluster as one line, and each cluster&rsquo;s featured system is chosen by written criteria, with arrival order counting for nothing. A university project and a company product are judged the same way.</p>
         <h3>Where it goes</h3>
         <p>Each system is filed by what the human still rules on, not by the stage of work it serves. The part of the product that carries research judgment is the part tested. Bench is tested first, then Delegation, Standing Verdicts, Human Approval and Critique in that order, and the first match places it. An entry moves whenever a release changes how the product works.</p>
         <h3>What counts as evidence</h3>
@@ -269,7 +292,7 @@ try { var t = localStorage.getItem('hairs-theme'); if (t === 'light' || t === 'd
     <details class="qa">
       <summary><span class="m-title">Why is a system I use not on the list?</span></summary>
       <div class="m-body">
-        <p>Usually for one of four reasons. Nobody has tested it yet. It failed one of the tests above: a waitlist, a general-purpose assistant, a language service, a plugin that only runs inside another agent, or a single maintainer with nothing behind the project. A listed system already answers the same question for the same reader. Or it was removed on the maintainer&rsquo;s judgment.</p>
+        <p>It may be here already. A system that answers the same question as a listed one appears as a close alternative, listed inside that system&rsquo;s stacked card: open <em>+ close alternatives</em> on the card it most resembles. Otherwise it usually failed one of the tests above: a waitlist, a general-purpose assistant, a language service, a plugin that only runs inside another agent, or a single maintainer with nothing behind the project. It may also have been removed on the maintainer&rsquo;s judgment, or not tested yet.</p>
         <p>Systems left out after a closer look are in the <a href="__REPO_URL__/blob/main/METHOD.md#what-the-tests-excluded">exclusion table</a>, each with its reason. The weekly scan rules out more candidates than the table records, so a system missing from it may already have been looked at. Either way, <a href="__REPO_URL__/issues">open an issue</a> with a link to it and the case for it.</p>
       </div>
     </details>
@@ -307,7 +330,7 @@ try { var t = localStorage.getItem('hairs-theme'); if (t === 'light' || t === 'd
 
   <footer>
     <p id="provenance"></p>
-    <p>The cards are taken from the README tables, and which system sits under which need comes from the same list that builds the README&rsquo;s &ldquo;What do you want to do?&rdquo; section. The <em>How they differ</em> tables come from <code>scripts/lib/compare.js</code>, where each value carries the page and the words it rests on. The page is built from those files, and a check on every push fails if the committed page differs from a fresh build. To change it, edit the source and run <code>node scripts/build.js</code>.</p>
+    <p>The cards are taken from the README tables, and which system sits under which need comes from the same list that builds the README&rsquo;s &ldquo;What do you want to do?&rdquo; section. The <em>How they differ</em> tables come from <code>scripts/lib/compare.js</code>, where each value carries the page and the words it rests on, and the close alternatives in each stacked card come from <code>scripts/lib/clusters.js</code>. The page is built from those files, and a check on every push fails if the committed page differs from a fresh build. To change it, edit the source and run <code>node scripts/build.js</code>.</p>
     <p><a href="__REPO_URL__">The full list, and the reasoning behind every placement, is on GitHub.</a></p>
   </footer>
 </div>
@@ -390,11 +413,14 @@ window.HAIRS = null; /*__DATA__*/
     var cats = {};
     members.forEach(function (m) { cats[m.cat] = 1; });
     var nCats = Object.keys(cats).length;
+    var nAlts = 0;
+    members.forEach(function (m) { if (m.cluster) nAlts += m.cluster.members.length; });
+    var altsNote = nAlts ? ', ' + nAlts + (nAlts === 1 ? ' close alternative' : ' close alternatives') : '';
     var head = nCats > 1
-      ? '<p class="kicker">' + j.label + ' &middot; ' + members.length + ' systems, ' + nCats + ' categories</p>' +
+      ? '<p class="kicker">' + j.label + ' &middot; ' + members.length + ' systems, ' + nCats + ' categories' + altsNote + '</p>' +
         '<h2>Same job, different answerability.</h2>' +
         '<p>All of these ' + j.verb + '. Read the shaded line on each card: that is what you still rule on, and it is where they part company.</p>'
-      : '<p class="kicker">' + j.label + ' &middot; ' + members.length + ' systems, one category</p>' +
+      : '<p class="kicker">' + j.label + ' &middot; ' + members.length + ' systems, one category' + altsNote + '</p>' +
         '<h2>Same job, same category.</h2>' +
         '<p>All of these ' + j.verb + ', and they leave you the same kind of thing to rule on. They are straightforward alternatives, so the choice comes down to the details below.</p>';
     var html = '<div class="callout">' + head + '</div><div class="cards' + (reduce ? '' : ' play-cards') + '">';
@@ -403,8 +429,9 @@ window.HAIRS = null; /*__DATA__*/
       var dots = '';
       if (c.rank < 4) { for (var k = 0; k < 4; k++) dots += '<i' + (k === c.rank ? ' class="here"' : '') + '></i>'; }
       else { dots = '<i class="here"></i>'; }
-      html += '<article class="card" style="--c: var(--cat-' + c.key + '); --d:' + (i * .07 + .1).toFixed(2) + 's">' +
+      html += '<article class="card' + (m.cluster ? ' stacked' : '') + '" style="--c: var(--cat-' + c.key + '); --d:' + (i * .07 + .1).toFixed(2) + 's">' +
         '<div class="cat">' + catIcon(c) + m.cat + '</div>' +
+        (m.cluster ? '<p class="stack-title">' + m.cluster.title + '</p>' : '') +
         '<h3><a href="' + m.url + '" target="_blank" rel="noopener">' + m.label + '</a>' + (m.noteHTML ? '<span class="note">' + m.noteHTML + '</span>' : '') + '</h3>' +
         '<p class="does">' + m.doesHTML + '</p>' +
         '<div class="rules"><span class="k">You rule on</span><p>' + m.rulesHTML + '</p></div>' +
@@ -414,7 +441,7 @@ window.HAIRS = null; /*__DATA__*/
           '<div><dt>On the record</dt><dd>' + m.recordHTML + '</dd></div>' +
           '<div><dt>Writes into your draft</dt><dd>' + m.writesHTML + '</dd></div>' +
           '<div><dt>Access</dt><dd>' + m.accessHTML + '</dd></div>' +
-        '</dl></article>';
+        '</dl>' + altsHTML(m, i) + '</article>';
     });
     html += '</div>';
     html += renderDiff(j, members);
@@ -443,6 +470,25 @@ window.HAIRS = null; /*__DATA__*/
       '<p class="legend">&#10003; and &#10007; rest on the vendor&rsquo;s own pages or on the system&rsquo;s own README row, and &dagger; marks evidence found only in page source or a script bundle. In the evaluation row, &#10003; names the published study. <em>Not documented</em> means nothing we found on its public pages says either way. Checked ' + D.checked + '.</p></section>';
   }
 
+  // A featured system's close alternatives: one line each, folded under its card.
+  function altsHTML(m, i) {
+    if (!m.cluster) return '';
+    var n = m.cluster.members.length, id = 'alts-' + i;
+    var h = '<button type="button" class="alts-btn" aria-expanded="false" aria-controls="' + id + '"><span class="chev" aria-hidden="true">&#9656;</span>+' + n + (n === 1 ? ' close alternative' : ' close alternatives') + '</button>' +
+      '<ul class="alts" id="' + id + '" hidden>';
+    m.cluster.members.forEach(function (a) {
+      h += '<li><a href="' + a.url + '" target="_blank" rel="noopener">' + a.name + '</a>' + (a.was ? '<span class="was">own row until ' + a.was + '</span>' : '') + '<p>' + a.lineHTML + ' <a class="src" href="' + a.srcUrl + '" target="_blank" rel="noopener">source</a></p></li>';
+    });
+    return h + '</ul>';
+  }
+  document.getElementById('result').addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.alts-btn') : null;
+    if (!b) return;
+    var open = b.getAttribute('aria-expanded') !== 'true';
+    b.setAttribute('aria-expanded', String(open));
+    document.getElementById(b.getAttribute('aria-controls')).hidden = !open;
+  });
+
   function catIcon(c) {
     var s = document.createElementNS(NS, 'svg');
     s.setAttribute('width', 14); s.setAttribute('height', 14); s.setAttribute('viewBox', '-9 -9 18 18'); s.setAttribute('aria-hidden', 'true');
@@ -451,7 +497,7 @@ window.HAIRS = null; /*__DATA__*/
   }
 
   document.getElementById('provenance').textContent =
-    'Built from the README tables and scripts/lib/compare.js: ' + D.entries.length + ' systems under ' + D.jobs.length + ' needs.';
+    'Built from the README tables, scripts/lib/compare.js and scripts/lib/clusters.js: ' + D.entries.length + ' systems under ' + D.jobs.length + ' needs.';
 
   var h = (location.hash.match(/job=(\w+)/) || [])[1];
   if (h && jobsByKey[h]) setTimeout(function () { select(h); }, reduce ? 0 : 250);

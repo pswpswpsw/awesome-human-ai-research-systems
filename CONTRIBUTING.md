@@ -1,6 +1,6 @@
 # Contributing to Awesome Human-AI Research Systems
 
-Thanks for considering a contribution. Three things shape this list. An entry has to earn its place against the entries already here, by doing something none of them does. The list stays small on purpose. And it is organized by **what the human still rules on**, not by where a tool sits in a workflow. The reasoning behind that choice is in [METHOD.md](METHOD.md). This file is what you need before opening a pull request (PR).
+Thanks for considering a contribution. Three things shape this list. A system earns its own row by answering a question no listed system answers. One that answers the same question as a listed system joins that system's cluster as a single line. The list stays small on purpose. And it is organized by **what the human still rules on**, not by where a tool sits in a workflow. The reasoning behind that choice is in [METHOD.md](METHOD.md). This file is what you need before opening a pull request (PR).
 
 ## What belongs here
 
@@ -19,9 +19,14 @@ Systems that fail these tests but are worth knowing about get recorded in [METHO
 - **Domain models that predict nature.** If the output is a claim about the world, such as a protein structure, a material property, a weather field or a reaction yield, it takes the place of a measurement rather than of a research judgment. It performs a piece of the science instead of helping you decide how the work should go. AlphaFold, Boltz, MatterGen and the ML weather emulators are real, usable and important, and all out of scope. **The test:** is the output checked against nature, or against your standards for the work? Atinary is listed because what it returns is which experiment to run next, a decision about your research. A model returning what that experiment would have found would not be.
 - **Single-maintainer projects with nothing behind them.** One substantive contributor is fine when the project has backing: an institution, a company, a citable publication, or enough users that a break would be noticed. With none of those, a curated list should not point a researcher at software that depends on one person staying interested. The judgment concerns maintenance risk alone, and it is **separate from the activity rule above**: a project can run perfectly today and still fail this one.
 - **Pure retrieval tools.** A system that returns items and attaches no judgment to any of them has taken over no research judgment, and research judgment is what this list is about. Google Scholar, PubMed, Scopus and Web of Science are all out on this. Semantic Scholar is in because its highly-influential-citation classifier is a machine judgment made about each individual item. Ranking alone would not have been enough.
-- **Duplicates without a differentiating feature.** This is the rule that decides most close calls, and it judges a university project and a company product the same way. Name the thing this tool does that nothing already listed does. Weights and data you can host yourself, set against a hosted service, counts. Being free counts where nothing comparable is. A different front end does not, and neither does a different market being targeted with the same capability. Where two entries would answer the same question for the same reader, the list should hold one.
 - **Papers and preprints with no working product.** Link a survey list under [Related lists](METHOD.md#related-lists) instead.
 - **General-purpose assistants, access or discount programs, reference managers with no AI component.**
+
+## Its own row, or a line in a cluster?
+
+A system that passes every test above but answers the same question for the same reader as a listed one joins that system's **cluster**. The same question means the same need, the same category, and the same thing handed in and handed back. Weights you can host yourself, set against a hosted service, make a different question, as does being free where nothing comparable is. A different front end does not, and neither does a different market for the same capability. A university project and a company product are judged the same way.
+
+Each cluster has one featured system with a full row. Every other member is one line under it, naming one documented difference and linking the page it rests on; `scripts/lib/clusters.js` keeps the exact words. The featured system is chosen by the criteria in [METHOD.md](METHOD.md#clusters), in order, and when a system arrived counts for nothing, so a newcomer can take the featured row if it does better on them. A cluster also carries a short reason its featured system wins, which the build writes into METHOD.md.
 
 ## Which category does it go in?
 
@@ -44,7 +49,7 @@ If you genuinely cannot place a tool, say so in the PR and quote the vendor page
 
 ## How to add an entry
 
-Entries are table rows, not bullets. Add a row to the table for the category your tool lands in:
+Entries are table rows, not bullets. A system that joins a cluster is the exception: add it as a member in `scripts/lib/clusters.js`, with its one-line difference and the URL and words that line rests on, and no table row. Otherwise, add a row to the table for the category your tool lands in:
 
 ```markdown
 | [Name](https://example.com) | what it does | what the human rules on | what you get | decision record | writes into your draft | access |
@@ -70,7 +75,7 @@ Rules for the prose in those cells:
 7. If a product ships two paths, and the human rules on different things in each, name the path your placement rests on.
 8. One tool per pull request makes review faster. Small batches are fine.
 9. Check the links resolve before opening the PR.
-10. **Regenerate what is built from the tables.** The README’s "What do you want to do?" section, the figure in `docs/` and the chooser page at `docs/index.html` are generated, not written by hand. After adding, removing or moving an entry, or changing a value in `scripts/lib/compare.js`, run `node scripts/build.js`. A new entry also needs a line in `TAGS` in `scripts/lib/data.js` naming the needs it meets, read off what its own documentation says it does, and a value in `scripts/lib/compare.js` for every hand-entered row of the *How they differ* table under each of those needs. The rows for hosting the whole system yourself, downloadable weights and text reaching your document are read from the entry's Access and Writes into your draft cells. A hand-entered ✓ or ✗ carries the URL and the exact words it rests on. A ✗ needs the vendor saying so, or the entry's own row ruling it out, and anything else is *not documented*. The build refuses to run if the README tables and that list disagree, and names the README count that no longer matches. A check on every push reruns the build and fails if anything it produces differs from what was committed. Edit the tables and the scripts, never the generated section or the built files.
+10. **Regenerate what is built from the tables.** The README’s "What do you want to do?" section, the figure in `docs/` and the chooser page at `docs/index.html` are generated, not written by hand. After adding, removing or moving an entry, or changing a value in `scripts/lib/compare.js` or a cluster in `scripts/lib/clusters.js`, run `node scripts/build.js`. A new entry also needs a line in `TAGS` in `scripts/lib/data.js` naming the needs it meets, read off what its own documentation says it does, and a value in `scripts/lib/compare.js` for every hand-entered row of the *How they differ* table under each of those needs. The rows for hosting the whole system yourself, downloadable weights and text reaching your document are read from the entry's Access and Writes into your draft cells. A hand-entered ✓ or ✗ carries the URL and the exact words it rests on. A ✗ needs the vendor saying so, or the entry's own row ruling it out, and anything else is *not documented*. The build refuses to run if the README tables and that list disagree, and names the README count that no longer matches. A check on every push reruns the build and fails if anything it produces differs from what was committed. Edit the tables and the scripts, never the generated section or the built files.
 
 Proposing a **new category** is the exception. It needs a decision point the existing five cannot express, meaning a genuinely different answer to the question of what the human still rules on. It also needs a test a contributor can apply from a product's public pages. Categories that are really workflow stages in disguise will be declined.
 
@@ -81,7 +86,7 @@ Proposing a **new facet** (see [METHOD.md](METHOD.md#the-facets)) must clear tha
 This list exists because bigger lists in this space either sprawl until nobody can maintain them, or turn into a paper bibliography that goes stale within a year.
 
 - Quality and relevance beat completeness. Not every AI-for-research tool needs to be here.
-- If a category grows past ~10–12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at ten, is the closest to that line today.
+- If a category grows past about 10 to 12 entries, prune the weakest or split it along a finer decision boundary. *Delegation*, at nine, is the closest to that line today.
 - A category holding one entry is fine if the arrangement it describes is real. Thin categories are informative: they show where this sort of collaboration barely exists yet.
 
 ## Removing entries

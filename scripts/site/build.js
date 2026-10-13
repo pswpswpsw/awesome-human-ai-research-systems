@@ -2,9 +2,10 @@
 // Run everything at once with: node scripts/build.js
 //
 // Every product sentence on the cards is a README table cell, the How they
-// differ tables come from scripts/lib/compare.js, and the needs, colours and
-// shapes come from scripts/lib/data.js, the same files the README's "What do
-// you want to do?" section is built from. The script
+// differ tables come from scripts/lib/compare.js, the close alternatives in
+// each stacked card from scripts/lib/clusters.js, and the needs, colours and
+// shapes from scripts/lib/data.js, the same files the README's "What do you
+// want to do?" section is built from. The script
 // refuses to build if the README tables and data.js disagree about which
 // systems exist, so the page cannot quietly fall out of step with the list.
 const fs = require('fs');
@@ -12,6 +13,7 @@ const path = require('path');
 const { ROOT, readme, readRows } = require('../lib/readme');
 const { NEEDS, TAGS, CATS, PALETTE, SHAPES } = require('../lib/data');
 const { CHECKED, matrix } = require('../lib/compare');
+const { clusterOf } = require('../lib/clusters');
 
 const REPO_URL = 'https://github.com/pswpswpsw/awesome-human-ai-research-systems';
 const TEMPLATE = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
@@ -45,6 +47,10 @@ for (const row of readRows()) {
     recordHTML: md(cells[4]),
     writesHTML: md(cells[5]),
     accessHTML: md(cells[6]),
+    cluster: (() => {
+      const c = clusterOf(name);
+      return c ? { title: esc(c.title), members: c.members.map((m) => ({ name: esc(m.name), url: m.url, srcUrl: m.src.url, lineHTML: md(m.line), was: m.was ? esc(m.was) : '' })) } : null;
+    })(),
   });
 }
 for (const k of Object.keys(TAGS)) {
