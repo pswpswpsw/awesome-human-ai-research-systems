@@ -182,12 +182,9 @@ details.qa .badge {
 .rules .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
 .rules p { margin: 0; font-size: 17px; line-height: 1.45; color: var(--ink); }
 
-.scale { display: flex; align-items: center; gap: 12px; font-size: 14.5px; color: var(--ink-2); }
-.track { display: inline-flex; gap: 5px; flex: none; }
-.track i { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--rule-2); display: block; }
-.track i.here { background: var(--c); border-color: var(--c); }
-.track.off i { border-style: dashed; }
-.scale span { font-style: italic; }
+.idle { border-left: 3px solid var(--c); padding: 1px 0 1px 12px; }
+.idle .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 3px; }
+.idle p { margin: 0; font-size: 15.5px; line-height: 1.45; color: var(--ink-2); font-style: italic; }
 
 dl.facts { margin: 0; display: grid; gap: 11px; font-size: 14.5px; line-height: 1.45; border-top: 1px solid var(--rule); padding-top: 13px; }
 dl.facts dt { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 2px; }
@@ -426,16 +423,13 @@ window.HAIRS = null; /*__DATA__*/
     var html = '<div class="callout">' + head + '</div><div class="cards' + (reduce ? '' : ' play-cards') + '">';
     members.forEach(function (m, i) {
       var c = catOf(m);
-      var dots = '';
-      if (c.rank < 4) { for (var k = 0; k < 4; k++) dots += '<i' + (k === c.rank ? ' class="here"' : '') + '></i>'; }
-      else { dots = '<i class="here"></i>'; }
       html += '<article class="card' + (m.cluster ? ' stacked' : '') + '" style="--c: var(--cat-' + c.key + '); --d:' + (i * .07 + .1).toFixed(2) + 's">' +
         '<div class="cat">' + catIcon(c) + m.cat + '</div>' +
         (m.cluster ? '<p class="stack-title">' + m.cluster.title + '</p>' : '') +
         '<h3><a href="' + m.url + '" target="_blank" rel="noopener">' + m.label + '</a>' + (m.noteHTML ? '<span class="note">' + m.noteHTML + '</span>' : '') + '</h3>' +
         '<p class="does">' + m.doesHTML + '</p>' +
         '<div class="rules"><span class="k">You rule on</span><p>' + m.rulesHTML + '</p></div>' +
-        '<div class="scale"><span class="track' + (c.rank < 4 ? '' : ' off') + '" aria-hidden="true">' + dots + '</span><span>' + c.phrase + '</span></div>' +
+        '<div class="idle"><span class="k">If you do nothing</span><p>' + c.idle + '</p></div>' +
         '<dl class="facts">' +
           '<div><dt>You get</dt><dd>' + m.getHTML + '</dd></div>' +
           '<div><dt>On the record</dt><dd>' + m.recordHTML + '</dd></div>' +

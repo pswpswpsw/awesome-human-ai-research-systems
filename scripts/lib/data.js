@@ -51,7 +51,7 @@ const TAGS = {
 };
 
 // Category key, its position on the Standing scale (Bench sits off it), the
-// shape that marks it, and what the machine's call is worth there.
+// shape that marks it, and what happens if you do nothing, shown on each card.
 //
 // Colour never carries category on its own. The palette below was checked
 // with a colour-vision validator, and no five hues stay pairwise
@@ -59,11 +59,11 @@ const TAGS = {
 // Standing Verdicts are the closest pair. So wherever a colour marks a
 // category, the category is also named in text and marked by its shape.
 const CATS = {
-  'Delegation':        { key: 'D', rank: 0, shape: 'diamond',  phrase: 'The machine’s call is the record.' },
-  'Standing Verdicts': { key: 'S', rank: 1, shape: 'circle',   phrase: 'It stands until someone reverses it.' },
-  'Human Approval':    { key: 'H', rank: 2, shape: 'square',   phrase: 'It waits for a named person’s ruling.' },
-  'Critique':          { key: 'C', rank: 3, shape: 'triangle', phrase: 'It can never be the record.' },
-  'Bench':             { key: 'B', rank: 4, shape: 'hexagon',  phrase: 'Off this scale: a run settles it, not a reader.' },
+  'Delegation':        { key: 'D', rank: 0, shape: 'diamond',  idle: 'What it hands back is yours as it stands, and nothing records which parts you checked.' },
+  'Standing Verdicts': { key: 'S', rank: 1, shape: 'circle',   idle: 'Its call on every item you never open is the one that counts.' },
+  'Human Approval':    { key: 'H', rank: 2, shape: 'square',   idle: 'Nothing moves on until a named person rules.' },
+  'Critique':          { key: 'C', rank: 3, shape: 'triangle', idle: 'Not a word it writes reaches your file.' },
+  'Bench':             { key: 'B', rank: 4, shape: 'hexagon',  idle: 'Nothing runs, and the next experiment waits on you.' },
 };
 
 const PALETTE = {
