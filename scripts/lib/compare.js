@@ -31,7 +31,6 @@ const FEATURES = {
   relevance_reason: 'Says why each paper is relevant',
   coverage: 'Estimates how much of the literature it found',
   tally: 'Counts how many studies say yes or no',
-  influence: 'Marks highly influential citations',
   uncited_label: 'Labels text it wrote without a source',
   runs_code: 'Runs code to reach the answer, and shows it',
   peer_reviewed: 'Evaluation published in a peer-reviewed venue',
@@ -42,7 +41,6 @@ const FEATURES = {
   extraction: 'Cites the passage behind each extracted value',
   // citations and manuscripts
   fabricated: 'Flags references that match no real paper',
-  retraction: 'Flags retracted references',
   stance: 'Shows whether later papers support or contrast a cited work',
   selfcite: 'Flags self-citation',
   score: 'Scores the manuscript',
@@ -63,7 +61,6 @@ const FEATURES = {
   admit: 'Waits for you to admit each proposal before it runs',
   notebook: 'Its output can be saved in your lab notebook',
   robot: 'Connects to lab robots or instruments',
-  anomaly: 'Flags anomalies in your data',
   // any system
   api: 'Can be called from code',
   selfhost: 'You can host the whole system yourself',
@@ -87,28 +84,19 @@ const DERIVED = {
 
 // Which rows each need's panel shows, in this order.
 const ROWS = {
-  find: ['relevance_reason', 'coverage', 'tally', 'influence', 'person_record'],
+  find: ['relevance_reason', 'coverage', 'tally', 'person_record'],
   answer: ['runs_code', 'uncited_label', 'tally', 'peer_reviewed', 'weights'],
   review: ['dual', 'person_record', 'prisma', 'extraction', 'own_text', 'api'],
-  citations: ['fabricated', 'retraction', 'stance', 'selfcite', 'own_text'],
-  manuscript: ['score', 'rigor', 'rrid', 'claim_evidence', 'journal_fit', 'fabricated', 'own_text'],
+  citations: ['fabricated', 'stance', 'selfcite'],
+  manuscript: ['score', 'rigor', 'rrid', 'claim_evidence', 'journal_fit', 'fabricated'],
   paper: ['midrun', 'self_check', 'selfhost'],
   data: ['selfhost', 'own_model', 'evidence_package', 'rerun', 'gates'],
-  next: ['closed_loop', 'admit', 'notebook', 'robot', 'anomaly', 'api'],
+  next: ['closed_loop', 'admit', 'notebook', 'robot', 'api'],
 };
 
 // Hand-entered values, keyed by the system's name as the README writes it.
 // Each yes, no or text value carries the page it was read on and the words it rests on.
 const CELLS = {
-  "ClawsGO Science": {
-    dual: { v: "no", url: "README.md", quote: "The question, then keep / revise / discard the whole study" },
-    person_record: { v: "no", url: "README.md", quote: "Screening log of the model's own inclusion calls, seen only in a sample run on the homepage" },
-    prisma: { v: "yes", q: "sample run only", url: "https://clawsgo.ai/", quote: "fig1_prisma_flow.png" },
-    extraction: { v: "nd" },
-    api: { v: "nd" },
-    midrun: { v: "no", q: "asks at its own discretion, then proceeds", url: "https://clawsgo.ai/docs/quickstart/first-task", quote: "When a decision matters, ClawsGO stops and asks. ... Skip them all and it decides on its own." },
-    self_check: { v: "nd" },
-  },
   "Edison Platform": {
     runs_code: { v: "yes", q: "Kosmos", url: "https://docs.edisonscientific.com/overview.md", quote: "Kosmos autonomously reads literature, writes and executes analysis code, generates hypotheses, and produces a comprehensive cited report. ... You can trace any finding back to the specific code or literature passage that produced it." },
     uncited_label: { v: "nd" },
@@ -118,25 +106,6 @@ const CELLS = {
     evidence_package: { v: "nd" },
     rerun: { v: "nd" },
     gates: { v: "no", q: "task runs", url: "https://docs.edisonscientific.com/edison-client/methods/chat-sessions.md", quote: "Tasks (`run_tasks_until_done`) are fire-and-forget, not interactive." },
-  },
-  "Review-it": {
-    fabricated: { v: "yes", url: "https://review-it.ai/", quote: "Cross-verify literature citations in real-time to flag fabricated references or AI-hallucinated research sources." },
-    retraction: { v: "nd" },
-    stance: { v: "nd" },
-    selfcite: { v: "yes", q: "reference checker", url: "https://review-it.ai/reference-checker", quote: "Calculates self-citation ratios and flags potential manipulation of citation metrics for ethical compliance." },
-    score: { v: "yes", url: "https://review-it.ai/", quote: "Receive distinct quality marks (0-100) for your Abstract, Intro, Methodology, and Discussion sections." },
-    rigor: { v: "nd" },
-    rrid: { v: "nd" },
-    claim_evidence: { v: "nd" },
-    journal_fit: { v: "yes", url: "https://review-it.ai/review-document", quote: "recommend the best-fit scholars and journals for your research." },
-  },
-  "Labguru Assistant": {
-    closed_loop: { v: "nd" },
-    admit: { v: "nd" },
-    notebook: { v: "yes", url: "https://www.labguru.com/labguru-assistant", quote: "generating structured protocols ready to save and share within Labguru ELN/LIMS" },
-    robot: { v: "nd" },
-    anomaly: { v: "yes", url: "https://www.labguru.com/labguru-assistant", quote: "Analyze results, summarize trends, generate visual outputs, and identify anomalies using AI-powered insights." },
-    api: { v: "nd" },
   },
   "Polaris": {
     midrun: { v: "yes", q: "promotion and in-app submission; runs pause only with opt-in gates", url: "https://github.com/ZJU-REAL/Polaris/blob/main/docs/concepts.md", quote: "Promoting an idea to the experiment stage — promotion is itself an approval action, so this gate is always created. ... Marking a manuscript as submitted — always an approval action." },
@@ -148,18 +117,10 @@ const CELLS = {
     rerun: { v: "yes", q: "local runs", url: "https://raw.githubusercontent.com/xuzhougeng/wisp-science/main/docs/publication-evidence.md", quote: "On the frozen Run evidence card, choose **Verify in clean workspace**. ... compares every declared output against the frozen reference; and" },
     gates: { v: "yes", q: "dangerous commands, by default", url: "https://raw.githubusercontent.com/xuzhougeng/wisp-science/main/docs/basic-configuration.md", quote: "- **按工具规则**（默认）：遵循各工具的允许、询问或禁止规则；危险命令仍需确认，并非每次调用都会询问。" },
   },
-  "Semantic Scholar": {
-    relevance_reason: { v: "nd" },
-    coverage: { v: "nd" },
-    tally: { v: "nd" },
-    influence: { v: "yes", url: "https://www.semanticscholar.org/faq", quote: "Semantic Scholar identifies citations where the cited publication has a significant impact on the citing publication, making it easier to understand how publications build upon and relate to each other. Influential citations are determined utilizing a machine-learning model analy" },
-    person_record: { v: "no", url: "README.md", quote: "No" },
-  },
   "Consensus": {
     relevance_reason: { v: "nd" },
     coverage: { v: "nd" },
     tally: { v: "yes", url: "https://consensus.app/home/blog/introducing-the-consensus-meter/", quote: "For \"Yes/No\" questions, the Consensus Meter uses large language models to instantly classify the results as indicating \"yes\", \"no\" or \"possibly\" in a clean, aggregated interface." },
-    influence: { v: "nd" },
     person_record: { v: "no", url: "README.md", quote: "No" },
     runs_code: { v: "nd" },
     uncited_label: { v: "nd" },
@@ -169,14 +130,12 @@ const CELLS = {
     relevance_reason: { v: "yes", url: "https://www.undermind.ai/mcp", quote: "Why it’s relevant" },
     coverage: { v: "yes", url: "https://www.undermind.ai/", quote: "By statistically modeling this process, we can determine what fraction of relevant papers we have likely found. If your paper didn't show up at first, it's likely the search system knows it has not yet found everything (and the report summary will tell you)." },
     tally: { v: "nd" },
-    influence: { v: "nd" },
     person_record: { v: "no", url: "README.md", quote: "No" },
   },
   "Ai2 Asta": {
     relevance_reason: { v: "yes", d: true, url: "https://asta.allen.ai/547.64c6e7.chunk.js", quote: "n.relevance,relevanceScore:s.relevanceScore,text:null===(i=s.relevanceJudgement)||void 0===i?void 0:i.relevanceSummary" },
     coverage: { v: "nd" },
     tally: { v: "nd" },
-    influence: { v: "nd" },
     person_record: { v: "no", url: "README.md", quote: "No" },
     runs_code: { v: "nd" },
     uncited_label: { v: "yes", d: true, url: "https://asta.allen.ai/547.64c6e7.chunk.js", quote: "This text was generated by ${n}'s ${i} model without citing any retrieved papers. It relies on the model's training data." },
@@ -190,7 +149,6 @@ const CELLS = {
   },
   "scite": {
     fabricated: { v: "nd" },
-    retraction: { v: "yes", url: "https://scite.ai/features", quote: "including whether any have been retracted, received editorial notices, or accumulated contrasting findings." },
     stance: { v: "yes", url: "https://scite.ai/features", quote: "Our deep learning model analyzes 1.6B+ citation statements and classifies each one as supporting, contrasting, or mentioning" },
     selfcite: { v: "nd" },
   },
@@ -198,7 +156,6 @@ const CELLS = {
     relevance_reason: { v: "yes", url: "https://support.elicit.com/en/articles/14759154-systematic-reviews-in-elicit", quote: "Click any paper to see its per-criterion decisions, exclusion reasons, and source quotes from the abstract supporting each decision" },
     coverage: { v: "nd" },
     tally: { v: "nd" },
-    influence: { v: "nd" },
     person_record: { v: "yes", q: "dual-review path", url: "https://support.elicit.com/en/articles/14759154-systematic-reviews-in-elicit", quote: "Audit trail logs every decision, override, and adjudication for PRISMA reconstruction, plus agreement stats (decision agreement, exclusion reason agreement, Cohen's kappa) for both reviewer and Elicit pairs and reviewer to reviewer pairs" },
     dual: { v: "yes", q: "dual-review path", url: "https://support.elicit.com/en/articles/14759154-systematic-reviews-in-elicit", quote: "When dual review is enabled, two reviewers can independently make screening decisions in Elicit. Afterwards, Elicit will surface conflicts in screening judgements for reviewers to resolve." },
     prisma: { v: "yes", url: "https://support.elicit.com/en/articles/14758182-advanced-search-gathering-for-systematic-reviews", quote: "Generate a PRISMA flow diagram visualizing how many papers were identified from each specific search tab/source." },
@@ -215,7 +172,6 @@ const CELLS = {
   },
   "Reviewer3": {
     fabricated: { v: "yes", url: "https://reviewer3.com/", quote: "Finds hallucinated, retracted, irrelevant, and self-cited references." },
-    retraction: { v: "yes", url: "https://reviewer3.com/", quote: "Finds hallucinated, retracted, irrelevant, and self-cited references." },
     stance: { v: "nd" },
     selfcite: { v: "yes", url: "https://reviewer3.com/", quote: "Finds hallucinated, retracted, irrelevant, and self-cited references." },
     score: { v: "nd" },
@@ -228,7 +184,6 @@ const CELLS = {
     closed_loop: { v: "yes", url: "https://help.atinary.com/en/articles/591086-suggestions-measurements", quote: "Submitting results triggers a new recommendation cycle — the algorithm analyzes all available data and produces the next batch of recommendations." },
     notebook: { v: "yes", q: "optional, through its API", url: "https://atinary.com/technology/sdlabs/", quote: "data management systems like LIMS and ELNs, is optional and seamless via API/SDK." },
     robot: { v: "yes", q: "optional", url: "https://atinary.com/technology/sdlabs/", quote: "Integration with laboratory robotics platforms (such as Chemspeed, Bruker, or IBM RoboRXN), as well as platforms like ACD/Labs’ Katalyst and data management systems like LIMS and ELNs, is optional and seamless via API/SDK." },
-    anomaly: { v: "nd" },
     api: { v: "yes", url: "https://api.sdlabs.atinary.com/schema/", quote: "SDLabs API for experiment optimization and dataset management." },
     admit: { v: "nd" },
   },
@@ -237,7 +192,6 @@ const CELLS = {
     admit: { v: "no", q: "default Agentic setting; opt-in Copilot asks, as guidance rather than enforcement", url: "README.md", quote: "its loop waits on you between runs only when failed runs hit its repair cap" },
     notebook: { v: "nd" },
     robot: { v: "nd" },
-    anomaly: { v: "nd" },
     api: { v: "yes", q: "orx CLI", url: "https://github.com/alphaXiv/OpenResearch/blob/main/SKILL.md", quote: "Read this before driving `orx` programmatically." },
   },
   "NeuriCo": {
@@ -245,7 +199,6 @@ const CELLS = {
     admit: { v: "yes", url: "https://github.com/ChicagoHAI/NeuriCo/blob/main/docs/HITL_AUTORESEARCH.md", quote: "A legal proposal is presented to the human for approval or concrete feedback." },
     notebook: { v: "nd" },
     robot: { v: "nd" },
-    anomaly: { v: "nd" },
     api: { v: "nd" },
   },
 };
@@ -268,6 +221,8 @@ function cellFor(row, feature) {
 
 // The table for one need. members: README rows, already in panel order.
 function matrix(need, members) {
+  // a panel with one system has nothing to compare
+  if (members.length < 2) return [];
   return (ROWS[need] || []).map((f) => ({
     feature: f,
     label: FEATURES[f],
@@ -283,6 +238,7 @@ const VALUES = ['yes', 'no', 'nd', 'preprint', 'text'];
 function check(rowsByNeed) {
   const errors = [];
   for (const [need, members] of Object.entries(rowsByNeed)) {
+    if (members.length < 2) continue;
     for (const f of ROWS[need] || []) {
       if (!FEATURES[f]) { errors.push('need "' + need + '" shows row "' + f + '", which FEATURES does not define.'); continue; }
       const shown = [];

@@ -6,7 +6,7 @@
 
 The judgment moves. Who answers for it does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. So the useful question about any of these tools is what it leaves you answerable for.
 
-Eighteen systems a researcher can use today, in five categories, and nine close alternatives listed under the system each most resembles. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
+Fourteen systems a researcher can use today, in five categories, and five close alternatives listed under the system each most resembles. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
 
 ## What do you want to do?
 
@@ -18,13 +18,12 @@ Start from the job you came for. Click one to open every system here that does i
 In *How they differ*, ✓ and ✗ rest on the vendor’s own pages or on the system’s own row further down, and **†** marks evidence found only in page source or a script bundle. In the evaluation row, ✓ names the published study. *Not documented* means nothing we found on its public pages says either way. Checked October 2026.
 
 <details>
-<summary><b>Find papers on a question</b> &middot; 5 systems</summary>
+<summary><b>Find papers on a question</b> &middot; 4 systems</summary>
 
-Five systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=find).
+Four systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=find).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [Semantic Scholar](https://www.semanticscholar.org/) | Scholarly search that flags which citations were highly influential | Everything the evidence is used for | [Standing Verdicts](#standing-verdicts) |
 | [Consensus](https://consensus.app/) | Tallies what the papers found on a yes or no question | Whether a tally really settles anything, and every sentence you cite in | [Standing Verdicts](#standing-verdicts) |
 | [Undermind](https://www.undermind.ai/) | Scores each paper, states why it fits, and estimates coverage | What the material means and which papers get cited | [Standing Verdicts](#standing-verdicts) |
 | [Ai2 Asta](https://asta.allen.ai/) | Sorts papers into relevance tiers †, labels its own uncited text † | Which relevance tier to trust, and every sentence you write | [Standing Verdicts](#standing-verdicts) |
@@ -32,13 +31,12 @@ Five systems across two categories, so they leave you different things to rule o
 
 **How they differ**
 
-| | Semantic Scholar | Consensus | Undermind | Ai2 Asta | Elicit |
-| --- | :---: | :---: | :---: | :---: | :---: |
-| Says why each paper is relevant | *not documented* | *not documented* | ✓ | ✓ † | ✓ |
-| Estimates how much of the literature it found | *not documented* | *not documented* | ✓ | *not documented* | *not documented* |
-| Counts how many studies say yes or no | *not documented* | ✓ | *not documented* | *not documented* | *not documented* |
-| Marks highly influential citations | ✓ | *not documented* | *not documented* | *not documented* | *not documented* |
-| Records which person decided each item | ✗ | ✗ | ✗ | ✗ | ✓ (dual-review path) |
+| | Consensus | Undermind | Ai2 Asta | Elicit |
+| --- | :---: | :---: | :---: | :---: |
+| Says why each paper is relevant | *not documented* | ✓ | ✓ † | ✓ |
+| Estimates how much of the literature it found | *not documented* | ✓ | *not documented* | *not documented* |
+| Counts how many studies say yes or no | ✓ | *not documented* | *not documented* | *not documented* |
+| Records which person decided each item | ✗ | ✗ | ✗ | ✓ (dual-review path) |
 
 </details>
 
@@ -67,100 +65,67 @@ Four systems across two categories, so they leave you different things to rule o
 </details>
 
 <details>
-<summary><b>Run a systematic review</b> &middot; 2 systems</summary>
+<summary><b>Run a systematic review</b> &middot; 1 system</summary>
 
-Two systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=review).
+One system, in Human Approval. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=review).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [ClawsGO Science](https://clawsgo.ai/) | Takes a question and hands back a finished manuscript | The question, then keep / revise / discard the whole study | [Delegation](#delegation) |
 | [Elicit](https://elicit.com/) | Screens and extracts; disagreements go to a person on the dual path | Every disagreement between two independent reviewers; on the single-reviewer path, only the labels you open a paper to overturn | [Human Approval](#human-approval) |
-
-**How they differ**
-
-| | ClawsGO Science | Elicit |
-| --- | :---: | :---: |
-| Two people screen each record independently | ✗ | ✓ (dual-review path) |
-| Records which person decided each item | ✗ | ✓ (dual-review path) |
-| Draws a PRISMA flow diagram | ✓ (sample run only) | ✓ |
-| Cites the passage behind each extracted value | *not documented* | ✓ |
-| Its text can go straight into your document | ✓ | ✗ |
-| Can be called from code | *not documented* | ✓ (dual review not in the API docs) |
 
 </details>
 
 <details>
-<summary><b>Check whether citations hold up</b> &middot; 3 systems</summary>
+<summary><b>Check whether citations hold up</b> &middot; 2 systems</summary>
 
-Three systems across three categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=citations).
+Two systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=citations).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [Review-it](https://review-it.ai/) | Scores a manuscript; an upgrade tier returns it corrected † | Which manuscript to upload, then the returned document | [Delegation](#delegation) |
 | [scite](https://scite.ai/) | Sorts each citation as support or contrast, and flags retractions | Which references survive the flags | [Standing Verdicts](#standing-verdicts) |
 | [Reviewer3](https://reviewer3.com/) | Checks each claim against the evidence the manuscript reports | Every finding, one at a time, and every word of the revision | [Critique](#critique) |
 
 **How they differ**
 
-| | Review-it | scite | Reviewer3 |
-| --- | :---: | :---: | :---: |
-| Flags references that match no real paper | ✓ | *not documented* | ✓ |
-| Flags retracted references | *not documented* | ✓ | ✓ |
-| Shows whether later papers support or contrast a cited work | *not documented* | ✓ | *not documented* |
-| Flags self-citation | ✓ (reference checker) | *not documented* | ✓ |
-| Its text can go straight into your document | ✓ † (upgrade tier) | ✗ | ✗ |
+| | scite | Reviewer3 |
+| --- | :---: | :---: |
+| Flags references that match no real paper | *not documented* | ✓ |
+| Shows whether later papers support or contrast a cited work | ✓ | *not documented* |
+| Flags self-citation | *not documented* | ✓ |
 
 </details>
 
 <details>
-<summary><b>Check a manuscript before submitting</b> &middot; 3 systems</summary>
+<summary><b>Check a manuscript before submitting</b> &middot; 2 systems</summary>
 
-Three systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=manuscript).
+Both in Critique, so they leave you the same kind of thing to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=manuscript).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [Review-it](https://review-it.ai/) | Scores a manuscript; an upgrade tier returns it corrected † | Which manuscript to upload, then the returned document | [Delegation](#delegation) |
 | [SciScore](https://sciscore.com/) | Checks a manuscript for missing rigour and verifies resource IDs | Each missing rigour element, and every edit: it names the gap, you write the sentence | [Critique](#critique) |
 | [Reviewer3](https://reviewer3.com/) | Checks each claim against the evidence the manuscript reports | Every finding, one at a time, and every word of the revision | [Critique](#critique) |
 
 **How they differ**
 
-| | Review-it | SciScore | Reviewer3 |
-| --- | :---: | :---: | :---: |
-| Scores the manuscript | ✓ | ✓ (methods reporting) | *not documented* |
-| Checks reporting rigour such as blinding and power | *not documented* | ✓ | *not documented* |
-| Checks resource identifiers against a registry | *not documented* | ✓ | *not documented* |
-| Checks each claim against the manuscript’s own evidence | *not documented* | *not documented* | ✓ |
-| Suggests journals that fit | ✓ | *not documented* | ✗ |
-| Flags references that match no real paper | ✓ | *not documented* | ✓ |
-| Its text can go straight into your document | ✓ † (upgrade tier) | ✗ | ✗ |
+| | SciScore | Reviewer3 |
+| --- | :---: | :---: |
+| Scores the manuscript | ✓ (methods reporting) | *not documented* |
+| Checks reporting rigour such as blinding and power | ✓ | *not documented* |
+| Checks resource identifiers against a registry | ✓ | *not documented* |
+| Checks each claim against the manuscript’s own evidence | *not documented* | ✓ |
+| Suggests journals that fit | *not documented* | ✗ |
+| Flags references that match no real paper | *not documented* | ✓ |
 
 </details>
 
 <details>
-<summary><b>Get a whole paper drafted</b> &middot; 2 systems, 4 close alternatives</summary>
+<summary><b>Get a whole paper drafted</b> &middot; 1 system</summary>
 
-Both in Delegation, so they leave you the same kind of thing to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=paper).
+One system, in Delegation. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=paper).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [ClawsGO Science](https://clawsgo.ai/) | Takes a question and hands back a finished manuscript | The question, then keep / revise / discard the whole study | [Delegation](#delegation) |
 | [Polaris](https://github.com/ZJU-REAL/Polaris) | Takes a research direction to a LaTeX paper, and by default will not mark it submitted until its own review passes, which fails on any fabricated citation | The direction, then every idea promoted to an experiment, which its docs say only a person can decide in the app, and in-app submission of the reviewed paper, which the arXiv export skips †; also any question it asks when stuck. Goal and budget checks exist but are off by default | [Delegation](#delegation) |
-
-**Close to Polaris** &middot; *Direction in, paper and code out, on your machine*
-
-- [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) *(own row until October 2026)*: can start from a set of reference papers, without a specific idea in mind ([source](https://raw.githubusercontent.com/HKUDS/AI-Researcher/HEAD/README.md))
-- [EvoScientist](https://github.com/EvoScientist/EvoScientist): with its EvoSkills pack, reads its evo-memory first to reuse feasible directions and avoid known dead ends ([source](https://raw.githubusercontent.com/EvoScientist/EvoSkills/HEAD/README.md))
-- [NanoResearch](https://github.com/OpenRaiser/NanoResearch): writes sbatch scripts, submits its experiments to a cluster and monitors job status ([source](https://raw.githubusercontent.com/OpenRaiser/NanoResearch/HEAD/README_en.md))
-- [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw): routes experiments beyond its default ML sandbox to a specialist agent per field ([source](https://raw.githubusercontent.com/aiming-lab/AutoResearchClaw/HEAD/README.md))
-
-**How they differ**
-
-| | ClawsGO Science | Polaris |
-| --- | :---: | :---: |
-| Stops at set points for your approval | ✗ (asks at its own discretion, then proceeds) | ✓ (promotion and in-app submission; runs pause only with opt-in gates) |
-| Checks every citation and number in its own draft | *not documented* | ✓ (percentages and decimals; support for up to 30 citations a round) |
-| You can host the whole system yourself | ✗ | ✓ |
 
 </details>
 
@@ -195,27 +160,25 @@ Both in Delegation, so they leave you the same kind of thing to rule on. [Compar
 </details>
 
 <details>
-<summary><b>Decide what to run next in the lab</b> &middot; 4 systems</summary>
+<summary><b>Decide what to run next in the lab</b> &middot; 3 systems</summary>
 
-Four systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=next).
+Three systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=next).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Suggests protocol parameters and next steps in a side panel inside Labguru | The question, then whether to save what it returns, a step no public page shows; nothing waits on the check the help centre asks you to make | [Delegation](#delegation) |
 | [OpenResearch](https://openresearch.sh/) | Works in a Git repository, preferably an existing implementation you import, puts each hypothesis on its own branch, runs every branch under one fixed command, and builds the next round on the measured winner | The repository, the goal and the compute backend, then the write-up; on the default Agentic setting its loop waits on you between runs only when failed runs hit its repair cap, and permission prompts are a separate setting | [Delegation](#delegation) |
 | [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Proposes the next experiment, then re-plans on the result you bring back | Whether to spend materials and machine time on the condition it suggests | [Bench](#bench) |
 | [NeuriCo](https://github.com/ChicagoHAI/NeuriCo) | Proposes one change to a software experiment, runs and scores it only after you admit it, and plans the next from the scores | Each proposed experiment before it runs; whether a scored result is kept is the manager model's call | [Bench](#bench) |
 
 **How they differ**
 
-| | Labguru Assistant | OpenResearch | Atinary SDLabs | NeuriCo |
-| --- | :---: | :---: | :---: | :---: |
-| Plans the next run from results you measure | *not documented* | ✓ (on runs it launches itself) | ✓ | ✓ (scores its own scorer computes, not measurements) |
-| Waits for you to admit each proposal before it runs | *not documented* | ✗ (default Agentic setting; opt-in Copilot asks, as guidance rather than enforcement) | *not documented* | ✓ |
-| Its output can be saved in your lab notebook | ✓ | *not documented* | ✓ (optional, through its API) | *not documented* |
-| Connects to lab robots or instruments | *not documented* | *not documented* | ✓ (optional) | *not documented* |
-| Flags anomalies in your data | ✓ | *not documented* | *not documented* | *not documented* |
-| Can be called from code | *not documented* | ✓ (orx CLI) | ✓ | *not documented* |
+| | OpenResearch | Atinary SDLabs | NeuriCo |
+| --- | :---: | :---: | :---: |
+| Plans the next run from results you measure | ✓ (on runs it launches itself) | ✓ | ✓ (scores its own scorer computes, not measurements) |
+| Waits for you to admit each proposal before it runs | ✗ (default Agentic setting; opt-in Copilot asks, as guidance rather than enforcement) | *not documented* | ✓ |
+| Its output can be saved in your lab notebook | *not documented* | ✓ (optional, through its API) | *not documented* |
+| Connects to lab robots or instruments | *not documented* | ✓ (optional) | *not documented* |
+| Can be called from code | ✓ (orx CLI) | ✓ | *not documented* |
 
 </details>
 
@@ -227,8 +190,8 @@ Four systems across two categories, so they leave you different things to rule o
 
 | Category | What the human still rules on | Entries |
 | --- | --- | --- |
-| [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 7 |
-| [Standing Verdicts](#standing-verdicts) | Every sentence you write. The machine's call on each paper is the record unless you open the source and reverse it. | 6 |
+| [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 4 |
+| [Standing Verdicts](#standing-verdicts) | Every sentence you write. The machine's call on each paper is the record unless you open the source and reverse it. | 5 |
 | [Human Approval](#human-approval) | Every record, one at a time, with your name on it. Nothing moves until you say so. | 1 |
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes reaches your file unless you act on that specific item. | 2 |
 | [Bench](#bench) | Whether to spend the materials and the machine time. A measurement, not a reader, decides who was right. | 2 |
@@ -257,23 +220,13 @@ You supply a question or some source material, the system hands back something t
 
 | System | What it does | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- | --- |
-| [ClawsGO Science](https://clawsgo.ai/) | Takes a question and hands back a finished manuscript | The question, then keep / revise / discard the whole study | Manuscript compiled from LaTeX, a typesetting system used for science papers, plus figures and analyses | Screening log of the model's own inclusion calls, seen only in a sample run on the homepage | It *is* the draft | hosted |
 | [Edison Platform](https://platform.edisonscientific.com/) *(the commercial spinout of FutureHouse)* | Answers a question, citing the code or passage behind each claim | The question, then keep / revise / discard the report | Cited report from Kosmos or one of four narrower agents, with each conclusion traceable back to the code or the passage that produced it | No | It is the draft | hosted |
-| [Review-it](https://review-it.ai/) | Scores a manuscript; an upgrade tier returns it corrected † | Which manuscript to upload, then the returned document | Section scores, weakness flags, fabricated-citation flags, journal fit, and on an upgrade tier a corrected document | No | Yes, on the upgrade tier †; whether the fixes apply all at once or one at a time is not publicly documented, and the placement rests on that | hosted |
-| [Labguru Assistant](https://www.labguru.com/labguru-assistant) | Suggests protocol parameters and next steps in a side panel inside Labguru | The question, then whether to save what it returns, a step no public page shows; nothing waits on the check the help centre asks you to make | Protocol parameters, anomaly flags, recommended next step, with links to related Labguru items but no citation behind any claim | No | Not on its own: answers appear in a side panel, and the product page calls its protocols ready to save | hosted |
 | [Polaris](https://github.com/ZJU-REAL/Polaris) | Takes a research direction to a LaTeX paper, and by default will not mark it submitted until its own review passes, which fails on any fabricated citation | The direction, then every idea promoted to an experiment, which its docs say only a person can decide in the app, and in-app submission of the reviewed paper, which the arXiv export skips †; also any question it asks when stuck. Goal and budget checks exist but are off by default | Paper wiki, scored ideas, experiment runs on your GPU servers, a LaTeX paper, and a review rating every citation as exact, minor or fabricated and up to 30 per round as supported, partial or unsupported, with every percentage and decimal checked against the run record | No; answers to its questions record who answered, and each gate stores who decided it †, but no documented export carries either | It is the draft | self-host |
 | [Wisp Science](https://github.com/xuzhougeng/wisp-science) | Runs analyses on your own files and locks the evidence behind each manuscript claim into an exportable capsule | The question and any action an approval gate stops on, then which results are selected as evidence for each manuscript item | Literature search, Python and R runs with logs, figures and drafts in a local project, plus an Evidence Capsule: a ZIP binding manuscript items to the exact runs, code and environment behind them, with a clean-workspace rerun check | The Evidence Capsule marks each binding Candidate, Selected or Rejected, with lineage and checksums; the documentation does not say who made each choice | It writes project files; dangerous commands stop for approval and other tools follow their own allow, ask or deny rule, until you opt into Full Permission | self-host |
 | [OpenResearch](https://openresearch.sh/) *(an alphaXiv project)* | Works in a Git repository, preferably an existing implementation you import, puts each hypothesis on its own branch, runs every branch under one fixed command, and builds the next round on the measured winner | The repository, the goal and the compute backend, then the write-up; on the default Agentic setting its loop waits on you between runs only when failed runs hit its repair cap, and permission prompts are a separate setting | An experiment tree of git branches, each frozen once a run answers it, a log for every run, and reports and figures in a local artifacts folder | No; the tree stays in a local database and run logs on your machine, optional GitHub publication pushes only the experiment branches, and no field on a node or run says who promoted or stopped it † | It writes code to experiment branches in its own worktree, and is the draft when you ask for a paper (`paper.tex`), which can sync both ways with Overleaf | self-host |
 
 <!-- close:start Delegation -->
 **Close alternatives.** Grouped by the system in the table above that each most resembles, with one documented difference and its source.
-
-**Close to Polaris** &middot; *Direction in, paper and code out, on your machine*
-
-- [AI-Researcher (HKUDS)](https://github.com/hkuds/ai-researcher) *(own row until October 2026)*: can start from a set of reference papers, without a specific idea in mind ([source](https://raw.githubusercontent.com/HKUDS/AI-Researcher/HEAD/README.md))
-- [EvoScientist](https://github.com/EvoScientist/EvoScientist): with its EvoSkills pack, reads its evo-memory first to reuse feasible directions and avoid known dead ends ([source](https://raw.githubusercontent.com/EvoScientist/EvoSkills/HEAD/README.md))
-- [NanoResearch](https://github.com/OpenRaiser/NanoResearch): writes sbatch scripts, submits its experiments to a cluster and monitors job status ([source](https://raw.githubusercontent.com/OpenRaiser/NanoResearch/HEAD/README_en.md))
-- [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw): routes experiments beyond its default ML sandbox to a specialist agent per field ([source](https://raw.githubusercontent.com/aiming-lab/AutoResearchClaw/HEAD/README.md))
 
 **Close to Wisp Science** &middot; *Your files in, analyses out, on your own machine*
 
@@ -291,7 +244,6 @@ The AI gathers work other people did, labels it and arranges it, and leaves the 
 
 | System | What it does | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Semantic Scholar](https://www.semanticscholar.org/) | Scholarly search that flags which citations were highly influential | Everything the evidence is used for | Ranked search over 200M+ papers, citation graph, TLDRs, passage labels and cited-passage answers that describe a paper, and a classifier that flags each highly influential citation, the per-item verdict that places it here | No | No | hosted, free |
 | [Consensus](https://consensus.app/) | Tallies what the papers found on a yes or no question | Whether a tally really settles anything, and every sentence you cite in | Ranked papers over ~220M, a snapshot of each study, yes/no claim tally with quotes | No | No | hosted |
 | [Undermind](https://www.undermind.ai/) | Scores each paper, states why it fits, and estimates coverage | What the material means and which papers get cited | Ranked table with match scores, stated inclusion reasons, and a coverage estimate for the run | No | No | hosted |
 | [Ai2 Asta](https://asta.allen.ai/) | Sorts papers into relevance tiers †, labels its own uncited text † | Which relevance tier to trust, and every sentence you write | Per-paper relevance tiers with stated criteria †; reports where anything it wrote without a citation is labelled as model-generated † | No | No, export only | hosted |

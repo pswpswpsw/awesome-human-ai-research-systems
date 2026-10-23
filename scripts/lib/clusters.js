@@ -24,21 +24,6 @@
 //             was:  the month it last had its own README row, if it had one
 // }
 const CLUSTERS = {
-  "paper-local": {
-    title: "Direction in, paper and code out, on your machine",
-    featured: "Polaris",
-    reason: "Criterion 1. Its docs say only a person can decide a gate in the app. The topic owner rules on idea promotion, and submitting a paper in the app is always a gate. Answers to its questions record who answered, though the app has no sign-in. AutoResearchClaw sets out your role at most of its stages but lets another agent approve its gates, and its intervention record has no field for who acted, a point found only in source. EvoScientist, NanoResearch and AI-Researcher document no record of who decided anything.",
-    members: [
-      { name: "AI-Researcher (HKUDS)", url: "https://github.com/hkuds/ai-researcher", line: "can start from a set of reference papers, without a specific idea in mind",
-        src: { url: "https://raw.githubusercontent.com/HKUDS/AI-Researcher/HEAD/README.md", quote: "users submitting reference papers without a specific idea in mind" }, was: "October 2026" },
-      { name: "EvoScientist", url: "https://github.com/EvoScientist/EvoScientist", line: "with its EvoSkills pack, reads its evo-memory first to reuse feasible directions and avoid known dead ends",
-        src: { url: "https://raw.githubusercontent.com/EvoScientist/EvoSkills/HEAD/README.md", quote: "Read `evo-memory` first to reuse feasible directions and avoid known dead ends" } },
-      { name: "NanoResearch", url: "https://github.com/OpenRaiser/NanoResearch", line: "writes sbatch scripts, submits its experiments to a cluster and monitors job status",
-        src: { url: "https://raw.githubusercontent.com/OpenRaiser/NanoResearch/HEAD/README_en.md", quote: "Generate sbatch scripts, submit to cluster, monitor job status" } },
-      { name: "AutoResearchClaw", url: "https://github.com/aiming-lab/AutoResearchClaw", line: "routes experiments beyond its default ML sandbox to a specialist agent per field",
-        src: { url: "https://raw.githubusercontent.com/aiming-lab/AutoResearchClaw/HEAD/README.md", quote: "routes beyond the default ML sandbox to specialist agents per field" } },
-    ],
-  },
   "local-agent": {
     title: "Your files in, analyses out, on your own machine",
     featured: "Wisp Science",

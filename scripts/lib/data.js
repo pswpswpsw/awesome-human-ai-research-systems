@@ -30,13 +30,9 @@ const NEEDS = {
 // Which needs each system meets, keyed by its name exactly as the README
 // table writes it.
 const TAGS = {
-  'ClawsGO Science':       ['review', 'paper'],
   'Edison Platform':       ['answer', 'data'],
-  'Review-it':             ['citations', 'manuscript'],
-  'Labguru Assistant':     ['next'],
   'Polaris':               ['paper'],
   'Wisp Science':          ['data'],
-  'Semantic Scholar':      ['find'],
   'Consensus':             ['find', 'answer'],
   'Undermind':             ['find'],
   'Ai2 Asta':              ['find', 'answer'],
