@@ -45,9 +45,9 @@ Hold on to one consequence, because the file keeps coming back to it. A checkpoi
 
 ## ClawsGO Science: a sentence at midnight, a manuscript by morning
 
-> ClawsGO Science was removed from the [README](README.md) list in October 2026, under the rule for end-to-end generators. The trace is kept as a worked example of a run in which the brief is the only human judgment that gates anything.
+> ClawsGO Science was removed from the [README](README.md) list in October 2026, under the rule for end-to-end generators. The trace is kept as a worked example of a run in which the brief is the only human judgment that gates anything. It was written against the documentation as it stood in September 2026, and apart from its filing line the body below has not been revised since. The removal rests on a recheck on 2026-10-23, by which time the docs had changed in several places. Among other things, they no longer carried the Permissions setting, the sentence "Cloud hosts default to Full access", the phrase "Both cards are auto-denied" or a billing CSV export.
 
-**The task.** A researcher submits one question and wants a citeable manuscript back. Filed in [Delegation](README.md#delegation).
+**The task.** A researcher submits one question and wants a citeable manuscript back. It was filed in Delegation while listed.
 
 The set of pages to check is unusually small and knowable. The file at `https://clawsgo.ai/llms.txt` lists the whole documentation set, 11 pages, and `llms-full.txt` returns all of it as markdown. Every quote below was then confirmed by searching the HTML of its own page, fetched separately. `/api`, `/docs/api` and `/developers` all return 404, and the China edition at clawsgo.cn has the same 11 pages and no API page either. One thing went wrong along the way, and it is worth reporting. A tool that fetches a page and summarizes it invented human-checkpoint steps that are not on the page, so everything here comes from raw retrieval instead.
 
@@ -244,7 +244,7 @@ What to build that Elicit does not offer: a screening decision resource of its o
 
 > Covidence was removed from the [README](README.md) list in September 2026. The trace is kept because two of METHOD’s clauses were rewritten in response to it, so deleting the evidence would leave those rewrites unexplained.
 
-**The task.** Identical to the Elicit trace, deliberately. Filed in [Human Approval](README.md#human-approval). Not-for-profit, based in Melbourne, hosted web app only: "It is not possible to use Covidence offline."
+**The task.** Identical to the Elicit trace, deliberately. It was filed in Human Approval while listed. Not-for-profit, based in Melbourne, hosted web app only: "It is not possible to use Covidence offline."
 
 Access conditions gate the task before anything else does. The free trial stops at 500 records, so 2,000 needs a paid plan. A co-reviewer, though, needs no subscription of their own (documented).
 
@@ -543,4 +543,4 @@ Stated as facts with their tests, rather than as proposals to move entries betwe
 - **Atinary and the third [Bench](METHOD.md#bench) clause.** The trace finds no approval state in the status enum, no accept operation in 95 API paths, and an API that closes the loop unattended. METHOD answered this by rewriting the clause to ask for a required human act rather than an approval control, and filing the entry on its default mode, where the researcher still has to bring the measurement back.
 - **Covidence and the second [Human Approval](METHOD.md#human-approval) clause.** At screening, what exports is a PRISMA DOCX with no names and an IRR CSV attributing agreement counts to reviewer pairs, with voting history documented as not exportable. The per-reviewer export exists one stage later, at extraction. METHOD answered this by saying the export need not carry names itself, provided a reader can rebuild the flow.
 - **Elicit's tier and path qualifications.** The audit-trail sentence sits under Enterprise dual review, the pricing page mentions no PRISMA flow diagram at any tier, and per-decision quotes depend on Thorough screening depth.
-- **The Record facet example in [METHOD](METHOD.md#the-facets).** ClawsGO's documented log, the kind whose entries are the model's own labels, is the step timeline, which is viewable and shareable rather than exportable, and the screening log that looks like the example is demonstrated only. METHOD answered this by rewriting the example to say the log is viewable rather than exportable.
+- **The Record facet example in [METHOD](METHOD.md#the-facets).** ClawsGO's documented log, the kind whose entries are the model's own labels, is the step timeline, which is viewable and shareable rather than exportable, and the screening log that looks like the example is demonstrated only. METHOD answered this by rewriting the example to say the log is viewable rather than exportable. Once ClawsGO left the list, the example moved to Consensus and Elicit.

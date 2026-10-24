@@ -24,6 +24,15 @@
 //             was:  the month it last had its own README row, if it had one
 // }
 const CLUSTERS = {
+  "paper-local": {
+    title: "Direction in, paper and code out, on your machine",
+    featured: "Polaris",
+    reason: "Criterion 1. Its docs say only a person can decide a gate in the app, and the topic owner rules on idea promotion. AutoResearchClaw's stage gates can be auto-approved, which its quick start does, or approved by another agent. Its intervention record has no field for who acted, a point found only in source.",
+    members: [
+      { name: "AutoResearchClaw", url: "https://github.com/aiming-lab/AutoResearchClaw", line: "routes experiments beyond its default ML sandbox to a specialist agent per field",
+        src: { url: "https://raw.githubusercontent.com/aiming-lab/AutoResearchClaw/HEAD/README.md", quote: "routes beyond the default ML sandbox to specialist agents per field" } },
+    ],
+  },
   "local-agent": {
     title: "Your files in, analyses out, on your own machine",
     featured: "Wisp Science",

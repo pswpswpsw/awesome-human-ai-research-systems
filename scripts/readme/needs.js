@@ -61,7 +61,7 @@ function closeList(c) {
     .concat(['']);
 }
 const anchor = (cat) => '#' + cat.toLowerCase().replace(/\s+/g, '-');
-const LEGEND = 'In *How they differ*, ✓ and ✗ rest on the vendor’s own pages or on the system’s own row further down, and **†** marks evidence found only in page source or a script bundle. In the evaluation row, ✓ names the published study. *Not documented* means nothing we found on its public pages says either way. Checked ' + CHECKED + '.';
+const LEGEND = 'In *How they differ*, ✓ and ✗ rest on the vendor’s own pages or on the system’s own row further down, and **†** marks evidence found only in page source, a script bundle or a repository’s code. In the evaluation row, ✓ names the published study. *Not documented* means nothing we found on its public pages says either way. Checked ' + CHECKED + '.';
 const out = [START, NOTE, '', LEGEND];
 for (const [key, need] of Object.entries(NEEDS)) {
   const members = membersOf(key);
@@ -78,7 +78,7 @@ for (const [key, need] of Object.entries(NEEDS)) {
   // open. GitHub renders details/summary natively, with no script. The blank
   // line after the summary is what lets the markdown table inside render.
   out.push('', '<details>', '<summary><b>' + need.label + '</b> &middot; ' + n + (n === 1 ? ' system' : ' systems') + (alts ? ', ' + alts + (alts === 1 ? ' close alternative' : ' close alternatives') : '') + '</summary>', '');
-  out.push(lead + ' [Compare them side by side](' + CHOOSER_URL + '#job=' + key + ').', '');
+  out.push(lead + ' [' + (n === 1 ? 'See its card' : 'Compare them side by side') + '](' + CHOOSER_URL + '#job=' + key + ').', '');
   out.push('| System | What it does | What you still rule on | Category |', '| --- | --- | --- | --- |');
   for (const m of members) {
     out.push('| [' + m.name + '](' + m.url + ') | ' + m.cells[1] + ' | ' + m.cells[2] + ' | [' + m.cat + '](' + anchor(m.cat) + ') |');

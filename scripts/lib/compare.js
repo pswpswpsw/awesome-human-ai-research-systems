@@ -9,8 +9,8 @@
 // and read, so any cell can be re-checked. Where the URL is README.md, the words
 // must appear in that system's own README row. The values a cell may take:
 //   yes  the vendor's pages, or the system's own README row, document it;
-//        d: true when only page source or a script bundle says so, which the
-//        README marks with a dagger
+//        d: true when only page source, a script bundle or a repository's code
+//        says so, which the README marks with a dagger
 //   no   the vendor's pages say it does not, or the system's own README row
 //        rules it out; for a hand-entered value, absence of evidence is never "no"
 //   nd   nothing found on the vendor's public pages says either way
@@ -21,8 +21,9 @@
 // The build refuses to run if a system under a need has no value for one of
 // that need's rows, if a value is not one of the above, if a hand-entered yes
 // or no has no source, if a README-sourced quote is not in that system's row,
-// or if a row shows the same value for every system in the panel and so tells
-// them apart from nothing.
+// if a row shows no system with the feature, or if a row shows the same value
+// for every system in the panel and so tells them apart from nothing. A panel
+// with one system has no table.
 
 const CHECKED = 'October 2026';
 
@@ -47,7 +48,6 @@ const FEATURES = {
   rigor: 'Checks reporting rigour such as blinding and power',
   rrid: 'Checks resource identifiers against a registry',
   claim_evidence: 'Checks each claim against the manuscript’s own evidence',
-  journal_fit: 'Suggests journals that fit',
   // drafting
   midrun: 'Stops at set points for your approval',
   self_check: 'Checks every citation and number in its own draft',
@@ -57,8 +57,7 @@ const FEATURES = {
   rerun: 'Checks that the analysis reruns in a clean workspace',
   gates: 'Stops for your approval before it acts',
   // the lab
-  closed_loop: 'Plans the next run from results you measure',
-  admit: 'Waits for you to admit each proposal before it runs',
+  closed_loop: 'Plans the next run from the results of earlier runs',
   notebook: 'Its output can be saved in your lab notebook',
   robot: 'Connects to lab robots or instruments',
   // any system
@@ -88,10 +87,10 @@ const ROWS = {
   answer: ['runs_code', 'uncited_label', 'tally', 'peer_reviewed', 'weights'],
   review: ['dual', 'person_record', 'prisma', 'extraction', 'own_text', 'api'],
   citations: ['fabricated', 'stance', 'selfcite'],
-  manuscript: ['score', 'rigor', 'rrid', 'claim_evidence', 'journal_fit', 'fabricated'],
+  manuscript: ['score', 'rigor', 'rrid', 'claim_evidence', 'fabricated'],
   paper: ['midrun', 'self_check', 'selfhost'],
   data: ['selfhost', 'own_model', 'evidence_package', 'rerun', 'gates'],
-  next: ['closed_loop', 'admit', 'notebook', 'robot', 'api'],
+  next: ['closed_loop', 'notebook', 'robot', 'api'],
 };
 
 // Hand-entered values, keyed by the system's name as the README writes it.
@@ -167,7 +166,6 @@ const CELLS = {
     rigor: { v: "yes", url: "https://sciscore.asedasciences.com/faq", quote: "Addressing certain rigor criteria in the methods section like blinding, randomization of groups, and power analysis, even if it is to simply state that they are not relevant to the study, should improve your score." },
     rrid: { v: "yes", url: "https://www.scicrunch.com/faq-rrid", quote: "If authors use this RRID, then SciScore will ask the database about that particular identifier." },
     claim_evidence: { v: "nd" },
-    journal_fit: { v: "nd" },
     fabricated: { v: "nd" },
   },
   "Reviewer3": {
@@ -178,25 +176,21 @@ const CELLS = {
     rigor: { v: "nd" },
     rrid: { v: "nd" },
     claim_evidence: { v: "yes", url: "https://reviewer3.com/", quote: "A manuscript is decomposed into the claims it makes, and every claim is checked against the evidence offered for it." },
-    journal_fit: { v: "no", url: "https://reviewer3.com/compare/reviewer3-vs-thesify", quote: "Citation search across 200M+ sources, a journal recommender, and research agents. / None of these. Reviewer3 searches academic databases to verify the citations already in your paper, not to find new ones for you." },
   },
   "Atinary SDLabs": {
     closed_loop: { v: "yes", url: "https://help.atinary.com/en/articles/591086-suggestions-measurements", quote: "Submitting results triggers a new recommendation cycle — the algorithm analyzes all available data and produces the next batch of recommendations." },
     notebook: { v: "yes", q: "optional, through its API", url: "https://atinary.com/technology/sdlabs/", quote: "data management systems like LIMS and ELNs, is optional and seamless via API/SDK." },
     robot: { v: "yes", q: "optional", url: "https://atinary.com/technology/sdlabs/", quote: "Integration with laboratory robotics platforms (such as Chemspeed, Bruker, or IBM RoboRXN), as well as platforms like ACD/Labs’ Katalyst and data management systems like LIMS and ELNs, is optional and seamless via API/SDK." },
     api: { v: "yes", url: "https://api.sdlabs.atinary.com/schema/", quote: "SDLabs API for experiment optimization and dataset management." },
-    admit: { v: "nd" },
   },
   "OpenResearch": {
     closed_loop: { v: "yes", q: "on runs it launches itself", url: "https://github.com/alphaXiv/OpenResearch", quote: "learn from past results and decide what to try next." },
-    admit: { v: "no", q: "default Agentic setting; opt-in Copilot asks, as guidance rather than enforcement", url: "README.md", quote: "its loop waits on you between runs only when failed runs hit its repair cap" },
     notebook: { v: "nd" },
     robot: { v: "nd" },
     api: { v: "yes", q: "orx CLI", url: "https://github.com/alphaXiv/OpenResearch/blob/main/SKILL.md", quote: "Read this before driving `orx` programmatically." },
   },
   "NeuriCo": {
-    closed_loop: { v: "yes", q: "scores its own scorer computes, not measurements", url: "https://github.com/ChicagoHAI/NeuriCo", quote: "Iteratively proposes, executes, scores, and checkpoints improvements" },
-    admit: { v: "yes", url: "https://github.com/ChicagoHAI/NeuriCo/blob/main/docs/HITL_AUTORESEARCH.md", quote: "A legal proposal is presented to the human for approval or concrete feedback." },
+    closed_loop: { v: "yes", q: "on scores its own sealed scorer computes", url: "https://github.com/ChicagoHAI/NeuriCo", quote: "Iteratively proposes, executes, scores, and checkpoints improvements" },
     notebook: { v: "nd" },
     robot: { v: "nd" },
     api: { v: "nd" },
@@ -252,6 +246,7 @@ function check(rowsByNeed) {
         // a dagger only says where the evidence sits, so it does not tell systems apart
         shown.push([cell.v, cell.q || '', cell.t || ''].join('|'));
       }
+      if (shown.length === members.length && !members.some((m) => { const c = cellFor(m, f); return c && ['yes', 'preprint', 'text'].includes(c.v); })) errors.push('row "' + f + '" under "' + need + '" shows no system with the feature, so it compares nothing.');
       if (shown.length === members.length && new Set(shown).size === 1) errors.push('row "' + f + '" under "' + need + '" reads the same for every system, so it tells them apart from nothing.');
     }
   }

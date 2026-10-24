@@ -278,11 +278,11 @@ try { var t = localStorage.getItem('hairs-theme'); if (t === 'light' || t === 'd
         <p>Every Monday a scheduled AI agent searches arXiv, launch announcements, the related awesome lists and GitHub for new research systems. It tests each candidate against the rules below, checks whether any excluded system has opened to the public, and opens every listed link to catch products that moved or closed. It writes a report and changes nothing. The maintainer rules on each candidate, and an entry is added or moved only when the evidence holds up.</p>
         </div>
         <h3>What gets in</h3>
-        <p>A system has to pass two tests on its own public pages. A researcher can use it today, with no waitlist or private preview, and it was built for research work, not as a general assistant. A system that takes a question all the way to a finished paper must also document something a reader can check: a check of its own draft, a gate only a person can pass, a trace from each conclusion to its source, or a record of who decided. A system that passes and answers a question no listed system answers gets its own row. One that answers the same question as a listed system joins its cluster as one line, and each cluster&rsquo;s featured system is chosen by written criteria, with arrival order counting for nothing. A university project and a company product are judged the same way.</p>
+        <p>A system has to pass two tests on its own public pages. A researcher can use it today, with no waitlist or private preview, and it was built for research work, not as a general assistant. A system that takes a question, a direction, an idea or a codebase all the way to a finished paper or report must also document, on the path it is filed on and at that path&rsquo;s default settings, something a reader can check: a check of its own draft against sources or runs, a gate on research content that only a person can pass, a trace tying each result to the specific run, code or passage behind it, or an exportable record of who decided. A system that passes and answers a question no listed system answers gets its own row. One that answers the same question as a listed system joins its cluster as one line, and each cluster&rsquo;s featured system is chosen by written criteria, with arrival order counting for nothing. A university project and a company product are judged the same way.</p>
         <h3>Where it goes</h3>
         <p>Each system is filed by what the human still rules on, not by the stage of work it serves. The part of the product that carries research judgment is the part tested. Bench is tested first, then Delegation, Standing Verdicts, Human Approval and Critique in that order, and the first match places it. An entry moves whenever a release changes how the product works.</p>
         <h3>What counts as evidence</h3>
-        <p>Every boundary is a test a reader can run against the vendor&rsquo;s public pages. Pages are fetched and read directly, never through a tool that summarises them. A claim found only in page source or a script bundle carries a &dagger;, and anything no public page states is marked <em>not documented</em>. Each value in the <em>How they differ</em> tables keeps the URL and the exact words it rests on, and a check on every push rebuilds the README and this page from those sources and fails if either differs from what was committed.</p>
+        <p>Every boundary is a test a reader can run against the vendor&rsquo;s public pages. Pages are fetched and read directly, never through a tool that summarises them. A claim found only in page source, a script bundle or a repository&rsquo;s code carries a &dagger;, and anything no public page states is marked <em>not documented</em>. Each value in the <em>How they differ</em> tables keeps the URL and the exact words it rests on, and a check on every push rebuilds the README and this page from those sources and fails if either differs from what was committed.</p>
         <p class="m-links">The full tests, the placement rules and every exclusion are in <a href="__REPO_URL__/blob/main/METHOD.md">METHOD.md</a>. How each column is filled is in <a href="__REPO_URL__/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>, and four systems are traced through a real task in <a href="__REPO_URL__/blob/main/WORKFLOWS.md">WORKFLOWS.md</a>.</p>
       </div>
     </details>
@@ -383,7 +383,7 @@ window.HAIRS = null; /*__DATA__*/
   D.jobs.forEach(function (j) {
     var b = document.createElement('button');
     b.type = 'button'; b.className = 'chip'; b.setAttribute('aria-pressed', 'false');
-    b.innerHTML = '<span>' + j.label + '</span><span class="n" aria-label="' + j.members.length + ' systems">' + j.members.length + '</span>';
+    b.innerHTML = '<span>' + j.label + '</span><span class="n" aria-label="' + j.members.length + (j.members.length === 1 ? ' system' : ' systems') + '">' + j.members.length + '</span>';
     b.addEventListener('click', function () { select(current === j.key ? null : j.key); });
     chips.appendChild(b); chipEls[j.key] = b;
   });
@@ -413,7 +413,11 @@ window.HAIRS = null; /*__DATA__*/
     var nAlts = 0;
     members.forEach(function (m) { if (m.cluster) nAlts += m.cluster.members.length; });
     var altsNote = nAlts ? ', ' + nAlts + (nAlts === 1 ? ' close alternative' : ' close alternatives') : '';
-    var head = nCats > 1
+    var head = members.length === 1
+      ? '<p class="kicker">' + j.label + ' &middot; one system, in ' + members[0].cat + (nAlts ? ', with ' + (nAlts === 1 ? 'one close alternative' : nAlts + ' close alternatives') : '') + '</p>' +
+        '<h2>' + (nAlts ? 'One system has its own card for this job.' : 'One system does this job.') + '</h2>' +
+        '<p>Read the shaded line on its card for what you still rule on.</p>'
+      : nCats > 1
       ? '<p class="kicker">' + j.label + ' &middot; ' + members.length + ' systems, ' + nCats + ' categories' + altsNote + '</p>' +
         '<h2>Same job, different answerability.</h2>' +
         '<p>All of these ' + j.verb + '. Read the shaded line on each card: that is what you still rule on, and it is where they part company.</p>'
@@ -461,7 +465,7 @@ window.HAIRS = null; /*__DATA__*/
       h += '</tr>';
     });
     return h + '</tbody></table></div>' +
-      '<p class="legend">&#10003; and &#10007; rest on the vendor&rsquo;s own pages or on the system&rsquo;s own README row, and &dagger; marks evidence found only in page source or a script bundle. In the evaluation row, &#10003; names the published study. <em>Not documented</em> means nothing we found on its public pages says either way. Checked ' + D.checked + '.</p></section>';
+      '<p class="legend">&#10003; and &#10007; rest on the vendor&rsquo;s own pages or on the system&rsquo;s own README row, and &dagger; marks evidence found only in page source, a script bundle or a repository&rsquo;s code. In the evaluation row, &#10003; names the published study. <em>Not documented</em> means nothing we found on its public pages says either way. Checked ' + D.checked + '.</p></section>';
   }
 
   // A featured system's close alternatives: one line each, folded under its card.
