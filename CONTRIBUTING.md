@@ -1,6 +1,6 @@
 # Contributing to Awesome Human-AI Research Systems
 
-Thanks for considering a contribution. Three things shape this list. A system earns its own row by answering a question no listed system answers. One that answers the same question as a listed system joins that system's cluster as a single line. The list stays small on purpose. And it is organized by **what the human still rules on**, not by where a tool sits in a workflow. The reasoning behind that choice is in [METHOD.md](METHOD.md). This file is what you need before opening a pull request (PR).
+Thanks for considering a contribution. Three things shape this list. A system earns its own row by answering a question no listed system answers. One that answers the same question as a listed system joins that system's cluster as a single line. The list stays small on purpose. A reader reaches each entry through the stage of a project it serves, but the entry is placed by **what the human still rules on**, not by where it sits in a workflow. The reasoning behind that choice is in [METHOD.md](METHOD.md). This file is what you need before opening a pull request (PR).
 
 ## What belongs here
 
@@ -20,13 +20,14 @@ Systems that fail these tests but are worth knowing about get recorded in [METHO
 - **Single-maintainer projects with nothing behind them.** One substantive contributor is fine when the project has backing: an institution, a company, a citable publication, or enough users that a break would be noticed. With none of those, a curated list should not point a researcher at software that depends on one person staying interested. The judgment concerns maintenance risk alone, and it is **separate from the activity rule above**: a project can run perfectly today and still fail this one.
 - **Pure retrieval tools.** A system that returns items and attaches no judgment to any of them has taken over no research judgment, and research judgment is what this list is about. Google Scholar, PubMed, Scopus and Web of Science are all out on this. Semantic Scholar is out too: its highly-influential-citation flag marks the citations where, by Semantic Scholar's own model, the cited work had a significant impact on the citing paper, an influence label rather than a judgment about the evidence, and ranking and summaries are not judgments either. scite stays because its label says whether a citing statement supports, contrasts or only mentions the cited work.
 - **End-to-end generators with nothing a reader can check.** A system that takes a question, a direction, an idea or a codebase all the way to a finished paper or report is in only if its documentation, not just its marketing, describes at least one of these on the path the entry is filed on, at that path's default settings: a check of its own draft before it hands it over, against sources or runs; a gate on research content, such as an idea, a plan, an experiment or a draft, that only a person can pass (a permission prompt on commands does not count, nor does a gate another agent can pass); a trace that ties its results or conclusions to the specific run, code or passage behind each; or an exportable record of who decided what.
+- **Gap finders, idea generators and novelty checkers with nothing a reader can check.** A system that finds research gaps, proposes ideas or hypotheses, or judges whether an idea is new must leave something a reader can check, such as the papers behind each gap, a test of each hypothesis against data, a check of whether a gap is still open, or the prior work behind a novelty verdict. One that hands back only a ranked list of ideas is at most a close alternative to a listed system.
 - **Grant, proposal and study-plan writers.** A funding proposal, a preregistration or a study plan describes research that has not been done yet, and drafting one is writing about research rather than doing it. These are out even when they search the literature or check their own drafts.
 - **Papers and preprints with no working product.** Link a survey list under [Related lists](METHOD.md#related-lists) instead.
 - **General-purpose assistants, access or discount programs, reference managers with no AI component.**
 
 ## Its own row, or a line in a cluster?
 
-A system that passes every test above but answers the same question for the same reader as a listed one joins that system's **cluster**. The same question means the same need, the same category, and the same thing handed in and handed back. Weights you can host yourself, set against a hosted service, make a different question, as does being free where nothing comparable is. A different front end does not, and neither does a different market for the same capability. A university project and a company product are judged the same way.
+A system that passes every test above but answers the same question for the same reader as a listed one joins that system's **cluster**. The same question means the same job, the same category, and the same thing handed in and handed back. Weights you can host yourself, set against a hosted service, make a different question, as does being free where nothing comparable is. A different front end does not, and neither does a different market for the same capability. A university project and a company product are judged the same way.
 
 Each cluster has one featured system with a full row. Every other member is one line under it, naming one documented difference and linking the page it rests on; `scripts/lib/clusters.js` keeps the exact words. The featured system is chosen by the criteria in [METHOD.md](METHOD.md#clusters), in order, and when a system arrived counts for nothing, so a newcomer can take the featured row if it does better on them. A cluster also carries a short reason its featured system wins, which the build writes into METHOD.md.
 
@@ -34,7 +35,7 @@ Each cluster has one featured system with a full row. Every other member is one 
 
 Apply two rules in this order. [METHOD.md](METHOD.md) argues both in full.
 
-1. **The module rule: classify by the part of the product that carries research judgment,** not the part the homepage leads with. A module is one working piece of a product, such as the screening tool inside a review platform. This rule picks *which part of a product you evaluate*.
+1. **The module rule: classify separately each part of the product that carries research judgment,** not the product as the homepage presents it. A module is one working piece of a product, such as the screening tool inside a review platform. This rule picks *which part of a product you evaluate*. A product whose modules do different jobs and leave the researcher different things to rule on gets one row per module, each placed by its own documentation, so one product can sit in two categories. Modules that leave the researcher the same thing to rule on can share a row, as Edison's Literature and Analysis agents share the Edison Platform row. A module that no row covers is not shown under any job.
 2. **Test Bench first. Then walk Delegation, Standing Verdicts, Human Approval and Critique in order, and stop at the first match.** Bench's test is narrow and easy to confirm, so running it first stops a broader test from catching something it was never written for. Within those four the earlier category wins, because the earlier one describes the weaker position for the human, and the list should not flatter a tool.
 
 What follows are short forms. [METHOD.md](METHOD.md) holds the authoritative versions.
@@ -48,6 +49,18 @@ What follows are short forms. [METHOD.md](METHOD.md) holds the authoritative ver
 **Membership is release-mobile**, meaning an entry can move to another category when a release changes how the product works. Add a reviewer log, a checkpoint screen, or any control that applies all the fixes at once, and the entry moves. A PR that re-tests an existing entry against its category is as welcome as one adding a tool.
 
 If you genuinely cannot place a tool, say so in the PR and quote the vendor page that confuses you. A boundary that cannot decide a real case is a bug in the category scheme, and that is worth an issue.
+
+## Which stage and job does it go under?
+
+The README and the chooser open with five stages of a project, each holding the jobs a researcher arrives with:
+
+1. **Understand the field and the problem**: find papers on a question, get a sourced answer, run a systematic review.
+2. **Find gaps and ideas**: find gaps in the literature, find hypotheses in your own data.
+3. **Propose a solution and check it is new**: check whether an idea has been done.
+4. **Design and run the experiments**: analyse your own data with an agent, decide what to run next in the lab.
+5. **Write it up**: check whether citations hold up, check a manuscript before submitting.
+
+A sixth heading, **Hand over the whole project**, holds systems that start from a question, a direction, an idea or a codebase, decide which experiments or analyses to run, run them, and hand back a finished paper or report, with no documented step at which the researcher designs the experiments. Such a system is listed there once and not split across the stages. An entry goes under a job only when its own documentation says that module does the job, and the stage follows from the job. Stages 2 and 3 carry the bar for gap finders, idea generators and novelty checkers given above.
 
 ## How to add an entry
 
@@ -77,7 +90,7 @@ Rules for the prose in those cells:
 7. If a product ships two paths, and the human rules on different things in each, name the path your placement rests on.
 8. One tool per pull request makes review faster. Small batches are fine.
 9. Check the links resolve before opening the PR.
-10. **Regenerate what is built from the tables.** The README’s "What do you want to do?" section, the figure in `docs/` and the chooser page at `docs/index.html` are generated, not written by hand. After adding, removing or moving an entry, or changing a value in `scripts/lib/compare.js` or a cluster in `scripts/lib/clusters.js`, run `node scripts/build.js`. A new entry also needs a line in `TAGS` in `scripts/lib/data.js` naming the needs it meets, read off what its own documentation says it does, and a value in `scripts/lib/compare.js` for every hand-entered row of the *How they differ* table under each of those needs. The rows for hosting the whole system yourself, downloadable weights and text reaching your document are read from the entry's Access and Writes into your draft cells. A hand-entered ✓ or ✗ carries the URL and the exact words it rests on. A ✗ needs the vendor saying so, or the entry's own row ruling it out, and anything else is *not documented*. The build refuses to run if the README tables and that list disagree, and names the README count that no longer matches. A check on every push reruns the build and fails if anything it produces differs from what was committed. Edit the tables and the scripts, never the generated section or the built files.
+10. **Regenerate what is built from the tables.** The README’s "What do you want to do?" section, the figure in `docs/` and the chooser page at `docs/index.html` are generated, not written by hand. After adding, removing or moving an entry, or changing a value in `scripts/lib/compare.js` or a cluster in `scripts/lib/clusters.js`, run `node scripts/build.js`. A new entry also needs a line in `TAGS` in `scripts/lib/data.js` naming the jobs it does, read off what its own documentation says it does, and a value in `scripts/lib/compare.js` for every hand-entered row of the *How they differ* table under each of those jobs. A row for one module of a product is named after the product and its module, such as "Consensus Research Gaps Matrix", since a row's name is its key in every one of these files, and it needs a line in `PRODUCT` naming the product it belongs to, so that the README counts products as well as entries. The rows for hosting the whole system yourself, downloadable weights and text reaching your document are read from the entry's Access and Writes into your draft cells. A hand-entered ✓ or ✗ carries the URL and the exact words it rests on. A ✗ needs the vendor saying so, or the entry's own row ruling it out, and anything else is *not documented*. The build refuses to run if the README tables and that list disagree, and names the README count that no longer matches. A check on every push reruns the build and fails if anything it produces differs from what was committed. Edit the tables and the scripts, never the generated section or the built files.
 
 Proposing a **new category** is the exception. It needs a decision point the existing five cannot express, meaning a genuinely different answer to the question of what the human still rules on. It also needs a test a contributor can apply from a product's public pages. Categories that are really workflow stages in disguise will be declined.
 
@@ -88,7 +101,7 @@ Proposing a **new facet** (see [METHOD.md](METHOD.md#the-facets)) must clear tha
 This list exists because bigger lists in this space either sprawl until nobody can maintain them, or turn into a paper bibliography that goes stale within a year.
 
 - Quality and relevance beat completeness. Not every AI-for-research tool needs to be here.
-- If a category grows past about 10 to 12 entries, prune the weakest or split it along a finer decision boundary. *Delegation* and *Standing Verdicts*, at five each, are the largest today.
+- If a category grows past about 10 to 12 entries, prune the weakest or split it along a finer decision boundary. *Standing Verdicts*, at ten, and *Delegation*, at eight, are the largest today.
 - A category holding one entry is fine if the arrangement it describes is real. Thin categories are informative: they show where this sort of collaboration barely exists yet.
 
 ## Removing entries

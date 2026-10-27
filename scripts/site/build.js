@@ -3,15 +3,15 @@
 //
 // Every product sentence on the cards is a README table cell, the How they
 // differ tables come from scripts/lib/compare.js, the close alternatives in
-// each stacked card from scripts/lib/clusters.js, and the needs, colours and
-// shapes from scripts/lib/data.js, the same files the README's "What do you
+// each stacked card from scripts/lib/clusters.js, and the stages, jobs, colours
+// and shapes from scripts/lib/data.js, the same files the README's "What do you
 // want to do?" section is built from. The script
 // refuses to build if the README tables and data.js disagree about which
 // systems exist, so the page cannot quietly fall out of step with the list.
 const fs = require('fs');
 const path = require('path');
 const { ROOT, readme, readRows } = require('../lib/readme');
-const { NEEDS, TAGS, CATS, PALETTE, SHAPES } = require('../lib/data');
+const { NEEDS, STAGES, PRODUCT, TAGS, CATS, PALETTE, SHAPES } = require('../lib/data');
 const { CHECKED, matrix } = require('../lib/compare');
 const { clusterOf } = require('../lib/clusters');
 
@@ -38,7 +38,7 @@ for (const row of readRows()) {
   if (cells.length !== 7) { errors.push('expected 7 cells in the row for "' + name + '", got ' + cells.length); continue; }
   if (!TAGS[name]) { errors.push('README lists "' + name + '" but scripts/lib/data.js TAGS has no entry for it.'); continue; }
   entries.push({
-    name, url, cat, order: entries.length,
+    name, url, cat, order: entries.length, product: PRODUCT[name] || name,
     label: name, jobs: TAGS[name],
     noteHTML: note ? md(note) : '',
     doesHTML: md(cells[1]), doesText: plain(cells[1]),
@@ -81,9 +81,11 @@ const jobs = Object.entries(NEEDS)
 // The README links straight to jobs on this page. Those links are written by
 // hand, so check them: each must name a job that exists, and each job must
 // have one, or a renamed job would leave a link that silently opens nothing.
+// A link may also open a stage, and must then name a stage that exists.
 const linked = [...readme().matchAll(/#job=([a-z]+)/g)].map((m) => m[1]);
 const keys = jobs.map((j) => j.key);
-const deadLinks = [...new Set(linked.filter((k) => !keys.includes(k)))];
+const stageLinks = [...readme().matchAll(/#stage=([a-z]+)/g)].map((m) => m[1]);
+const deadLinks = [...new Set(linked.filter((k) => !keys.includes(k)).concat(stageLinks.filter((k) => !STAGES.some((s) => s.key === k)).map((k) => 'stage ' + k)))];
 const unlinked = keys.filter((k) => !linked.includes(k));
 if (deadLinks.length || unlinked.length) {
   if (deadLinks.length) console.error('README links to jobs that do not exist: ' + deadLinks.join(', '));
@@ -91,9 +93,14 @@ if (deadLinks.length || unlinked.length) {
   process.exit(1);
 }
 
+// The stages the page opens on, each with the jobs that have entries.
+const stages = STAGES.map((s) => ({ key: s.key, n: s.n, label: s.label, jobs: s.jobs.filter((k) => keys.includes(k)) }))
+  .filter((s) => s.jobs.length);
+
 const data = {
   entries,
   jobs,
+  stages,
   cats: CATS,
   catOrder: Object.keys(CATS).sort((a, b) => CATS[a].rank - CATS[b].rank),
   shapes: SHAPES,
@@ -120,4 +127,4 @@ if (/__[A-Z_]+__/.test(withData)) { console.error('An unfilled placeholder is le
 fs.writeFileSync(path.join(ROOT, 'docs', 'index.html'), withData);
 // GitHub Pages runs Jekyll by default; this page needs none of it
 fs.writeFileSync(path.join(ROOT, 'docs', '.nojekyll'), '');
-console.log('site: docs/index.html, ' + entries.length + ' systems under ' + jobs.length + ' needs');
+console.log('site: docs/index.html, ' + entries.length + ' entries under ' + stages.length + ' stages and ' + jobs.length + ' jobs');

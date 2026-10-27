@@ -1,18 +1,20 @@
-// The one hand-maintained list besides the README tables: the needs a
-// researcher arrives with, and which listed systems meet each one. The
-// README's "What do you want to do?" section and the chooser page are both
-// built from it, so a need is named, and a system placed under it, here and
-// nowhere else.
+// The one hand-maintained list besides the README tables: the stages of a
+// research project, the jobs a researcher arrives with inside each stage, and
+// which listed entries do each job. The README's "What do you want to do?"
+// section and the chooser page are both built from it, so a job is named, and
+// an entry placed under it, here and nowhere else.
 //
-// A system is put under a need only when its own documentation says it does
-// that job, never on the strength of how it sells itself, and only through the
-// module its README row describes. The needs section shows that row's cells
-// and that row's category, so placing a product under a need served by some
-// other module would put one module's answerability on another. Elicit's
-// research reports, scite's question answering and Asta's data analysis are
-// real, and are left out for that reason. The README tables
-// decide which systems exist and which category each sits in; the build
-// refuses to run if this file disagrees with them.
+// An entry is one README row, and a row describes one module of a product: the
+// part that carries research judgment for that job. A product with modules
+// that serve different jobs, and leave the researcher different things to rule
+// on, has one row per module, each with its own category. An entry is put
+// under a job only when its own documentation says that module does the job,
+// never on the strength of how the product sells itself. Modules that leave the researcher the same
+// thing to rule on can share a row. A module that no row covers is not shown
+// under any job, however real it is, because the card
+// would show another module's answerability. The README tables decide which
+// entries exist and which category each sits in; the build refuses to run if
+// this file disagrees with them.
 
 // label: the heading in the README and the button on the chooser.
 // verb: completes the chooser's sentence "All of these ...".
@@ -20,30 +22,68 @@ const NEEDS = {
   find:       { label: 'Find papers on a question',              verb: 'find papers on a question and judge what they find' },
   answer:     { label: 'Get a sourced answer to a question',     verb: 'answer a research question from the literature, with sources' },
   review:     { label: 'Run a systematic review',                verb: 'take on systematic-review work' },
+  gaps:       { label: 'Find gaps in the literature',            verb: 'point to where the literature on a question leaves something open' },
+  hypotheses: { label: 'Find hypotheses in your own data',       verb: 'propose hypotheses from data you provide and test them against it' },
+  novelty:    { label: 'Check whether an idea has been done',    verb: 'judge whether an idea already has prior work' },
+  data:       { label: 'Analyse your own data with an agent',    verb: 'run analyses on files you provide to answer a question you set' },
+  next:       { label: 'Decide what to run next in the lab',     verb: 'suggest the next experiment' },
   citations:  { label: 'Check whether citations hold up',        verb: 'judge whether the citations in a paper hold up' },
   manuscript: { label: 'Check a manuscript before submitting',   verb: 'check a finished manuscript before it goes out' },
-  paper:      { label: 'Get a whole paper drafted',              verb: 'hand back a drafted paper' },
-  data:       { label: 'Analyse your own data with an agent',    verb: 'run analyses on files you provide' },
-  next:       { label: 'Decide what to run next in the lab',     verb: 'suggest the next experiment' },
+  paper:      { label: 'Hand over the whole project',            verb: 'take a question, a direction, an idea or a codebase through their own experiments to a finished write-up' },
 };
 
-// Which needs each system meets, keyed by its name exactly as the README
-// table writes it.
+// The stages of a project, in order, each with its jobs. The chooser shows
+// these first. n numbers the five stages; the whole-project entry point has
+// none, because it spans them. A system belongs there when it starts from a
+// question, direction, idea or codebase, decides which experiments or analyses
+// to run, runs them, and hands back a finished paper or report, with no
+// documented step at which the researcher designs the experiments.
+const STAGES = [
+  { key: 'understand', n: 1, label: 'Understand the field and the problem', jobs: ['find', 'answer', 'review'] },
+  { key: 'ideas',      n: 2, label: 'Find gaps and ideas',                  jobs: ['gaps', 'hypotheses'] },
+  { key: 'solution',   n: 3, label: 'Propose a solution and check it is new', jobs: ['novelty'] },
+  { key: 'experiment', n: 4, label: 'Design and run the experiments',       jobs: ['data', 'next'] },
+  { key: 'write',      n: 5, label: 'Write it up',                          jobs: ['citations', 'manuscript'] },
+  { key: 'whole',      n: 0, label: 'Hand over the whole project',          jobs: ['paper'] },
+];
+
+// The product each module row belongs to, keyed by the row's name. A row not
+// listed here is its own product. The README counts products from this.
+const PRODUCT = {
+  'Edison Precedent':               'Edison Platform',
+  'Elicit Reports':                 'Elicit',
+  'Arbor idea-check':               'Arbor',
+  'Consensus Research Gaps Matrix': 'Consensus',
+  'Ai2 Asta AutoDiscovery':         'Ai2 Asta',
+  'SCiNiTO Gap Finding Agent':      'SCiNiTO',
+  'Patsnap Eureka Novelty Search':  'Patsnap Eureka',
+};
+
+// Which jobs each entry does, keyed by its name exactly as the README table
+// writes it.
 const TAGS = {
-  'Edison Platform':       ['answer', 'data'],
-  'Polaris':               ['paper'],
-  'Wisp Science':          ['data'],
-  'Consensus':             ['find', 'answer'],
-  'Undermind':             ['find'],
-  'Ai2 Asta':              ['find', 'answer'],
-  'OpenScholar':           ['answer'],
-  'scite':                 ['citations'],
-  'Elicit':                ['find', 'review'],
-  'SciScore':              ['manuscript'],
-  'Reviewer3':             ['citations', 'manuscript'],
-  'Atinary SDLabs':        ['next'],
-  'NeuriCo':               ['next'],
-  'OpenResearch':          ['next'],
+  'Edison Platform':                ['answer', 'data'],
+  'Edison Precedent':               ['novelty'],
+  'Polaris':                        ['paper'],
+  'Wisp Science':                   ['data'],
+  'OpenResearch':                   ['paper'],
+  'NeuriCo':                        ['paper'],
+  'Elicit Reports':                 ['gaps'],
+  'Arbor idea-check':               ['novelty'],
+  'Consensus':                      ['find', 'answer'],
+  'Consensus Research Gaps Matrix': ['gaps'],
+  'Undermind':                      ['find'],
+  'Ai2 Asta':                       ['find', 'answer'],
+  'Ai2 Asta AutoDiscovery':         ['hypotheses'],
+  'OpenScholar':                    ['answer'],
+  'scite':                          ['citations'],
+  'SCiNiTO Gap Finding Agent':      ['gaps'],
+  'HypoGeniC':                      ['hypotheses'],
+  'Patsnap Eureka Novelty Search':  ['novelty'],
+  'Elicit':                         ['find', 'review'],
+  'SciScore':                       ['manuscript'],
+  'Reviewer3':                      ['citations', 'manuscript'],
+  'Atinary SDLabs':                 ['next'],
 };
 
 // Category key, its position on the Standing scale (Bench sits off it), the
@@ -78,4 +118,4 @@ const SHAPES = {
 
 const CHOOSER_URL = 'https://pswpswpsw.github.io/awesome-human-ai-research-systems/';
 
-module.exports = { NEEDS, TAGS, CATS, PALETTE, SHAPES, CHOOSER_URL };
+module.exports = { NEEDS, STAGES, PRODUCT, TAGS, CATS, PALETTE, SHAPES, CHOOSER_URL };

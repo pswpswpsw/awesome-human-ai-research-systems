@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HAIRS Chooser</title>
-<meta name="description" content="Pick the research job you came to do and compare the AI systems that do it, side by side, by what each one leaves you answerable for.">
+<meta name="description" content="Pick the part of a research project you are working on and compare the AI systems that do it, side by side, by what each one leaves you answerable for.">
 <style>
 :root {
   color-scheme: light;
@@ -128,6 +128,16 @@ details.qa .badge {
 }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .chip[aria-pressed="true"] .n { background: color-mix(in srgb, var(--bg) 22%, transparent); color: var(--bg); }
+.chip .step {
+  font-size: 13px; font-weight: 600; width: 22px; height: 22px; border-radius: 999px; flex: none;
+  display: inline-grid; place-items: center; border: 1px solid var(--rule-2); color: var(--ink-2);
+}
+.chip[aria-pressed="true"] .step { border-color: color-mix(in srgb, var(--bg) 45%, transparent); color: var(--bg); }
+.chip.whole { border-style: dashed; }
+.subpick { margin: 18px 0 0; padding: 14px 0 0; border-top: 1px solid var(--rule); }
+.subpick[hidden] { display: none; }
+.subpick .picker-label { margin-bottom: 10px; }
+.subpick .chip { font-size: 15px; padding: 7px 14px 7px 16px; }
 
 /* ---- result ---- */
 .result { margin: 34px 0 0; min-height: 120px; }
@@ -256,16 +266,20 @@ try { var t = localStorage.getItem('hairs-theme'); if (t === 'light' || t === 'd
       </div>
     </div>
     <h1>A bird&rsquo;s-eye view of human-AI research systems</h1>
-    <p class="lede">Systems where AI does part of the research and a named human still answers for it. Pick a job to compare the ones that do it: what separates them is <em>what the machine&rsquo;s call is worth before you touch it</em>.</p>
+    <p class="lede">Systems where AI does part of the research and a named human still answers for it. Pick the part of the project you are working on to compare the ones that do it: what separates them is <em>what the machine&rsquo;s call is worth before you touch it</em>.</p>
   </header>
 
   <section class="picker" aria-labelledby="pick-label">
-    <p class="picker-label" id="pick-label">What are you here to do?</p>
-    <div class="chips" role="group" aria-labelledby="pick-label" id="chips"></div>
+    <p class="picker-label" id="pick-label">Which part of the research are you working on?</p>
+    <div class="chips" role="group" aria-labelledby="pick-label" id="stages"></div>
+    <div class="subpick" id="subpick" hidden>
+      <p class="picker-label" id="job-label">What do you want done?</p>
+      <div class="chips" role="group" aria-labelledby="job-label" id="chips"></div>
+    </div>
   </section>
 
   <section class="result" id="result" aria-live="polite">
-    <div class="prompt">Choose what you want to do above to see the systems that do it, side by side.</div>
+    <div class="prompt">Choose the part of the research you are working on above to see the systems that do it, side by side.</div>
   </section>
 
   <section class="faq" aria-labelledby="faq-h">
@@ -278,9 +292,9 @@ try { var t = localStorage.getItem('hairs-theme'); if (t === 'light' || t === 'd
         <p>Every Monday a scheduled AI agent searches arXiv, launch announcements, the related awesome lists and GitHub for new research systems. It tests each candidate against the rules below, checks whether any excluded system has opened to the public, and opens every listed link to catch products that moved or closed. It writes a report and changes nothing. The maintainer rules on each candidate, and an entry is added or moved only when the evidence holds up.</p>
         </div>
         <h3>What gets in</h3>
-        <p>A system has to pass two tests on its own public pages. A researcher can use it today, with no waitlist or private preview, and it was built for research work, not as a general assistant. A system that takes a question, a direction, an idea or a codebase all the way to a finished paper or report must also document, on the path it is filed on and at that path&rsquo;s default settings, something a reader can check: a check of its own draft against sources or runs, a gate on research content that only a person can pass, a trace tying each result to the specific run, code or passage behind it, or an exportable record of who decided. A system that passes and answers a question no listed system answers gets its own row. One that answers the same question as a listed system joins its cluster as one line, and each cluster&rsquo;s featured system is chosen by written criteria, with arrival order counting for nothing. A university project and a company product are judged the same way.</p>
+        <p>A system has to pass two tests on its own public pages. A researcher can use it today, with no waitlist or private preview, and it was built for research work, not as a general assistant. A system that takes a question, a direction, an idea or a codebase all the way to a finished paper or report must also document, on the path it is filed on and at that path&rsquo;s default settings, something a reader can check: a check of its own draft against sources or runs, a gate on research content that only a person can pass, a trace tying each result to the specific run, code or passage behind it, or an exportable record of who decided. A system that finds research gaps, proposes ideas or hypotheses, or judges whether an idea is new must leave something a reader can check in the same way, such as the papers behind each gap, a test of each hypothesis against data, a check of whether a gap is still open, or the prior work behind a novelty verdict. One that hands back only a ranked list of ideas is at most a close alternative. A system that passes and answers a question no listed system answers gets its own row. One that answers the same question as a listed system joins its cluster as one line, and each cluster&rsquo;s featured system is chosen by written criteria, with arrival order counting for nothing. A university project and a company product are judged the same way.</p>
         <h3>Where it goes</h3>
-        <p>Each system is filed by what the human still rules on, not by the stage of work it serves. The part of the product that carries research judgment is the part tested. Bench is tested first, then Delegation, Standing Verdicts, Human Approval and Critique in that order, and the first match places it. An entry moves whenever a release changes how the product works.</p>
+        <p>The page starts from the stage of the project, and inside each stage every entry is filed by what the human still rules on. Each part of a product that carries research judgment is tested on its own, so one product can have several entries in different categories. Bench is tested first, then Delegation, Standing Verdicts, Human Approval and Critique in that order, and the first match places it. An entry moves whenever a release changes how the product works.</p>
         <h3>What counts as evidence</h3>
         <p>Every boundary is a test a reader can run against the vendor&rsquo;s public pages. Pages are fetched and read directly, never through a tool that summarises them. A claim found only in page source, a script bundle or a repository&rsquo;s code carries a &dagger;, and anything no public page states is marked <em>not documented</em>. Each value in the <em>How they differ</em> tables keeps the URL and the exact words it rests on, and a check on every push rebuilds the README and this page from those sources and fails if either differs from what was committed.</p>
         <p class="m-links">The full tests, the placement rules and every exclusion are in <a href="__REPO_URL__/blob/main/METHOD.md">METHOD.md</a>. How each column is filled is in <a href="__REPO_URL__/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>, and four systems are traced through a real task in <a href="__REPO_URL__/blob/main/WORKFLOWS.md">WORKFLOWS.md</a>.</p>
@@ -300,9 +314,15 @@ try { var t = localStorage.getItem('hairs-theme'); if (t === 'light' || t === 'd
       </div>
     </details>
     <details class="qa">
-      <summary><span class="m-title">Why group systems by what you still rule on, not by task?</span></summary>
+      <summary><span class="m-title">Why start from the stage of the project?</span></summary>
       <div class="m-body">
-        <p>Two tools that do the same job can leave you answerable for very different things. One screening tool&rsquo;s label is the record unless you open the paper and reverse it; another&rsquo;s waits for a named person to rule. The jobs above let you start from the task, and the category on each card tells you what that tool leaves you to check.</p>
+        <p>A researcher looking for help usually knows which part of the work they are on: understanding the field and the problem, finding gaps and ideas, proposing a solution and checking it is new, designing and running the experiments, or writing it up. So the page opens there. Inside a stage, two tools that do the same job can still leave you answerable for very different things. One screening tool&rsquo;s label is the record unless you open the paper and reverse it; another&rsquo;s waits for a named person to rule. The category on each card tells you what that tool leaves you to check.</p>
+      </div>
+    </details>
+    <details class="qa">
+      <summary><span class="m-title">Why does one product appear more than once?</span></summary>
+      <div class="m-body">
+        <p>Some products have parts that do different jobs and leave you different things to rule on. Each such part has its own entry, with its own category, so a card always describes the part that does that job. A system sits under <em>Hand over the whole project</em>, and is not split across the stages, when it starts from a question, a direction, an idea or a codebase, decides which experiments or analyses to run, runs them and hands back a finished paper or report, with no documented step at which you design the experiments.</p>
       </div>
     </details>
     <details class="qa">
@@ -327,7 +347,7 @@ try { var t = localStorage.getItem('hairs-theme'); if (t === 'light' || t === 'd
 
   <footer>
     <p id="provenance"></p>
-    <p>The cards are taken from the README tables, and which system sits under which need comes from the same list that builds the README&rsquo;s &ldquo;What do you want to do?&rdquo; section. The <em>How they differ</em> tables come from <code>scripts/lib/compare.js</code>, where each value carries the page and the words it rests on, and the close alternatives in each stacked card come from <code>scripts/lib/clusters.js</code>. The page is built from those files, and a check on every push fails if the committed page differs from a fresh build. To change it, edit the source and run <code>node scripts/build.js</code>.</p>
+    <p>The cards are taken from the README tables, and which entry sits under which stage and job comes from the same list that builds the README&rsquo;s &ldquo;What do you want to do?&rdquo; section. The <em>How they differ</em> tables come from <code>scripts/lib/compare.js</code>, where each value carries the page and the words it rests on, and the close alternatives in each stacked card come from <code>scripts/lib/clusters.js</code>. The page is built from those files, and a check on every push fails if the committed page differs from a fresh build. To change it, edit the source and run <code>node scripts/build.js</code>.</p>
     <p><a href="__REPO_URL__">The full list, and the reasoning behind every placement, is on GitHub.</a></p>
   </footer>
 </div>
@@ -377,30 +397,66 @@ window.HAIRS = null; /*__DATA__*/
   }
   function catOf(e) { return D.cats[e.cat]; }
 
-  // ---------------- chips ----------------
+  // ---------------- stages, then the jobs inside the chosen stage ----------------
+  var jobsByKey = {}, stageOfJob = {}, stagesByKey = {};
+  D.jobs.forEach(function (j) { jobsByKey[j.key] = j; });
+  D.stages.forEach(function (s) {
+    stagesByKey[s.key] = s;
+    s.jobs.forEach(function (k) { stageOfJob[k] = s.key; });
+  });
+  function countLabel(n) { return n + (n === 1 ? ' system' : ' systems'); }
+  // entries across a stage's jobs, each counted once
+  function stageCount(s) {
+    var seen = {};
+    s.jobs.forEach(function (k) { jobsByKey[k].members.forEach(function (n) { seen[n] = 1; }); });
+    return Object.keys(seen).length;
+  }
+
+  var stageBox = document.getElementById('stages');
+  var subpick = document.getElementById('subpick');
   var chips = document.getElementById('chips');
-  var chipEls = {};
-  D.jobs.forEach(function (j) {
-    var b = document.createElement('button');
-    b.type = 'button'; b.className = 'chip'; b.setAttribute('aria-pressed', 'false');
-    b.innerHTML = '<span>' + j.label + '</span><span class="n" aria-label="' + j.members.length + (j.members.length === 1 ? ' system' : ' systems') + '">' + j.members.length + '</span>';
-    b.addEventListener('click', function () { select(current === j.key ? null : j.key); });
-    chips.appendChild(b); chipEls[j.key] = b;
+  var stageEls = {}, chipEls = {};
+  D.stages.forEach(function (s) {
+    var b = document.createElement('button'), n = stageCount(s);
+    b.type = 'button'; b.className = 'chip' + (s.n ? '' : ' whole'); b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = (s.n ? '<span class="step" aria-hidden="true">' + s.n + '</span><span>' + s.label + '</span>'
+      : '<span>Or ' + s.label.charAt(0).toLowerCase() + s.label.slice(1) + '</span>') +
+      '<span class="n" aria-label="' + countLabel(n) + '">' + n + '</span>';
+    b.addEventListener('click', function () { selectStage(curStage === s.key ? null : s.key); });
+    stageBox.appendChild(b); stageEls[s.key] = b;
   });
 
-  // ---------------- selection ----------------
-  var current = null;
-  var jobsByKey = {};
-  D.jobs.forEach(function (j) { jobsByKey[j.key] = j; });
+  var curStage = null, current = null;
+  var PROMPT = '<div class="prompt">Choose the part of the research you are working on above to see the systems that do it, side by side.</div>';
+
+  // A stage with one job opens that job at once; a stage with several shows
+  // its jobs and opens the first, or the one a link asked for.
+  function selectStage(key, jobKey) {
+    curStage = key;
+    for (var k in stageEls) stageEls[k].setAttribute('aria-pressed', String(k === key));
+    chips.innerHTML = ''; chipEls = {};
+    if (!key) {
+      subpick.hidden = true; current = null;
+      try { history.replaceState(null, '', location.pathname); } catch (_) {}
+      document.getElementById('result').innerHTML = PROMPT;
+      return;
+    }
+    var s = stagesByKey[key];
+    subpick.hidden = s.jobs.length < 2;
+    s.jobs.forEach(function (k) {
+      var j = jobsByKey[k], b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.setAttribute('aria-pressed', 'false');
+      b.innerHTML = '<span>' + j.label + '</span><span class="n" aria-label="' + countLabel(j.members.length) + '">' + j.members.length + '</span>';
+      b.addEventListener('click', function () { select(j.key); });
+      chips.appendChild(b); chipEls[j.key] = b;
+    });
+    select(jobKey && s.jobs.indexOf(jobKey) >= 0 ? jobKey : s.jobs[0]);
+  }
 
   function select(key) {
     current = key;
     for (var k in chipEls) chipEls[k].setAttribute('aria-pressed', String(k === key));
-    try { history.replaceState(null, '', key ? '#job=' + key : location.pathname); } catch (_) {}
-    if (!key) {
-      document.getElementById('result').innerHTML = '<div class="prompt">Choose what you want to do above to see the systems that do it, side by side.</div>';
-      return;
-    }
+    try { history.replaceState(null, '', '#job=' + key); } catch (_) {}
     renderCards(jobsByKey[key]);
   }
 
@@ -494,11 +550,18 @@ window.HAIRS = null; /*__DATA__*/
     return s.outerHTML;
   }
 
+  var products = {};
+  D.entries.forEach(function (e) { products[e.product] = 1; });
   document.getElementById('provenance').textContent =
-    'Built from the README tables, scripts/lib/compare.js and scripts/lib/clusters.js: ' + D.entries.length + ' systems under ' + D.jobs.length + ' needs.';
+    'Built from the README tables, scripts/lib/compare.js and scripts/lib/clusters.js: ' + D.entries.length + ' entries from ' + Object.keys(products).length + ' products, under ' + D.stages.filter(function (s) { return s.n; }).length + ' stages, the whole-project heading and ' + D.jobs.length + ' jobs.';
 
-  var h = (location.hash.match(/job=(\w+)/) || [])[1];
-  if (h && jobsByKey[h]) setTimeout(function () { select(h); }, reduce ? 0 : 250);
+  // #job=<job> opens that job inside its stage; #stage=<stage> opens a stage.
+  // A key that names nothing leaves the page on its stage picker.
+  var hj = (location.hash.match(/job=(\w+)/) || [])[1];
+  var hs = (location.hash.match(/stage=(\w+)/) || [])[1];
+  var go = hj && jobsByKey[hj] ? function () { selectStage(stageOfJob[hj], hj); }
+    : hs && stagesByKey[hs] ? function () { selectStage(hs); } : null;
+  if (go) setTimeout(go, reduce ? 0 : 250);
 })();
 </script>
 </body>
