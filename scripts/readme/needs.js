@@ -89,7 +89,7 @@ for (const stage of STAGES) {
     const members = membersOf(key);
     const cats = [...new Set(members.map((m) => m.cat))];
     const n = members.length;
-    const clusters = members.map((m) => clusterOf(m.name)).filter(Boolean);
+    const clusters = members.map((m) => clusterOf(m.name, key)).filter(Boolean);
     const alts = clusters.reduce((k, c) => k + c.members.length, 0);
     let lead;
     if (cats.length > 1) lead = cap(words(n)) + ' systems across ' + words(cats.length) + ' categories, so they leave you different things to rule on.';

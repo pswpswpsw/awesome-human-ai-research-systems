@@ -71,7 +71,7 @@ const FEATURES = {
   evidence_package: 'Exports a package tying the claims you bind to their runs',
   rerun: 'Checks that the analysis reruns in a clean workspace',
   gates: 'Stops for your approval before it acts',
-  // the lab
+  // the next experiment
   closed_loop: 'Plans the next run from the results of earlier runs',
   notebook: 'Its output can be saved in your lab notebook',
   robot: 'Connects to lab robots or instruments',
@@ -160,6 +160,11 @@ const CELLS = {
     tally: { v: "nd" },
     peer_reviewed: { v: "yes", q: "Nature, 2026", url: "https://www.nature.com/articles/s41586-025-10072-4", quote: "thanks Shubham Agarwal, Pascal Sun and the other, anonymous, reviewer(s) for their contribution to the peer review of this work." },
   },
+  "PaperQA2": {
+    uncited_label: { v: "nd" },
+    tally: { v: "nd" },
+    peer_reviewed: { v: "preprint", q: "arXiv, 2024", url: "https://arxiv.org/abs/2409.13740", quote: "Language agents achieve superhuman synthesis of scientific knowledge" },
+  },
   "scite": {
     fabricated: { v: "nd" },
     stance: { v: "yes", url: "https://scite.ai/features", quote: "Our deep learning model analyzes 1.6B+ citation statements and classifies each one as supporting, contrasting, or mentioning" },
@@ -196,6 +201,12 @@ const CELLS = {
     notebook: { v: "yes", q: "optional, through its API", url: "https://atinary.com/technology/sdlabs/", quote: "data management systems like LIMS and ELNs, is optional and seamless via API/SDK." },
     robot: { v: "yes", q: "optional", url: "https://atinary.com/technology/sdlabs/", quote: "Integration with laboratory robotics platforms (such as Chemspeed, Bruker, or IBM RoboRXN), as well as platforms like ACD/Labs’ Katalyst and data management systems like LIMS and ELNs, is optional and seamless via API/SDK." },
     api: { v: "yes", url: "https://api.sdlabs.atinary.com/schema/", quote: "SDLabs API for experiment optimization and dataset management." },
+  },
+  "Outerloop": {
+    closed_loop: { v: "yes", q: "builds on merged gains", url: "https://docs.outerloop.science/how-it-works/", quote: "Only when the kernel sees the merge does it record the gain as confirmed in the ledger, and the merged code becomes the next runs' base." },
+    notebook: { v: "nd" },
+    robot: { v: "nd" },
+    api: { v: "yes", q: "through its command line, which can print JSON", url: "https://raw.githubusercontent.com/outerloop-science/outerloop/main/docs/reference/cli.md", quote: "outerloop status [--root ROOT] [--json] ... print structured JSON instead of text" },
   },
   "OpenResearch": {
     midrun: { v: "no", q: "default Agentic setting †; asks you between runs only at its repair cap", url: "README.md", quote: "its loop waits on you between runs only when failed runs hit its repair cap" },
@@ -254,6 +265,16 @@ const CELLS = {
     prior_art_scope: { v: "text", t: "patents and non-patent literature", q: "it ranks and compares patents", url: "https://help.patsnap.com/hc/en-us/articles/38547096847645-Novelty-Search", quote: "The agent can also use citation tracking and search non-patent literature and other available sources. ... The agent returns up to 100 patents matching your input, grouped by family. ... You can manually select other patents for the table (up to 5 references)." },
     thin_search_flag: { v: "nd" },
     confirm_reading: { v: "yes", q: "its summary, and the features unless Auto Run is selected", url: "https://help.patsnap.com/hc/en-us/articles/38547096847645-Novelty-Search", quote: "Users can review the summary and edit it if needed. Confirm the technical summary once you are satisfied with the summary. Note: Selecting Auto Run will run through all of the following sections automatically. Unselect this if you want to customize each section. ... Users can add, edit, or delete technical features." },
+  },
+  "Yila Research Gap and Topic Validation": {
+    gap_sources: { v: "text", t: "the closest work it finds to your idea, plus any references you attach", url: "https://yila.ai/guides/how-to-validate-a-research-gap-and-identify-a-more-worthwhile-topic-with-yila", quote: "Yila decomposes the research question, finds the closest existing work, and checks whether the topic satisfies three conditions ... You can upload a proposal, research plan, question list, supervisor feedback, initial search records, or key references. Yila reads them before validating the idea." },
+    gap_grid: { v: "nd" },
+    gap_rank: { v: "yes", q: "its candidate-topic table, by novelty, importance and feasibility, per its guide; its last-step prompt says not to rank †", url: "https://yila.ai/guides/how-to-validate-a-research-gap-and-identify-a-more-worthwhile-topic-with-yila", quote: "a ranked candidate-topic table for comparing directions and discussing them with supervisors or teams. ... The table organizes and ranks candidate topics by novelty, importance, feasibility, key evidence, main risks, and current status." },
+    screen_log: { v: "nd" },
+    feature_table: { v: "nd" },
+    prior_art_scope: { v: "text", t: "the research literature, counterexamples included", q: "no database named for this agent", url: "https://yila.ai/guides/how-to-validate-a-research-gap-and-identify-a-more-worthwhile-topic-with-yila", quote: "It searches for directly overlapping and adjacent studies, reviews, representative work, citation relationships, and counterexamples that may invalidate the claimed gap" },
+    thin_search_flag: { v: "yes", q: "an Ambiguous status, for conflicting evidence or thin coverage", url: "https://yila.ai/guides/how-to-validate-a-research-gap-and-identify-a-more-worthwhile-topic-with-yila", quote: "Ambiguous: evidence conflicts or coverage is insufficient for a stable judgment." },
+    confirm_reading: { v: "nd" },
   },
 };
 

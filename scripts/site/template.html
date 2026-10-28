@@ -467,7 +467,7 @@ window.HAIRS = null; /*__DATA__*/
     members.forEach(function (m) { cats[m.cat] = 1; });
     var nCats = Object.keys(cats).length;
     var nAlts = 0;
-    members.forEach(function (m) { if (m.cluster) nAlts += m.cluster.members.length; });
+    members.forEach(function (m) { var cl = clusterIn(m, j); if (cl) nAlts += cl.members.length; });
     var altsNote = nAlts ? ', ' + nAlts + (nAlts === 1 ? ' close alternative' : ' close alternatives') : '';
     var head = members.length === 1
       ? '<p class="kicker">' + j.label + ' &middot; one system, in ' + members[0].cat + (nAlts ? ', with ' + (nAlts === 1 ? 'one close alternative' : nAlts + ' close alternatives') : '') + '</p>' +
@@ -482,10 +482,10 @@ window.HAIRS = null; /*__DATA__*/
         '<p>All of these ' + j.verb + ', and they leave you the same kind of thing to rule on. They are straightforward alternatives, so the choice comes down to the details below.</p>';
     var html = '<div class="callout">' + head + '</div><div class="cards' + (reduce ? '' : ' play-cards') + '">';
     members.forEach(function (m, i) {
-      var c = catOf(m);
-      html += '<article class="card' + (m.cluster ? ' stacked' : '') + '" style="--c: var(--cat-' + c.key + '); --d:' + (i * .07 + .1).toFixed(2) + 's">' +
+      var c = catOf(m), cl = clusterIn(m, j);
+      html += '<article class="card' + (cl ? ' stacked' : '') + '" style="--c: var(--cat-' + c.key + '); --d:' + (i * .07 + .1).toFixed(2) + 's">' +
         '<div class="cat">' + catIcon(c) + m.cat + '</div>' +
-        (m.cluster ? '<p class="stack-title">' + m.cluster.title + '</p>' : '') +
+        (cl ? '<p class="stack-title">' + cl.title + '</p>' : '') +
         '<h3><a href="' + m.url + '" target="_blank" rel="noopener">' + m.label + '</a>' + (m.noteHTML ? '<span class="note">' + m.noteHTML + '</span>' : '') + '</h3>' +
         '<p class="does">' + m.doesHTML + '</p>' +
         '<div class="rules"><span class="k">You rule on</span><p>' + m.rulesHTML + '</p></div>' +
@@ -495,7 +495,7 @@ window.HAIRS = null; /*__DATA__*/
           '<div><dt>On the record</dt><dd>' + m.recordHTML + '</dd></div>' +
           '<div><dt>Writes into your draft</dt><dd>' + m.writesHTML + '</dd></div>' +
           '<div><dt>Access</dt><dd>' + m.accessHTML + '</dd></div>' +
-        '</dl>' + altsHTML(m, i) + '</article>';
+        '</dl>' + altsHTML(cl, i) + '</article>';
     });
     html += '</div>';
     html += renderDiff(j, members);
@@ -524,13 +524,19 @@ window.HAIRS = null; /*__DATA__*/
       '<p class="legend">&#10003; and &#10007; rest on the vendor&rsquo;s own pages or on the system&rsquo;s own README row, and &dagger; marks evidence found only in page source, a script bundle or a repository&rsquo;s code. In the evaluation row, &#10003; names the published study. <em>Not documented</em> means nothing we found on its public pages says either way. Checked ' + D.checked + '.</p></section>';
   }
 
+  // A featured system's cluster, shown only under the job its members share
+  // when it names one.
+  function clusterIn(m, j) {
+    return m.cluster && (!m.cluster.job || m.cluster.job === j.key) ? m.cluster : null;
+  }
+
   // A featured system's close alternatives: one line each, folded under its card.
-  function altsHTML(m, i) {
-    if (!m.cluster) return '';
-    var n = m.cluster.members.length, id = 'alts-' + i;
+  function altsHTML(cl, i) {
+    if (!cl) return '';
+    var n = cl.members.length, id = 'alts-' + i;
     var h = '<button type="button" class="alts-btn" aria-expanded="false" aria-controls="' + id + '"><span class="chev" aria-hidden="true">&#9656;</span>+' + n + (n === 1 ? ' close alternative' : ' close alternatives') + '</button>' +
       '<ul class="alts" id="' + id + '" hidden>';
-    m.cluster.members.forEach(function (a) {
+    cl.members.forEach(function (a) {
       h += '<li><a href="' + a.url + '" target="_blank" rel="noopener">' + a.name + '</a>' + (a.was ? '<span class="was">own row until ' + a.was + '</span>' : '') + '<p>' + a.lineHTML + ' <a class="src" href="' + a.srcUrl + '" target="_blank" rel="noopener">source</a></p></li>';
     });
     return h + '</ul>';

@@ -26,7 +26,7 @@ const NEEDS = {
   hypotheses: { label: 'Find hypotheses in your own data',       verb: 'propose hypotheses from data you provide and test them against it' },
   novelty:    { label: 'Check whether an idea has been done',    verb: 'judge whether an idea already has prior work' },
   data:       { label: 'Analyse your own data with an agent',    verb: 'run analyses on files you provide to answer a question you set' },
-  next:       { label: 'Decide what to run next in the lab',     verb: 'suggest the next experiment' },
+  next:       { label: 'Decide what to run next',                verb: 'propose the next experiment from the results of earlier ones' },
   citations:  { label: 'Check whether citations hold up',        verb: 'judge whether the citations in a paper hold up' },
   manuscript: { label: 'Check a manuscript before submitting',   verb: 'check a finished manuscript before it goes out' },
   paper:      { label: 'Hand over the whole project',            verb: 'take a question, a direction, an idea or a codebase through their own experiments to a finished write-up' },
@@ -57,6 +57,7 @@ const PRODUCT = {
   'Ai2 Asta AutoDiscovery':         'Ai2 Asta',
   'SCiNiTO Gap Finding Agent':      'SCiNiTO',
   'Patsnap Eureka Novelty Search':  'Patsnap Eureka',
+  'Yila Research Gap and Topic Validation': 'Yila',
 };
 
 // Which jobs each entry does, keyed by its name exactly as the README table
@@ -68,6 +69,7 @@ const TAGS = {
   'Wisp Science':                   ['data'],
   'OpenResearch':                   ['paper'],
   'NeuriCo':                        ['paper'],
+  'Outerloop':                      ['next'],
   'Elicit Reports':                 ['gaps'],
   'Arbor idea-check':               ['novelty'],
   'Consensus':                      ['find', 'answer'],
@@ -76,10 +78,12 @@ const TAGS = {
   'Ai2 Asta':                       ['find', 'answer'],
   'Ai2 Asta AutoDiscovery':         ['hypotheses'],
   'OpenScholar':                    ['answer'],
+  'PaperQA2':                       ['answer'],
   'scite':                          ['citations'],
   'SCiNiTO Gap Finding Agent':      ['gaps'],
   'HypoGeniC':                      ['hypotheses'],
   'Patsnap Eureka Novelty Search':  ['novelty'],
+  'Yila Research Gap and Topic Validation': ['gaps', 'novelty'],
   'Elicit':                         ['find', 'review'],
   'SciScore':                       ['manuscript'],
   'Reviewer3':                      ['citations', 'manuscript'],

@@ -12,12 +12,17 @@
 // Clusters section are all built from this file. The build refuses to run if a
 // featured system is not a README row, if a member also has a README row (by
 // name or by URL), if a member line has no source, if a URL is not https, if a
-// system sits in two clusters, or if a member still appears in METHOD.md's
-// exclusion table.
+// system sits in two clusters, if a member still appears in METHOD.md's
+// exclusion table, if a cluster names a job that does not exist or that its
+// featured system does not do, or if a featured system that does more than one
+// job has a cluster that names none.
 
 // key: {
 //   title     the shared approach, shown on the stack
 //   featured  the system's name exactly as the README table writes it
+//   job       the job the members are listed under, from data.js; needed only
+//             when the featured system does more than one, and the members are
+//             then shown under that job alone
 //   reason    why it is featured, criterion by criterion (written into METHOD.md)
 //   members   [{ name, url, line, src: { url, quote }, was }]
 //             line: one documented difference from the featured system
@@ -27,10 +32,12 @@ const CLUSTERS = {
   "paper-local": {
     title: "Direction in, paper and code out, on your machine",
     featured: "Polaris",
-    reason: "Criterion 1. Its docs say only a person can decide a gate in the app, and the topic owner rules on idea promotion. AutoResearchClaw's stage gates can be auto-approved, which its quick start does, or approved by another agent. Its intervention record has no field for who acted, a point found only in source.",
+    reason: "Criterion 1. Its docs say only a person can decide a gate in the app, and the topic owner rules on idea promotion. AutoResearchClaw's stage gates can be auto-approved, which its quick start does, or approved by another agent. Its intervention record has no field for who acted, a point found only in source. Agentic Scientist documents its run record in detail, with a git checkpoint after every program evaluation, but no stop for a person once a run starts and nothing that says who decided. Criteria 2 to 4, backing and stars among them, are therefore never reached.",
     members: [
       { name: "AutoResearchClaw", url: "https://github.com/aiming-lab/AutoResearchClaw", line: "routes experiments beyond its default ML sandbox to a specialist agent per field",
         src: { url: "https://raw.githubusercontent.com/aiming-lab/AutoResearchClaw/HEAD/README.md", quote: "routes beyond the default ML sandbox to specialist agents per field" } },
+      { name: "Agentic Scientist (Sakana AI)", url: "https://github.com/SakanaAI/AI-Scientist-v3", line: "re-scores the winning program in a sealed environment before it writes the paper",
+        src: { url: "https://raw.githubusercontent.com/SakanaAI/AI-Scientist-v3/HEAD/README.md", quote: "the final evaluation re-scores it in a sealed environment; post-hoc analysis mines the artifacts for extra evidence; and the paper phase writes" } },
     ],
   },
   "local-agent": {
@@ -50,7 +57,19 @@ const CLUSTERS = {
         src: { url: "https://sciencediscovery.github.io/docs/reference/runtime-behavior.html", quote: "Network is a policy, not a constant: it defaults to none (no interface in the sandbox)" } },
     ],
   },
+  "manuscript-report": {
+    title: "Your manuscript in, a report on its problems out, hosted",
+    featured: "Reviewer3",
+    job: "manuscript",
+    reason: "Criterion 1, narrowly, on the review each returns. Reviewer3's home page names the judgments its review leaves to people, whether a contribution is novel and whether a field will care, where Deep Review's announcement leaves \"higher-level judgements to humans\" without naming them. Deep Review's API reference is plainer about what reaches the document: \"Documents are immutable post-creation\". Neither documents a record of who decided. Reviewer3's home page now adds that \"The editor can also propose revisions\", on terms its pages do not state, and if that editor is read as part of the review, criterion 1 favours Deep Review. Read as the separate module it is filed apart from, criteria 2 and 3, where Deep Review leads with a preprint, a public API reference and Google Research behind it, are not reached.",
+    members: [
+      { name: "Google Deep Review", url: "https://research.google/deepreview/", line: "treats each submitted document as immutable, so a revised draft is reviewed as a new document",
+        src: { url: "https://deepreview.googleapis.com/$discovery/rest?version=v1", quote: "Documents are immutable post-creation; to review a new version, create a new Document." } },
+    ],
+  },
 };
+
+const { NEEDS, TAGS } = require('./data');
 
 const norm = (u) => u.toLowerCase().replace(/^https?:\/\/(www\.)?/, '').replace(/\/+$/, '');
 
@@ -73,6 +92,10 @@ function checkClusters(rows, methodText) {
   for (const [key, c] of Object.entries(CLUSTERS)) {
     if (!c.title || !c.reason) errors.push('cluster "' + key + '" needs a title and a reason.');
     if (!names.has(c.featured)) errors.push('cluster "' + key + '" features "' + c.featured + '", which has no README row.');
+    const jobs = TAGS[c.featured] || [];
+    if (c.job && !NEEDS[c.job]) errors.push('cluster "' + key + '" names the job "' + c.job + '", which is not a job in data.js.');
+    else if (c.job && !jobs.includes(c.job)) errors.push('cluster "' + key + '" names the job "' + c.job + '", which its featured system "' + c.featured + '" does not do.');
+    if (!c.job && jobs.length > 1) errors.push('cluster "' + key + '" features "' + c.featured + '", which does more than one job (' + jobs.join(', ') + '). Name the one its members share in job.');
     const row = rows.find((r) => r.name === c.featured);
     note(row ? norm(row.url) : c.featured, c.featured, key);
     if (!c.members || !c.members.length) errors.push('cluster "' + key + '" has no members besides its featured system.');
@@ -90,9 +113,12 @@ function checkClusters(rows, methodText) {
   return errors;
 }
 
-// The cluster a README row features, if any.
-function clusterOf(name) {
-  for (const [key, c] of Object.entries(CLUSTERS)) if (c.featured === name) return Object.assign({ key }, c);
+// The cluster a README row features, if any. Given a job, only a cluster
+// whose members share that job.
+function clusterOf(name, job) {
+  for (const [key, c] of Object.entries(CLUSTERS)) {
+    if (c.featured === name && (!job || !c.job || c.job === job)) return Object.assign({ key }, c);
+  }
   return null;
 }
 

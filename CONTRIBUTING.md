@@ -29,7 +29,7 @@ Systems that fail these tests but are worth knowing about get recorded in [METHO
 
 A system that passes every test above but answers the same question for the same reader as a listed one joins that system's **cluster**. The same question means the same job, the same category, and the same thing handed in and handed back. Weights you can host yourself, set against a hosted service, make a different question, as does being free where nothing comparable is. A different front end does not, and neither does a different market for the same capability. A university project and a company product are judged the same way.
 
-Each cluster has one featured system with a full row. Every other member is one line under it, naming one documented difference and linking the page it rests on; `scripts/lib/clusters.js` keeps the exact words. The featured system is chosen by the criteria in [METHOD.md](METHOD.md#clusters), in order, and when a system arrived counts for nothing, so a newcomer can take the featured row if it does better on them. A cluster also carries a short reason its featured system wins, which the build writes into METHOD.md.
+Each cluster has one featured system with a full row. Every other member is one line under it, naming one documented difference and linking the page it rests on; `scripts/lib/clusters.js` keeps the exact words. If the featured system does more than one job, the cluster names the job its members are listed under, and they appear under that job only. The featured system is chosen by the criteria in [METHOD.md](METHOD.md#clusters), in order, and when a system arrived counts for nothing, so a newcomer can take the featured row if it does better on them. A cluster also carries a short reason its featured system wins, which the build writes into METHOD.md.
 
 ## Which category does it go in?
 
@@ -57,7 +57,7 @@ The README and the chooser open with five stages of a project, each holding the 
 1. **Understand the field and the problem**: find papers on a question, get a sourced answer, run a systematic review.
 2. **Find gaps and ideas**: find gaps in the literature, find hypotheses in your own data.
 3. **Propose a solution and check it is new**: check whether an idea has been done.
-4. **Design and run the experiments**: analyse your own data with an agent, decide what to run next in the lab.
+4. **Design and run the experiments**: analyse your own data with an agent, decide what to run next.
 5. **Write it up**: check whether citations hold up, check a manuscript before submitting.
 
 A sixth heading, **Hand over the whole project**, holds systems that start from a question, a direction, an idea or a codebase, decide which experiments or analyses to run, run them, and hand back a finished paper or report, with no documented step at which the researcher designs the experiments. Such a system is listed there once and not split across the stages. An entry goes under a job only when its own documentation says that module does the job, and the stage follows from the job. Stages 2 and 3 carry the bar for gap finders, idea generators and novelty checkers given above.
@@ -101,7 +101,7 @@ Proposing a **new facet** (see [METHOD.md](METHOD.md#the-facets)) must clear tha
 This list exists because bigger lists in this space either sprawl until nobody can maintain them, or turn into a paper bibliography that goes stale within a year.
 
 - Quality and relevance beat completeness. Not every AI-for-research tool needs to be here.
-- If a category grows past about 10 to 12 entries, prune the weakest or split it along a finer decision boundary. *Standing Verdicts*, at ten, and *Delegation*, at eight, are the largest today.
+- If a category grows past about 10 to 12 entries, prune the weakest or split it along a finer decision boundary. *Standing Verdicts*, at eleven, and *Delegation*, at ten, are the largest today.
 - A category holding one entry is fine if the arrangement it describes is real. Thin categories are informative: they show where this sort of collaboration barely exists yet.
 
 ## Removing entries

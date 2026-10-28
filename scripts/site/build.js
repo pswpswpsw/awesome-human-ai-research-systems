@@ -49,7 +49,7 @@ for (const row of readRows()) {
     accessHTML: md(cells[6]),
     cluster: (() => {
       const c = clusterOf(name);
-      return c ? { title: esc(c.title), members: c.members.map((m) => ({ name: esc(m.name), url: m.url, srcUrl: m.src.url, lineHTML: md(m.line), was: m.was ? esc(m.was) : '' })) } : null;
+      return c ? { title: esc(c.title), job: c.job || '', members: c.members.map((m) => ({ name: esc(m.name), url: m.url, srcUrl: m.src.url, lineHTML: md(m.line), was: m.was ? esc(m.was) : '' })) } : null;
     })(),
   });
 }

@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const { ROOT } = require('../lib/readme');
 const { CLUSTERS } = require('../lib/clusters');
+const { NEEDS } = require('../lib/data');
 
 const START = '<!-- clusters:start -->';
 const END = '<!-- clusters:end -->';
@@ -19,7 +20,8 @@ if (i < 0 || j < i) {
 }
 const and = (xs) => (xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1]);
 const lines = Object.values(CLUSTERS).map((c) =>
-  '- **' + c.featured + '** is featured for *' + c.title.charAt(0).toLowerCase() + c.title.slice(1) + '*, ahead of ' + and(c.members.map((m) => m.name)) + '. ' + c.reason);
+  '- **' + c.featured + '** is featured for *' + c.title.charAt(0).toLowerCase() + c.title.slice(1) + '*' +
+  (c.job ? ', under *' + NEEDS[c.job].label + '* only' : '') + ', ahead of ' + and(c.members.map((m) => m.name)) + '. ' + c.reason);
 const block = START + '\n' + lines.join('\n') + '\n' + END;
 const next = text.slice(0, i) + block + text.slice(j + END.length);
 if (next !== text) fs.writeFileSync(FILE, next);
