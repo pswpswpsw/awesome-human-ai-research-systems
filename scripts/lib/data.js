@@ -21,7 +21,6 @@
 const NEEDS = {
   find:       { label: 'Find papers on a question',              verb: 'find papers on a question and judge what they find' },
   answer:     { label: 'Get a sourced answer to a question',     verb: 'answer a research question from the literature, with sources' },
-  review:     { label: 'Run a systematic review',                verb: 'take on systematic-review work' },
   gaps:       { label: 'Find gaps in the literature',            verb: 'point to where the literature on a question leaves something open' },
   hypotheses: { label: 'Find hypotheses in your own data',       verb: 'propose hypotheses from data you provide and test them against it' },
   novelty:    { label: 'Check whether an idea has been done',    verb: 'judge whether an idea already has prior work' },
@@ -39,7 +38,7 @@ const NEEDS = {
 // to run, runs them, and hands back a finished paper or report, with no
 // documented step at which the researcher designs the experiments.
 const STAGES = [
-  { key: 'understand', n: 1, label: 'Understand the field and the problem', jobs: ['find', 'answer', 'review'] },
+  { key: 'understand', n: 1, label: 'Understand the field and the problem', jobs: ['find', 'answer'] },
   { key: 'ideas',      n: 2, label: 'Find gaps and ideas',                  jobs: ['gaps', 'hypotheses'] },
   { key: 'solution',   n: 3, label: 'Propose a solution and check it is new', jobs: ['novelty'] },
   { key: 'experiment', n: 4, label: 'Design and run the experiments',       jobs: ['data', 'next'] },
@@ -84,10 +83,8 @@ const TAGS = {
   'HypoGeniC':                      ['hypotheses'],
   'Patsnap Eureka Novelty Search':  ['novelty'],
   'Yila Research Gap and Topic Validation': ['gaps', 'novelty'],
-  'Elicit':                         ['find', 'review'],
   'SciScore':                       ['manuscript'],
   'Reviewer3':                      ['citations', 'manuscript'],
-  'Atinary SDLabs':                 ['next'],
 };
 
 // Category key, its position on the Standing scale (Bench sits off it), the

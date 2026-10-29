@@ -6,7 +6,7 @@
 
 The judgment moves. Who answers for it does not. A screening label the model got wrong is still your screening label, and a citation it invented is still your citation. So the useful question about any of these tools is what it leaves you answerable for.
 
-Twenty-five entries from twenty-one products a researcher can use today, in five categories, and eight close alternatives listed under the system each most resembles. A product whose parts do different jobs and leave you different things to rule on has one entry for each part. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
+Twenty-three entries from twenty products a researcher can use today, filed in five categories, and eight close alternatives listed under the system each most resembles. Two categories, Human Approval and Bench, have no entry at present. A product whose parts do different jobs and leave you different things to rule on has one entry for each part. The tests behind the boundaries, the facet grid they come from, and why each entry sits where it does are all in [METHOD.md](METHOD.md).
 
 ## What do you want to do?
 
@@ -20,25 +20,23 @@ In *How they differ*, ✓ and ✗ rest on the vendor’s own pages or on the sys
 ### 1. Understand the field and the problem
 
 <details>
-<summary><b>Find papers on a question</b> &middot; 4 systems</summary>
+<summary><b>Find papers on a question</b> &middot; 3 systems</summary>
 
-Four systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=find).
+Three systems, all in Standing Verdicts, so they leave you the same kind of thing to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=find).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
 | [Consensus](https://consensus.app/) | Tallies what the papers found on a yes or no question | Whether a tally really settles anything, and every sentence you cite in | [Standing Verdicts](#standing-verdicts) |
 | [Undermind](https://www.undermind.ai/) | Scores each paper, states why it fits, and estimates coverage | What the material means and which papers get cited | [Standing Verdicts](#standing-verdicts) |
 | [Ai2 Asta](https://asta.allen.ai/) | Sorts papers into relevance tiers †, labels its own uncited text † | Which relevance tier to trust, and every sentence you write | [Standing Verdicts](#standing-verdicts) |
-| [Elicit](https://elicit.com/) | Screens and extracts; disagreements go to a person on the dual path | Every disagreement between two independent reviewers; on the single-reviewer path, only the labels you open a paper to overturn | [Human Approval](#human-approval) |
 
 **How they differ**
 
-| | Consensus | Undermind | Ai2 Asta | Elicit |
-| --- | :---: | :---: | :---: | :---: |
-| Says why each paper is relevant | *not documented* | ✓ | ✓ † | ✓ |
-| Estimates how much of the literature it found | *not documented* | ✓ | *not documented* | *not documented* |
-| Counts how many studies say yes or no | ✓ | *not documented* | *not documented* | *not documented* |
-| Records which person decided each item | ✗ | ✗ | ✗ | ✓ (dual-review path) |
+| | Consensus | Undermind | Ai2 Asta |
+| --- | :---: | :---: | :---: |
+| Says why each paper is relevant | *not documented* | ✓ | ✓ |
+| Estimates how much of the literature it found | *not documented* | ✓ | *not documented* |
+| Counts how many studies say yes or no | ✓ | *not documented* | *not documented* |
 
 </details>
 
@@ -50,30 +48,19 @@ Five systems across two categories, so they leave you different things to rule o
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
 | [Edison Platform](https://playground.edisonscientific.com/) | Answers a question from the literature with references, or analyses files you upload in a notebook it writes | The question and any files, then keep, revise or discard the answer. Its docs call task runs fire-and-forget, not interactive | [Delegation](#delegation) |
-| [PaperQA2](https://github.com/Future-House/paper-qa) | Answers a question from a folder of papers you supply, using only the retrieved passages it scores as relevant | The files in the folder and the question, then whether each cited sentence holds up against the pages it names. Nothing documented waits on you during a run, and no documented step shows you a score or lets you overrule one | [Delegation](#delegation) |
+| [PaperQA2](https://github.com/Future-House/paper-qa) | Answers a question from a folder of papers you supply, using only the retrieved passages it scores as relevant | The files in the folder and the question, then whether each cited sentence holds up against the pages it names. Nothing documented waits on you during a run. A Python tutorial prints the passage scores after the answer, but no documented step lets you overrule one | [Delegation](#delegation) |
 | [Consensus](https://consensus.app/) | Tallies what the papers found on a yes or no question | Whether a tally really settles anything, and every sentence you cite in | [Standing Verdicts](#standing-verdicts) |
 | [Ai2 Asta](https://asta.allen.ai/) | Sorts papers into relevance tiers †, labels its own uncited text † | Which relevance tier to trust, and every sentence you write | [Standing Verdicts](#standing-verdicts) |
-| [OpenScholar](https://github.com/AkariAsai/OpenScholar) | Answers with each claim tied to a source | What the evidence means | [Standing Verdicts](#standing-verdicts) |
+| [OpenScholar](https://github.com/AkariAsai/OpenScholar) | Answers from the papers it retrieves, with citations | What the evidence means | [Standing Verdicts](#standing-verdicts) |
 
 **How they differ**
 
 | | Edison Platform | PaperQA2 | Consensus | Ai2 Asta | OpenScholar |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| Labels text it wrote without a source | *not documented* | *not documented* | *not documented* | ✓ † | *not documented* |
+| Labels text it wrote without a source | *not documented* | *not documented* | *not documented* | ✓ † | ✗ |
 | Counts how many studies say yes or no | *not documented* | *not documented* | ✓ | *not documented* | *not documented* |
 | Evaluation published in a peer-reviewed venue | *not documented* | preprint (arXiv, 2024) | ✓ (independent study of its search, 2026) | ✓ (Scholar QA, ACL 2025 demo) | ✓ (Nature, 2026) |
 | Model weights are downloadable | ✗ | ✗ | ✗ | ✗ | ✓ |
-
-</details>
-
-<details>
-<summary><b>Run a systematic review</b> &middot; 1 system</summary>
-
-One system, in Human Approval. [See its card](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=review).
-
-| System | What it does | What you still rule on | Category |
-| --- | --- | --- | --- |
-| [Elicit](https://elicit.com/) | Screens and extracts; disagreements go to a person on the dual path | Every disagreement between two independent reviewers; on the single-reviewer path, only the labels you open a paper to overturn | [Human Approval](#human-approval) |
 
 </details>
 
@@ -183,23 +170,13 @@ Both in Delegation, so they leave you the same kind of thing to rule on. [Compar
 </details>
 
 <details>
-<summary><b>Decide what to run next</b> &middot; 2 systems</summary>
+<summary><b>Decide what to run next</b> &middot; 1 system</summary>
 
-Two systems across two categories, so they leave you different things to rule on. [Compare them side by side](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=next).
+One system, in Delegation. [See its card](https://pswpswpsw.github.io/awesome-human-ai-research-systems/#job=next).
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [Outerloop](https://github.com/outerloop-science/outerloop) | Has an agent try one hypothesis at a time on your research code, and opens a pull request only for a gain its own measurement confirms | The repository, its contract and roadmap, then each gain's pull request, which waits for a person to merge or close it and holds the loop's only slot while open †. An attempt with no gain ends in a report, and the next starts after the six-hour default cooldown without anyone | [Delegation](#delegation) |
-| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Proposes the next experiment, then re-plans on the result you bring back | Whether to spend materials and machine time on the condition it suggests | [Bench](#bench) |
-
-**How they differ**
-
-| | Outerloop | Atinary SDLabs |
-| --- | :---: | :---: |
-| Plans the next run from the results of earlier runs | ✓ (builds on merged gains) | ✓ |
-| Its output can be saved in your lab notebook | *not documented* | ✓ (optional, through its API) |
-| Connects to lab robots or instruments | *not documented* | ✓ (optional) |
-| Can be called from code | ✓ (through its command line, which can print JSON) | ✓ |
+| [Outerloop](https://github.com/outerloop-science/outerloop) | Has an agent try one hypothesis at a time on your research code, and opens a pull request only for a gain its own measurement confirms | The repository, its contract and roadmap, then each gain's pull request, which waits for a person to merge or close it unless the agent withdraws it, and holds the loop's only slot while open †. An attempt with no gain ends in a report, and the next starts after the six-hour default cooldown without anyone | [Delegation](#delegation) |
 
 </details>
 
@@ -212,7 +189,7 @@ Two systems across two categories, so they leave you different things to rule on
 
 | System | What it does | What you still rule on | Category |
 | --- | --- | --- | --- |
-| [scite](https://scite.ai/) | Sorts each citation as support or contrast, and flags retractions | Which references survive the flags | [Standing Verdicts](#standing-verdicts) |
+| [scite](https://scite.ai/) | Sorts each citation as supporting, contrasting or mentioning, and flags retractions | Which references survive the flags | [Standing Verdicts](#standing-verdicts) |
 | [Reviewer3](https://reviewer3.com/) | Checks each claim against the evidence the manuscript reports | Which checks run, then every finding, one at a time | [Critique](#critique) |
 
 **How they differ**
@@ -221,7 +198,7 @@ Two systems across two categories, so they leave you different things to rule on
 | --- | :---: | :---: |
 | Flags references that match no real paper | *not documented* | ✓ |
 | Shows whether later papers support or contrast a cited work | ✓ | *not documented* |
-| Flags self-citation | *not documented* | ✓ |
+| Flags self-citation | ✓ (among papers citing a work, as a report filter) | ✓ |
 
 </details>
 
@@ -246,7 +223,7 @@ Both in Critique, so they leave you the same kind of thing to rule on. [Compare 
 | Scores the manuscript | ✓ (methods reporting) | *not documented* |
 | Checks reporting rigour such as blinding and power | ✓ | *not documented* |
 | Checks resource identifiers against a registry | ✓ | *not documented* |
-| Checks each claim against the manuscript’s own evidence | *not documented* | ✓ |
+| Checks each claim against the manuscript’s own evidence | ✗ (methods reporting only) | ✓ |
 | Flags references that match no real paper | *not documented* | ✓ |
 
 </details>
@@ -288,9 +265,9 @@ Three systems, all in Delegation, so they leave you the same kind of thing to ru
 | --- | --- | --- |
 | [Delegation](#delegation) | Keep it, fix it, or throw it away. Nothing records which parts you actually checked. | 10 |
 | [Standing Verdicts](#standing-verdicts) | Every sentence you write. The machine's call on each item is the record unless you open the source and reverse it. | 11 |
-| [Human Approval](#human-approval) | Every record, one at a time, with your name on it. Nothing moves until you say so. | 1 |
+| [Human Approval](#human-approval) | Every record, one at a time, with your name on it. Nothing moves until you say so. | 0 |
 | [Critique](#critique) | Whether a single word changes. Nothing the AI writes reaches your file unless you act on that specific item. | 2 |
-| [Bench](#bench) | Whether to spend the materials and the machine time. A measurement, not a reader, decides who was right. | 1 |
+| [Bench](#bench) | Whether to spend the materials and the machine time. A measurement, not a reader, decides who was right. | 0 |
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/categories-dark.svg">
@@ -300,7 +277,7 @@ Three systems, all in Delegation, so they leave you the same kind of thing to ru
 <details>
 <summary><b>How to read the tables</b></summary>
 
-*What it does* is a one-line compression of the row. *The human rules on* is the one column that is our reading, worked out from what the documentation requires and what it does not. [WORKFLOWS.md](WORKFLOWS.md) follows four systems through a real task to show how that reading is made. *Decision record* is what leaves the platform as evidence of how the decisions were reached, and who it puts them on. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable, and `free` marks a service the company documents as free outright.
+*What it does* is a one-line compression of the row. *The human rules on* is the one column that is our reading, worked out from what the documentation requires and what it does not. *Decision record* is what leaves the platform as evidence of how the decisions were reached, and who it puts them on. A *No* there, or under *Writes into your draft*, means the product's public pages describe none. *Access*: `hosted` is a service you log into, `self-host` is code you run, `install into a host` is a library something else runs, `open weights` means the model is downloadable, and `free` marks a service the company documents as free outright.
 
 **†** marks wording the company published only in page source or in a script the browser never displays. It confirms the wording went out, and leaves open whether the feature is switched on for you. In a code repository, † marks behaviour found in the code rather than the documentation, and a default set in the code is what a run gets unless you change it.
 
@@ -318,12 +295,12 @@ You supply a question or some source material, the system hands back something t
 | --- | --- | --- | --- | --- | --- | --- |
 | [Edison Platform](https://playground.edisonscientific.com/) *(the commercial spinout of FutureHouse: its Literature and Analysis agents, on the Edison Playground and through the Edison Platform API)* | Answers a question from the literature with references, or analyses files you upload in a notebook it writes | The question and any files, then keep, revise or discard the answer. Its docs call task runs fire-and-forget, not interactive | From Literature, an answer or literature report with references, and, fetched through the API with the verbose setting, the contexts and paper metadata behind it. From Analysis, an answer with the notebook of analysis code and any figures it made | No | It is the draft | hosted |
 | [Edison Precedent](https://docs.edisonscientific.com/agents#precedent) *(an Edison Platform agent, formerly Has Anyone)* | Answers a "Has anyone done this before?" question about your idea, searching across fields | The idea and how to put it, then whether the cited answer settles it and what to ask next; API tasks are fire-and-forget | One answer with references and a flag for whether it found a good answer; the web app also shows a Yes or No badge taken from the first Yes or No in the answer † | No | No | hosted |
-| [PaperQA2](https://github.com/Future-House/paper-qa) *(FutureHouse)* | Answers a question from a folder of papers you supply, using only the retrieved passages it scores as relevant | The files in the folder and the question, then whether each cited sentence holds up against the pages it names. Nothing documented waits on you during a run, and no documented step shows you a score or lets you overrule one | An answer of about 200 words by default with in-text citations to papers by page range, or a fixed "I cannot answer" reply when no passage passes its relevance cutoff †; each answer is stored under `~/.pqa` with the scored summaries behind it and a reference list giving citation counts and journal quality where found † | No | No | self-host |
+| [PaperQA2](https://github.com/Future-House/paper-qa) *(FutureHouse)* | Answers a question from a folder of papers you supply, using only the retrieved passages it scores as relevant | The files in the folder and the question, then whether each cited sentence holds up against the pages it names. Nothing documented waits on you during a run. A Python tutorial prints the passage scores after the answer, but no documented step lets you overrule one | An answer of about 200 words by default with in-text citations to papers by page range, or a fixed "I cannot answer" reply when no passage passes its relevance cutoff †; each answer is stored under `~/.pqa` with the scored summaries behind it and a reference list giving citation counts and journal quality where found † | No | No | self-host |
 | [Polaris](https://github.com/ZJU-REAL/Polaris) | Takes a research direction to a LaTeX paper, and by default will not mark it submitted until its own review passes, which fails on any fabricated citation | The direction, then every idea promoted to an experiment, which its docs say only a person can decide in the app, and in-app submission of the reviewed paper, which the arXiv export skips †; also any question it asks when stuck. Goal and budget checks exist but are off by default | Paper wiki, scored ideas, experiment runs on your GPU servers, a LaTeX paper, and a review rating every citation as exact, minor or fabricated and up to 30 per round as supported, partial or unsupported, with every percentage and decimal checked against the run record | No; answers to its questions record who answered, and each gate stores who decided it †, but no documented export carries either | It is the draft | self-host |
 | [Wisp Science](https://github.com/xuzhougeng/wisp-science) | Runs analyses on your own files and locks the evidence behind the manuscript items you bind into an exportable capsule | The question and any action an approval gate stops on, then which results are selected as evidence for each manuscript item | Literature search, Python and R runs with logs, figures and drafts in a local project, plus an Evidence Capsule: a ZIP binding manuscript items to the exact runs, code and environment behind them, with a clean-workspace rerun check | The Evidence Capsule marks each binding Candidate, Selected or Rejected, with lineage and checksums; the documentation does not say who made each choice | It writes project files; dangerous commands stop for approval and other tools follow their own allow, ask or deny rule, until you opt into Full Permission | self-host |
-| [OpenResearch](https://openresearch.sh/) *(an alphaXiv project)* | Works in a Git repository, preferably an existing implementation you import, puts each hypothesis on its own branch, runs every branch under one fixed command, and builds the next round on the measured winner | The repository, the goal and the compute backend, then the write-up; on the default Agentic setting †, its loop waits on you between runs only when failed runs hit its repair cap, and permission prompts are a separate setting | An experiment tree of git branches, each frozen once a run answers it, a log for every run, and reports and figures in a local artifacts folder | No; the tree stays in a local database and run logs on your machine, optional GitHub publication pushes only the experiment branches, and no field on a node or run says who promoted or stopped it † | It writes code to experiment branches in its own worktree, and is the draft when you ask for a paper (`paper.tex`), which can sync both ways with Overleaf | self-host |
+| [OpenResearch](https://openresearch.sh/) *(an alphaXiv project)* | Works in a Git repository, preferably an existing implementation you import, puts each hypothesis on its own branch, runs every branch under one fixed command, and builds the next round on the measured winner | The repository, the goal and the compute backend, then the write-up; on the default Agentic setting †, its loop waits on you between runs only when failed runs hit its repair cap, and permission prompts are a separate setting | An experiment tree of git branches, each frozen once a run answers it, a log for every run, and reports and figures in a local artifacts folder | No; the tree stays in a local database and run logs on your machine, optional GitHub publication pushes the baseline branch and the experiment branches †, and no field on a node says who promoted it, while a cancelled run names at most the agent session that asked to stop it † | It writes code to experiment branches in its own worktree, and is the draft when you ask for a paper (`paper.tex`), which can sync both ways with Overleaf | self-host |
 | [NeuriCo](https://github.com/ChicagoHAI/NeuriCo) *(HITL AutoResearch path)* | Proposes one change to a software experiment at a time, runs and scores it, and plans the next from the scores | The idea and its run settings, then the scored results and paper it hands back. On the default Auto setting its manager agent decides whether to admit each proposal †, and a legal proposal waits for you only with Auto off. Either way the manager agent decides whether a scored result is kept | A frontier of scored experiment checkpoints with code, logs and reports, and a paper draft unless you switch paper writing off at launch †, run by Claude Code or Codex workers † | An append-only idea log tagging each decision as the worker's, the manager's or the human's, and on the default Auto setting only as the worker's or the manager's †; it names no person | It is the draft unless you switch paper writing off at launch †; code and reports stay in its own workspace | self-host |
-| [Outerloop](https://github.com/outerloop-science/outerloop) *(Agentic Learning AI Lab at NYU)* | Has an agent try one hypothesis at a time on your research code, and opens a pull request only for a gain its own measurement confirms | The repository, its contract and roadmap, then each gain's pull request, which waits for a person to merge or close it and holds the loop's only slot while open †. An attempt with no gain ends in a report, and the next starts after the six-hour default cooldown without anyone | A pull request for each gain, carrying the kernel's measured numbers and the agent's report, and a short report on every attempt, failed ones included: hypothesis, change, outcome, next step | A research-log branch with a row for every attempt and a ledger that marks a gain confirmed once the merge is seen; neither names who merged, in the docs or in the code † | It writes code only to its own branches, and a pull request reaches your base branch when a person merges it, unless the contract sets `merge: auto` | self-host |
+| [Outerloop](https://github.com/outerloop-science/outerloop) *(Agentic Learning AI Lab at NYU)* | Has an agent try one hypothesis at a time on your research code, and opens a pull request only for a gain its own measurement confirms | The repository, its contract and roadmap, then each gain's pull request, which waits for a person to merge or close it unless the agent withdraws it, and holds the loop's only slot while open †. An attempt with no gain ends in a report, and the next starts after the six-hour default cooldown without anyone | A pull request for each gain, carrying the kernel's measured numbers and the agent's report, and a short report on every attempt, failed ones included: hypothesis, change, outcome, next step | A research-log branch with a row for every attempt and a ledger that marks a gain confirmed once the merge is seen; neither names who merged, in the docs or in the code † | It writes code only to its own branches, and a pull request reaches your base branch when a person merges it, unless the contract sets `merge: auto` | self-host |
 | [Elicit Reports](https://support.elicit.com/en/articles/14756862-get-a-research-report-to-generate-in-depth-answers-automatically-in-elicit) *(Research Gap Analysis template)* | Runs its own search, screening and extraction on your question, then writes a cited report on where the evidence falls short | The question, the template and the depth, then the finished report; optionally its screening criteria, which papers are screened in or out and its extraction columns, before it regenerates. No documented step asks you to rule on a single gap | Report with numbered in-line citations, and supporting quotes and reasoning you can click into, drawn from the academic, journal and clinical trial corpus Elicit says Reports are limited to | Per-step CSVs listing the papers found and each paper's screening result, a log whose default entry is Elicit's own label and reasoning; the documentation names no person in them and does not say they record who edited a step | It is the draft | hosted |
 | [Arbor idea-check](https://RUC-NLPIR.github.io/Arbor/docs/cli/#arbor-idea-check) *(one command of Arbor's CLI)* | Searches arXiv papers through alphaXiv for one idea you type, and labels it `novel`, `partial-overlap` or `prior-art-exists` | The one-sentence idea and an optional focus, then whether to believe the label, with no documented stop in between. If its search comes up empty, its prompt tells it to answer `novel` and say so under overlap risks † | A printed verdict, or JSON, with a short summary of prior work, the closest papers, each with a URL and a one-line reason †, the label, and overlap risks; the docs and its prompt show no source link on the summary or the risks † | No; the verdict prints to the terminal, or as JSON with `--json` | No | self-host |
 
@@ -351,16 +328,16 @@ The AI labels and arranges work other people did, or tests an idea or a hypothes
 
 | System | What it does | The human rules on | You get | Decision record | Writes into your draft | Access |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Consensus](https://consensus.app/) | Tallies what the papers found on a yes or no question | Whether a tally really settles anything, and every sentence you cite in | Ranked papers over ~220M, a snapshot of each study, yes/no claim tally with quotes | No | No | hosted |
+| [Consensus](https://consensus.app/) | Tallies what the papers found on a yes or no question | Whether a tally really settles anything, and every sentence you cite in | Ranked papers over ~220M, a snapshot of each study, yes/no claim tally with quotes | No | No; on request it drafts text, which you can copy with its citations or export as a PDF | hosted |
 | [Consensus Research Gaps Matrix](https://help.consensus.app/en/articles/17234045-consensus-ai-analysis-citations-and-visuals) | Places the papers behind an answer in a grid by dimensions such as population, method or outcome, to show where evidence is thin | Whether a cell with little or no evidence is a real gap or an artefact of what was retrieved, and which cell, if any, to follow up with a targeted search | A grid built on a topic search or a saved Collection, each cell opening to its papers and to why each paper was placed there | No | No | hosted |
-| [Undermind](https://www.undermind.ai/) | Scores each paper, states why it fits, and estimates coverage | What the material means and which papers get cited | Ranked table with match scores, stated inclusion reasons, and a coverage estimate for the run | No | No | hosted |
+| [Undermind](https://www.undermind.ai/) | Scores each paper, states why it fits, and estimates coverage | What the material means and which papers get cited | Ranked table with match scores, stated inclusion reasons, and a coverage estimate for the run | No | No, for the search; its MCP `write_file` tool creates and edits Markdown notes and reports in your Undermind workspace | hosted |
 | [Ai2 Asta](https://asta.allen.ai/) | Sorts papers into relevance tiers †, labels its own uncited text † | Which relevance tier to trust, and every sentence you write | Per-paper relevance tiers with stated criteria †; reports where anything it wrote without a citation is labelled as model-generated † | No | No, export only | hosted |
 | [Ai2 Asta AutoDiscovery](https://asta-autodiscovery.allen.ai/) *(in AstaLabs, where Ai2 calls it an experimental feature in early access, and the open-source package behind it)* | Proposes hypotheses about your dataset, tests each with code it writes and runs, and steers toward the lines of inquiry that most shift an LLM's belief | The dataset, a description of its context, an optional intent, the experiment budget and, on the package, the model; then which tested hypotheses to follow up. Nothing documented waits on you during a run, and an LLM reviewer, not a person, decides whether each test counts | A table of every tested hypothesis with its plan, the statistical analysis and Python code behind it, its belief before and after, and whether it counts as surprising; the package also writes a static HTML report of the run | No | No | hosted, self-host |
-| [OpenScholar](https://github.com/AkariAsai/OpenScholar) | Answers with each claim tied to a source | What the evidence means | Answers whose claims are attributed to sources; released weights, reranker, and a 45M-paper index. [Published in *Nature*](https://www.nature.com/articles/s41586-025-10072-4); the hosted demo now redirects to Asta | No | No | self-host, open weights |
-| [scite](https://scite.ai/) | Sorts each citation as support or contrast, and flags retractions | Which references survive the flags | Each citation statement sorted into supporting, contrasting or mentioning; a check of an uploaded bibliography for retractions and contested references | No | No | hosted |
+| [OpenScholar](https://github.com/AkariAsai/OpenScholar) | Answers from the papers it retrieves, with citations | What the evidence means | Answers citing retrieved passages, which its authors say may still contain unsupported claims; released weights, reranker, and a 45M-paper index. [Published in *Nature*](https://www.nature.com/articles/s41586-025-10072-4); the hosted demo now redirects to Asta. A sentence no retrieved passage supports is left as written, with no label † | No | No | self-host, open weights |
+| [scite](https://scite.ai/) | Sorts each citation as supporting, contrasting or mentioning, and flags retractions | Which references survive the flags | Each citation statement sorted into supporting, contrasting or mentioning; a check of an uploaded bibliography for retractions and contested references | No | No | hosted |
 | [SCiNiTO Gap Finding Agent](https://www.scinito.ai/help/smart-search/gap-finding-agent) *(AI Chat path, from Notion Wave)* | Ranks the gaps it finds in papers you pick by urgency, impact and feasibility | The papers it reads, then which ranked gaps to pursue. Its help pages show no step to accept or reject a single gap, so each gap, the reason given for why it matters and its place in the ranking stand | A prioritized list of methodological, knowledge and technical gaps with why each one matters, plus impact and feasibility assessments and next steps, as an AI Chat answer that links every claim to a cited paper from your selection | No | No | hosted |
 | [HypoGeniC](https://github.com/ChicagoHAI/hypothesis-generation) *(Chicago Human+AI Lab; the data-only path)* | Drafts hypotheses from your labelled examples, scores each by how often the model predicts your labels with it, and drafts new ones from the examples the bank gets wrong | The labelled data and its split, the prompt templates and the model, then which scored hypotheses to believe and test further. No documented step waits on you while it generates, and it drops its lowest-reward hypotheses itself † | A JSON bank of plain-language hypotheses, each with its accuracy and reward on your training examples and a list of the ones it predicted correctly †, plus accuracy and F1 when the bank predicts your test file † | No | No | self-host |
-| [Patsnap Eureka Novelty Search](https://eureka.patsnap.com/novelty-search) *(an agent in Patsnap Eureka IP)* | Splits a technical idea into features and labels each one disclosed, obvious or undisclosed in each prior-art reference it compares | On the workflow its help pages document: its summary of your idea, which you confirm before it goes on. Unless Auto Run is selected, also the features, the search terms and codes, which references are compared, and each label. The docs do not say whether Auto Run is on by default, and Patsnap lists human-in-the-loop workflows as enterprise-only without saying which of these steps that covers | Up to 100 ranked patents grouped by family, from searches that also reach non-patent literature; a feature table over three references it preselects or up to five you pick, with the AI's rationale per label if you switch it on; and a final Novelty Assessment and Search Report, exportable to Word, whose contents the help pages list only in part | No; the docs do not say whether the exported report shows which labels a person changed | No; the report exports as a Word file | hosted |
+| [Patsnap Eureka Novelty Search](https://eureka.patsnap.com/novelty-search) *(an agent in Patsnap Eureka IP)* | Splits a technical idea into features and labels each one disclosed, obvious or undisclosed in each prior-art reference it compares | On the workflow its help pages document: its summary of your idea, which you confirm before it goes on. Unless Auto Run is selected, also the features, the search terms and codes, which references are compared, and each label. The docs do not say whether Auto Run is on by default, and Patsnap lists human-in-the-loop workflows as enterprise-only without saying which of these steps that covers | Up to 100 ranked patents grouped by family, from searches that also reach non-patent literature; a feature table over three references it preselects or up to five you pick, with the AI's rationale per label if you switch it on; and a final Novelty Assessment and Search Report, exportable to Word, whose contents the help pages list only in part | Its API returns each feature's original label, score and reason next to the ones a user modified; the docs do not say whether the exported report shows which labels a person changed, or record who changed them | No; the report exports as a Word file | hosted |
 | [Yila Research Gap and Topic Validation](https://yila.ai/guides/how-to-validate-a-research-gap-and-identify-a-more-worthwhile-topic-with-yila) *(an agent in Yila)* | Labels the gap your idea claims with one of the four statuses its guide names, from Open to Unsupported, against the closest work it finds, then scores candidate topics on openness, contribution and feasibility in turn | The idea, which its guide has you confirm before you click Start, then which candidate topic to pursue, since it gives each a verdict and leaves the choice to you. No documented step accepts or rejects a gap status or a score | A Markdown report, which its guide says keeps retrieved evidence apart from inference, holding the search records, the closest studies, the gap status, the three-part assessment and the uncertainty, plus a scored candidate-topic table as an Excel file | No | No; the report and the table download as Markdown and Excel files | hosted |
 
 <!-- close:start Standing Verdicts -->
@@ -370,9 +347,7 @@ The AI labels and arranges work other people did, or tests an idea or a hypothes
 
 The AI screens and ranks, a named person decides, and the trail it leaves is good enough to publish. This is the only category here that ends up with a record of who decided what.
 
-| System | What it does | The human rules on | You get | Decision record | Writes into your draft | Access |
-| --- | --- | --- | --- | --- | --- | --- |
-| [Elicit](https://elicit.com/) | Screens and extracts; disagreements go to a person on the dual path | Every disagreement between two independent reviewers; on the single-reviewer path, only the labels you open a paper to overturn | Ranked results, an include or exclude label on each record with a reason and a quote, extraction tables with sentence-level citations | Audit trail logging every decision, override and adjudication for PRISMA reconstruction, plus agreement statistics and an exported PRISMA flow diagram | No | hosted |
+No system is listed here at present. Elicit's systematic-review workflow sat here on its dual-review path until October 2026, and [METHOD.md](METHOD.md#what-the-tests-excluded) records why it left.
 
 <!-- close:start Human Approval -->
 <!-- close:end Human Approval -->
@@ -399,9 +374,7 @@ The AI reads your work and comments on it. A comment reaches the record only whe
 
 The AI suggests the next experiment, you spend the materials and the machine time, and a measurement settles who was right.
 
-| System | What it does | The human rules on | You get | Decision record | Writes into your draft | Access |
-| --- | --- | --- | --- | --- | --- | --- |
-| [Atinary SDLabs](https://atinary.com/applications/ai-experimental-design-platform/) | Proposes the next experiment, then re-plans on the result you bring back | Whether to spend materials and machine time on the condition it suggests | The next experiment to run, from a Bayesian explore-exploit search † over your parameter space, balancing new settings against refinement of the good ones, re-tuned on results you feed back by hand or through an optional robot link | No | No | hosted |
+No system is listed here at present. Atinary SDLabs sat here until October 2026, and [METHOD.md](METHOD.md#what-the-tests-excluded) records why it left.
 
 <!-- close:start Bench -->
 <!-- close:end Bench -->
